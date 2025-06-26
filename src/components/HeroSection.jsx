@@ -15,13 +15,13 @@ export default function HeroSection() {
         alt="Keystone Notary Group logo"
         className="w-48 md:w-60"
       />
-      <p className="mt-6 text-lg font-light tracking-wide md:text-xl">
+      <p className="mt-6 text-base font-light tracking-wide sm:text-lg md:text-xl">
         Mobile Notary Services • Pennsylvania
       </p>
 
       <nav
         aria-label="Main navigation"
-        className="mt-6 flex justify-center space-x-6 text-sm font-medium uppercase"
+        className="mt-6 flex flex-col items-center space-y-3 text-sm font-medium uppercase sm:flex-row sm:space-y-0 sm:space-x-6"
       >
         <Link
           to="/"

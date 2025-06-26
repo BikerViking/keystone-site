@@ -8,10 +8,10 @@ export default function ServicesPage() {
         aria-label="Services"
         className="mx-auto max-w-3xl px-4 py-16 text-gray-200 sm:py-24"
       >
-        <h1 className="mb-10 text-center text-3xl font-semibold tracking-wide">
+        <h1 className="mb-10 text-center text-2xl font-semibold tracking-wide sm:text-3xl">
           Our Services
         </h1>
-        <div className="space-y-8">
+        <div className="space-y-8 sm:space-y-10">
           <div className="rounded bg-neutral-800 p-6 shadow-sm">
             <h2 className="text-xl font-semibold">General Notary Work</h2>
             <p className="mt-2 text-gray-400">
