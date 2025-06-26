@@ -5,7 +5,7 @@ export default function HeroSection() {
   return (
     <section
       aria-label="Hero Section"
-      className="relative flex min-h-screen flex-col items-center justify-center bg-cover bg-center px-4 text-center text-gray-200"
+      className="relative flex min-h-screen flex-col items-center justify-center bg-cover bg-center bg-no-repeat px-4 text-center text-gray-200"
       style={{ backgroundImage: "url('/bg-texture.PNG')" }}
     >
       {/* Dark overlay for better contrast */}
@@ -22,7 +22,7 @@ export default function HeroSection() {
 
       <nav
         aria-label="Main navigation"
-        className="mt-10 flex flex-wrap justify-center gap-6 text-sm font-medium uppercase"
+        className="mt-6 flex justify-center space-x-6 text-sm font-medium uppercase"
       >
         <Link
           to="/"
