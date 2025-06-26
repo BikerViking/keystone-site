@@ -3,7 +3,7 @@ import React from "react";
 export default function HeroSection() {
   return (
     <section
-      aria-label="Hero"
+      aria-label="Hero Section"
       className="flex min-h-screen items-center justify-center bg-neutral-950 text-white"
     >
       <div className="mx-auto max-w-2xl px-4 text-center">
