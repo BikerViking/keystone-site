@@ -29,12 +29,12 @@ export default function FaqPage() {
     <LayoutWrapper>
       <section
         aria-label="Frequently Asked Questions"
-        className="mx-auto max-w-3xl px-4 py-16 text-gray-200 sm:py-24"
+        className="mx-auto max-w-screen-lg px-4 py-12 text-gray-200 sm:px-6 sm:py-16"
       >
-        <h1 className="mb-10 text-center text-2xl font-semibold tracking-wide sm:text-3xl">
+        <h1 className="mb-6 text-center text-2xl font-semibold tracking-wide sm:mb-8 sm:text-3xl">
           Frequently Asked Questions
         </h1>
-        <div className="space-y-8">
+        <div className="space-y-6 sm:space-y-8">
           {faqs.map(({ q, a }) => (
             <div key={q} className="rounded bg-neutral-800 p-6 shadow-sm">
               <h2 className="text-lg font-medium text-gray-100">{q}</h2>
