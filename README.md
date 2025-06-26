@@ -2,6 +2,10 @@
 
 This is a small React site styled with Tailwind CSS.
 
+## Requirements
+
+- Node.js 18 or later
+
 ## Getting Started
 
 1. Install dependencies: `npm install`
