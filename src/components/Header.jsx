@@ -2,6 +2,9 @@ import React from "react";
 
 export default function Header() {
   return (
+    <header
+      className="border-b border-gray-800 bg-neutral-900/80 backdrop-blur text-gray-200 shadow-sm"
+    >
     <header className="border-b border-gray-800 bg-neutral-900/80 backdrop-blur text-gray-200 shadow-sm">
       <div
         className="mx-auto flex max-w-screen-lg items-center justify-between px-4 py-3 sm:px-6 lg:px-8"
