@@ -1,17 +1,18 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-export default function HeroSection() {
+export default function LandingHero() {
   return (
     <section
-      aria-label="Hero Section"
-      className="relative flex min-h-screen flex-col items-center justify-center px-4 text-center text-gray-200"
+      aria-label="Landing Hero"
+      className="relative flex min-h-screen w-full flex-col items-center justify-center bg-cover bg-center bg-no-repeat px-4 text-center text-gray-200 filter brightness-125"
+      style={{ backgroundImage: "url('/bg-texture.PNG')" }}
     >
       <div className="p-6">
         <img
           src="/logo.PNG"
           alt="Keystone Notary Group logo"
-          className="mx-auto w-48 md:w-64 bg-transparent"
+          className="mx-auto w-40 sm:w-52 md:w-64 bg-transparent"
         />
         <p className="mt-6 text-base font-light tracking-wide sm:text-lg md:text-xl">
           Mobile Notary Services • Pennsylvania

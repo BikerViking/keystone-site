@@ -1,11 +1,11 @@
 import React from "react";
 import LayoutWrapper from "../components/LayoutWrapper";
-import HeroSection from "../components/HeroSection";
+import LandingHero from "../components/LandingHero";
 
 export default function HomePage() {
   return (
     <LayoutWrapper>
-      <HeroSection />
+      <LandingHero />
     </LayoutWrapper>
   );
 }
