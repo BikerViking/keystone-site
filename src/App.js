@@ -1,11 +1,6 @@
 import React from "react";
-import LayoutWrapper from "./components/LayoutWrapper";
-import HeroSection from "./components/HeroSection";
+import HomePage from "./pages/index";
 
 export default function App() {
-  return (
-    <LayoutWrapper>
-      <HeroSection />
-    </LayoutWrapper>
-  );
+  return <HomePage />;
 }
