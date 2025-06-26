@@ -62,6 +62,27 @@ export default function ContactPage() {
             </button>
           </div>
         </form>
+        {/* Additional instructions and contact information */}
+        <p className="mt-8 text-sm text-gray-400">
+          Please mention the type of document or notarization service you are requesting.
+        </p>
+        <div className="mt-6 space-y-2 text-sm text-gray-300">
+          <p>
+            <strong>Phone:</strong> (267) 309-9000
+          </p>
+          <p>
+            <strong>Email:</strong>{" "}
+            <a
+              href="mailto:appointments@keystonenotarygroup.com"
+              className="text-blue-400 hover:text-blue-300"
+            >
+              appointments@keystonenotarygroup.com
+            </a>
+          </p>
+          <p>
+            <strong>Service Area:</strong> Bucks and Montgomery County, PA
+          </p>
+        </div>
       </section>
     </LayoutWrapper>
   );
