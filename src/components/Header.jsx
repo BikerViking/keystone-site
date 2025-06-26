@@ -2,9 +2,9 @@ import React from "react";
 
 export default function Header() {
   return (
-    <header className="bg-neutral-950 text-white">
-      <div className="mx-auto flex items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
-        <h1 className="text-lg font-semibold">Keystone Notary Group</h1>
+    <header className="bg-neutral-950/80 backdrop-blur text-gray-200">
+      <div className="mx-auto flex items-center justify-between px-6 py-4 sm:px-8">
+        <h1 className="text-lg font-light tracking-wide">Keystone Notary Group</h1>
         {/* Hamburger icon for mobile navigation */}
         <button
           type="button"
