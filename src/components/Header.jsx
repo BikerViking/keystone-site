@@ -2,9 +2,15 @@ import React from "react";
 
 export default function Header() {
   return (
-    <header className="border-b border-gray-800 bg-neutral-900/80 backdrop-blur text-gray-200 shadow-sm">
-      <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between px-4 py-2 sm:flex-nowrap sm:px-6 sm:py-3">
-        <h1 className="text-sm font-semibold uppercase tracking-wide text-gray-100 sm:text-base">
+    <header
+      className="border-b border-gray-800 bg-neutral-900/80 backdrop-blur text-gray-200 shadow-sm"
+    >
+      <div
+        className="mx-auto flex max-w-screen-lg items-center justify-between px-4 py-3 sm:px-6 lg:px-8"
+      >
+        <h1
+          className="flex-1 text-center text-sm font-semibold uppercase tracking-wide text-gray-100 sm:text-left sm:text-base"
+        >
           Keystone Notary Group
         </h1>
         {/* Navigation drawer trigger - functionality handled elsewhere */}
