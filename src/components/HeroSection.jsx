@@ -13,7 +13,7 @@ export default function HeroSection() {
       <img
         src="/logo.PNG"
         alt="Keystone Notary Group logo"
-        className="w-48 md:w-60"
+        className="w-48 md:w-64 shadow-xl shadow-black/50 ring-1 ring-white/10 rounded-sm"
       />
       <p className="mt-6 text-base font-light tracking-wide sm:text-lg md:text-xl">
         Mobile Notary Services • Pennsylvania
