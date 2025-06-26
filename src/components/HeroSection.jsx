@@ -5,8 +5,7 @@ export default function HeroSection() {
   return (
     <section
       aria-label="Hero Section"
-      className="relative flex min-h-screen flex-col items-center justify-center bg-cover bg-center bg-no-repeat px-4 text-center text-gray-200"
-      style={{ backgroundImage: "url('/bg-texture.PNG')" }}
+      className="relative flex min-h-screen flex-col items-center justify-center px-4 text-center text-gray-200"
     >
       {/* Dark overlay for better contrast */}
       <div className="absolute inset-0 -z-10 bg-black/60" aria-hidden="true" />
