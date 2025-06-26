@@ -4,8 +4,13 @@ import LayoutWrapper from "../components/LayoutWrapper";
 export default function ServicesPage() {
   return (
     <LayoutWrapper>
-      <section aria-label="Services" className="mx-auto max-w-2xl px-4 py-20 text-gray-200">
-        <h1 className="mb-12 text-center text-3xl font-semibold">Our Services</h1>
+      <section
+        aria-label="Services"
+        className="mx-auto max-w-3xl px-4 py-16 text-gray-200 sm:py-24"
+      >
+        <h1 className="mb-10 text-center text-3xl font-semibold tracking-wide">
+          Our Services
+        </h1>
         <div className="space-y-8">
           <div className="rounded bg-neutral-800 p-6 shadow-sm">
             <h2 className="text-xl font-semibold">General Notary Work</h2>
