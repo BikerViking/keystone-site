@@ -11,6 +11,9 @@ export default function ContactPage() {
     <LayoutWrapper>
       <section
         aria-label="Contact"
+        className="mx-auto max-w-screen-lg px-4 py-12 text-gray-200 sm:px-6 sm:py-16 lg:px-8"
+      >
+        <h1 className="mb-8 text-center text-2xl font-semibold tracking-wide sm:mb-12 sm:text-3xl">
         className="mx-auto max-w-screen-lg px-4 py-12 text-gray-200 sm:px-6 sm:py-16"
       >
         <h1 className="mb-6 text-center text-2xl font-semibold tracking-wide sm:mb-8 sm:text-3xl">
@@ -63,6 +66,7 @@ export default function ContactPage() {
           </div>
         </form>
         {/* Additional instructions and contact information */}
+        <p className="mt-8 text-sm text-gray-400 sm:mt-10">
         <p className="mt-6 text-sm text-gray-400">
           Please mention the type of document or notarization service you are requesting.
         </p>
