@@ -8,11 +8,11 @@ export default function LandingHero() {
       className="relative flex min-h-screen w-full flex-col items-center justify-center bg-cover bg-center bg-no-repeat px-4 text-center text-gray-200 filter brightness-125"
       style={{ backgroundImage: "url('/bg-texture.PNG')" }}
     >
-      <div className="p-6">
+      <div className="mx-auto max-w-screen-md p-8 sm:p-10">
         <img
           src="/logo.PNG"
           alt="Keystone Notary Group logo"
-          className="mx-auto w-40 sm:w-52 md:w-64 bg-transparent"
+          className="mx-auto w-40 bg-transparent sm:w-52 md:w-64"
         />
         <p className="mt-6 text-base font-light tracking-wide sm:text-lg md:text-xl">
           Mobile Notary Services • Pennsylvania
@@ -20,7 +20,7 @@ export default function LandingHero() {
 
         <nav
           aria-label="Main navigation"
-          className="mt-6 flex justify-center gap-6 flex-wrap text-sm font-medium uppercase"
+          className="mt-8 flex flex-col items-center gap-4 text-sm font-medium uppercase sm:mt-10 sm:flex-row sm:gap-6"
         >
           <Link
             to="/"
