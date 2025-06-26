@@ -13,10 +13,10 @@ export default function ContactPage() {
         aria-label="Contact"
         className="mx-auto max-w-lg px-4 py-16 text-gray-200 sm:py-24"
       >
-        <h1 className="mb-10 text-center text-3xl font-semibold tracking-wide">
+        <h1 className="mb-10 text-center text-2xl font-semibold tracking-wide sm:text-3xl">
           Contact
         </h1>
-        <form onSubmit={handleSubmit} className="space-y-6">
+        <form onSubmit={handleSubmit} className="space-y-6 sm:space-y-8">
           <div>
             <label htmlFor="name" className="block text-sm font-medium">
               Full Name
