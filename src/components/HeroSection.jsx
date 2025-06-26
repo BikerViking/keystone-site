@@ -21,7 +21,7 @@ export default function HeroSection() {
 
       <nav
         aria-label="Main navigation"
-        className="mt-6 flex flex-col items-center space-y-3 text-sm font-medium uppercase sm:flex-row sm:space-y-0 sm:space-x-6"
+        className="mt-6 flex justify-center gap-6 flex-wrap text-sm font-medium uppercase"
       >
         <Link
           to="/"
