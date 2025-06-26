@@ -5,7 +5,7 @@ export default function HeroSection() {
   return (
     <section
       aria-label="Hero Section"
-      className="relative flex min-h-screen flex-col items-center justify-center text-center bg-cover bg-center text-gray-200"
+      className="relative flex min-h-screen flex-col items-center justify-center bg-cover bg-center px-4 text-center text-gray-200"
       style={{ backgroundImage: "url('/bg-texture.PNG')" }}
     >
       {/* Dark overlay for better contrast */}
@@ -14,32 +14,46 @@ export default function HeroSection() {
       <img
         src="/logo.PNG"
         alt="Keystone Notary Group logo"
-        className="w-48 md:w-64"
+        className="w-48 md:w-60"
       />
-      <p className="mt-6 text-xl font-light">
+      <p className="mt-6 text-lg font-light tracking-wide md:text-xl">
         Mobile Notary Services • Pennsylvania
       </p>
 
-      <nav aria-label="Main" className="mt-8 space-x-4 text-sm uppercase">
-        <a href="#" className="hover:underline">
+      <nav
+        aria-label="Main navigation"
+        className="mt-10 flex flex-wrap justify-center gap-6 text-sm font-medium uppercase"
+      >
+        <Link
+          to="/"
+          className="text-gray-400 transition-colors hover:text-white focus-visible:text-white"
+        >
           Home
-        </a>
-        <span aria-hidden="true">&bull;</span>
-        <a href="#" className="hover:underline">
+        </Link>
+        <Link
+          to="/about"
+          className="text-gray-400 transition-colors hover:text-white focus-visible:text-white"
+        >
           About
-        </a>
-        <span aria-hidden="true">&bull;</span>
-        <Link to="/services" className="hover:underline">
+        </Link>
+        <Link
+          to="/services"
+          className="text-gray-400 transition-colors hover:text-white focus-visible:text-white"
+        >
           Services
         </Link>
-        <span aria-hidden="true">&bull;</span>
-        <a href="#" className="hover:underline">
+        <Link
+          to="/faq"
+          className="text-gray-400 transition-colors hover:text-white focus-visible:text-white"
+        >
           FAQ
-        </a>
-        <span aria-hidden="true">&bull;</span>
-        <a href="#" className="hover:underline">
+        </Link>
+        <Link
+          to="/contact"
+          className="text-gray-400 transition-colors hover:text-white focus-visible:text-white"
+        >
           Contact
-        </a>
+        </Link>
       </nav>
     </section>
   );
