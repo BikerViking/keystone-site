@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function HeroSection() {
   return (
@@ -28,9 +29,9 @@ export default function HeroSection() {
           About
         </a>
         <span aria-hidden="true">&bull;</span>
-        <a href="#" className="hover:underline">
+        <Link to="/services" className="hover:underline">
           Services
-        </a>
+        </Link>
         <span aria-hidden="true">&bull;</span>
         <a href="#" className="hover:underline">
           FAQ
