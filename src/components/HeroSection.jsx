@@ -7,11 +7,11 @@ export default function HeroSection() {
       aria-label="Hero Section"
       className="relative flex min-h-screen flex-col items-center justify-center px-4 text-center text-gray-200"
     >
-      <div className="bg-black/70 p-6 rounded-md">
+      <div className="p-6">
         <img
           src="/logo.PNG"
           alt="Keystone Notary Group logo"
-          className="mx-auto w-48 md:w-64 shadow-lg shadow-black/60"
+          className="mx-auto w-48 md:w-64 bg-transparent"
         />
         <p className="mt-6 text-base font-light tracking-wide sm:text-lg md:text-xl">
           Mobile Notary Services • Pennsylvania
