@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Keystone Notary Group</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: #0d0d0d;
+      color: #eee;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    header {
+      min-height: 100vh;
+      background: linear-gradient(135deg, #0d0d0d, #1a1a1a);
+      background-image: url('https://www.transparenttextures.com/patterns/black-paper.png');
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      letter-spacing: 0.2rem;
+      margin-bottom: 1rem;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      color: #aaa;
+      margin-bottom: 2rem;
+    }
+
+    .btn {
+      padding: 0.75rem 2rem;
+      background: #1f1f1f;
+      border: 1px solid #555;
+      color: #eee;
+      text-decoration: none;
+      transition: background 0.3s ease;
+    }
+
+    .btn:hover {
+      background: #333;
+    }
+
+    section {
+      padding: 4rem 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      letter-spacing: 0.1rem;
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+
+    .service {
+      background: #1a1a1a;
+      padding: 2rem;
+      border: 1px solid #333;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .service:hover {
+      transform: translateY(-5px);
+    }
+
+    .contact {
+      text-align: center;
+    }
+
+    footer {
+      background: #111;
+      color: #666;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 600px) {
+      header h1 { font-size: 2rem; }
+      .section-title { font-size: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Keystone Notary Group</h1>
+    <p>Mobile Notary & Certified Signing Agent • Pennsylvania</p>
+    <a href="#contact" class="btn">Schedule Appointment</a>
+  </header>
+
+  <section id="services">
+    <h2 class="section-title">Our Services</h2>
+    <div class="services">
+      <div class="service">
+        <h3>Loan Signing</h3>
+        <p>Certified and trained in handling loan documents with care, accuracy, and professionalism.</p>
+      </div>
+      <div class="service">
+        <h3>General Notarization</h3>
+        <p>From affidavits to power of attorney, trust our precision and mobile convenience.</p>
+      </div>
+      <div class="service">
+        <h3>Apostille Assistance</h3>
+        <p>International document legalization services, made simple and hassle-free.</p>
+      </div>
+      <div class="service">
+        <h3>I-9 Verifications</h3>
+        <p>Remote employee verification, legally compliant and employer-approved.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <h2 class="section-title">About Us</h2>
+    <p style="max-width: 700px; margin: auto; text-align: center;">
+      I'm Thomas Krupp, the founder of Keystone Notary Group, LLC — a Pennsylvania-commissioned Notary Public and NNA Certified Signing Agent. I bring professionalism, punctuality, and peace of mind to every document I stamp.
+    </p>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2 class="section-title">Contact</h2>
+    <p>Email: <a href="mailto:info@keystonenotarygroup.com" style="color:#ccc;">info@keystonenotarygroup.com</a></p>
+    <p>Phone: <a href="tel:2673099000" style="color:#ccc;">(267) 309-9000</a></p>
+    <p>Souderton, PA 18964</p>
+  </section>
+
+  <footer>
+    &copy; 2025 Keystone Notary Group, LLC • All rights reserved
+  </footer>
+
+</body>
+</html>
