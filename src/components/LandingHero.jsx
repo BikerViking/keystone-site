@@ -1,22 +1,22 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 
 export default function LandingHero() {
-  const [isOpen, setIsOpen] = useState(false);
   const navItems = ["Home", "About", "Services", "FAQ", "Contact"];
 
   return (
     <section
-      aria-label="Landing Hero"
-      className="relative flex min-h-[90vh] w-full flex-col items-center justify-center bg-neutral-900 text-gray-200"
+      className="relative flex min-h-screen w-full flex-col items-center justify-center bg-neutral-900 text-gray-200 overflow-hidden"
     >
+      {/* Background Layer */}
       <div
-        aria-hidden="true"
-        className="absolute inset-0 -z-10 bg-cover bg-center opacity-50"
+        className="absolute inset-0 z-0 bg-cover bg-center opacity-40"
         style={{ backgroundImage: "url('/bg-texture.PNG')" }}
+        aria-hidden="true"
       />
 
-      <div className="mx-auto w-full max-w-screen-md px-4 py-12 text-center sm:py-16">
+      {/* Foreground Content */}
+      <div className="relative z-10 mx-auto w-full max-w-screen-md px-4 py-12 text-center sm:py-16">
         <img
           src="/logo.PNG"
           alt="Keystone Notary Group logo"
