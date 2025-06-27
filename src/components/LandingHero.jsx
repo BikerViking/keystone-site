@@ -1,11 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 export default function LandingHero() {
+  const [isOpen, setIsOpen] = useState(false);
+  const toggleMenu = () => setIsOpen(!isOpen);
+
+  const navItems = ["Home", "About", "Services", "FAQ", "Contact"];
+
   return (
     <section
       aria-label="Landing Hero"
-      className="relative flex min-h-[90vh] w-full items-center justify-center overflow-hidden bg-neutral-900 text-gray-200"
+      className="relative flex min-h-[90vh] w-full flex-col items-center justify-center overflow-hidden bg-neutral-900 text-gray-200"
     >
       <div
         aria-hidden="true"
@@ -21,63 +26,50 @@ export default function LandingHero() {
         <h1 className="mt-4 text-base font-light tracking-wide text-amber-200 sm:mt-6 sm:text-lg md:text-xl">
           Mobile Notary Services • Pennsylvania
         </h1>
-
-        <nav aria-label="Main navigation" className="mt-8 sm:mt-10">
+        <nav className="mt-8 hidden sm:block" aria-label="Main navigation">
           <ul className="flex flex-wrap items-center justify-center gap-3 text-sm font-medium uppercase sm:gap-4">
-            <li>
-              <Link
-                to="/"
-                className="text-gray-300 transition-colors hover:text-white focus-visible:text-white"
-              >
-                Home
-              </Link>
-            </li>
-            <li aria-hidden="true" className="hidden select-none text-gray-400 sm:block">
-              &bull;
-            </li>
-            <li>
-              <Link
-                to="/about"
-                className="text-gray-300 transition-colors hover:text-white focus-visible:text-white"
-              >
-                About
-              </Link>
-            </li>
-            <li aria-hidden="true" className="hidden select-none text-gray-400 sm:block">
-              &bull;
-            </li>
-            <li>
-              <Link
-                to="/services"
-                className="text-gray-300 transition-colors hover:text-white focus-visible:text-white"
-              >
-                Services
-              </Link>
-            </li>
-            <li aria-hidden="true" className="hidden select-none text-gray-400 sm:block">
-              &bull;
-            </li>
-            <li>
-              <Link
-                to="/faq"
-                className="text-gray-300 transition-colors hover:text-white focus-visible:text-white"
-              >
-                FAQ
-              </Link>
-            </li>
-            <li aria-hidden="true" className="hidden select-none text-gray-400 sm:block">
-              &bull;
-            </li>
-            <li>
-              <Link
-                to="/contact"
-                className="text-gray-300 transition-colors hover:text-white focus-visible:text-white"
-              >
-                Contact
-              </Link>
-            </li>
+            {navItems.map((label, idx) => (
+              <React.Fragment key={label}>
+                <li>
+                  <Link
+                    to={`/${label.toLowerCase() === "home" ? "" : label.toLowerCase()}`}
+                    className="text-gray-300 transition-colors hover:text-white focus-visible:text-white"
+                  >
+                    {label}
+                  </Link>
+                </li>
+                {idx < navItems.length - 1 && (
+                  <li aria-hidden="true" className="hidden select-none text-gray-400 sm:block">
+                    &bull;
+                  </li>
+                )}
+              </React.Fragment>
+            ))}
           </ul>
         </nav>
+        <div className="mt-6 sm:hidden">
+          <button
+            onClick={toggleMenu}
+            className="rounded border border-gray-500 px-4 py-2 text-sm uppercase tracking-wide text-gray-200 hover:border-white"
+          >
+            {isOpen ? "Close Menu" : "Open Menu"}
+          </button>
+          {isOpen && (
+            <ul className="mt-4 space-y-2 text-sm font-medium uppercase">
+              {navItems.map((label) => (
+                <li key={label}>
+                  <Link
+                    to={`/${label.toLowerCase() === "home" ? "" : label.toLowerCase()}`}
+                    className="block text-gray-300 transition-colors hover:text-white"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    {label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
       </div>
     </section>
   );
