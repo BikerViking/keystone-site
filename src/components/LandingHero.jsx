@@ -20,15 +20,22 @@ export default function LandingHero() {
           className="mx-auto w-40 sm:w-52 md:w-64"
         />
 
+        {/* Tagline under the logo */}
+
+
         {/* Navigation follows directly under the logo */}
         <nav className="mt-8 sm:mt-10" aria-label="Site navigation">
 
+        main
         <p className="mt-4 text-sm tracking-wide text-amber-200 sm:mt-6 sm:text-base">
           Mobile Notary Services • Pennsylvania
         </p>
 
+        {/* Navigation list */}
+
         <nav className="mt-10 sm:mt-12" aria-label="Site navigation">
 
+        main
         <div className="mt-10 sm:mt-12">
          main
           <ul className="space-y-2 text-sm font-medium uppercase text-gray-300 sm:flex sm:justify-center sm:gap-6 sm:space-y-0">
