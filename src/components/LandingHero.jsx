@@ -21,39 +21,55 @@ export default function LandingHero() {
 
         <nav
           aria-label="Main navigation"
-          className="mt-8 flex flex-col items-center gap-4 text-sm font-medium uppercase sm:mt-10 sm:flex-row sm:gap-6"
+          className="mt-8 sm:mt-10"
         >
-          <Link
-            to="/"
-            className="text-gray-400 transition-colors hover:text-white focus-visible:text-white"
-          >
-            Home
-          </Link>
-            <Link
-              to="/about"
-              className="text-gray-400 transition-colors hover:text-white focus-visible:text-white"
-            >
-              About
-            </Link>
-            <Link
-              to="/services"
-              className="text-gray-400 transition-colors hover:text-white focus-visible:text-white"
-            >
-              Services
-            </Link>
-            <Link
-              to="/faq"
-              className="text-gray-400 transition-colors hover:text-white focus-visible:text-white"
-            >
-              FAQ
-            </Link>
-          <Link
-            to="/contact"
-            className="text-gray-400 transition-colors hover:text-white focus-visible:text-white"
-          >
-            Contact
-            </Link>
-          </nav>
+          <ul className="flex items-center justify-center gap-2 text-sm font-medium uppercase sm:gap-3">
+            <li>
+              <Link
+                to="/"
+                className="text-gray-400 transition-colors hover:text-white focus-visible:text-white"
+              >
+                Home
+              </Link>
+            </li>
+            <li aria-hidden="true" className="select-none text-gray-400">&bull;</li>
+            <li>
+              <Link
+                to="/about"
+                className="text-gray-400 transition-colors hover:text-white focus-visible:text-white"
+              >
+                About
+              </Link>
+            </li>
+            <li aria-hidden="true" className="select-none text-gray-400">&bull;</li>
+            <li>
+              <Link
+                to="/services"
+                className="text-gray-400 transition-colors hover:text-white focus-visible:text-white"
+              >
+                Services
+              </Link>
+            </li>
+            <li aria-hidden="true" className="select-none text-gray-400">&bull;</li>
+            <li>
+              <Link
+                to="/faq"
+                className="text-gray-400 transition-colors hover:text-white focus-visible:text-white"
+              >
+                FAQ
+              </Link>
+            </li>
+            <li aria-hidden="true" className="select-none text-gray-400">&bull;</li>
+            <li>
+              <Link
+                to="/contact"
+                className="text-gray-400 transition-colors hover:text-white focus-visible:text-white"
+              >
+                Contact
+              </Link>
+            </li>
+          </ul>
+        </nav>
         </div>
       </div>
     </section>
