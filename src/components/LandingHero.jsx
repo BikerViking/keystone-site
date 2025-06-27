@@ -8,14 +8,11 @@ export default function LandingHero() {
     <section
       className="relative flex min-h-screen w-full flex-col items-center justify-center bg-neutral-900 text-gray-200 overflow-hidden"
     >
-      {/* Background Layer */}
       <div
         className="absolute inset-0 z-0 bg-cover bg-center opacity-40"
         style={{ backgroundImage: "url('/bg-texture.PNG')" }}
         aria-hidden="true"
       />
-
-      {/* Foreground Content */}
       <div className="relative z-10 mx-auto w-full max-w-screen-md px-4 py-12 text-center sm:py-16">
         <img
           src="/logo.PNG"
@@ -25,7 +22,6 @@ export default function LandingHero() {
         <p className="mt-4 text-sm tracking-wide text-amber-200 sm:mt-6 sm:text-base">
           Mobile Notary Services • Pennsylvania
         </p>
-
         <div className="mt-10 sm:mt-12">
           <ul className="space-y-2 text-sm font-medium uppercase text-gray-300 sm:flex sm:justify-center sm:gap-6 sm:space-y-0">
             {navItems.map((label) => (
