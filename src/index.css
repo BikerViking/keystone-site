@@ -2,9 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
+@layer base
   /* Base body styles */
   body {
     @apply min-h-screen;
+  /* Global background pattern */
+  body {
+    @apply bg-cover bg-center bg-no-repeat min-h-screen;
+    background-image: url('../public/bg-texture.PNG');
   }
 }
