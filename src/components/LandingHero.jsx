@@ -26,6 +26,9 @@ export default function LandingHero() {
         <p className="mt-4 text-sm tracking-wide text-amber-200 sm:mt-6 sm:text-base">
           Mobile Notary Services • Pennsylvania
         </p>
+
+        <nav className="mt-10 sm:mt-12" aria-label="Site navigation">
+
         <div className="mt-10 sm:mt-12">
          main
           <ul className="space-y-2 text-sm font-medium uppercase text-gray-300 sm:flex sm:justify-center sm:gap-6 sm:space-y-0">
