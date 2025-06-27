@@ -1,21 +1,11 @@
+// Replaced routing-based App with simple component for render testing
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import HomePage from "./pages/index";
-import ServicesPage from "./pages/services";
-import ContactPage from "./pages/contact";
-import AboutPage from "./pages/about";
-import FaqPage from "./pages/faq";
 
 export default function App() {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/services" element={<ServicesPage />} />
-        <Route path="/about" element={<AboutPage />} />
-        <Route path="/faq" element={<FaqPage />} />
-        <Route path="/contact" element={<ContactPage />} />
-      </Routes>
-    </Router>
+    <div style={{ backgroundColor: "#111", color: "gold", padding: "2rem" }}>
+      <h1>Keystone Notary Group</h1>
+      <p>This is a test to confirm the site is rendering.</p>
+    </div>
   );
 }
