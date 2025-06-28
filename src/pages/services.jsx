@@ -38,10 +38,10 @@ export default function ServicesPage() {
         </div>
         <img
           src="/nna-seal.PNG"
-          alt=""
+          alt="NNA Certified Notary Signing Agent 2025"
           aria-hidden="true"
-          className="absolute bottom-[-3rem] right-[-2rem] h-20 rotate-[12deg] shadow-xl z-10 pointer-events-none"
-        />
+          className="absolute bottom-[-2rem] right-[-1rem] h-40 w-auto rotate-[10deg] shadow-2xl"
+         />
       </section>
     </LayoutWrapper>
   );
