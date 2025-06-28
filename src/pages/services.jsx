@@ -49,11 +49,12 @@ export default function ServicesPage() {
         </section>
 
         {/* NNA Seal Floating on Screen Corner */}
+        {/* Position seal at bottom right so it doesn't overlap the content */}
         <img
           src="/nna-seal.PNG"
           alt="NNA Certified Notary Signing Agent 2025"
           aria-hidden="true"
-          className="pointer-events-none absolute bottom-4 right-4 h-40 w-auto rotate-[10deg] shadow-2xl z-50"
+          className="pointer-events-none absolute bottom-0 right-4 h-40 w-auto rotate-[10deg] shadow-2xl z-50"
         />
       </div>
     </LayoutWrapper>
