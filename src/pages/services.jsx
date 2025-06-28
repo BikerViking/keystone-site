@@ -4,7 +4,7 @@ import LayoutWrapper from "../components/LayoutWrapper";
 export default function ServicesPage() {
   return (
     <LayoutWrapper>
-      <div className="relative w-full">
+      <div className="relative w-screen">
         <section
           aria-label="Services"
           className="mx-auto max-w-screen-lg px-4 py-12 text-gray-200 sm:px-6 sm:py-16 lg:px-8"
@@ -38,14 +38,22 @@ export default function ServicesPage() {
               </li>
             </ul>
           </div>
+
+          <p className="mt-6 text-center text-lg text-gray-300">
+            <strong>We proudly work with:</strong>
+            <br />
+            Homeowners &bull; Attorneys &bull; Title Companies &bull; Real Estate Agents &bull;
+            Financial Institutions &bull; Health & Senior Care Providers &bull; Individuals with
+            urgent or specialized needs
+          </p>
         </section>
 
-        {/* NNA Seal Positioned Bottom-Right */}
+        {/* NNA Seal Floating on Screen Corner */}
         <img
           src="/nna-seal.PNG"
           alt="NNA Certified Notary Signing Agent 2025"
           aria-hidden="true"
-          className="absolute bottom-[-2.5rem] right-[-2.5rem] h-44 w-auto rotate-[10deg] shadow-2xl z-10"
+          className="absolute bottom-4 right-4 h-40 w-auto rotate-[10deg] shadow-2xl z-50"
         />
       </div>
     </LayoutWrapper>
