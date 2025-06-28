@@ -6,7 +6,7 @@ export default function ServicesPage() {
     <LayoutWrapper>
       <section
         aria-label="Services"
-        className="mx-auto max-w-screen-lg px-4 py-12 text-gray-200 sm:px-6 sm:py-16 lg:px-8"
+        className="relative mx-auto max-w-screen-lg px-4 py-12 text-gray-200 sm:px-6 sm:py-16 lg:px-8"
       >
         <h1 className="mb-8 text-center text-2xl font-semibold tracking-wide sm:mb-12 sm:text-3xl">
           Our Services
@@ -36,6 +36,12 @@ export default function ServicesPage() {
             </li>
           </ul>
         </div>
+        <img
+          src="/nna-seal.PNG"
+          alt=""
+          aria-hidden="true"
+          className="absolute bottom-[-2rem] right-[-1rem] w-20 md:w-24 rotate-[-10deg] z-10 pointer-events-none shadow-xl shadow-black/30"
+        />
       </section>
     </LayoutWrapper>
   );
