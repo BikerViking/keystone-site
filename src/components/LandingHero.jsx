@@ -15,7 +15,7 @@ export default function LandingHero() {
       ></div>
 
       <div className="relative z-10 mx-auto w-full max-w-screen-md px-4 py-12 text-center sm:py-16">
-        <div className="opacity-0 transition-opacity duration-700 animate-fadeIn">
+        <div className="opacity-0 transition-opacity duration-1000 animate-fadeIn">
           <img
             src="/logo.PNG"
             alt="Keystone Notary Group logo"
