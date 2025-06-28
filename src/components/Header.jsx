@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
@@ -37,46 +37,54 @@ export default function Header() {
           id="mobile-menu"
           aria-label="Mobile"
           onClick={(e) => e.stopPropagation()}
-          className={`absolute left-0 right-0 top-0 bg-neutral-900 text-white shadow-lg transition-transform duration-300 ${
+          className={`absolute left-0 right-0 top-0 bg-gray-900 text-white shadow-lg transition-transform duration-300 ${
             open ? "translate-y-0" : "-translate-y-full"
           }`}
         >
           <ul className="flex flex-col items-center space-y-4 px-6 py-8 text-lg">
             <li>
-              <Link
+              <NavLink
                 to="/"
                 onClick={closeMenu}
-                className="block px-2 py-1 transition hover:text-amber-300"
+                className={({ isActive }) =>
+                  `block px-2 py-1 transition hover:text-blue-400${isActive ? " underline text-blue-400" : ""}`
+                }
               >
                 Home
-              </Link>
+              </NavLink>
             </li>
             <li>
-              <Link
+              <NavLink
                 to="/services"
                 onClick={closeMenu}
-                className="block px-2 py-1 transition hover:text-amber-300"
+                className={({ isActive }) =>
+                  `block px-2 py-1 transition hover:text-blue-400${isActive ? " underline text-blue-400" : ""}`
+                }
               >
                 Services
-              </Link>
+              </NavLink>
             </li>
             <li>
-              <Link
+              <NavLink
                 to="/faq"
                 onClick={closeMenu}
-                className="block px-2 py-1 transition hover:text-amber-300"
+                className={({ isActive }) =>
+                  `block px-2 py-1 transition hover:text-blue-400${isActive ? " underline text-blue-400" : ""}`
+                }
               >
                 FAQ
-              </Link>
+              </NavLink>
             </li>
             <li>
-              <Link
+              <NavLink
                 to="/contact"
                 onClick={closeMenu}
-                className="block px-2 py-1 transition hover:text-amber-300"
+                className={({ isActive }) =>
+                  `block px-2 py-1 transition hover:text-blue-400${isActive ? " underline text-blue-400" : ""}`
+                }
               >
                 Contact
-              </Link>
+              </NavLink>
             </li>
           </ul>
         </nav>
