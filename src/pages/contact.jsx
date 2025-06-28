@@ -1,10 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import LayoutWrapper from "../components/LayoutWrapper";
 
 export default function ContactPage() {
+  const [submitted, setSubmitted] = useState(false);
+
   // Prevent default form submission until backend integration is added
   const handleSubmit = (e) => {
     e.preventDefault();
+    // Reset form fields so the user sees a clear form
+    e.target.reset();
+    // Show confirmation message
+    setSubmitted(true);
   };
 
   return (
@@ -63,6 +69,16 @@ export default function ContactPage() {
             </button>
           </div>
         </form>
+        <p
+          role="status"
+          aria-live="polite"
+          className={
+            "text-green-400 text-center mt-6 text-lg font-medium transition-opacity duration-500" +
+            (submitted ? " opacity-100" : " opacity-0")
+          }
+        >
+          ✅ Thank you! Your message has been sent. We’ll be in touch shortly.
+        </p>
         <p className="mt-4 text-left text-sm text-gray-500">
           <strong>Disclaimer:</strong> Keystone Notary Group, LLC is not a law
           firm and does not provide legal advice, guidance on document selection,
