@@ -4,7 +4,7 @@ import LayoutWrapper from "../components/LayoutWrapper";
 export default function ServicesPage() {
   return (
     <LayoutWrapper>
-      <div className="relative w-screen">
+      <div className="relative w-full pb-48 pr-8">
         <section
           aria-label="Services"
           className="mx-auto max-w-screen-lg px-4 py-12 text-gray-200 sm:px-6 sm:py-16 lg:px-8"
@@ -53,7 +53,7 @@ export default function ServicesPage() {
           src="/nna-seal.PNG"
           alt="NNA Certified Notary Signing Agent 2025"
           aria-hidden="true"
-          className="absolute bottom-4 right-4 h-40 w-auto rotate-[10deg] shadow-2xl z-50"
+          className="pointer-events-none absolute bottom-4 right-4 h-40 w-auto rotate-[10deg] shadow-2xl z-50"
         />
       </div>
     </LayoutWrapper>
