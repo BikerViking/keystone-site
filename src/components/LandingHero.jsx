@@ -111,7 +111,8 @@ export default function LandingHero() {
             Our Services
           </h2>
           <div className="space-y-8">
-            <ul className="list-disc list-inside space-y-4 text-left text-lg text-gray-300">
+            {/* Add subtle dividers between list items for improved readability */}
+            <ul className="list-disc list-inside divide-y divide-gray-400/20 space-y-4 text-left text-lg text-gray-300">
               <li>
                 General notary work including acknowledgments, oaths,
                 affirmations, and signature witnessing
