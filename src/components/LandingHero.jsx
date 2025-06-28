@@ -15,24 +15,26 @@ export default function LandingHero() {
       ></div>
 
       <div className="relative z-10 mx-auto w-full max-w-screen-md px-4 py-12 text-center sm:py-16">
-        <img
-          src="/logo.PNG"
-          alt="Keystone Notary Group logo"
-          className="mx-auto w-40 sm:w-52 md:w-64"
-        />
-        <div className="mt-8 sm:mt-10">
-          <ul className="flex flex-col items-center space-y-2 sm:space-y-4 text-sm sm:text-base font-medium uppercase text-gray-300">
-            {navItems.map((label) => (
-              <li key={label}>
-                <Link
-                  to={`/${label.toLowerCase() === "home" ? "" : label.toLowerCase()}`}
-                  className="block px-2 py-1 transition-colors hover:text-gray-200"
-                >
-                  {label}
-                </Link>
-              </li>
-            ))}
-          </ul>
+        <div className="opacity-0 transition-opacity duration-700 animate-fadeIn">
+          <img
+            src="/logo.PNG"
+            alt="Keystone Notary Group logo"
+            className="mx-auto w-40 sm:w-52 md:w-64"
+          />
+          <div className="mt-8 sm:mt-10">
+            <ul className="flex flex-col items-center space-y-2 sm:space-y-4 text-sm sm:text-base font-medium uppercase text-gray-300">
+              {navItems.map((label) => (
+                <li key={label}>
+                  <Link
+                    to={`/${label.toLowerCase() === "home" ? "" : label.toLowerCase()}`}
+                    className="block px-2 py-1 transition-colors hover:text-gray-200"
+                  >
+                    {label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
     </section>
