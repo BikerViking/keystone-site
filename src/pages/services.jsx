@@ -12,18 +12,29 @@ export default function ServicesPage() {
           Our Services
         </h1>
         <div className="space-y-8">
-          <div className="rounded bg-neutral-800 p-6 shadow-sm">
-            <h2 className="text-xl font-semibold">General Notary Work</h2>
-            <p className="mt-2 text-gray-400">
-              Acknowledgements, jurats, oaths, affirmations, and more.
-            </p>
-          </div>
-          <div className="rounded bg-neutral-800 p-6 shadow-sm">
-            <h2 className="text-xl font-semibold">Loan Signing Agent</h2>
-            <p className="mt-2 text-gray-400">
-              Specialized in real estate closings and loan document notarizations.
-            </p>
-          </div>
+          <ul className="list-disc list-inside space-y-4 text-left text-justify text-lg text-gray-300">
+            <li>
+              General notary work including acknowledgments, oaths, affirmations,
+              and signature witnessing
+            </li>
+            <li>
+              Loan signing services for real estate closings, refinances, and
+              mortgage documents
+            </li>
+            <li>Power of attorney, wills, and estate planning notarizations</li>
+            <li>
+              Real estate transaction support for buyers, sellers, and agents
+            </li>
+            <li>
+              After-hours and emergency appointments
+              <span className="italic"> (additional surcharge applies)</span>
+            </li>
+            <li>
+              Mobile services to homes, offices, hospitals, financial
+              institutions, attorney offices, senior care facilities, and public
+              meeting locations
+            </li>
+          </ul>
         </div>
       </section>
     </LayoutWrapper>
