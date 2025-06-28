@@ -37,7 +37,7 @@ export default function FaqPage() {
         <div className="space-y-6 sm:space-y-8">
           {faqs.map(({ q, a }) => (
             <div key={q} className="rounded bg-neutral-800 p-6 shadow-sm">
-              <h2 className="text-left text-lg font-medium text-gray-100">
+              <h2 className="text-left text-base sm:text-lg font-medium text-gray-100">
                 {q}
               </h2>
               <p className="mt-2 text-left text-gray-400">{a}</p>

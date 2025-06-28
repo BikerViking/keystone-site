@@ -14,7 +14,7 @@ export default function ServicesPage() {
 
         <div className="space-y-8">
           {/* Add subtle dividers between list items for improved readability */}
-          <ul className="list-disc list-inside divide-y divide-gray-400/20 space-y-4 text-left text-lg text-gray-300">
+          <ul className="list-disc list-inside divide-y divide-gray-400/20 space-y-4 text-left text-base sm:text-lg text-gray-300">
             <li>
               General notary work including acknowledgments, oaths,
               affirmations, and signature witnessing
@@ -39,7 +39,7 @@ export default function ServicesPage() {
           </ul>
         </div>
 
-        <p className="mt-6 text-center text-lg text-gray-300">
+        <p className="mt-6 text-center text-base sm:text-lg text-gray-300">
           <strong>We proudly work with:</strong>
           <br />
           Homeowners &bull; Attorneys &bull; Title Companies &bull; Real Estate Agents &bull;
