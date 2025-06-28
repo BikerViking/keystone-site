@@ -11,6 +11,7 @@ export default function ServicesPage() {
         <h1 className="mb-8 text-center text-2xl font-semibold tracking-wide sm:mb-12 sm:text-3xl">
           Our Services
         </h1>
+
         <div className="space-y-8">
           <ul className="list-disc list-inside space-y-4 text-left text-lg text-gray-300">
             <li>
@@ -36,12 +37,16 @@ export default function ServicesPage() {
             </li>
           </ul>
         </div>
-        <img
-          src="/nna-seal.PNG"
-          alt="NNA Certified Notary Signing Agent 2025"
-          aria-hidden="true"
-          className="absolute bottom-[-2rem] right-[-1rem] h-40 w-auto rotate-[10deg] shadow-2xl"
-         />
+
+        {/* NNA Seal Positioned Bottom-Right */}
+        <div className="relative">
+          <img
+            src="/nna-seal.PNG"
+            alt="NNA Certified Notary Signing Agent 2025"
+            aria-hidden="true"
+            className="absolute bottom-[-2rem] right-[-1rem] h-40 w-auto rotate-[10deg] shadow-2xl"
+          />
+        </div>
       </section>
     </LayoutWrapper>
   );
