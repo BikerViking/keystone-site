@@ -13,7 +13,7 @@ export default function NotFound() {
         <p className="mb-8 text-gray-400">Sorry, the page you are looking for doesn\'t exist.</p>
         <Link
           to="/"
-          className="inline-block rounded-md bg-blue-600 px-6 py-2 font-semibold text-white transition-colors hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-neutral-900"
+          className="inline-block rounded-md bg-blue-600 px-6 min-h-[48px] py-2 font-semibold text-white transition-colors hover:bg-blue-500 active:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-neutral-900"
         >
           Return Home
         </Link>

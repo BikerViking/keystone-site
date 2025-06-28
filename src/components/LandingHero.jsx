@@ -75,7 +75,8 @@ export default function LandingHero() {
           <h2 className="mb-8 text-3xl font-bold sm:mb-12">
             About Keystone Notary Group
           </h2>
-          <p className="mx-auto max-w-prose text-lg text-gray-300">
+          {/* Ensure readability on small screens */}
+          <p className="mx-auto max-w-prose text-base sm:text-lg text-gray-300">
             Keystone Notary Group, LLC is a mobile notary service dedicated to
             professionalism, punctuality, and privacy. We provide document
             notarization services throughout Bucks and Montgomery County,
@@ -115,7 +116,7 @@ export default function LandingHero() {
           </h2>
           <div className="space-y-8">
             {/* Add subtle dividers between list items for improved readability */}
-            <ul className="list-disc list-inside divide-y divide-gray-400/20 space-y-4 text-left text-lg text-gray-300">
+            <ul className="list-disc list-inside divide-y divide-gray-400/20 space-y-4 text-left text-base sm:text-lg text-gray-300">
               <li>
                 General notary work including acknowledgments, oaths,
                 affirmations, and signature witnessing
@@ -140,7 +141,7 @@ export default function LandingHero() {
                 public meeting locations
               </li>
             </ul>
-            <p className="mt-6 text-center text-lg text-gray-300">
+            <p className="mt-6 text-center text-base sm:text-lg text-gray-300">
               <strong>We proudly work with:</strong>
               <br />
               Homeowners &bull; Attorneys &bull; Title Companies &bull; Real
@@ -164,46 +165,46 @@ export default function LandingHero() {
           </h2>
           <div className="space-y-6 sm:space-y-8">
             <div className="rounded-lg bg-neutral-900 p-6 shadow-md">
-              <h3 className="text-left text-lg font-medium text-gray-100">
+              <h3 className="text-left text-base sm:text-lg font-medium text-gray-100">
                 What do I need to bring to my notary appointment?
               </h3>
-              <p className="mt-2 text-left text-lg text-gray-300">
+              <p className="mt-2 text-left text-base sm:text-lg text-gray-300">
                 A valid, government-issued photo ID is required for all
                 notarizations.
               </p>
             </div>
             <div className="rounded-lg bg-neutral-900 p-6 shadow-md">
-              <h3 className="text-left text-lg font-medium text-gray-100">
+              <h3 className="text-left text-base sm:text-lg font-medium text-gray-100">
                 Do you offer mobile notary services?
               </h3>
-              <p className="mt-2 text-left text-lg text-gray-300">
+              <p className="mt-2 text-left text-base sm:text-lg text-gray-300">
                 Yes. We travel to your home, business, or public meeting
                 location in Bucks and Montgomery County.
               </p>
             </div>
             <div className="rounded-lg bg-neutral-900 p-6 shadow-md">
-              <h3 className="text-left text-lg font-medium text-gray-100">
+              <h3 className="text-left text-base sm:text-lg font-medium text-gray-100">
                 What types of documents can you notarize?
               </h3>
-              <p className="mt-2 text-left text-lg text-gray-300">
+              <p className="mt-2 text-left text-base sm:text-lg text-gray-300">
                 We notarize affidavits, acknowledgements, jurats, power of
                 attorney forms, real estate documents, and more.
               </p>
             </div>
             <div className="rounded-lg bg-neutral-900 p-6 shadow-md">
-              <h3 className="text-left text-lg font-medium text-gray-100">
+              <h3 className="text-left text-base sm:text-lg font-medium text-gray-100">
                 Are you certified and insured?
               </h3>
-              <p className="mt-2 text-left text-lg text-gray-300">
+              <p className="mt-2 text-left text-base sm:text-lg text-gray-300">
                 Yes. We are NNA Certified and carry errors & omissions
                 insurance.
               </p>
             </div>
             <div className="rounded-lg bg-neutral-900 p-6 shadow-md">
-              <h3 className="text-left text-lg font-medium text-gray-100">
+              <h3 className="text-left text-base sm:text-lg font-medium text-gray-100">
                 Do you provide after-hours or emergency service?
               </h3>
-              <p className="mt-2 text-left text-lg text-gray-300">
+              <p className="mt-2 text-left text-base sm:text-lg text-gray-300">
                 Yes. After-hours and emergency appointments are available upon
                 request and subject to availability.
               </p>
@@ -266,7 +267,7 @@ export default function LandingHero() {
               <button
                 type="submit"
                 aria-label="Send Message"
-                className="rounded-md bg-gradient-to-r from-blue-600 to-indigo-600 px-6 py-2 font-semibold text-white transition transform hover:scale-105 hover:from-blue-700 hover:to-indigo-700 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-neutral-900"
+                className="rounded-md bg-gradient-to-r from-blue-600 to-indigo-600 px-6 min-h-[48px] py-2 font-semibold text-white transition transform hover:scale-105 active:scale-95 hover:from-blue-700 hover:to-indigo-700 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-neutral-900"
               >
                 Send Message
               </button>
@@ -283,7 +284,7 @@ export default function LandingHero() {
             Please mention the type of document or notarization service you are
             requesting.
           </p>
-          <div className="mt-4 space-y-2 text-lg text-gray-300">
+          <div className="mt-4 space-y-2 text-base sm:text-lg text-gray-300">
             <p>
               <strong>Phone:</strong>{" "}
               <a
