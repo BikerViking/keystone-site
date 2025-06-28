@@ -12,10 +12,10 @@ export default function ServicesPage() {
           Our Services
         </h1>
         <div className="space-y-8">
-          <ul className="list-disc list-inside space-y-4 text-left text-justify text-lg text-gray-300">
+          <ul className="list-disc list-inside space-y-4 text-left text-lg text-gray-300">
             <li>
-              General notary work including acknowledgments, oaths, affirmations,
-              and signature witnessing
+              General notary work including acknowledgments, oaths,
+              affirmations, and signature witnessing
             </li>
             <li>
               Loan signing services for real estate closings, refinances, and

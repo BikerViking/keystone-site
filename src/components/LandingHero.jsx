@@ -65,11 +65,14 @@ export default function LandingHero() {
         className="flex min-h-screen w-full flex-col items-center justify-center bg-neutral-900 px-4 py-24 text-gray-200 sm:px-6 sm:py-32 lg:px-8"
       >
         <div className="mx-auto max-w-screen-lg text-center">
-          <h2 className="mb-8 text-3xl font-bold sm:mb-12">About Keystone Notary Group</h2>
+          <h2 className="mb-8 text-3xl font-bold sm:mb-12">
+            About Keystone Notary Group
+          </h2>
           <p className="mx-auto max-w-prose text-lg text-gray-300">
-            Keystone Notary Group, LLC is a mobile notary service dedicated to professionalism,
-            punctuality, and privacy. We provide document notarization services throughout Bucks
-            and Montgomery County, Pennsylvania.
+            Keystone Notary Group, LLC is a mobile notary service dedicated to
+            professionalism, punctuality, and privacy. We provide document
+            notarization services throughout Bucks and Montgomery County,
+            Pennsylvania.
           </p>
           <div className="mt-10 grid gap-6 sm:mt-12 sm:grid-cols-2">
             <div className="rounded-lg bg-neutral-900 p-6 text-center shadow-md">
@@ -82,7 +85,9 @@ export default function LandingHero() {
               <p className="font-medium">Serving Bucks & Montgomery County</p>
             </div>
             <div className="rounded-lg bg-neutral-900 p-6 text-center shadow-md">
-              <p className="font-medium">After-Hours & Emergency Services Available</p>
+              <p className="font-medium">
+                After-Hours & Emergency Services Available
+              </p>
             </div>
           </div>
           <p className="mt-10 text-sm text-gray-400">
@@ -98,18 +103,22 @@ export default function LandingHero() {
         className="flex min-h-screen w-full flex-col items-center justify-center bg-black px-4 py-24 text-gray-200 sm:px-6 sm:py-32 lg:px-8"
       >
         <div className="mx-auto max-w-screen-lg w-full">
-          <h2 className="mb-8 text-center text-3xl font-bold sm:mb-12">Our Services</h2>
+          <h2 className="mb-8 text-center text-3xl font-bold sm:mb-12">
+            Our Services
+          </h2>
           <div className="space-y-8">
-            <ul className="list-disc list-inside space-y-4 text-left text-justify text-lg text-gray-300">
+            <ul className="list-disc list-inside space-y-4 text-left text-lg text-gray-300">
               <li>
-                General notary work including acknowledgments, oaths, affirmations,
-                and signature witnessing
+                General notary work including acknowledgments, oaths,
+                affirmations, and signature witnessing
               </li>
               <li>
                 Loan signing services for real estate closings, refinances, and
                 mortgage documents
               </li>
-              <li>Power of attorney, wills, and estate planning notarizations</li>
+              <li>
+                Power of attorney, wills, and estate planning notarizations
+              </li>
               <li>
                 Real estate transaction support for buyers, sellers, and agents
               </li>
@@ -119,16 +128,17 @@ export default function LandingHero() {
               </li>
               <li>
                 Mobile services to homes, offices, hospitals, financial
-                institutions, attorney offices, senior care facilities, and public
-                meeting locations
+                institutions, attorney offices, senior care facilities, and
+                public meeting locations
               </li>
             </ul>
             <p className="mt-6 text-center text-lg text-gray-300">
               <strong>We proudly work with:</strong>
               <br />
-              Homeowners &bull; Attorneys &bull; Title Companies &bull; Real Estate
-              Agents &bull; Financial Institutions &bull; Health &amp; Senior Care
-              Providers &bull; Individuals with urgent or specialized needs
+              Homeowners &bull; Attorneys &bull; Title Companies &bull; Real
+              Estate Agents &bull; Financial Institutions &bull; Health &amp;
+              Senior Care Providers &bull; Individuals with urgent or
+              specialized needs
             </p>
           </div>
         </div>
@@ -141,27 +151,54 @@ export default function LandingHero() {
         className="flex min-h-screen w-full flex-col items-center justify-center bg-neutral-900 px-4 py-24 text-gray-200 sm:px-6 sm:py-32 lg:px-8"
       >
         <div className="mx-auto w-full max-w-screen-lg">
-          <h2 className="mb-8 text-center text-3xl font-bold sm:mb-12">Frequently Asked Questions</h2>
+          <h2 className="mb-8 text-center text-3xl font-bold sm:mb-12">
+            Frequently Asked Questions
+          </h2>
           <div className="space-y-6 sm:space-y-8">
             <div className="rounded-lg bg-neutral-900 p-6 shadow-md">
-              <h3 className="text-lg font-medium text-gray-100">What do I need to bring to my notary appointment?</h3>
-              <p className="mt-2 text-lg text-gray-300">A valid, government-issued photo ID is required for all notarizations.</p>
+              <h3 className="text-left text-lg font-medium text-gray-100">
+                What do I need to bring to my notary appointment?
+              </h3>
+              <p className="mt-2 text-left text-lg text-gray-300">
+                A valid, government-issued photo ID is required for all
+                notarizations.
+              </p>
             </div>
             <div className="rounded-lg bg-neutral-900 p-6 shadow-md">
-              <h3 className="text-lg font-medium text-gray-100">Do you offer mobile notary services?</h3>
-              <p className="mt-2 text-lg text-gray-300">Yes. We travel to your home, business, or public meeting location in Bucks and Montgomery County.</p>
+              <h3 className="text-left text-lg font-medium text-gray-100">
+                Do you offer mobile notary services?
+              </h3>
+              <p className="mt-2 text-left text-lg text-gray-300">
+                Yes. We travel to your home, business, or public meeting
+                location in Bucks and Montgomery County.
+              </p>
             </div>
             <div className="rounded-lg bg-neutral-900 p-6 shadow-md">
-              <h3 className="text-lg font-medium text-gray-100">What types of documents can you notarize?</h3>
-              <p className="mt-2 text-lg text-gray-300">We notarize affidavits, acknowledgements, jurats, power of attorney forms, real estate documents, and more.</p>
+              <h3 className="text-left text-lg font-medium text-gray-100">
+                What types of documents can you notarize?
+              </h3>
+              <p className="mt-2 text-left text-lg text-gray-300">
+                We notarize affidavits, acknowledgements, jurats, power of
+                attorney forms, real estate documents, and more.
+              </p>
             </div>
             <div className="rounded-lg bg-neutral-900 p-6 shadow-md">
-              <h3 className="text-lg font-medium text-gray-100">Are you certified and insured?</h3>
-              <p className="mt-2 text-lg text-gray-300">Yes. We are NNA Certified and carry errors & omissions insurance.</p>
+              <h3 className="text-left text-lg font-medium text-gray-100">
+                Are you certified and insured?
+              </h3>
+              <p className="mt-2 text-left text-lg text-gray-300">
+                Yes. We are NNA Certified and carry errors & omissions
+                insurance.
+              </p>
             </div>
             <div className="rounded-lg bg-neutral-900 p-6 shadow-md">
-              <h3 className="text-lg font-medium text-gray-100">Do you provide after-hours or emergency service?</h3>
-              <p className="mt-2 text-lg text-gray-300">Yes. After-hours and emergency appointments are available upon request and subject to availability.</p>
+              <h3 className="text-left text-lg font-medium text-gray-100">
+                Do you provide after-hours or emergency service?
+              </h3>
+              <p className="mt-2 text-left text-lg text-gray-300">
+                Yes. After-hours and emergency appointments are available upon
+                request and subject to availability.
+              </p>
             </div>
           </div>
         </div>
@@ -174,8 +211,13 @@ export default function LandingHero() {
         className="flex min-h-screen w-full flex-col items-center justify-center bg-black px-4 py-24 text-gray-200 sm:px-6 sm:py-32 lg:px-8"
       >
         <div className="mx-auto w-full max-w-screen-lg">
-          <h2 className="mb-8 text-center text-3xl font-bold sm:mb-12">Contact</h2>
-          <form onSubmit={(e) => e.preventDefault()} className="space-y-6 sm:space-y-8">
+          <h2 className="mb-8 text-center text-3xl font-bold sm:mb-12">
+            Contact
+          </h2>
+          <form
+            onSubmit={(e) => e.preventDefault()}
+            className="space-y-6 sm:space-y-8"
+          >
             <div>
               <label htmlFor="name" className="block text-sm font-medium">
                 Full Name
@@ -222,24 +264,33 @@ export default function LandingHero() {
             </div>
           </form>
           <p className="mt-4 text-left text-sm text-gray-500">
-            <strong>Disclaimer:</strong> Keystone Notary Group, LLC is not a law firm
-            and does not provide legal advice, guidance on document selection, or
-            assistance in preparing legal documents. For questions about what type of
-            document you need, please consult a licensed attorney.
+            <strong>Disclaimer:</strong> Keystone Notary Group, LLC is not a law
+            firm and does not provide legal advice, guidance on document
+            selection, or assistance in preparing legal documents. For questions
+            about what type of document you need, please consult a licensed
+            attorney.
           </p>
           <p className="mt-8 text-sm text-gray-400 sm:mt-10">
-            Please mention the type of document or notarization service you are requesting.
+            Please mention the type of document or notarization service you are
+            requesting.
           </p>
           <div className="mt-4 space-y-2 text-lg text-gray-300">
             <p>
               <strong>Phone:</strong>{" "}
-              <a href="tel:2673099000" className="text-blue-400 transition hover:text-blue-300 hover:shadow-xl" aria-label="Call 267-309-9000">
+              <a
+                href="tel:2673099000"
+                className="text-blue-400 transition hover:text-blue-300 hover:shadow-xl"
+                aria-label="Call 267-309-9000"
+              >
                 (267) 309-9000
               </a>
             </p>
             <p>
               <strong>Email:</strong>{" "}
-              <a href="mailto:appointments@keystonenotarygroup.com" className="text-blue-400 transition hover:text-blue-300 hover:shadow-xl">
+              <a
+                href="mailto:appointments@keystonenotarygroup.com"
+                className="text-blue-400 transition hover:text-blue-300 hover:shadow-xl"
+              >
                 appointments@keystonenotarygroup.com
               </a>
             </p>
