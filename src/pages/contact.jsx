@@ -68,7 +68,14 @@ export default function ContactPage() {
         </p>
         <div className="mt-4 space-y-2 text-sm text-gray-300">
           <p>
-            <strong>Phone:</strong> (267) 309-9000
+            <strong>Phone:</strong>{" "}
+            <a
+              href="tel:2673099000"
+              className="text-blue-400 hover:text-blue-300"
+              aria-label="Call 267-309-9000"
+            >
+              (267) 309-9000
+            </a>
           </p>
           <p>
             <strong>Email:</strong>{" "}
