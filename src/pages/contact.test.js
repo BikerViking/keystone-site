@@ -1,8 +1,13 @@
 import { render, screen, fireEvent } from '@testing-library/react';
+import { MemoryRouter } from 'react-router-dom';
 import ContactPage from './contact.jsx';
 
 test('shows confirmation message on successful form submission', () => {
-  render(<ContactPage />);
+  render(
+    <MemoryRouter>
+      <ContactPage />
+    </MemoryRouter>
+  );
   fireEvent.change(screen.getByLabelText(/full name/i), { target: { value: 'John' } });
   fireEvent.change(screen.getByLabelText(/email address/i), { target: { value: 'john@example.com' } });
   fireEvent.change(screen.getByLabelText(/^Message$/i), { target: { value: 'Hello' } });
