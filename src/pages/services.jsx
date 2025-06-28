@@ -4,12 +4,10 @@ import LayoutWrapper from "../components/LayoutWrapper";
 export default function ServicesPage() {
   return (
     <LayoutWrapper>
-      {/* Extra bottom padding keeps the NNA seal from overlapping page text */}
-      <div className="relative w-full pb-64 pr-8">
-        <section
-          aria-label="Services"
-          className="mx-auto max-w-screen-lg px-4 py-12 text-gray-200 sm:px-6 sm:py-16 lg:px-8"
-        >
+      <section
+        aria-label="Services"
+        className="relative mx-auto max-w-screen-lg px-4 py-12 pb-36 text-gray-200 sm:px-6 sm:py-16 lg:px-8"
+      >
           <h1 className="mb-8 text-center text-2xl font-semibold tracking-wide sm:mb-12 sm:text-3xl">
             Our Services
           </h1>
@@ -47,7 +45,6 @@ export default function ServicesPage() {
             Financial Institutions &bull; Health & Senior Care Providers &bull; Individuals with
             urgent or specialized needs
           </p>
-        </section>
 
         {/* NNA Seal Floating on Screen Corner */}
         {/* Position seal at bottom right so it doesn't overlap the content */}
@@ -55,9 +52,9 @@ export default function ServicesPage() {
           src="/nna-seal.PNG"
           alt="NNA Certified Notary Signing Agent 2025"
           aria-hidden="true"
-          className="pointer-events-none absolute bottom-0 right-4 h-40 w-auto rotate-[10deg] shadow-2xl z-50"
+          className="pointer-events-none absolute bottom-6 right-4 h-32 w-auto rotate-[10deg] shadow-2xl"
         />
-      </div>
+      </section>
     </LayoutWrapper>
   );
 }
