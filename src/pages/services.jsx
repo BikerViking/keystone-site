@@ -39,13 +39,14 @@ export default function ServicesPage() {
         </div>
 
         {/* NNA Seal Positioned Bottom-Right */}
-      <div className="relative">
+      <div className="relative w-full">
         <img
           src="/nna-seal.PNG"
           alt="NNA Certified Notary Signing Agent 2025"
           aria-hidden="true"
-          className="absolute bottom-[-1rem] right-20 h-32 w-auto rotate-[8deg] shadow-2xl"
+          className="absolute bottom-[-3.5rem] right-[-2.5rem] h-44 w-auto rotate-[10deg] shadow-2xl z-10"
         />
+      </div>
       </div>
         </div>
       </section>
