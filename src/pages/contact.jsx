@@ -56,7 +56,8 @@ export default function ContactPage() {
           <div className="text-center">
             <button
               type="submit"
-              className="rounded-md bg-blue-600 px-6 py-2 font-semibold text-white transition-colors hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-neutral-900"
+              aria-label="Send Message"
+              className="rounded-md bg-gradient-to-r from-blue-600 to-indigo-600 px-6 py-2 font-semibold text-white transition transform hover:scale-105 hover:from-blue-700 hover:to-indigo-700 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-neutral-900"
             >
               Send Message
             </button>
