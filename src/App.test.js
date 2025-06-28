@@ -15,3 +15,9 @@ test('includes about section', () => {
   const about = screen.getByRole('region', { name: /about/i });
   expect(about).toBeInTheDocument();
 });
+
+test('displays NNA seal in services section', () => {
+  const { container } = render(<App />);
+  const seal = container.querySelector('img[src="/nna-seal.PNG"]');
+  expect(seal).toBeTruthy();
+});
