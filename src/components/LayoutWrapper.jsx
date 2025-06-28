@@ -2,6 +2,7 @@ import React from "react";
 import { Helmet } from "react-helmet";
 import Header from "./Header";
 import Footer from "./Footer";
+import Certifications from "./Certifications";
 
 export default function LayoutWrapper({ children, fullWidth = false }) {
   return (
@@ -49,6 +50,7 @@ export default function LayoutWrapper({ children, fullWidth = false }) {
       >
         {children}
       </main>
+      <Certifications />
       <Footer />
     </div>
   );
