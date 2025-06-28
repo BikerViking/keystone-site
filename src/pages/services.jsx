@@ -47,8 +47,6 @@ export default function ServicesPage() {
           className="absolute bottom-[-3.5rem] right-[-2.5rem] h-44 w-auto rotate-[10deg] shadow-2xl z-10"
         />
       </div>
-      </div>
-        </div>
       </section>
     </LayoutWrapper>
   );
