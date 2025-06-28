@@ -145,7 +145,7 @@ export default function LandingHero() {
           src="/nna-seal.PNG"
           alt=""
           aria-hidden="true"
-          className="absolute bottom-[-4rem] right-[-3rem] h-24 rotate-[12deg] shadow-xl z-10 pointer-events-none"
+          className="absolute bottom-[-6rem] right-4 h-36 w-auto rotate-[12deg] shadow-xl z-10 pointer-events-none"
         />
       </div>
     </section>
