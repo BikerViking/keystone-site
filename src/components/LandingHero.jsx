@@ -20,10 +20,7 @@ export default function LandingHero() {
           alt="Keystone Notary Group logo"
           className="mx-auto w-40 sm:w-52 md:w-64"
         />
-        <p className="mt-4 text-sm tracking-wide text-amber-200 sm:mt-6 sm:text-base">
-          Mobile Notary Services • Pennsylvania
-        </p>
-        <div className="mt-10 sm:mt-12">
+        <div className="mt-8 sm:mt-10">
           <ul className="flex justify-center gap-x-6 text-sm font-medium uppercase text-gray-300 sm:flex-col sm:gap-x-0 sm:gap-y-2">
             {navItems.map((label) => (
               <li key={label}>
