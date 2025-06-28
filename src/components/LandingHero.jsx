@@ -102,7 +102,7 @@ export default function LandingHero() {
         aria-label="Services"
         className="flex min-h-screen w-full flex-col items-center justify-center bg-black px-4 py-24 text-gray-200 sm:px-6 sm:py-32 lg:px-8"
       >
-        <div className="mx-auto max-w-screen-lg w-full">
+        <div className="relative mx-auto w-full max-w-screen-lg">
           <h2 className="mb-8 text-center text-3xl font-bold sm:mb-12">
             Our Services
           </h2>
@@ -139,10 +139,16 @@ export default function LandingHero() {
               Estate Agents &bull; Financial Institutions &bull; Health &amp;
               Senior Care Providers &bull; Individuals with urgent or
               specialized needs
-            </p>
-          </div>
+          </p>
         </div>
-      </section>
+        <img
+          src="/nna-seal.PNG"
+          alt=""
+          aria-hidden="true"
+          className="absolute bottom-6 right-6 w-24 opacity-60 rotate-[-8deg] pointer-events-none"
+        />
+      </div>
+    </section>
 
       {/* FAQ Section */}
       <section
