@@ -30,7 +30,11 @@ export default function LandingHero() {
       >
         <div
           className="absolute inset-0 z-0 bg-cover bg-center opacity-40"
-          style={{ backgroundImage: "url('/bg-texture.PNG')" }}
+          /* Faint parchment overlay to subtly reinforce legal theme */
+          style={{
+            backgroundImage:
+              "linear-gradient(rgba(246,242,238,0.45), rgba(246,242,238,0.45)), url('/bg-texture.PNG')",
+          }}
           aria-hidden="true"
         ></div>
 
