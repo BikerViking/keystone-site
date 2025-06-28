@@ -21,7 +21,7 @@ export default function LandingHero() {
           className="mx-auto w-40 sm:w-52 md:w-64"
         />
         <div className="mt-8 sm:mt-10">
-          <ul className="flex justify-center gap-x-6 text-sm font-medium uppercase text-gray-300 sm:flex-col sm:gap-x-0 sm:gap-y-2">
+          <ul className="flex flex-col items-center space-y-2 sm:space-y-4 text-sm sm:text-base font-medium uppercase text-gray-300">
             {navItems.map((label) => (
               <li key={label}>
                 <Link
