@@ -100,7 +100,7 @@ export default function LandingHero() {
         <div className="mx-auto max-w-screen-lg w-full">
           <h2 className="mb-8 text-center text-3xl font-bold sm:mb-12">Our Services</h2>
           <div className="space-y-8">
-            <ul className="list-disc list-inside space-y-4 text-lg text-gray-300">
+            <ul className="list-disc list-inside space-y-4 text-left text-justify text-lg text-gray-300">
               <li>
                 General notary work including acknowledgments, oaths, affirmations,
                 and signature witnessing
@@ -221,7 +221,7 @@ export default function LandingHero() {
               </button>
             </div>
           </form>
-          <p className="mt-4 text-center text-sm text-gray-500">
+          <p className="mt-4 text-left text-sm text-gray-500">
             <strong>Disclaimer:</strong> Keystone Notary Group, LLC is not a law firm
             and does not provide legal advice, guidance on document selection, or
             assistance in preparing legal documents. For questions about what type of

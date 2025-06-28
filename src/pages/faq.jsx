@@ -21,7 +21,7 @@ export default function FaqPage() {
     },
     {
       q: "Do you provide after-hours or emergency service?",
-      a: "Yes. After-hours and emergency appointments are available upon request and subject to availability.",
+      a: "Yes. After-hours and emergency appointments are available upon request and subject to availability. An additional surcharge may apply.",
     },
   ];
 
@@ -38,7 +38,7 @@ export default function FaqPage() {
           {faqs.map(({ q, a }) => (
             <div key={q} className="rounded bg-neutral-800 p-6 shadow-sm">
               <h2 className="text-lg font-medium text-gray-100">{q}</h2>
-              <p className="mt-2 text-gray-400">{a}</p>
+              <p className="mt-2 text-left text-gray-400">{a}</p>
             </div>
           ))}
         </div>

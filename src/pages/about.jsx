@@ -11,7 +11,7 @@ export default function AboutPage() {
         <h1 className="mb-8 text-center text-2xl font-semibold tracking-wide sm:mb-12 sm:text-3xl">
           About Keystone Notary Group
         </h1>
-        <p className="mx-auto max-w-prose text-center text-gray-300">
+        <p className="mx-auto max-w-prose text-left text-gray-300">
           Keystone Notary Group, LLC is a mobile notary service dedicated to professionalism,
           punctuality, and privacy. We provide document notarization services throughout Bucks
           and Montgomery County, Pennsylvania.
@@ -30,7 +30,7 @@ export default function AboutPage() {
             <p className="font-medium">After-Hours & Emergency Services Available</p>
           </div>
         </div>
-        <p className="mt-10 text-center text-sm text-gray-400">
+        <p className="mt-10 text-left text-sm text-gray-400">
           Commissioned in the Commonwealth of Pennsylvania
         </p>
       </section>

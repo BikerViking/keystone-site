@@ -62,7 +62,7 @@ export default function ContactPage() {
             </button>
           </div>
         </form>
-        <p className="mt-4 text-center text-sm text-gray-500">
+        <p className="mt-4 text-left text-sm text-gray-500">
           <strong>Disclaimer:</strong> Keystone Notary Group, LLC is not a law
           firm and does not provide legal advice, guidance on document selection,
           or assistance in preparing legal documents. For questions about what
