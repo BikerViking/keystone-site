@@ -4,7 +4,8 @@ import LayoutWrapper from "../components/LayoutWrapper";
 export default function ServicesPage() {
   return (
     <LayoutWrapper>
-      <div className="relative w-full pb-48 pr-8">
+      {/* Extra bottom padding keeps the NNA seal from overlapping page text */}
+      <div className="relative w-full pb-64 pr-8">
         <section
           aria-label="Services"
           className="mx-auto max-w-screen-lg px-4 py-12 text-gray-200 sm:px-6 sm:py-16 lg:px-8"
