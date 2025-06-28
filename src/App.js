@@ -5,6 +5,7 @@ import ServicesPage from "./pages/services";
 import ContactPage from "./pages/contact";
 import AboutPage from "./pages/about";
 import FaqPage from "./pages/faq";
+import NotFound from "./pages/NotFound";
 
 export default function App() {
   return (
@@ -15,6 +16,7 @@ export default function App() {
         <Route path="/about" element={<AboutPage />} />
         <Route path="/faq" element={<FaqPage />} />
         <Route path="/contact" element={<ContactPage />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </Router>
   );
