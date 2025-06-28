@@ -40,7 +40,7 @@ export default function ServicesPage() {
           src="/nna-seal.PNG"
           alt=""
           aria-hidden="true"
-          className="absolute bottom-[-2rem] right-[-1rem] w-20 md:w-24 rotate-[-10deg] z-10 pointer-events-none shadow-xl shadow-black/30"
+          className="absolute bottom-[-4rem] right-[-3rem] h-24 rotate-[12deg] shadow-xl z-10 pointer-events-none"
         />
       </section>
     </LayoutWrapper>
