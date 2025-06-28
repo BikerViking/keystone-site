@@ -20,13 +20,13 @@ export default function LandingHero() {
 
   return (
     <div
-      className={`scroll-smooth opacity-0 transition-opacity duration-[2000ms] ease-out ${
+      className={`scroll-smooth space-y-12 opacity-0 transition-opacity duration-[2000ms] ease-out ${
         fadeIn ? "opacity-100" : ""
       }`}
     >
       <section
         id="home"
-        className="relative flex min-h-screen w-full flex-col items-center justify-center bg-neutral-900 text-gray-200 overflow-hidden"
+        className="relative flex min-h-screen w-full flex-col items-center justify-center bg-black text-gray-200 overflow-hidden py-24 sm:py-32"
       >
         <div
           className="absolute inset-0 z-0 bg-cover bg-center opacity-40"
@@ -47,7 +47,7 @@ export default function LandingHero() {
                   <li key={label}>
                     <a
                       href={href}
-                      className="block px-2 py-1 transition-colors hover:text-gray-200"
+                      className="block rounded px-2 py-1 transition hover:shadow-xl hover:text-gray-200"
                     >
                       {label}
                     </a>
@@ -62,28 +62,26 @@ export default function LandingHero() {
       <section
         id="about"
         aria-label="About"
-        className="flex min-h-screen w-full flex-col items-center justify-center bg-neutral-800 px-4 py-12 text-gray-200 sm:px-6 sm:py-16 lg:px-8"
+        className="flex min-h-screen w-full flex-col items-center justify-center bg-neutral-900 px-4 py-24 text-gray-200 sm:px-6 sm:py-32 lg:px-8"
       >
         <div className="mx-auto max-w-screen-lg text-center">
-          <h2 className="mb-8 text-2xl font-semibold tracking-wide sm:mb-12 sm:text-3xl">
-            About Keystone Notary Group
-          </h2>
-          <p className="mx-auto max-w-prose text-gray-300">
+          <h2 className="mb-8 text-3xl font-bold sm:mb-12">About Keystone Notary Group</h2>
+          <p className="mx-auto max-w-prose text-lg text-gray-300">
             Keystone Notary Group, LLC is a mobile notary service dedicated to professionalism,
             punctuality, and privacy. We provide document notarization services throughout Bucks
             and Montgomery County, Pennsylvania.
           </p>
           <div className="mt-10 grid gap-6 sm:mt-12 sm:grid-cols-2">
-            <div className="rounded bg-neutral-900 p-6 text-center shadow-sm">
+            <div className="rounded-lg bg-neutral-900 p-6 text-center shadow-md">
               <p className="font-medium">Certified Loan Signing Agent</p>
             </div>
-            <div className="rounded bg-neutral-900 p-6 text-center shadow-sm">
+            <div className="rounded-lg bg-neutral-900 p-6 text-center shadow-md">
               <p className="font-medium">NNA Certified and Insured</p>
             </div>
-            <div className="rounded bg-neutral-900 p-6 text-center shadow-sm">
+            <div className="rounded-lg bg-neutral-900 p-6 text-center shadow-md">
               <p className="font-medium">Serving Bucks & Montgomery County</p>
             </div>
-            <div className="rounded bg-neutral-900 p-6 text-center shadow-sm">
+            <div className="rounded-lg bg-neutral-900 p-6 text-center shadow-md">
               <p className="font-medium">After-Hours & Emergency Services Available</p>
             </div>
           </div>
@@ -97,22 +95,20 @@ export default function LandingHero() {
       <section
         id="services"
         aria-label="Services"
-        className="flex min-h-screen w-full flex-col items-center justify-center bg-neutral-900 px-4 py-12 text-gray-200 sm:px-6 sm:py-16 lg:px-8"
+        className="flex min-h-screen w-full flex-col items-center justify-center bg-black px-4 py-24 text-gray-200 sm:px-6 sm:py-32 lg:px-8"
       >
         <div className="mx-auto max-w-screen-lg w-full">
-          <h2 className="mb-8 text-center text-2xl font-semibold tracking-wide sm:mb-12 sm:text-3xl">
-            Our Services
-          </h2>
+          <h2 className="mb-8 text-center text-3xl font-bold sm:mb-12">Our Services</h2>
           <div className="space-y-8">
-            <div className="rounded bg-neutral-800 p-6 shadow-sm">
+            <div className="rounded-lg bg-neutral-800 p-6 shadow-md">
               <h3 className="text-xl font-semibold">General Notary Work</h3>
-              <p className="mt-2 text-gray-400">
+              <p className="mt-2 text-lg text-gray-300">
                 Acknowledgements, jurats, oaths, affirmations, and more.
               </p>
             </div>
-            <div className="rounded bg-neutral-800 p-6 shadow-sm">
+            <div className="rounded-lg bg-neutral-800 p-6 shadow-md">
               <h3 className="text-xl font-semibold">Loan Signing Agent</h3>
-              <p className="mt-2 text-gray-400">
+              <p className="mt-2 text-lg text-gray-300">
                 Specialized in real estate closings and loan document notarizations.
               </p>
             </div>
@@ -124,32 +120,30 @@ export default function LandingHero() {
       <section
         id="faq"
         aria-label="Frequently Asked Questions"
-        className="flex min-h-screen w-full flex-col items-center justify-center bg-neutral-800 px-4 py-12 text-gray-200 sm:px-6 sm:py-16 lg:px-8"
+        className="flex min-h-screen w-full flex-col items-center justify-center bg-neutral-900 px-4 py-24 text-gray-200 sm:px-6 sm:py-32 lg:px-8"
       >
         <div className="mx-auto w-full max-w-screen-lg">
-          <h2 className="mb-8 text-center text-2xl font-semibold tracking-wide sm:mb-12 sm:text-3xl">
-            Frequently Asked Questions
-          </h2>
+          <h2 className="mb-8 text-center text-3xl font-bold sm:mb-12">Frequently Asked Questions</h2>
           <div className="space-y-6 sm:space-y-8">
-            <div className="rounded bg-neutral-900 p-6 shadow-sm">
+            <div className="rounded-lg bg-neutral-900 p-6 shadow-md">
               <h3 className="text-lg font-medium text-gray-100">What do I need to bring to my notary appointment?</h3>
-              <p className="mt-2 text-gray-400">A valid, government-issued photo ID is required for all notarizations.</p>
+              <p className="mt-2 text-lg text-gray-300">A valid, government-issued photo ID is required for all notarizations.</p>
             </div>
-            <div className="rounded bg-neutral-900 p-6 shadow-sm">
+            <div className="rounded-lg bg-neutral-900 p-6 shadow-md">
               <h3 className="text-lg font-medium text-gray-100">Do you offer mobile notary services?</h3>
-              <p className="mt-2 text-gray-400">Yes. We travel to your home, business, or public meeting location in Bucks and Montgomery County.</p>
+              <p className="mt-2 text-lg text-gray-300">Yes. We travel to your home, business, or public meeting location in Bucks and Montgomery County.</p>
             </div>
-            <div className="rounded bg-neutral-900 p-6 shadow-sm">
+            <div className="rounded-lg bg-neutral-900 p-6 shadow-md">
               <h3 className="text-lg font-medium text-gray-100">What types of documents can you notarize?</h3>
-              <p className="mt-2 text-gray-400">We notarize affidavits, acknowledgements, jurats, power of attorney forms, real estate documents, and more.</p>
+              <p className="mt-2 text-lg text-gray-300">We notarize affidavits, acknowledgements, jurats, power of attorney forms, real estate documents, and more.</p>
             </div>
-            <div className="rounded bg-neutral-900 p-6 shadow-sm">
+            <div className="rounded-lg bg-neutral-900 p-6 shadow-md">
               <h3 className="text-lg font-medium text-gray-100">Are you certified and insured?</h3>
-              <p className="mt-2 text-gray-400">Yes. We are NNA Certified and carry errors & omissions insurance.</p>
+              <p className="mt-2 text-lg text-gray-300">Yes. We are NNA Certified and carry errors & omissions insurance.</p>
             </div>
-            <div className="rounded bg-neutral-900 p-6 shadow-sm">
+            <div className="rounded-lg bg-neutral-900 p-6 shadow-md">
               <h3 className="text-lg font-medium text-gray-100">Do you provide after-hours or emergency service?</h3>
-              <p className="mt-2 text-gray-400">Yes. After-hours and emergency appointments are available upon request and subject to availability.</p>
+              <p className="mt-2 text-lg text-gray-300">Yes. After-hours and emergency appointments are available upon request and subject to availability.</p>
             </div>
           </div>
         </div>
@@ -159,12 +153,10 @@ export default function LandingHero() {
       <section
         id="contact"
         aria-label="Contact"
-        className="flex min-h-screen w-full flex-col items-center justify-center bg-neutral-900 px-4 py-12 text-gray-200 sm:px-6 sm:py-16 lg:px-8"
+        className="flex min-h-screen w-full flex-col items-center justify-center bg-black px-4 py-24 text-gray-200 sm:px-6 sm:py-32 lg:px-8"
       >
         <div className="mx-auto w-full max-w-screen-lg">
-          <h2 className="mb-8 text-center text-2xl font-semibold tracking-wide sm:mb-12 sm:text-3xl">
-            Contact
-          </h2>
+          <h2 className="mb-8 text-center text-3xl font-bold sm:mb-12">Contact</h2>
           <form onSubmit={(e) => e.preventDefault()} className="space-y-6 sm:space-y-8">
             <div>
               <label htmlFor="name" className="block text-sm font-medium">
@@ -205,7 +197,7 @@ export default function LandingHero() {
             <div className="text-center">
               <button
                 type="submit"
-                className="rounded-md bg-blue-600 px-6 py-2 font-semibold text-white transition-colors hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-neutral-900"
+                className="rounded-md bg-blue-600 px-6 py-2 font-semibold text-white transition hover:bg-blue-500 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-neutral-900"
               >
                 Send Message
               </button>
@@ -214,16 +206,16 @@ export default function LandingHero() {
           <p className="mt-8 text-sm text-gray-400 sm:mt-10">
             Please mention the type of document or notarization service you are requesting.
           </p>
-          <div className="mt-4 space-y-2 text-sm text-gray-300">
+          <div className="mt-4 space-y-2 text-lg text-gray-300">
             <p>
               <strong>Phone:</strong>{" "}
-              <a href="tel:2673099000" className="text-blue-400 hover:text-blue-300" aria-label="Call 267-309-9000">
+              <a href="tel:2673099000" className="text-blue-400 transition hover:text-blue-300 hover:shadow-xl" aria-label="Call 267-309-9000">
                 (267) 309-9000
               </a>
             </p>
             <p>
               <strong>Email:</strong>{" "}
-              <a href="mailto:appointments@keystonenotarygroup.com" className="text-blue-400 hover:text-blue-300">
+              <a href="mailto:appointments@keystonenotarygroup.com" className="text-blue-400 transition hover:text-blue-300 hover:shadow-xl">
                 appointments@keystonenotarygroup.com
               </a>
             </p>
