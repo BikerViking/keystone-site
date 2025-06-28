@@ -17,7 +17,7 @@ export default function Footer() {
         src="/nna-seal.PNG"
         alt="NNA Certified Notary Signing Agent 2025"
         aria-hidden="true"
-        className="pointer-events-none absolute bottom-2 right-2 h-20 w-auto rotate-[8deg] shadow-lg"
+        className="pointer-events-none absolute bottom-4 right-4 h-28 w-auto rotate-[10deg] shadow-2xl"
       />
     </div>
   );
