@@ -11,7 +11,7 @@ export default function Header() {
         <button
           type="button"
           aria-label="Open navigation menu"
-          className="rounded border border-gray-600 px-3 py-1 text-xs uppercase tracking-wide text-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-600 sm:hidden"
+          className="rounded border border-gray-600 px-3 py-1 text-xs uppercase tracking-wide text-gray-200 transition hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-blue-600 sm:hidden"
         >
           Menu
         </button>
