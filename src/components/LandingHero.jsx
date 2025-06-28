@@ -24,12 +24,12 @@ export default function LandingHero() {
           Mobile Notary Services • Pennsylvania
         </p>
         <div className="mt-10 sm:mt-12">
-          <ul className="space-y-2 text-sm font-medium uppercase text-gray-300 sm:flex sm:justify-center sm:gap-6 sm:space-y-0">
+          <ul className="flex justify-center gap-x-6 text-sm font-medium uppercase text-gray-300 sm:flex-col sm:gap-x-0 sm:gap-y-2">
             {navItems.map((label) => (
               <li key={label}>
                 <Link
                   to={`/${label.toLowerCase() === "home" ? "" : label.toLowerCase()}`}
-                  className="block px-2 py-1 transition-colors hover:text-white"
+                  className="block px-2 py-1 transition-colors hover:text-gray-200"
                 >
                   {label}
                 </Link>
