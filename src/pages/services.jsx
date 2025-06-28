@@ -44,7 +44,7 @@ export default function ServicesPage() {
           src="/nna-seal.PNG"
           alt="NNA Certified Notary Signing Agent 2025"
           aria-hidden="true"
-          className="absolute bottom-4 right-4 h-24 w-auto rotate-[8deg] shadow-xl"
+          className="absolute bottom-[-1rem] right-20 h-32 w-auto rotate-[8deg] shadow-2xl"
         />
       </div>
         </div>
