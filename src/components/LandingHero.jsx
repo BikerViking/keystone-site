@@ -100,18 +100,36 @@ export default function LandingHero() {
         <div className="mx-auto max-w-screen-lg w-full">
           <h2 className="mb-8 text-center text-3xl font-bold sm:mb-12">Our Services</h2>
           <div className="space-y-8">
-            <div className="rounded-lg bg-neutral-800 p-6 shadow-md">
-              <h3 className="text-xl font-semibold">General Notary Work</h3>
-              <p className="mt-2 text-lg text-gray-300">
-                Acknowledgements, jurats, oaths, affirmations, and more.
-              </p>
-            </div>
-            <div className="rounded-lg bg-neutral-800 p-6 shadow-md">
-              <h3 className="text-xl font-semibold">Loan Signing Agent</h3>
-              <p className="mt-2 text-lg text-gray-300">
-                Specialized in real estate closings and loan document notarizations.
-              </p>
-            </div>
+            <ul className="list-disc list-inside space-y-4 text-lg text-gray-300">
+              <li>
+                General notary work including acknowledgments, oaths, affirmations,
+                and signature witnessing
+              </li>
+              <li>
+                Loan signing services for real estate closings, refinances, and
+                mortgage documents
+              </li>
+              <li>Power of attorney, wills, and estate planning notarizations</li>
+              <li>
+                Real estate transaction support for buyers, sellers, and agents
+              </li>
+              <li>
+                After-hours and emergency appointments
+                <span className="italic"> (additional surcharge applies)</span>
+              </li>
+              <li>
+                Mobile services to homes, offices, hospitals, financial
+                institutions, attorney offices, senior care facilities, and public
+                meeting locations
+              </li>
+            </ul>
+            <p className="mt-6 text-center text-lg text-gray-300">
+              <strong>We proudly work with:</strong>
+              <br />
+              Homeowners &bull; Attorneys &bull; Title Companies &bull; Real Estate
+              Agents &bull; Financial Institutions &bull; Health &amp; Senior Care
+              Providers &bull; Individuals with urgent or specialized needs
+            </p>
           </div>
         </div>
       </section>
@@ -203,6 +221,12 @@ export default function LandingHero() {
               </button>
             </div>
           </form>
+          <p className="mt-4 text-center text-sm text-gray-500">
+            <strong>Disclaimer:</strong> Keystone Notary Group, LLC is not a law firm
+            and does not provide legal advice, guidance on document selection, or
+            assistance in preparing legal documents. For questions about what type of
+            document you need, please consult a licensed attorney.
+          </p>
           <p className="mt-8 text-sm text-gray-400 sm:mt-10">
             Please mention the type of document or notarization service you are requesting.
           </p>
