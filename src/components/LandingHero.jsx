@@ -45,13 +45,16 @@ export default function LandingHero() {
               alt="Keystone Notary Group logo"
               className="mx-auto w-40 sm:w-52 md:w-64"
             />
-            <nav className="mt-8 sm:mt-10" aria-label="Main navigation">
-              <ul className="flex flex-col items-center space-y-2 sm:space-y-4 text-sm sm:text-base font-medium uppercase text-gray-300">
+            <nav
+              className="mt-8 sm:mt-10 border-b border-gray-700 pb-4 shadow-md"
+              aria-label="Main navigation"
+            >
+              <ul className="flex flex-col items-center space-y-3 sm:space-y-6 text-sm sm:text-base font-medium uppercase text-gray-300">
                 {navItems.map(({ label, href }) => (
                   <li key={label}>
                     <a
                       href={href}
-                      className="block rounded px-2 py-1 transition hover:shadow-xl hover:text-gray-200"
+                      className="block rounded px-2 py-1 transition hover:shadow-xl hover:text-amber-300 focus:text-amber-300"
                     >
                       {label}
                     </a>
