@@ -6,7 +6,7 @@ export default function ServicesPage() {
     <LayoutWrapper>
       <section
         aria-label="Services"
-        className="relative mx-auto max-w-screen-lg px-4 py-12 pb-40 text-gray-200 sm:px-6 sm:py-16 lg:px-8"
+        className="mx-auto max-w-screen-lg px-4 py-12 text-gray-200 sm:px-6 sm:py-16 lg:px-8"
       >
         <h1 className="mb-8 text-center text-2xl font-semibold tracking-wide sm:mb-12 sm:text-3xl">
           Our Services
@@ -45,16 +45,6 @@ export default function ServicesPage() {
           Financial Institutions &bull; Health & Senior Care Providers &bull; Individuals with
           urgent or specialized needs
         </p>
-
-        {/* NNA Seal Floating */}
-        <div className="relative">
-          <img
-            src="/nna-seal.PNG"
-            alt="NNA Certified Notary Signing Agent 2025"
-            aria-hidden="true"
-            className="pointer-events-none absolute bottom-[-3rem] right-[-2rem] h-40 w-auto rotate-[10deg] shadow-2xl sm:bottom-[-2rem] sm:right-[-1rem]"
-          />
-        </div>
       </section>
     </LayoutWrapper>
   );
