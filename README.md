@@ -11,6 +11,7 @@ This is a small React site styled with Tailwind CSS.
 1. Install dependencies: `npm install`
 2. Start the development server: `npm start`
 3. Build for production: `npm run build`
+4. Run tests: `npm test`
 
 ## Project Structure
 
