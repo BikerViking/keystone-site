@@ -6,6 +6,7 @@ export default function LandingHero() {
     { label: "Home", href: "#home" },
     { label: "About", href: "#about" },
     { label: "Services", href: "#services" },
+    { label: "Service Area", href: "#service-area" },
     { label: "FAQ", href: "#faq" },
     { label: "Contact", href: "#contact" },
   ];
@@ -177,6 +178,26 @@ export default function LandingHero() {
               Senior Care Providers &bull; Individuals with urgent or
               specialized needs
             </p>
+          </div>
+        </div>
+      </section>
+      {/* Service Area Section */}
+      <section
+        id="service-area"
+        aria-label="Service Area"
+        className="flex min-h-screen w-full flex-col items-center justify-center bg-neutral-900 px-4 py-24 text-gray-200 sm:px-6 sm:py-32 lg:px-8"
+      >
+        <div className="mx-auto w-full max-w-screen-lg text-center">
+          <h2 className="mb-8 text-3xl font-bold sm:mb-12">Service Area</h2>
+          <p className="mb-8 text-base sm:text-lg text-gray-300">
+            We proudly serve Bucks and Montgomery County, Pennsylvania.
+          </p>
+          <div className="mx-auto max-w-md">
+            <img
+              src="/pa-map.svg"
+              alt="Map showing Bucks and Montgomery counties in Pennsylvania"
+              className="h-auto w-full rounded-md border border-gray-600 shadow-md"
+            />
           </div>
         </div>
       </section>
