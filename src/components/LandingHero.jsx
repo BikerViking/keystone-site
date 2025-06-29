@@ -152,6 +152,11 @@ export default function LandingHero() {
         </div>
       </div>
     </section>
+    {/* Mobile separator between Services and FAQ */}
+    <hr
+      aria-hidden="true"
+      className="border-neutral-800 sm:hidden"
+    />
 
       {/* FAQ Section */}
       <section
@@ -212,6 +217,11 @@ export default function LandingHero() {
           </div>
         </div>
       </section>
+    {/* Mobile separator between FAQ and Contact */}
+    <hr
+      aria-hidden="true"
+      className="border-neutral-800 sm:hidden"
+    />
 
       {/* Contact Section */}
       <section
