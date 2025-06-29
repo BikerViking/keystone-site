@@ -34,3 +34,18 @@ test('accordion shows one answer at a time', () => {
   expect(secondButton).toHaveAttribute('aria-expanded', 'true');
   expect(secondPanel).toHaveAttribute('aria-hidden', 'false');
 });
+
+test('CTA to contact page is present', () => {
+  render(
+    <MemoryRouter>
+      <FaqPage />
+    </MemoryRouter>
+  );
+
+  expect(
+    screen.getByRole('heading', { name: /still have questions/i })
+  ).toBeInTheDocument();
+
+  const link = screen.getByRole('link', { name: /contact us/i });
+  expect(link).toHaveAttribute('href', '/contact#contact');
+});
