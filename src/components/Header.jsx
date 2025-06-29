@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import { createPortal } from "react-dom";
 import { NavLink } from "react-router-dom";
 
 export default function Header() {
@@ -54,35 +55,36 @@ export default function Header() {
         </button>
       </div>
 
-      {/* Mobile menu overlay */}
-      <div
-        role="presentation"
-        aria-hidden={!open}
-        aria-label="Menu overlay"
-        className={`sm:hidden fixed inset-0 z-[9999] bg-black/80 transition-opacity duration-300 ${
-          open ? "opacity-100" : "pointer-events-none opacity-0"
-        }`}
-        onClick={closeMenu}
-      >
-        <nav
-          id="mobile-menu"
-          aria-label="Mobile"
-          onKeyDown={handleKeyDown}
-          onClick={(e) => e.stopPropagation()}
-          className={`fixed right-0 top-0 bottom-0 w-64 transform bg-gray-900 text-white shadow-xl transition-all duration-300 ${
-            open ? "translate-x-0" : "translate-x-full"
+      {/* Mobile menu overlay rendered in a portal to avoid stacking issues */}
+      {createPortal(
+        <div
+          role="presentation"
+          aria-hidden={!open}
+          aria-label="Menu overlay"
+          className={`sm:hidden fixed inset-0 z-[9999] bg-black/80 transition-opacity duration-300 ${
+            open ? "opacity-100" : "pointer-events-none opacity-0"
           }`}
+          onClick={closeMenu}
         >
-          <button
-            type="button"
-            aria-label="Close menu"
-            onClick={closeMenu}
-            ref={firstRef}
-            className="absolute top-4 right-4 text-white text-2xl z-50 focus:outline-none"
+          <nav
+            id="mobile-menu"
+            aria-label="Mobile"
+            onKeyDown={handleKeyDown}
+            onClick={(e) => e.stopPropagation()}
+            className={`fixed right-0 top-0 bottom-0 w-64 transform bg-gray-900 text-white shadow-xl transition-all duration-300 ${
+              open ? "translate-x-0" : "translate-x-full"
+            }`}
           >
-            &times;
-          </button>
-          <ul className="flex flex-col items-start space-y-4 px-6 py-8 text-lg">
+            <button
+              type="button"
+              aria-label="Close menu"
+              onClick={closeMenu}
+              ref={firstRef}
+              className="absolute top-4 right-4 text-white text-2xl z-50 focus:outline-none"
+            >
+              &times;
+            </button>
+            <ul className="flex flex-col items-start space-y-4 px-6 py-8 text-lg">
             <li>
               <NavLink
                 to="/"
@@ -130,7 +132,9 @@ export default function Header() {
             </li>
           </ul>
         </nav>
-      </div>
+        </div>,
+        document.body
+      )}
     </header>
   );
 }
