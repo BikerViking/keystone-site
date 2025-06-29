@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import LayoutWrapper from "../components/LayoutWrapper";
 
 export default function FaqPage() {
@@ -37,9 +38,9 @@ export default function FaqPage() {
     <LayoutWrapper>
       <section
         aria-label="Frequently Asked Questions"
-        className="bg-neutral-900 mx-auto max-w-screen-lg px-4 py-12 text-gray-200 sm:px-6 sm:py-16 lg:px-8"
+        className="bg-neutral-900 mx-auto max-w-screen-lg px-4 py-12 lg:py-20 text-gray-200 sm:px-6 lg:px-8"
       >
-        <h1 className="mb-8 text-center text-2xl font-semibold tracking-wide sm:mb-12 sm:text-3xl">
+        <h1 className="mb-8 text-center font-extrabold">
           Frequently Asked Questions
         </h1>
         <dl className="space-y-6 sm:space-y-8">
@@ -79,6 +80,17 @@ export default function FaqPage() {
             </div>
           ))}
         </dl>
+        <div className="mt-12 rounded-lg border border-blue-500/30 bg-neutral-800 p-6 text-center shadow-inner">
+          <h2 className="mb-4 font-bold text-gray-100">
+            Still have questions?
+          </h2>
+          <Link
+            to="/contact#contact"
+            className="inline-block min-h-[48px] rounded-md bg-blue-600 px-6 py-2 font-semibold text-white shadow transition-colors hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-neutral-900"
+          >
+            Contact Us
+          </Link>
+        </div>
       </section>
     </LayoutWrapper>
   );
