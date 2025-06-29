@@ -33,13 +33,19 @@ export default function RequestNotaryButton() {
   }, []);
 
   return (
-    <button
-      type="button"
-      onClick={handleClick}
-      aria-label="Request Notary"
-      className={`sm:hidden fixed bottom-0 left-0 right-0 z-50 w-full py-4 bg-blue-600 min-h-[48px] font-semibold text-white shadow-md transition hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 ${hidden ? "hidden" : ""}`}
+    <div
+      className={`pointer-events-none fixed bottom-4 left-4 right-4 z-50 md:hidden ${
+        hidden ? "hidden" : ""
+      }`}
     >
-      Request Notary
-    </button>
+      <button
+        type="button"
+        onClick={handleClick}
+        aria-label="Request Notary"
+        className="pointer-events-auto w-full bg-blue-600 text-white text-center py-4 rounded-md shadow-lg text-lg font-semibold transition hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400"
+      >
+        Request Notary
+      </button>
+    </div>
   );
 }
