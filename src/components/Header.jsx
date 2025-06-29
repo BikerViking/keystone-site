@@ -1,11 +1,39 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { NavLink } from "react-router-dom";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
+  const firstRef = useRef(null);
+  const lastRef = useRef(null);
 
   const toggleMenu = () => setOpen((v) => !v);
   const closeMenu = () => setOpen(false);
+
+  useEffect(() => {
+    const body = document.body;
+    if (open) {
+      body.classList.add("overflow-hidden");
+      firstRef.current?.focus();
+    } else {
+      body.classList.remove("overflow-hidden");
+    }
+  }, [open]);
+
+  const handleKeyDown = (e) => {
+    if (e.key === "Tab") {
+      if (e.shiftKey) {
+        if (document.activeElement === firstRef.current) {
+          e.preventDefault();
+          lastRef.current?.focus();
+        }
+      } else if (document.activeElement === lastRef.current) {
+        e.preventDefault();
+        firstRef.current?.focus();
+      }
+    } else if (e.key === "Escape") {
+      closeMenu();
+    }
+  };
 
   return (
     <header className="border-b border-gray-800 bg-neutral-900/80 backdrop-blur text-gray-200 shadow-sm">
@@ -28,7 +56,10 @@ export default function Header() {
 
       {/* Mobile menu overlay */}
       <div
-        className={`sm:hidden fixed inset-0 z-[9998] transition-opacity duration-300 ${
+        role="presentation"
+        aria-hidden={!open}
+        aria-label="Menu overlay"
+        className={`sm:hidden fixed inset-0 z-40 bg-black/80 transition-opacity duration-300 ${
           open ? "opacity-100" : "pointer-events-none opacity-0"
         }`}
         onClick={closeMenu}
@@ -36,12 +67,22 @@ export default function Header() {
         <nav
           id="mobile-menu"
           aria-label="Mobile"
+          onKeyDown={handleKeyDown}
           onClick={(e) => e.stopPropagation()}
-          className={`absolute left-0 right-0 top-0 z-[9999] bg-gray-900 text-white shadow-lg transition-transform duration-300 ${
-            open ? "translate-y-0" : "-translate-y-full"
+          className={`fixed right-0 top-0 bottom-0 w-64 transform bg-gray-900 text-white shadow-xl transition-all duration-300 ${
+            open ? "translate-x-0" : "translate-x-full"
           }`}
         >
-          <ul className="flex flex-col items-center space-y-4 px-6 py-8 text-lg">
+          <button
+            type="button"
+            aria-label="Close menu"
+            onClick={closeMenu}
+            ref={firstRef}
+            className="absolute top-4 right-4 text-white text-2xl z-50 focus:outline-none"
+          >
+            &times;
+          </button>
+          <ul className="flex flex-col items-start space-y-4 px-6 py-8 text-lg">
             <li>
               <NavLink
                 to="/"
@@ -79,6 +120,7 @@ export default function Header() {
               <NavLink
                 to="/contact"
                 onClick={closeMenu}
+                ref={lastRef}
                 className={({ isActive }) =>
                   `block px-2 py-1 transition hover:text-blue-400${isActive ? " underline text-blue-400" : ""}`
                 }
