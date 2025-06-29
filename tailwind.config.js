@@ -11,6 +11,10 @@ module.exports = {
           '100%': { opacity: '1' },
         },
       },
+      fontFamily: {
+        display: ['"Playfair Display"', 'serif'],
+        sans: ['Inter', 'sans-serif'],
+      },
     },
   },
   plugins: [],

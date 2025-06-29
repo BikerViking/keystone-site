@@ -6,9 +6,9 @@ export default function ServicesPage() {
     <LayoutWrapper>
       <section
         aria-label="Services"
-        className="bg-neutral-800 mx-auto max-w-screen-lg px-4 py-12 lg:py-20 text-gray-200 sm:px-6 lg:px-8"
+        className="bg-black mx-auto max-w-screen-lg px-4 py-12 lg:py-20 text-gray-200 sm:px-6 lg:px-8"
       >
-        <h1 className="mb-8 text-center font-extrabold">
+        <h1 className="mb-8 text-center">
           Our Services
         </h1>
 

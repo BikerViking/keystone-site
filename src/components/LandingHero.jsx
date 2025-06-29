@@ -101,7 +101,7 @@ export default function LandingHero() {
         className="flex min-h-screen w-full flex-col items-center justify-center bg-neutral-900 px-4 py-12 lg:py-20 text-gray-200 sm:px-6 lg:px-8"
       >
         <div className="mx-auto max-w-screen-lg text-center">
-          <h2 className="mb-8 text-3xl font-bold sm:mb-12">
+          <h2 className="mb-8 sm:mb-12">
             About Keystone Notary Group
           </h2>
           {/* Ensure readability on small screens */}
@@ -137,10 +137,10 @@ export default function LandingHero() {
       <section
         id="services"
         aria-label="Services"
-        className="flex min-h-screen w-full flex-col items-center justify-center bg-neutral-800 px-4 py-12 lg:py-20 text-gray-200 sm:px-6 lg:px-8"
+        className="flex min-h-screen w-full flex-col items-center justify-center bg-gray-950 px-4 py-12 lg:py-20 text-gray-200 sm:px-6 lg:px-8"
       >
         <div className="mx-auto w-full max-w-screen-lg">
-          <h2 className="mb-8 text-center text-3xl font-bold sm:mb-12">
+          <h2 className="mb-8 text-center sm:mb-12">
             Our Services
           </h2>
           <div className="space-y-8">
@@ -188,7 +188,7 @@ export default function LandingHero() {
         className="flex min-h-screen w-full flex-col items-center justify-center bg-neutral-900 px-4 py-12 lg:py-20 text-gray-200 sm:px-6 lg:px-8"
       >
         <div className="mx-auto w-full max-w-screen-lg text-center">
-          <h2 className="mb-8 text-3xl font-bold sm:mb-12">Service Area</h2>
+          <h2 className="mb-8 sm:mb-12">Service Area</h2>
           <p className="mb-8 text-base sm:text-lg text-gray-300">
             We proudly serve Bucks and Montgomery County, Pennsylvania.
           </p>
@@ -208,10 +208,10 @@ export default function LandingHero() {
       <section
         id="faq"
         aria-label="Frequently Asked Questions"
-        className="flex min-h-screen w-full flex-col items-center justify-center bg-neutral-900 px-4 py-12 lg:py-20 text-gray-200 sm:px-6 lg:px-8"
+        className="flex min-h-screen w-full flex-col items-center justify-center bg-neutral-900 rounded-t-[3rem] px-4 py-12 lg:py-20 text-gray-200 sm:px-6 lg:px-8"
       >
         <div className="mx-auto w-full max-w-screen-lg">
-          <h2 className="mb-8 text-center text-3xl font-bold sm:mb-12">
+          <h2 className="mb-8 text-center sm:mb-12">
             Frequently Asked Questions
           </h2>
           <dl className="space-y-6 sm:space-y-8">
@@ -263,10 +263,10 @@ export default function LandingHero() {
       <section
         id="contact"
         aria-label="Contact"
-        className="flex min-h-screen w-full flex-col items-center justify-center bg-neutral-800 px-4 py-12 lg:py-20 text-gray-200 sm:px-6 lg:px-8"
+        className="flex min-h-screen w-full flex-col items-center justify-center bg-gray-950 rounded-t-[3rem] px-4 py-12 lg:py-20 text-gray-200 sm:px-6 lg:px-8"
       >
         <div className="mx-auto w-full max-w-screen-lg">
-          <h2 className="mb-8 text-center text-3xl font-bold sm:mb-12">
+          <h2 className="mb-8 text-center sm:mb-12">
             Contact
           </h2>
           <form

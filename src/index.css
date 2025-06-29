@@ -5,14 +5,14 @@
 @layer base {
   /* Global background pattern */
   body {
-    @apply bg-cover bg-center bg-no-repeat min-h-screen;
+    @apply bg-cover bg-center bg-no-repeat min-h-screen font-sans text-base sm:text-lg leading-relaxed tracking-normal;
     background-image: url('../public/bg-texture.PNG');
   }
-  h1 {
-    @apply text-3xl sm:text-4xl font-extrabold;
+  h1, h2 {
+    @apply font-display text-3xl sm:text-4xl font-semibold tracking-wide;
   }
-  h2 {
-    @apply text-2xl sm:text-3xl font-bold;
+  h3 {
+    @apply font-display text-xl font-medium tracking-wide;
   }
   p {
     @apply leading-relaxed;

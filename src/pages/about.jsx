@@ -6,9 +6,9 @@ export default function AboutPage() {
     <LayoutWrapper>
       <section
         aria-label="About"
-        className="mx-auto max-w-screen-lg px-4 py-12 lg:py-20 text-gray-200 sm:px-6 lg:px-8"
+        className="bg-neutral-900 mx-auto max-w-screen-lg px-4 py-12 lg:py-20 text-gray-200 sm:px-6 lg:px-8"
       >
-        <h1 className="mb-8 text-center font-extrabold">
+        <h1 className="mb-8 text-center">
           About Keystone Notary Group
         </h1>
         <p className="mx-auto max-w-prose text-left text-base sm:text-lg text-gray-300">
