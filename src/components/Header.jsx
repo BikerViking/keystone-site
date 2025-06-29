@@ -28,7 +28,7 @@ export default function Header() {
 
       {/* Mobile menu overlay */}
       <div
-        className={`sm:hidden fixed inset-0 z-50 transition-opacity duration-300 ${
+        className={`sm:hidden fixed inset-0 z-[9998] transition-opacity duration-300 ${
           open ? "opacity-100" : "pointer-events-none opacity-0"
         }`}
         onClick={closeMenu}
@@ -37,7 +37,7 @@ export default function Header() {
           id="mobile-menu"
           aria-label="Mobile"
           onClick={(e) => e.stopPropagation()}
-          className={`absolute left-0 right-0 top-0 bg-gray-900 text-white shadow-lg transition-transform duration-300 ${
+          className={`absolute left-0 right-0 top-0 z-[9999] bg-gray-900 text-white shadow-lg transition-transform duration-300 ${
             open ? "translate-y-0" : "-translate-y-full"
           }`}
         >
