@@ -18,9 +18,9 @@ export default function ContactPage() {
       <section
         id="contact"
         aria-label="Contact"
-        className="bg-neutral-800 mx-auto max-w-screen-lg px-4 py-12 text-gray-200 sm:px-6 sm:py-16 lg:px-8"
+        className="bg-neutral-800 mx-auto max-w-screen-lg px-4 py-12 lg:py-20 text-gray-200 sm:px-6 lg:px-8"
       >
-        <h1 className="mb-8 text-center text-2xl font-semibold tracking-wide sm:mb-12 sm:text-3xl">
+        <h1 className="mb-8 text-center font-extrabold">
           Contact
         </h1>
         <form onSubmit={handleSubmit} className="space-y-6 sm:space-y-8">
@@ -90,7 +90,7 @@ export default function ContactPage() {
         <p className="mt-8 text-sm text-gray-400 sm:mt-10">
           Please mention the type of document or notarization service you are requesting.
         </p>
-        <div className="mt-4 space-y-2 text-sm text-gray-300">
+        <div className="mt-4 space-y-2 text-base sm:text-lg text-gray-300">
           <p>
             <strong>Phone:</strong>{" "}
             <a

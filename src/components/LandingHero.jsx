@@ -55,7 +55,7 @@ export default function LandingHero() {
     >
       <section
         id="home"
-        className="relative flex min-h-screen w-full flex-col items-center justify-center bg-black text-gray-200 overflow-hidden py-24 sm:py-32"
+        className="relative flex min-h-screen w-full flex-col items-center justify-center bg-black text-gray-200 overflow-hidden py-12 lg:py-20"
       >
         <div
           className="absolute inset-0 z-0 bg-cover bg-center opacity-40"
@@ -67,7 +67,7 @@ export default function LandingHero() {
           aria-hidden="true"
         ></div>
 
-        <div className="relative z-10 mx-auto w-full max-w-screen-md px-4 py-12 text-center sm:py-16">
+        <div className="relative z-10 mx-auto w-full max-w-screen-md px-4 py-12 lg:py-20 text-center">
           <div className="flex flex-col items-center">
             <img
               src="/logo.PNG"
@@ -98,7 +98,7 @@ export default function LandingHero() {
       <section
         id="about"
         aria-label="About"
-        className="flex min-h-screen w-full flex-col items-center justify-center bg-neutral-900 px-4 py-24 text-gray-200 sm:px-6 sm:py-32 lg:px-8"
+        className="flex min-h-screen w-full flex-col items-center justify-center bg-neutral-900 px-4 py-12 lg:py-20 text-gray-200 sm:px-6 lg:px-8"
       >
         <div className="mx-auto max-w-screen-lg text-center">
           <h2 className="mb-8 text-3xl font-bold sm:mb-12">
@@ -137,7 +137,7 @@ export default function LandingHero() {
       <section
         id="services"
         aria-label="Services"
-        className="flex min-h-screen w-full flex-col items-center justify-center bg-neutral-800 px-4 py-24 text-gray-200 sm:px-6 sm:py-32 lg:px-8"
+        className="flex min-h-screen w-full flex-col items-center justify-center bg-neutral-800 px-4 py-12 lg:py-20 text-gray-200 sm:px-6 lg:px-8"
       >
         <div className="mx-auto w-full max-w-screen-lg">
           <h2 className="mb-8 text-center text-3xl font-bold sm:mb-12">
@@ -185,7 +185,7 @@ export default function LandingHero() {
       <section
         id="service-area"
         aria-label="Service Area"
-        className="flex min-h-screen w-full flex-col items-center justify-center bg-neutral-900 px-4 py-24 text-gray-200 sm:px-6 sm:py-32 lg:px-8"
+        className="flex min-h-screen w-full flex-col items-center justify-center bg-neutral-900 px-4 py-12 lg:py-20 text-gray-200 sm:px-6 lg:px-8"
       >
         <div className="mx-auto w-full max-w-screen-lg text-center">
           <h2 className="mb-8 text-3xl font-bold sm:mb-12">Service Area</h2>
@@ -208,7 +208,7 @@ export default function LandingHero() {
       <section
         id="faq"
         aria-label="Frequently Asked Questions"
-        className="flex min-h-screen w-full flex-col items-center justify-center bg-neutral-900 px-4 py-24 text-gray-200 sm:px-6 sm:py-32 lg:px-8"
+        className="flex min-h-screen w-full flex-col items-center justify-center bg-neutral-900 px-4 py-12 lg:py-20 text-gray-200 sm:px-6 lg:px-8"
       >
         <div className="mx-auto w-full max-w-screen-lg">
           <h2 className="mb-8 text-center text-3xl font-bold sm:mb-12">
@@ -263,7 +263,7 @@ export default function LandingHero() {
       <section
         id="contact"
         aria-label="Contact"
-        className="flex min-h-screen w-full flex-col items-center justify-center bg-neutral-800 px-4 py-24 text-gray-200 sm:px-6 sm:py-32 lg:px-8"
+        className="flex min-h-screen w-full flex-col items-center justify-center bg-neutral-800 px-4 py-12 lg:py-20 text-gray-200 sm:px-6 lg:px-8"
       >
         <div className="mx-auto w-full max-w-screen-lg">
           <h2 className="mb-8 text-center text-3xl font-bold sm:mb-12">
