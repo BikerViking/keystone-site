@@ -108,7 +108,7 @@ export default function LandingHero() {
       <section
         id="services"
         aria-label="Services"
-        className="flex min-h-screen w-full flex-col items-center justify-center bg-black px-4 py-24 text-gray-200 sm:px-6 sm:py-32 lg:px-8"
+        className="flex min-h-screen w-full flex-col items-center justify-center bg-neutral-800 px-4 py-24 text-gray-200 sm:px-6 sm:py-32 lg:px-8"
       >
         <div className="mx-auto w-full max-w-screen-lg">
           <h2 className="mb-8 text-center text-3xl font-bold sm:mb-12">
@@ -155,7 +155,7 @@ export default function LandingHero() {
     {/* Mobile separator between Services and FAQ */}
     <hr
       aria-hidden="true"
-      className="border-neutral-800 sm:hidden"
+      className="border-neutral-700 sm:hidden"
     />
 
       {/* FAQ Section */}
@@ -220,14 +220,14 @@ export default function LandingHero() {
     {/* Mobile separator between FAQ and Contact */}
     <hr
       aria-hidden="true"
-      className="border-neutral-800 sm:hidden"
+      className="border-neutral-700 sm:hidden"
     />
 
       {/* Contact Section */}
       <section
         id="contact"
         aria-label="Contact"
-        className="flex min-h-screen w-full flex-col items-center justify-center bg-black px-4 py-24 text-gray-200 sm:px-6 sm:py-32 lg:px-8"
+        className="flex min-h-screen w-full flex-col items-center justify-center bg-neutral-800 px-4 py-24 text-gray-200 sm:px-6 sm:py-32 lg:px-8"
       >
         <div className="mx-auto w-full max-w-screen-lg">
           <h2 className="mb-8 text-center text-3xl font-bold sm:mb-12">
