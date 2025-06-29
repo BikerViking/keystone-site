@@ -22,3 +22,20 @@ test('mobile menu opens and closes properly', () => {
   expect(toggle).toHaveAttribute('aria-expanded', 'false');
   expect(document.body).not.toHaveClass('overflow-hidden');
 });
+
+test('adds shadow when page is scrolled', () => {
+  Object.defineProperty(window, 'scrollY', { writable: true, configurable: true, value: 0 });
+  render(
+    <MemoryRouter>
+      <Header />
+    </MemoryRouter>
+  );
+
+  const header = screen.getByRole('banner');
+  expect(header.className).toMatch(/shadow-none/);
+
+  window.scrollY = 100;
+  fireEvent.scroll(window);
+
+  expect(header.className).toMatch(/shadow-md/);
+});

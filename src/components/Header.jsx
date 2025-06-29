@@ -4,6 +4,7 @@ import { NavLink } from "react-router-dom";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const firstRef = useRef(null);
   const lastRef = useRef(null);
 
@@ -19,6 +20,16 @@ export default function Header() {
       body.classList.remove("overflow-hidden");
     }
   }, [open]);
+
+  // Toggle a shadow once the user scrolls down the page
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 0);
+    };
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // initialize on mount
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const handleKeyDown = (e) => {
     if (e.key === "Tab") {
@@ -37,7 +48,12 @@ export default function Header() {
   };
 
   return (
-    <header className="border-b border-gray-800 bg-neutral-900/80 backdrop-blur text-gray-200 shadow-sm">
+    <header
+      role="banner"
+      className={`sticky top-0 border-b border-gray-800 bg-neutral-900/80 backdrop-blur text-gray-200 transition-shadow duration-300 ${
+        scrolled ? "shadow-md" : "shadow-none"
+      }`}
+    >
       <div className="mx-auto flex max-w-screen-xl flex-wrap items-center justify-center gap-4 px-4 py-2 sm:flex-nowrap sm:justify-between sm:px-6 sm:py-3">
         <h1 className="text-center text-sm font-semibold uppercase tracking-wide text-gray-100 sm:text-base">
           Keystone Notary Group
