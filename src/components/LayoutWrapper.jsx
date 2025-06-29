@@ -3,6 +3,7 @@ import { Helmet } from "react-helmet";
 import Header from "./Header";
 import Footer from "./Footer";
 import Certifications from "./Certifications";
+import BackToTopButton from "./BackToTopButton";
 
 export default function LayoutWrapper({ children, fullWidth = false }) {
   return (
@@ -52,6 +53,7 @@ export default function LayoutWrapper({ children, fullWidth = false }) {
       </main>
       <Certifications />
       <Footer />
+      <BackToTopButton />
     </div>
   );
 }
