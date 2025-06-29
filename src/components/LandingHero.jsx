@@ -11,12 +11,40 @@ export default function LandingHero() {
   ];
   // Controls the full hero fade-in effect
   const [fadeIn, setFadeIn] = useState(false);
+  const faqs = [
+    {
+      q: "What do I need to bring to my notary appointment?",
+      a: "A valid, government-issued photo ID is required for all notarizations.",
+    },
+    {
+      q: "Do you offer mobile notary services?",
+      a: "Yes. We travel to your home, business, or public meeting location in Bucks and Montgomery County.",
+    },
+    {
+      q: "What types of documents can you notarize?",
+      a: "We notarize affidavits, acknowledgements, jurats, power of attorney forms, real estate documents, and more.",
+    },
+    {
+      q: "Are you certified and insured?",
+      a: "Yes. We are NNA Certified and carry errors & omissions insurance.",
+    },
+    {
+      q: "Do you provide after-hours or emergency service?",
+      a: "Yes. After-hours and emergency appointments are available upon request and subject to availability.",
+    },
+  ];
+  // Track which FAQ item is expanded; only one can be open at a time
+  const [openIndex, setOpenIndex] = useState(null);
 
   // Trigger the fade-in shortly after initial render so the transition runs
   useEffect(() => {
     const timer = setTimeout(() => setFadeIn(true), 300);
     return () => clearTimeout(timer);
   }, []);
+
+  const toggleFaq = (index) => {
+    setOpenIndex((prev) => (prev === index ? null : index));
+  };
 
   return (
     <div
@@ -148,15 +176,12 @@ export default function LandingHero() {
               Estate Agents &bull; Financial Institutions &bull; Health &amp;
               Senior Care Providers &bull; Individuals with urgent or
               specialized needs
-          </p>
+            </p>
+          </div>
         </div>
-      </div>
-    </section>
-    {/* Mobile separator between Services and FAQ */}
-    <hr
-      aria-hidden="true"
-      className="border-neutral-700 sm:hidden"
-    />
+      </section>
+      {/* Mobile separator between Services and FAQ */}
+      <hr aria-hidden="true" className="border-neutral-700 sm:hidden" />
 
       {/* FAQ Section */}
       <section
@@ -168,60 +193,50 @@ export default function LandingHero() {
           <h2 className="mb-8 text-center text-3xl font-bold sm:mb-12">
             Frequently Asked Questions
           </h2>
-          <div className="space-y-6 sm:space-y-8">
-            <div className="rounded-lg bg-neutral-900 p-6 shadow-md">
-              <h3 className="text-left text-base sm:text-lg font-medium text-gray-100">
-                What do I need to bring to my notary appointment?
-              </h3>
-              <p className="mt-2 text-left text-base sm:text-lg text-gray-300">
-                A valid, government-issued photo ID is required for all
-                notarizations.
-              </p>
-            </div>
-            <div className="rounded-lg bg-neutral-900 p-6 shadow-md">
-              <h3 className="text-left text-base sm:text-lg font-medium text-gray-100">
-                Do you offer mobile notary services?
-              </h3>
-              <p className="mt-2 text-left text-base sm:text-lg text-gray-300">
-                Yes. We travel to your home, business, or public meeting
-                location in Bucks and Montgomery County.
-              </p>
-            </div>
-            <div className="rounded-lg bg-neutral-900 p-6 shadow-md">
-              <h3 className="text-left text-base sm:text-lg font-medium text-gray-100">
-                What types of documents can you notarize?
-              </h3>
-              <p className="mt-2 text-left text-base sm:text-lg text-gray-300">
-                We notarize affidavits, acknowledgements, jurats, power of
-                attorney forms, real estate documents, and more.
-              </p>
-            </div>
-            <div className="rounded-lg bg-neutral-900 p-6 shadow-md">
-              <h3 className="text-left text-base sm:text-lg font-medium text-gray-100">
-                Are you certified and insured?
-              </h3>
-              <p className="mt-2 text-left text-base sm:text-lg text-gray-300">
-                Yes. We are NNA Certified and carry errors & omissions
-                insurance.
-              </p>
-            </div>
-            <div className="rounded-lg bg-neutral-900 p-6 shadow-md">
-              <h3 className="text-left text-base sm:text-lg font-medium text-gray-100">
-                Do you provide after-hours or emergency service?
-              </h3>
-              <p className="mt-2 text-left text-base sm:text-lg text-gray-300">
-                Yes. After-hours and emergency appointments are available upon
-                request and subject to availability.
-              </p>
-            </div>
-          </div>
+          <dl className="space-y-6 sm:space-y-8">
+            {faqs.map(({ q, a }, idx) => (
+              <div key={q} className="rounded-lg bg-neutral-900 p-6 shadow-md">
+                <dt>
+                  <button
+                    type="button"
+                    aria-expanded={openIndex === idx}
+                    aria-controls={`faq-panel-${idx}`}
+                    onClick={() => toggleFaq(idx)}
+                    className="flex w-full items-center justify-between text-left text-base font-medium text-gray-100 sm:text-lg"
+                  >
+                    <span>{q}</span>
+                    <svg
+                      className={`ml-2 h-5 w-5 transform transition-transform duration-300 ${openIndex === idx ? "rotate-180" : ""}`}
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M19 9l-7 7-7-7"
+                      />
+                    </svg>
+                  </button>
+                </dt>
+                <dd
+                  id={`faq-panel-${idx}`}
+                  className={`mt-2 overflow-hidden transition-all duration-300 ${openIndex === idx ? "max-h-96" : "max-h-0"}`}
+                  aria-hidden={openIndex !== idx}
+                >
+                  <p className="text-left text-base sm:text-lg text-gray-300 pb-2">
+                    {a}
+                  </p>
+                </dd>
+              </div>
+            ))}
+          </dl>
         </div>
       </section>
-    {/* Mobile separator between FAQ and Contact */}
-    <hr
-      aria-hidden="true"
-      className="border-neutral-700 sm:hidden"
-    />
+      {/* Mobile separator between FAQ and Contact */}
+      <hr aria-hidden="true" className="border-neutral-700 sm:hidden" />
 
       {/* Contact Section */}
       <section
