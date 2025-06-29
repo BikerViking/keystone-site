@@ -50,7 +50,7 @@ export default function Header() {
   return (
     <header
       role="banner"
-      className={`sticky top-0 border-b border-gray-800 bg-neutral-900/80 backdrop-blur text-gray-200 transition-shadow duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 border-b border-gray-800 bg-neutral-900/80 backdrop-blur text-gray-200 transition-shadow duration-300 ${
         scrolled ? "shadow-sm" : "shadow-none"
       }`}
     >
