@@ -59,7 +59,7 @@ export default function Header() {
         role="presentation"
         aria-hidden={!open}
         aria-label="Menu overlay"
-        className={`sm:hidden fixed inset-0 z-40 bg-black/80 transition-opacity duration-300 ${
+        className={`sm:hidden fixed inset-0 z-[9999] bg-black/80 transition-opacity duration-300 ${
           open ? "opacity-100" : "pointer-events-none opacity-0"
         }`}
         onClick={closeMenu}
