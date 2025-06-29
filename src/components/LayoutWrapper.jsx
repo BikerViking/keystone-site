@@ -71,7 +71,27 @@ export default function LayoutWrapper({ children, fullWidth = false }) {
                 "contactType": "customer service",
                 "telephone": "+1-267-309-9000",
                 "email": "appointments@keystonenotarygroup.com"
-              }
+              },
+              "openingHoursSpecification": [
+                {
+                  "@type": "OpeningHoursSpecification",
+                  "dayOfWeek": [
+                    "Monday",
+                    "Tuesday",
+                    "Wednesday",
+                    "Thursday",
+                    "Friday"
+                  ],
+                  "opens": "09:00",
+                  "closes": "17:00"
+                },
+                {
+                  "@type": "OpeningHoursSpecification",
+                  "dayOfWeek": "Saturday",
+                  "opens": "10:00",
+                  "closes": "14:00"
+                }
+              ]
             }
           `}
         </script>
