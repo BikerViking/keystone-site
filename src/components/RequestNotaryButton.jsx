@@ -42,7 +42,7 @@ export default function RequestNotaryButton() {
         type="button"
         onClick={handleClick}
         aria-label="Request Notary"
-        className="pointer-events-auto w-full bg-blue-600 text-white text-center py-4 rounded-md shadow-lg text-lg font-semibold transition hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400"
+        className="pointer-events-auto w-full bg-blue-600 text-white text-center py-4 rounded-md shadow-lg text-lg font-semibold transition-transform duration-300 ease-in-out hover:scale-105 active:scale-95 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400"
       >
         Request Notary
       </button>

@@ -65,7 +65,7 @@ export default function Header() {
           aria-controls="mobile-menu"
           aria-expanded={open}
           onClick={toggleMenu}
-          className="rounded border border-gray-600 px-6 min-h-[48px] py-1 text-xs uppercase tracking-wide text-gray-200 transition hover:shadow-xl active:shadow-none focus:outline-none focus:ring-2 focus:ring-blue-600 sm:hidden"
+          className="rounded border border-gray-600 px-6 min-h-[48px] py-1 text-xs uppercase tracking-wide text-gray-200 transition-transform duration-300 ease-in-out hover:-translate-y-0.5 hover:shadow-md active:shadow-none focus:outline-none focus:ring-2 focus:ring-blue-600 sm:hidden"
         >
           Menu
         </button>
@@ -106,7 +106,7 @@ export default function Header() {
                 to="/"
                 onClick={closeMenu}
                 className={({ isActive }) =>
-                  `block px-2 py-1 transition hover:text-blue-400${isActive ? " underline text-blue-400" : ""}`
+                  `block px-2 py-1 transition-transform duration-300 ease-in-out hover:-translate-y-0.5 hover:text-blue-400${isActive ? " underline text-blue-400" : ""}`
                 }
               >
                 Home
@@ -117,7 +117,7 @@ export default function Header() {
                 to="/services"
                 onClick={closeMenu}
                 className={({ isActive }) =>
-                  `block px-2 py-1 transition hover:text-blue-400${isActive ? " underline text-blue-400" : ""}`
+                  `block px-2 py-1 transition-transform duration-300 ease-in-out hover:-translate-y-0.5 hover:text-blue-400${isActive ? " underline text-blue-400" : ""}`
                 }
               >
                 Services
@@ -128,7 +128,7 @@ export default function Header() {
                 to="/faq"
                 onClick={closeMenu}
                 className={({ isActive }) =>
-                  `block px-2 py-1 transition hover:text-blue-400${isActive ? " underline text-blue-400" : ""}`
+                  `block px-2 py-1 transition-transform duration-300 ease-in-out hover:-translate-y-0.5 hover:text-blue-400${isActive ? " underline text-blue-400" : ""}`
                 }
               >
                 FAQ
@@ -140,7 +140,7 @@ export default function Header() {
                 onClick={closeMenu}
                 ref={lastRef}
                 className={({ isActive }) =>
-                  `block px-2 py-1 transition hover:text-blue-400${isActive ? " underline text-blue-400" : ""}`
+                  `block px-2 py-1 transition-transform duration-300 ease-in-out hover:-translate-y-0.5 hover:text-blue-400${isActive ? " underline text-blue-400" : ""}`
                 }
               >
                 Contact

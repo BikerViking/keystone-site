@@ -1,16 +1,20 @@
 import React from "react";
+import useScrollReveal from "../hooks/useScrollReveal";
 import LayoutWrapper from "../components/LayoutWrapper";
 
 export default function AboutPage() {
+  const [ref, visible] = useScrollReveal();
   return (
     <LayoutWrapper>
       <section
         aria-label="About"
-        className="bg-neutral-900 mx-auto max-w-screen-lg px-4 py-12 lg:py-20 text-gray-200 sm:px-6 lg:px-8"
+        ref={ref}
+        className={`bg-neutral-900 mx-auto max-w-screen-lg px-4 py-12 lg:py-20 text-gray-200 sm:px-6 lg:px-8 opacity-0 translate-y-6 transition-all duration-700 ease-in-out ${visible ? "opacity-100 translate-y-0" : ""}`}
       >
-        <h1 className="mb-8 text-center">
+        <h1 className="mb-2 text-center">
           About Keystone Notary Group
         </h1>
+        <div aria-hidden="true" className="border-t border-gray-600 w-12 mx-auto mt-4 opacity-60" />
         <p className="mx-auto max-w-prose text-left text-base sm:text-lg text-gray-300">
           Keystone Notary Group, LLC is a mobile notary service dedicated to professionalism,
           punctuality, and privacy. We provide document notarization services throughout Bucks

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import LayoutWrapper from "../components/LayoutWrapper";
+import useScrollReveal from "../hooks/useScrollReveal";
 
 export default function FaqPage() {
   const faqs = [
@@ -34,15 +35,18 @@ export default function FaqPage() {
     setOpenIndex((prev) => (prev === index ? null : index));
   };
 
+  const [ref, visible] = useScrollReveal();
   return (
     <LayoutWrapper>
       <section
         aria-label="Frequently Asked Questions"
-        className="bg-neutral-900 rounded-t-[3rem] mx-auto max-w-screen-lg px-4 py-12 lg:py-20 text-gray-200 sm:px-6 lg:px-8"
+        ref={ref}
+        className={`bg-neutral-900 rounded-t-[3rem] mx-auto max-w-screen-lg px-4 py-12 lg:py-20 text-gray-200 sm:px-6 lg:px-8 opacity-0 translate-y-6 transition-all duration-700 ease-in-out ${visible ? "opacity-100 translate-y-0" : ""}`}
       >
-        <h1 className="mb-8 text-center">
+        <h1 className="mb-2 text-center">
           Frequently Asked Questions
         </h1>
+        <div aria-hidden="true" className="border-t border-gray-600 w-12 mx-auto mt-4 opacity-60" />
         <dl className="space-y-6 sm:space-y-8">
           {faqs.map(({ q, a }, idx) => (
             <div key={q} className="rounded bg-neutral-800 p-4 sm:p-6 shadow-sm">
@@ -86,7 +90,7 @@ export default function FaqPage() {
           </h2>
           <Link
             to="/contact#contact"
-            className="inline-block min-h-[48px] rounded-md bg-blue-600 px-6 py-2 font-semibold text-white shadow transition-colors hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-neutral-900"
+            className="inline-block min-h-[48px] rounded-md bg-blue-600 px-6 py-2 font-semibold text-white shadow transition-transform duration-300 ease-in-out hover:-translate-y-0.5 hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-neutral-900"
           >
             Contact Us
           </Link>
