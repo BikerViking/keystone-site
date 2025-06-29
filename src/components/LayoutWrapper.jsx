@@ -4,6 +4,7 @@ import Header from "./Header";
 import Footer from "./Footer";
 import Certifications from "./Certifications";
 import BackToTopButton from "./BackToTopButton";
+import RequestNotaryButton from "./RequestNotaryButton";
 
 export default function LayoutWrapper({ children, fullWidth = false }) {
   return (
@@ -88,6 +89,8 @@ export default function LayoutWrapper({ children, fullWidth = false }) {
       </main>
       <Certifications />
       <Footer />
+      {/* Floating quick access button for mobile devices */}
+      <RequestNotaryButton />
       <BackToTopButton />
     </div>
   );
