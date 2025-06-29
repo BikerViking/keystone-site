@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import useScrollReveal from "../hooks/useScrollReveal";
 
 export default function LandingHero() {
   // Map labels to in-page anchor targets
@@ -37,6 +38,13 @@ export default function LandingHero() {
   // Track which FAQ item is expanded; only one can be open at a time
   const [openIndex, setOpenIndex] = useState(null);
 
+  const [homeRef, homeVisible] = useScrollReveal();
+  const [aboutRef, aboutVisible] = useScrollReveal();
+  const [servicesRef, servicesVisible] = useScrollReveal();
+  const [areaRef, areaVisible] = useScrollReveal();
+  const [faqRef, faqVisible] = useScrollReveal();
+  const [contactRef, contactVisible] = useScrollReveal();
+
   // Trigger the fade-in shortly after initial render so the transition runs
   useEffect(() => {
     const timer = setTimeout(() => setFadeIn(true), 300);
@@ -55,7 +63,8 @@ export default function LandingHero() {
     >
       <section
         id="home"
-        className="relative flex min-h-screen w-full flex-col items-center justify-center bg-black text-gray-200 overflow-hidden py-12 lg:py-20"
+        ref={homeRef}
+        className={`relative flex min-h-screen w-full flex-col items-center justify-center bg-black text-gray-200 overflow-hidden py-12 lg:py-20 opacity-0 translate-y-6 transition-all duration-700 ease-in-out ${homeVisible ? "opacity-100 translate-y-0" : ""}`}
       >
         <div
           className="absolute inset-0 z-0 bg-cover bg-center opacity-40"
@@ -83,7 +92,7 @@ export default function LandingHero() {
                   <li key={label}>
                     <a
                       href={href}
-                      className="block rounded px-2 py-1 transition hover:shadow-xl hover:text-amber-300 focus:text-amber-300"
+                      className="block rounded px-2 py-1 transition-transform duration-300 ease-in-out hover:-translate-y-0.5 hover:shadow-md hover:text-amber-300 focus:text-amber-300"
                     >
                       {label}
                     </a>
@@ -97,13 +106,15 @@ export default function LandingHero() {
       {/* About Section */}
       <section
         id="about"
+        ref={aboutRef}
         aria-label="About"
-        className="flex min-h-screen w-full flex-col items-center justify-center bg-neutral-900 px-4 py-12 lg:py-20 text-gray-200 sm:px-6 lg:px-8"
+        className={`flex min-h-screen w-full flex-col items-center justify-center bg-neutral-900 px-4 py-12 lg:py-20 text-gray-200 sm:px-6 lg:px-8 opacity-0 translate-y-6 transition-all duration-700 ease-in-out ${aboutVisible ? "opacity-100 translate-y-0" : ""}`}
       >
         <div className="mx-auto max-w-screen-lg text-center">
-          <h2 className="mb-8 sm:mb-12">
+          <h2 className="mb-2 sm:mb-4">
             About Keystone Notary Group
           </h2>
+          <div aria-hidden="true" className="border-t border-gray-600 w-12 mx-auto mt-4 opacity-60" />
           {/* Ensure readability on small screens */}
           <p className="mx-auto max-w-prose text-base sm:text-lg text-gray-300">
             Keystone Notary Group, LLC is a mobile notary service dedicated to
@@ -136,13 +147,15 @@ export default function LandingHero() {
       {/* Services Section */}
       <section
         id="services"
+        ref={servicesRef}
         aria-label="Services"
-        className="flex min-h-screen w-full flex-col items-center justify-center bg-gray-950 px-4 py-12 lg:py-20 text-gray-200 sm:px-6 lg:px-8"
+        className={`flex min-h-screen w-full flex-col items-center justify-center bg-gray-950 px-4 py-12 lg:py-20 text-gray-200 sm:px-6 lg:px-8 opacity-0 translate-y-6 transition-all duration-700 ease-in-out ${servicesVisible ? "opacity-100 translate-y-0" : ""}`}
       >
         <div className="mx-auto w-full max-w-screen-lg">
-          <h2 className="mb-8 text-center sm:mb-12">
+          <h2 className="mb-2 text-center sm:mb-4">
             Our Services
           </h2>
+          <div aria-hidden="true" className="border-t border-gray-600 w-12 mx-auto mt-4 opacity-60" />
           <div className="space-y-8">
             {/* Add subtle dividers between list items for improved readability */}
             <ul className="list-disc list-inside divide-y divide-gray-400/20 space-y-4 text-left text-base sm:text-lg text-gray-300">
@@ -184,11 +197,13 @@ export default function LandingHero() {
       {/* Service Area Section */}
       <section
         id="service-area"
+        ref={areaRef}
         aria-label="Service Area"
-        className="flex min-h-screen w-full flex-col items-center justify-center bg-neutral-900 px-4 py-12 lg:py-20 text-gray-200 sm:px-6 lg:px-8"
+        className={`flex min-h-screen w-full flex-col items-center justify-center bg-neutral-900 px-4 py-12 lg:py-20 text-gray-200 sm:px-6 lg:px-8 opacity-0 translate-y-6 transition-all duration-700 ease-in-out ${areaVisible ? "opacity-100 translate-y-0" : ""}`}
       >
         <div className="mx-auto w-full max-w-screen-lg text-center">
-          <h2 className="mb-8 sm:mb-12">Service Area</h2>
+          <h2 className="mb-2 sm:mb-4">Service Area</h2>
+          <div aria-hidden="true" className="border-t border-gray-600 w-12 mx-auto mt-4 opacity-60" />
           <p className="mb-8 text-base sm:text-lg text-gray-300">
             We proudly serve Bucks and Montgomery County, Pennsylvania.
           </p>
@@ -207,13 +222,15 @@ export default function LandingHero() {
       {/* FAQ Section */}
       <section
         id="faq"
+        ref={faqRef}
         aria-label="Frequently Asked Questions"
-        className="flex min-h-screen w-full flex-col items-center justify-center bg-neutral-900 rounded-t-[3rem] px-4 py-12 lg:py-20 text-gray-200 sm:px-6 lg:px-8"
+        className={`flex min-h-screen w-full flex-col items-center justify-center bg-neutral-900 rounded-t-[3rem] px-4 py-12 lg:py-20 text-gray-200 sm:px-6 lg:px-8 opacity-0 translate-y-6 transition-all duration-700 ease-in-out ${faqVisible ? "opacity-100 translate-y-0" : ""}`}
       >
         <div className="mx-auto w-full max-w-screen-lg">
-          <h2 className="mb-8 text-center sm:mb-12">
+          <h2 className="mb-2 text-center sm:mb-4">
             Frequently Asked Questions
           </h2>
+          <div aria-hidden="true" className="border-t border-gray-600 w-12 mx-auto mt-4 opacity-60" />
           <dl className="space-y-6 sm:space-y-8">
             {faqs.map(({ q, a }, idx) => (
               <div key={q} className="rounded-lg bg-neutral-900 p-6 shadow-md">
@@ -262,13 +279,15 @@ export default function LandingHero() {
       {/* Contact Section */}
       <section
         id="contact"
+        ref={contactRef}
         aria-label="Contact"
-        className="flex min-h-screen w-full flex-col items-center justify-center bg-gray-950 rounded-t-[3rem] px-4 py-12 lg:py-20 text-gray-200 sm:px-6 lg:px-8"
+        className={`flex min-h-screen w-full flex-col items-center justify-center bg-gray-950 rounded-t-[3rem] px-4 py-12 lg:py-20 text-gray-200 sm:px-6 lg:px-8 opacity-0 translate-y-6 transition-all duration-700 ease-in-out ${contactVisible ? "opacity-100 translate-y-0" : ""}`}
       >
         <div className="mx-auto w-full max-w-screen-lg">
-          <h2 className="mb-8 text-center sm:mb-12">
+          <h2 className="mb-2 text-center sm:mb-4">
             Contact
           </h2>
+          <div aria-hidden="true" className="border-t border-gray-600 w-12 mx-auto mt-4 opacity-60" />
           <form
             onSubmit={(e) => e.preventDefault()}
             className="space-y-6 sm:space-y-8"
@@ -313,7 +332,7 @@ export default function LandingHero() {
               <button
                 type="submit"
                 aria-label="Send Message"
-                className="rounded-md bg-gradient-to-r from-blue-600 to-indigo-600 px-6 min-h-[48px] py-2 font-semibold text-white transition transform hover:scale-105 active:scale-95 hover:from-blue-700 hover:to-indigo-700 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-neutral-900"
+                className="rounded-md bg-gradient-to-r from-blue-600 to-indigo-600 px-6 min-h-[48px] py-2 font-semibold text-white transition-transform duration-300 ease-in-out hover:scale-105 active:scale-95 hover:from-blue-700 hover:to-indigo-700 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-neutral-900"
               >
                 Send Message
               </button>
@@ -335,7 +354,7 @@ export default function LandingHero() {
               <strong>Phone:</strong>{" "}
               <a
                 href="tel:2673099000"
-                className="text-blue-400 transition hover:text-blue-300 hover:shadow-xl"
+                className="text-blue-400 transition-transform duration-300 ease-in-out hover:-translate-y-0.5 hover:text-blue-300 hover:shadow-md"
                 aria-label="Call 267-309-9000"
               >
                 (267) 309-9000
@@ -345,7 +364,7 @@ export default function LandingHero() {
               <strong>Email:</strong>{" "}
               <a
                 href="mailto:appointments@keystonenotarygroup.com"
-                className="text-blue-400 transition hover:text-blue-300 hover:shadow-xl"
+                className="text-blue-400 transition-transform duration-300 ease-in-out hover:-translate-y-0.5 hover:text-blue-300 hover:shadow-md"
               >
                 appointments@keystonenotarygroup.com
               </a>

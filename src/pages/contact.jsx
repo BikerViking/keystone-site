@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import LayoutWrapper from "../components/LayoutWrapper";
+import useScrollReveal from "../hooks/useScrollReveal";
 
 export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
@@ -13,16 +14,19 @@ export default function ContactPage() {
     setSubmitted(true);
   };
 
+  const [ref, visible] = useScrollReveal();
   return (
     <LayoutWrapper>
       <section
         id="contact"
+        ref={ref}
         aria-label="Contact"
-        className="bg-gray-950 mx-auto max-w-screen-lg px-4 py-12 lg:py-20 text-gray-200 sm:px-6 lg:px-8"
+        className={`bg-gray-950 mx-auto max-w-screen-lg px-4 py-12 lg:py-20 text-gray-200 sm:px-6 lg:px-8 opacity-0 translate-y-6 transition-all duration-700 ease-in-out ${visible ? "opacity-100 translate-y-0" : ""}`}
       >
-        <h1 className="mb-8 text-center">
+        <h1 className="mb-2 text-center">
           Contact
         </h1>
+        <div aria-hidden="true" className="border-t border-gray-600 w-12 mx-auto mt-4 opacity-60" />
         <form onSubmit={handleSubmit} className="space-y-6 sm:space-y-8">
           <div>
             <label htmlFor="name" className="block text-sm font-medium">
@@ -64,7 +68,7 @@ export default function ContactPage() {
             <button
               type="submit"
               aria-label="Send Message"
-              className="rounded-md bg-gradient-to-r from-blue-600 to-indigo-600 px-6 min-h-[48px] py-2 font-semibold text-white transition transform hover:scale-105 active:scale-95 hover:from-blue-700 hover:to-indigo-700 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-neutral-900"
+              className="rounded-md bg-gradient-to-r from-blue-600 to-indigo-600 px-6 min-h-[48px] py-2 font-semibold text-white transition-transform duration-300 ease-in-out hover:scale-105 active:scale-95 hover:from-blue-700 hover:to-indigo-700 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-neutral-900"
             >
               Send Message
             </button>
@@ -95,7 +99,7 @@ export default function ContactPage() {
             <strong>Phone:</strong>{" "}
             <a
               href="tel:2673099000"
-              className="text-blue-400 hover:text-blue-300"
+              className="text-blue-400 transition-transform duration-300 ease-in-out hover:-translate-y-0.5 hover:text-blue-300"
               aria-label="Call 267-309-9000"
             >
               (267) 309-9000
@@ -105,7 +109,7 @@ export default function ContactPage() {
             <strong>Email:</strong>{" "}
             <a
               href="mailto:appointments@keystonenotarygroup.com"
-              className="text-blue-400 hover:text-blue-300"
+              className="text-blue-400 transition-transform duration-300 ease-in-out hover:-translate-y-0.5 hover:text-blue-300"
             >
               appointments@keystonenotarygroup.com
             </a>

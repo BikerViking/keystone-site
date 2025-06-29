@@ -1,16 +1,20 @@
 import React from "react";
 import LayoutWrapper from "../components/LayoutWrapper";
+import useScrollReveal from "../hooks/useScrollReveal";
 
 export default function ServicesPage() {
+  const [ref, visible] = useScrollReveal();
   return (
     <LayoutWrapper>
       <section
         aria-label="Services"
-        className="bg-black mx-auto max-w-screen-lg px-4 py-12 lg:py-20 text-gray-200 sm:px-6 lg:px-8"
+        ref={ref}
+        className={`bg-black mx-auto max-w-screen-lg px-4 py-12 lg:py-20 text-gray-200 sm:px-6 lg:px-8 opacity-0 translate-y-6 transition-all duration-700 ease-in-out ${visible ? "opacity-100 translate-y-0" : ""}`}
       >
-        <h1 className="mb-8 text-center">
+        <h1 className="mb-2 text-center">
           Our Services
         </h1>
+        <div aria-hidden="true" className="border-t border-gray-600 w-12 mx-auto mt-4 opacity-60" />
 
         <div className="space-y-8">
           {/* Add subtle dividers between list items for improved readability */}

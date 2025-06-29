@@ -10,7 +10,7 @@ export default function NavigationBar() {
         <span className="text-lg font-bold text-white">Keystone Notary Group</span>
         <button
           type="button"
-          className="rounded-md bg-white px-6 min-h-[48px] py-2 text-sm font-semibold text-neutral-950 transition hover:bg-neutral-100 hover:shadow-xl active:shadow-none"
+          className="rounded-md bg-white px-6 min-h-[48px] py-2 text-sm font-semibold text-neutral-950 transition-transform duration-300 ease-in-out hover:-translate-y-0.5 hover:bg-neutral-100 hover:shadow-md active:shadow-none"
         >
           Schedule a Signing
         </button>
