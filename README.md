@@ -5,6 +5,13 @@ This is a small React site styled with Tailwind CSS.
 The application includes basic Progressive Web App (PWA) support with an
 offline-capable service worker and web app manifest.
 
+## Analytics
+
+Google Analytics 4 tracking is included with privacy-friendly defaults. Update
+the measurement ID in `public/index.html` and adjust consent logic as needed.
+Optional snippets for Hotjar or Microsoft Clarity are also provided in the head
+section but are disabled by default.
+
 ## Requirements
 
 - Node.js 18 or later
