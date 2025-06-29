@@ -37,5 +37,5 @@ test('adds shadow when page is scrolled', () => {
   window.scrollY = 100;
   fireEvent.scroll(window);
 
-  expect(header.className).toMatch(/shadow-md/);
+  expect(header.className).toMatch(/shadow-sm/);
 });

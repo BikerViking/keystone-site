@@ -21,7 +21,7 @@ export default function Header() {
     }
   }, [open]);
 
-  // Toggle a shadow once the user scrolls down the page
+  // Toggle a subtle shadow once the user scrolls down the page
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 0);
@@ -51,7 +51,7 @@ export default function Header() {
     <header
       role="banner"
       className={`sticky top-0 border-b border-gray-800 bg-neutral-900/80 backdrop-blur text-gray-200 transition-shadow duration-300 ${
-        scrolled ? "shadow-md" : "shadow-none"
+        scrolled ? "shadow-sm" : "shadow-none"
       }`}
     >
       <div className="mx-auto flex max-w-screen-xl flex-wrap items-center justify-center gap-4 px-4 py-2 sm:flex-nowrap sm:justify-between sm:px-6 sm:py-3">
