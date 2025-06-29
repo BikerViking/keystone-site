@@ -39,6 +39,41 @@ export default function LayoutWrapper({ children, fullWidth = false }) {
           content="Professional mobile notary services in Bucks and Montgomery County, PA. Certified, punctual, and NNA insured."
         />
         <meta name="twitter:image" content="/logo.PNG" />
+        <script type="application/ld+json">
+          {`
+            {
+              "@context": "https://schema.org",
+              "@type": "LocalBusiness",
+              "name": "Keystone Notary Group, LLC",
+              "image": "/logo.PNG",
+              "url": "https://www.keystonenotarygroup.com/",
+              "telephone": "+1-267-309-9000",
+              "email": "appointments@keystonenotarygroup.com",
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Bucks County",
+                "addressRegion": "PA",
+                "addressCountry": "US"
+              },
+              "areaServed": [
+                {
+                  "@type": "AdministrativeArea",
+                  "name": "Bucks County, PA"
+                },
+                {
+                  "@type": "AdministrativeArea",
+                  "name": "Montgomery County, PA"
+                }
+              ],
+              "contactPoint": {
+                "@type": "ContactPoint",
+                "contactType": "customer service",
+                "telephone": "+1-267-309-9000",
+                "email": "appointments@keystonenotarygroup.com"
+              }
+            }
+          `}
+        </script>
       </Helmet>
       <Header />
       <main
