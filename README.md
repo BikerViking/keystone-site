@@ -2,6 +2,9 @@
 
 This is a small React site styled with Tailwind CSS.
 
+The application includes basic Progressive Web App (PWA) support with an
+offline-capable service worker and web app manifest.
+
 ## Requirements
 
 - Node.js 18 or later
