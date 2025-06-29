@@ -4,7 +4,7 @@ export default function Certifications() {
   return (
     <section className="bg-gray-950 text-gray-200 py-12">
       <div className="mx-auto max-w-screen-lg px-4">
-        <h2 className="mb-8 text-2xl font-semibold text-center">
+        <h2 className="mb-8 text-center">
           Certifications & Credentials
         </h2>
         <ul

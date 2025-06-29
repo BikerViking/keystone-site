@@ -38,9 +38,9 @@ export default function FaqPage() {
     <LayoutWrapper>
       <section
         aria-label="Frequently Asked Questions"
-        className="bg-neutral-900 mx-auto max-w-screen-lg px-4 py-12 lg:py-20 text-gray-200 sm:px-6 lg:px-8"
+        className="bg-neutral-900 rounded-t-[3rem] mx-auto max-w-screen-lg px-4 py-12 lg:py-20 text-gray-200 sm:px-6 lg:px-8"
       >
-        <h1 className="mb-8 text-center font-extrabold">
+        <h1 className="mb-8 text-center">
           Frequently Asked Questions
         </h1>
         <dl className="space-y-6 sm:space-y-8">
@@ -81,7 +81,7 @@ export default function FaqPage() {
           ))}
         </dl>
         <div className="mt-12 rounded-lg border border-blue-500/30 bg-neutral-800 p-6 text-center shadow-inner">
-          <h2 className="mb-4 font-bold text-gray-100">
+          <h2 className="mb-4 text-gray-100">
             Still have questions?
           </h2>
           <Link
