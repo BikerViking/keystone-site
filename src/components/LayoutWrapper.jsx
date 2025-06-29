@@ -9,7 +9,7 @@ import RequestNotaryButton from "./RequestNotaryButton";
 export default function LayoutWrapper({ children, fullWidth = false }) {
   return (
     <div
-      className="scroll-smooth relative flex min-h-screen w-full flex-col overflow-hidden brightness-125 contrast-110 text-gray-200 before:absolute before:inset-0 before:-z-10 before:pointer-events-none before:bg-[radial-gradient(circle,rgba(255,255,255,0.05)_1px,transparent_1px)] before:bg-[length:50px_50px]"
+      className="scroll-smooth relative flex min-h-screen w-full flex-col overflow-x-hidden brightness-125 contrast-110 text-gray-200 before:absolute before:inset-0 before:-z-10 before:pointer-events-none before:bg-[radial-gradient(circle,rgba(255,255,255,0.05)_1px,transparent_1px)] before:bg-[length:50px_50px]"
       /* Ensure pages share consistent textured background */
       style={{ backgroundImage: "url('/bg-texture.PNG')" }}
     >
