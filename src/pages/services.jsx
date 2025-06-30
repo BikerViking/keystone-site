@@ -19,27 +19,31 @@ export default function ServicesPage() {
         <div className="space-y-8">
           {/* Add subtle dividers between list items for improved readability */}
           <ul className="list-disc list-inside divide-y divide-gray-400/20 space-y-4 text-left text-base sm:text-lg text-gray-300">
-            <li>
-              General notary work including acknowledgments, oaths,
-              affirmations, and signature witnessing
-            </li>
-            <li>
-              Loan signing services for real estate closings, refinances, and
-              mortgage documents
-            </li>
-            <li>Power of attorney, wills, and estate planning notarizations</li>
-            <li>
-              Real estate transaction support for buyers, sellers, and agents
-            </li>
-            <li>
-              After-hours and emergency appointments
-              <span className="italic"> (additional surcharge applies)</span>
-            </li>
-            <li>
-              Mobile services to homes, offices, hospitals, financial
-              institutions, attorney offices, senior care facilities, and public
-              meeting locations
-            </li>
+            {[
+              'General notary work including acknowledgments, oaths, affirmations, and signature witnessing',
+              'Loan signing services for real estate closings, refinances, and mortgage documents',
+              'Power of attorney, wills, and estate planning notarizations',
+              'Real estate transaction support for buyers, sellers, and agents',
+              'After-hours and emergency appointments',
+              'Mobile services to homes, offices, hospitals, financial institutions, attorney offices, senior care facilities, and public meeting locations',
+            ].map((text, idx) => (
+              <li
+                key={idx}
+                className={`opacity-0 translate-y-3 transition-all duration-700 ease-in-out ${
+                  visible ? 'opacity-100 translate-y-0' : ''
+                }`}
+                style={{ transitionDelay: `${idx * 100}ms` }}
+              >
+                {text.includes('After-hours') ? (
+                  <>
+                    After-hours and emergency appointments
+                    <span className="italic"> (additional surcharge applies)</span>
+                  </>
+                ) : (
+                  text
+                )}
+              </li>
+            ))}
           </ul>
         </div>
 

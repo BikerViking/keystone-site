@@ -95,28 +95,46 @@ export default function ContactPage() {
           Please mention the type of document or notarization service you are requesting.
         </p>
         <div className="mt-4 space-y-2 text-base sm:text-lg text-gray-300">
-          <p>
-            <strong>Phone:</strong>{" "}
-            <a
-              href="tel:2673099000"
-              className="text-blue-400 transition-transform duration-300 ease-in-out hover:-translate-y-0.5 hover:text-blue-300"
-              aria-label="Call 267-309-9000"
+          {[
+            (
+              <>
+                <strong>Phone:</strong>{' '}
+                <a
+                  href="tel:2673099000"
+                  className="text-blue-400 transition-transform duration-300 ease-in-out hover:-translate-y-0.5 hover:text-blue-300"
+                  aria-label="Call 267-309-9000"
+                >
+                  (267) 309-9000
+                </a>
+              </>
+            ),
+            (
+              <>
+                <strong>Email:</strong>{' '}
+                <a
+                  href="mailto:appointments@keystonenotarygroup.com"
+                  className="text-blue-400 transition-transform duration-300 ease-in-out hover:-translate-y-0.5 hover:text-blue-300"
+                >
+                  appointments@keystonenotarygroup.com
+                </a>
+              </>
+            ),
+            (
+              <>
+                <strong>Service Area:</strong> Bucks and Montgomery County, PA
+              </>
+            ),
+          ].map((node, idx) => (
+            <p
+              key={idx}
+              className={`opacity-0 translate-y-3 transition-all duration-700 ease-in-out ${
+                visible ? 'opacity-100 translate-y-0' : ''
+              }`}
+              style={{ transitionDelay: `${idx * 100}ms` }}
             >
-              (267) 309-9000
-            </a>
-          </p>
-          <p>
-            <strong>Email:</strong>{" "}
-            <a
-              href="mailto:appointments@keystonenotarygroup.com"
-              className="text-blue-400 transition-transform duration-300 ease-in-out hover:-translate-y-0.5 hover:text-blue-300"
-            >
-              appointments@keystonenotarygroup.com
-            </a>
-          </p>
-          <p>
-            <strong>Service Area:</strong> Bucks and Montgomery County, PA
-          </p>
+              {node}
+            </p>
+          ))}
         </div>
       </section>
     </LayoutWrapper>
