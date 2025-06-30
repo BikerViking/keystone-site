@@ -155,7 +155,7 @@ export default function LandingHero() {
         id="services"
         ref={servicesRef}
         aria-label="Services"
-        className={`flex min-h-screen w-full flex-col items-center justify-center bg-gray-950 px-4 py-12 lg:py-20 text-gray-200 sm:px-6 lg:px-8 opacity-0 translate-y-6 transition-all duration-700 ease-in-out ${servicesVisible ? "opacity-100 translate-y-0" : ""}`}
+        className={`flex min-h-screen w-full flex-col items-center justify-center bg-gray-950 paper-texture px-4 py-12 lg:py-20 text-gray-200 sm:px-6 lg:px-8 opacity-0 translate-y-6 transition-all duration-700 ease-in-out ${servicesVisible ? "opacity-100 translate-y-0" : ""}`}
       >
         <div className="mx-auto w-full max-w-screen-lg">
           <h2 className="mb-2 text-center sm:mb-4">
@@ -295,7 +295,7 @@ export default function LandingHero() {
         id="contact"
         ref={contactRef}
         aria-label="Contact"
-        className={`flex min-h-screen w-full flex-col items-center justify-center bg-gray-950 rounded-t-[3rem] px-4 py-12 lg:py-20 text-gray-200 sm:px-6 lg:px-8 opacity-0 translate-y-6 transition-all duration-700 ease-in-out ${contactVisible ? "opacity-100 translate-y-0" : ""}`}
+        className={`flex min-h-screen w-full flex-col items-center justify-center bg-gray-950 paper-texture rounded-t-[3rem] px-4 py-12 lg:py-20 text-gray-200 sm:px-6 lg:px-8 opacity-0 translate-y-6 transition-all duration-700 ease-in-out ${contactVisible ? "opacity-100 translate-y-0" : ""}`}
       >
         <div className="mx-auto w-full max-w-screen-lg">
           <h2 className="mb-2 text-center sm:mb-4">
