@@ -77,15 +77,21 @@ export default function LandingHero() {
         ></div>
 
         <div className="relative z-10 mx-auto w-full max-w-screen-md px-4 py-12 lg:py-20 text-center">
-          <div className="flex flex-col items-center">
+          <div
+            className="flex flex-col items-center border-b border-gray-800 bg-gradient-to-b from-black via-gray-950 to-transparent pb-4 pt-4"
+          >
             <img
               src="/logo.PNG"
               alt="Keystone Notary Group logo"
-              className="mx-auto w-40 sm:w-52 md:w-64"
+              className="mx-auto mb-4 w-32 sm:w-36 md:w-40"
             />
-            <nav
-              className="mt-8 sm:mt-10 border-b border-gray-700 pb-4 shadow-md"
-              aria-label="Main navigation"
+            <p className="text-xs uppercase tracking-wide text-gray-400">
+              Mobile Notary Services • Pennsylvania
+            </p>
+          </div>
+          <nav
+            className="mt-8 sm:mt-10 border-b border-gray-700 pb-4 shadow-md"
+            aria-label="Main navigation"
             >
               <ul className="flex flex-col items-center space-y-3 sm:space-y-6 text-sm sm:text-base font-medium uppercase text-gray-300">
                 {navItems.map(({ label, href }, idx) => (
@@ -107,7 +113,6 @@ export default function LandingHero() {
               </ul>
             </nav>
           </div>
-        </div>
       </section>
       {/* About Section */}
       <section
