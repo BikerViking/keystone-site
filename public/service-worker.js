@@ -3,7 +3,8 @@ const URLS_TO_CACHE = [
   '/',
   '/index.html',
   '/logo.PNG',
-  '/manifest.json'
+  '/manifest.json',
+  '/checklist.pdf'
 ];
 
 self.addEventListener('install', event => {

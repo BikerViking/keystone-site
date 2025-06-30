@@ -184,6 +184,13 @@ export default function ContactPage() {
             <li>Any witnesses required</li>
             <li>Payment method (if applicable)</li>
           </ul>
+          <a
+            href="/checklist.pdf"
+            download
+            className="mt-2 inline-block text-sm text-blue-400 underline hover:text-blue-300"
+          >
+            📄 Download Appointment Checklist (PDF)
+          </a>
         </div>
       </section>
     </LayoutWrapper>
