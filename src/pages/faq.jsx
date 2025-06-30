@@ -49,7 +49,13 @@ export default function FaqPage() {
         <div aria-hidden="true" className="border-t border-gray-600 w-12 mx-auto mt-4 opacity-60" />
         <dl className="space-y-6 sm:space-y-8">
           {faqs.map(({ q, a }, idx) => (
-            <div key={q} className="rounded bg-neutral-800 p-4 sm:p-6 shadow-sm">
+            <div
+              key={q}
+              className={`rounded bg-neutral-800 p-4 sm:p-6 shadow-sm opacity-0 translate-y-3 transition-all duration-700 ease-in-out ${
+                visible ? 'opacity-100 translate-y-0' : ''
+              }`}
+              style={{ transitionDelay: `${idx * 100}ms` }}
+            >
               <dt>
                 <button
                   type="button"

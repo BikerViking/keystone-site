@@ -88,8 +88,14 @@ export default function LandingHero() {
               aria-label="Main navigation"
             >
               <ul className="flex flex-col items-center space-y-3 sm:space-y-6 text-sm sm:text-base font-medium uppercase text-gray-300">
-                {navItems.map(({ label, href }) => (
-                  <li key={label}>
+                {navItems.map(({ label, href }, idx) => (
+                  <li
+                    key={label}
+                    className={`opacity-0 translate-y-3 transition-all duration-700 ease-in-out ${
+                      homeVisible ? 'opacity-100 translate-y-0' : ''
+                    }`}
+                    style={{ transitionDelay: `${idx * 100}ms` }}
+                  >
                     <a
                       href={href}
                       className="block rounded px-2 py-1 transition-transform duration-300 ease-in-out hover:-translate-y-0.5 hover:shadow-md hover:text-amber-300 focus:text-amber-300"
@@ -159,29 +165,31 @@ export default function LandingHero() {
           <div className="space-y-8">
             {/* Add subtle dividers between list items for improved readability */}
             <ul className="list-disc list-inside divide-y divide-gray-400/20 space-y-4 text-left text-base sm:text-lg text-gray-300">
-              <li>
-                General notary work including acknowledgments, oaths,
-                affirmations, and signature witnessing
-              </li>
-              <li>
-                Loan signing services for real estate closings, refinances, and
-                mortgage documents
-              </li>
-              <li>
-                Power of attorney, wills, and estate planning notarizations
-              </li>
-              <li>
-                Real estate transaction support for buyers, sellers, and agents
-              </li>
-              <li>
-                After-hours and emergency appointments
-                <span className="italic"> (additional surcharge applies)</span>
-              </li>
-              <li>
-                Mobile services to homes, offices, hospitals, financial
-                institutions, attorney offices, senior care facilities, and
-                public meeting locations
-              </li>
+              {[
+                'General notary work including acknowledgments, oaths, affirmations, and signature witnessing',
+                'Loan signing services for real estate closings, refinances, and mortgage documents',
+                'Power of attorney, wills, and estate planning notarizations',
+                'Real estate transaction support for buyers, sellers, and agents',
+                'After-hours and emergency appointments',
+                'Mobile services to homes, offices, hospitals, financial institutions, attorney offices, senior care facilities, and public meeting locations',
+              ].map((text, idx) => (
+                <li
+                  key={idx}
+                  className={`opacity-0 translate-y-3 transition-all duration-700 ease-in-out ${
+                    servicesVisible ? 'opacity-100 translate-y-0' : ''
+                  }`}
+                  style={{ transitionDelay: `${idx * 100}ms` }}
+                >
+                  {text.includes('After-hours') ? (
+                    <>
+                      After-hours and emergency appointments
+                      <span className="italic"> (additional surcharge applies)</span>
+                    </>
+                  ) : (
+                    text
+                  )}
+                </li>
+              ))}
             </ul>
             <p className="mt-6 text-center text-base sm:text-lg text-gray-300">
               <strong>We proudly work with:</strong>
@@ -233,7 +241,13 @@ export default function LandingHero() {
           <div aria-hidden="true" className="border-t border-gray-600 w-12 mx-auto mt-4 opacity-60" />
           <dl className="space-y-6 sm:space-y-8">
             {faqs.map(({ q, a }, idx) => (
-              <div key={q} className="rounded-lg bg-neutral-900 p-6 shadow-md">
+              <div
+                key={q}
+                className={`rounded-lg bg-neutral-900 p-6 shadow-md opacity-0 translate-y-3 transition-all duration-700 ease-in-out ${
+                  faqVisible ? 'opacity-100 translate-y-0' : ''
+                }`}
+                style={{ transitionDelay: `${idx * 100}ms` }}
+              >
                 <dt>
                   <button
                     type="button"
