@@ -13,7 +13,7 @@ export default function ServicesPage() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
           viewport={{ once: true }}
-          className="relative overflow-hidden bg-black mx-auto max-w-screen-lg px-4 py-12 lg:py-20 text-gray-200 sm:px-6 lg:px-8"
+          className="relative overflow-hidden bg-neutral-950 mx-auto max-w-screen-lg px-4 pt-20 pb-24 text-gray-200 sm:px-6 lg:px-8"
         >
           <h1 className="mb-2 text-center">Our Services</h1>
           <div aria-hidden="true" className="border-t border-gray-600 w-12 mx-auto mt-4 opacity-60" />
@@ -49,7 +49,7 @@ export default function ServicesPage() {
             </ul>
           </div>
 
-        <p className="mt-6 text-center text-base sm:text-lg text-gray-300">
+        <p className="mt-6 text-center text-base sm:text-lg text-gray-300 max-w-3xl mx-auto leading-relaxed">
           <strong>We proudly work with:</strong>
           <br />
           Homeowners &bull; Attorneys &bull; Title Companies &bull; Real Estate Agents &bull;

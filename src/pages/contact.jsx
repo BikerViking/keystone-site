@@ -25,7 +25,7 @@ export default function ContactPage() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
           viewport={{ once: true }}
-          className="relative overflow-hidden bg-gray-950 paper-texture mx-auto max-w-screen-lg px-4 py-12 lg:py-20 text-gray-200 sm:px-6 lg:px-8"
+          className="relative overflow-hidden bg-neutral-950 paper-texture mx-auto max-w-screen-lg px-4 pt-20 pb-24 text-gray-200 sm:px-6 lg:px-8"
         >
         <h1 className="mb-2 text-center">
           Contact
@@ -90,14 +90,14 @@ export default function ContactPage() {
         >
           ✅ Thank you! Your message has been sent. We’ll be in touch shortly.
         </p>
-        <p className="mt-4 text-left text-sm text-gray-500">
+        <p className="mt-4 text-left text-sm text-gray-500 max-w-3xl mx-auto leading-relaxed">
           <strong>Disclaimer:</strong> Keystone Notary Group, LLC is not a law
           firm and does not provide legal advice, guidance on document selection,
           or assistance in preparing legal documents. For questions about what
           type of document you need, please consult a licensed attorney.
         </p>
         {/* Additional instructions and contact information */}
-        <p className="mt-8 text-sm text-gray-400 sm:mt-10">
+        <p className="mt-8 text-sm text-gray-400 sm:mt-10 max-w-3xl mx-auto leading-relaxed">
           Please mention the type of document or notarization service you are requesting.
         </p>
         <div className="mt-4 space-y-2 text-base sm:text-lg text-gray-300">
@@ -160,16 +160,17 @@ export default function ContactPage() {
           <line x1="17.5" y1="15" x2="9" y2="15" />
         </svg>
         </motion.section>
+        <hr className="border-t border-gray-700 my-12" />
         <motion.section
           aria-label="What to Bring to Your Appointment"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
           viewport={{ once: true }}
-          className="mx-auto mt-12 max-w-screen-md"
+          className="bg-black mx-auto mt-12 max-w-screen-md px-4 pt-20 pb-24"
         >
           <div className="bg-neutral-900 p-6 rounded-md">
-          <div className="mb-4 flex items-center">
+          <div className="mb-8 flex items-center justify-center">
             <svg
               className="h-6 w-6 text-blue-400"
               xmlns="http://www.w3.org/2000/svg"
@@ -185,7 +186,8 @@ export default function ContactPage() {
                 d="M11.349 3.836c-.064.21-.099.433-.099.664 0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75c0-.231-.035-.454-.1-.664M11.349 3.836c.283-.919 1.139-1.586 2.151-1.586h1.5c1.012 0 1.868.667 2.151 1.586M11.349 3.836c-.376.022-.75.049-1.123.08C9.095 4.01 8.25 4.973 8.25 6.108v2.142M17.15 3.836c.376.022.75.049 1.124.08C19.405 4.01 20.25 4.973 20.25 6.108V16.5c0 1.243-1.007 2.25-2.25 2.25H15.75M8.25 8.25H4.875A1.125 1.125 0 0 0 3.75 9.375v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V18.75M8.25 8.25h6.375c.621 0 1.125.504 1.125 1.125v9.375M7.5 15.75 9 17.25l3-3.75"
               />
             </svg>
-            <h2 className="ml-2 text-lg font-semibold">What to Bring to Your Appointment</h2>
+            <h2 className="text-center text-3xl font-semibold tracking-wide text-white mb-8 ml-2">What to Bring to Your Appointment</h2>
+            <div aria-hidden="true" className="mx-auto -mt-6 mb-2 h-0.5 w-24 bg-gradient-to-r from-blue-500/50 to-blue-500/0" />
           </div>
           <ul className="list-disc list-inside space-y-1 text-gray-300">
             <li>Valid photo ID</li>

@@ -44,7 +44,7 @@ export default function FaqPage() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
           viewport={{ once: true }}
-          className="bg-neutral-900 rounded-t-[3rem] mx-auto max-w-screen-lg px-4 py-12 lg:py-20 text-gray-200 sm:px-6 lg:px-8"
+          className="bg-black rounded-t-[3rem] mx-auto max-w-screen-lg px-4 pt-20 pb-24 text-gray-200 sm:px-6 lg:px-8"
         >
         <h1 className="mb-2 text-center">
           Frequently Asked Questions
@@ -95,7 +95,8 @@ export default function FaqPage() {
           ))}
         </dl>
         <div className="mt-12 rounded-lg border border-blue-500/30 bg-neutral-800 p-6 text-center shadow-inner">
-          <h2 className="mb-4 text-gray-100">Still have questions?</h2>
+          <h2 className="text-center text-3xl font-semibold tracking-wide text-white mb-8">Still have questions?</h2>
+          <div aria-hidden="true" className="mx-auto mb-6 h-0.5 w-24 bg-gradient-to-r from-blue-500/50 to-blue-500/0" />
           <motion.a
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
