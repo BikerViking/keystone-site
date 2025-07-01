@@ -50,14 +50,22 @@ export default function Header() {
   return (
     <header
       role="banner"
-      className={`fixed top-0 left-0 right-0 z-50 border-b border-gray-800 bg-neutral-900/80 backdrop-blur text-gray-200 transition-shadow duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 border-b border-gray-800 bg-gradient-to-b from-gray-900 via-gray-950 to-black backdrop-blur text-gray-200 transition-shadow duration-300 ${
         scrolled ? "shadow-sm" : "shadow-none"
       }`}
     >
-      <div className="mx-auto flex max-w-screen-xl flex-wrap items-center justify-center gap-4 px-4 py-2 sm:flex-nowrap sm:justify-between sm:px-6 sm:py-3">
-        <h1 className="text-center text-sm font-semibold uppercase tracking-wide text-gray-100 sm:text-base">
-          Keystone Notary Group
-        </h1>
+      <h1 className="sr-only">Keystone Notary Group</h1>
+      <div className="mx-auto flex max-w-screen-xl items-center justify-between px-4 sm:px-6">
+        <div className="flex flex-col flex-1 items-center">
+          <img
+            src="/logo.PNG"
+            alt="Keystone Notary Group logo"
+            className="mx-auto w-36 py-4 sm:w-48 sm:py-6"
+          />
+          <p className="text-sm text-gray-400 tracking-wide uppercase text-center">
+            Mobile Notary Services in Pennsylvania
+          </p>
+        </div>
         {/* Mobile navigation toggle */}
         <button
           type="button"
@@ -65,7 +73,7 @@ export default function Header() {
           aria-controls="mobile-menu"
           aria-expanded={open}
           onClick={toggleMenu}
-          className="rounded border border-gray-600 px-6 min-h-[48px] py-1 text-xs uppercase tracking-wide text-gray-200 transition-transform duration-300 ease-in-out hover:-translate-y-0.5 hover:shadow-md active:shadow-none focus:outline-none focus:ring-2 focus:ring-blue-600 sm:hidden"
+          className="ml-4 rounded border border-gray-600 px-6 min-h-[48px] py-1 text-xs uppercase tracking-wide text-gray-200 transition-transform duration-300 ease-in-out hover:-translate-y-0.5 hover:shadow-md active:shadow-none focus:outline-none focus:ring-2 focus:ring-blue-600 sm:hidden"
         >
           Menu
         </button>
