@@ -169,7 +169,7 @@ export default function ContactPage() {
           viewport={{ once: true }}
           className="bg-gradient-to-b from-neutral-900 via-black to-neutral-950 mx-auto mt-12 max-w-screen-md px-4 pt-20 pb-24 space-y-4 sm:space-y-6"
         >
-          <div className="bg-neutral-900 p-6 rounded-md">
+          <div className="bg-neutral-900 p-6 rounded-xl ring-1 ring-neutral-700 shadow-[0_0_20px_rgba(255,255,255,0.05)]">
           <div className="mb-8 flex items-center justify-center">
             <svg
               className="h-6 w-6 text-blue-400"
