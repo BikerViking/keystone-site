@@ -30,3 +30,12 @@ test("FAQ accordion shows only one open panel at a time", () => {
   expect(second).toHaveAttribute("aria-expanded", "true");
   expect(secondPanel).toHaveAttribute("aria-hidden", "false");
 });
+
+test("renders logo and tagline", () => {
+  render(<LandingHero />);
+
+  expect(screen.getByAltText(/keystone notary group logo/i)).toBeInTheDocument();
+  expect(
+    screen.getByText(/mobile notary services in pennsylvania/i)
+  ).toBeInTheDocument();
+});

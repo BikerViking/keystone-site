@@ -40,14 +40,15 @@ test('adds shadow when page is scrolled', () => {
   expect(header.className).toMatch(/shadow-sm/);
 });
 
-test('renders tagline below logo', () => {
+test('does not render logo or tagline', () => {
   render(
     <MemoryRouter>
       <Header />
     </MemoryRouter>
   );
 
+  expect(screen.queryByAltText(/keystone notary group logo/i)).toBeNull();
   expect(
-    screen.getByText(/mobile notary services in pennsylvania/i)
-  ).toBeInTheDocument();
+    screen.queryByText(/mobile notary services in pennsylvania/i)
+  ).toBeNull();
 });

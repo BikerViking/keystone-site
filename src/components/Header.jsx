@@ -55,17 +55,7 @@ export default function Header() {
       }`}
     >
       <h1 className="sr-only">Keystone Notary Group</h1>
-      <div className="mx-auto flex max-w-screen-xl items-center justify-between px-4 sm:px-6">
-        <div className="flex flex-col flex-1 items-center">
-          <img
-            src="/logo.PNG"
-            alt="Keystone Notary Group logo"
-            className="mx-auto w-36 py-4 sm:w-48 sm:py-6"
-          />
-          <p className="text-sm text-gray-400 tracking-wide uppercase text-center">
-            Mobile Notary Services in Pennsylvania
-          </p>
-        </div>
+      <div className="mx-auto flex max-w-screen-xl items-center justify-end px-4 sm:px-6">
         {/* Mobile navigation toggle */}
         <button
           type="button"
