@@ -1,51 +1,53 @@
 import React from "react";
 import LayoutWrapper from "../components/LayoutWrapper";
-import useScrollReveal from "../hooks/useScrollReveal";
+import PageTransition from "../components/PageTransition";
+import { motion } from "framer-motion";
 
 export default function ServicesPage() {
-  const [ref, visible] = useScrollReveal();
   return (
-    <LayoutWrapper>
-      <section
-        aria-label="Services"
-        ref={ref}
-        className={`relative overflow-hidden bg-black mx-auto max-w-screen-lg px-4 py-12 lg:py-20 text-gray-200 sm:px-6 lg:px-8 opacity-0 translate-y-6 transition-all duration-700 ease-in-out ${visible ? "opacity-100 translate-y-0" : ""}`}
-      >
-        <h1 className="mb-2 text-center">
-          Our Services
-        </h1>
-        <div aria-hidden="true" className="border-t border-gray-600 w-12 mx-auto mt-4 opacity-60" />
+    <PageTransition>
+      <LayoutWrapper>
+        <motion.section
+          aria-label="Services"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          viewport={{ once: true }}
+          className="relative overflow-hidden bg-black mx-auto max-w-screen-lg px-4 py-12 lg:py-20 text-gray-200 sm:px-6 lg:px-8"
+        >
+          <h1 className="mb-2 text-center">Our Services</h1>
+          <div aria-hidden="true" className="border-t border-gray-600 w-12 mx-auto mt-4 opacity-60" />
 
-        <div className="space-y-8">
-          {/* Add subtle dividers between list items for improved readability */}
-          <ul className="list-disc list-inside divide-y divide-gray-400/20 space-y-4 text-left text-base sm:text-lg text-gray-300">
-            {[
-              'General notary work including acknowledgments, oaths, affirmations, and signature witnessing',
-              'Loan signing services for real estate closings, refinances, and mortgage documents',
-              'Power of attorney, wills, and estate planning notarizations',
-              'Real estate transaction support for buyers, sellers, and agents',
-              'After-hours and emergency appointments',
-              'Mobile services to homes, offices, hospitals, financial institutions, attorney offices, senior care facilities, and public meeting locations',
-            ].map((text, idx) => (
-              <li
-                key={idx}
-                className={`opacity-0 translate-y-3 transition-all duration-700 ease-in-out ${
-                  visible ? 'opacity-100 translate-y-0' : ''
-                }`}
-                style={{ transitionDelay: `${idx * 100}ms` }}
-              >
-                {text.includes('After-hours') ? (
-                  <>
-                    After-hours and emergency appointments
-                    <span className="italic"> (additional surcharge applies)</span>
-                  </>
-                ) : (
-                  text
-                )}
-              </li>
-            ))}
-          </ul>
-        </div>
+          <div className="space-y-8">
+            {/* Add subtle dividers between list items for improved readability */}
+            <ul className="list-disc list-inside divide-y divide-gray-400/20 space-y-4 text-left text-base sm:text-lg text-gray-300">
+              {[
+                'General notary work including acknowledgments, oaths, affirmations, and signature witnessing',
+                'Loan signing services for real estate closings, refinances, and mortgage documents',
+                'Power of attorney, wills, and estate planning notarizations',
+                'Real estate transaction support for buyers, sellers, and agents',
+                'After-hours and emergency appointments',
+                'Mobile services to homes, offices, hospitals, financial institutions, attorney offices, senior care facilities, and public meeting locations',
+              ].map((text, idx) => (
+                <motion.li
+                  key={idx}
+                  initial={{ opacity: 0, y: 12 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, ease: 'easeOut', delay: idx * 0.1 }}
+                >
+                  {text.includes('After-hours') ? (
+                    <>
+                      After-hours and emergency appointments
+                      <span className="italic"> (additional surcharge applies)</span>
+                    </>
+                  ) : (
+                    text
+                  )}
+                </motion.li>
+              ))}
+            </ul>
+          </div>
 
         <p className="mt-6 text-center text-base sm:text-lg text-gray-300">
           <strong>We proudly work with:</strong>
@@ -70,7 +72,8 @@ export default function ServicesPage() {
           <line x1="16" y1="8" x2="2" y2="22" />
           <line x1="17.5" y1="15" x2="9" y2="15" />
         </svg>
-      </section>
-    </LayoutWrapper>
+        </motion.section>
+      </LayoutWrapper>
+    </PageTransition>
   );
 }

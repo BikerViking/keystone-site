@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import LayoutWrapper from "../components/LayoutWrapper";
-import useScrollReveal from "../hooks/useScrollReveal";
+import PageTransition from "../components/PageTransition";
+import { motion } from "framer-motion";
 
 export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
@@ -14,16 +15,18 @@ export default function ContactPage() {
     setSubmitted(true);
   };
 
-  const [ref, visible] = useScrollReveal();
-  const [bringRef, bringVisible] = useScrollReveal();
   return (
-    <LayoutWrapper>
-      <section
-        id="contact"
-        ref={ref}
-        aria-label="Contact"
-        className={`relative overflow-hidden bg-gray-950 paper-texture mx-auto max-w-screen-lg px-4 py-12 lg:py-20 text-gray-200 sm:px-6 lg:px-8 opacity-0 translate-y-6 transition-all duration-700 ease-in-out ${visible ? "opacity-100 translate-y-0" : ""}`}
-      >
+    <PageTransition>
+      <LayoutWrapper>
+        <motion.section
+          id="contact"
+          aria-label="Contact"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          viewport={{ once: true }}
+          className="relative overflow-hidden bg-gray-950 paper-texture mx-auto max-w-screen-lg px-4 py-12 lg:py-20 text-gray-200 sm:px-6 lg:px-8"
+        >
         <h1 className="mb-2 text-center">
           Contact
         </h1>
@@ -66,13 +69,15 @@ export default function ContactPage() {
             ></textarea>
           </div>
           <div className="text-center">
-            <button
+            <motion.button
               type="submit"
               aria-label="Send Message"
-              className="rounded-md bg-gradient-to-r from-blue-600 to-indigo-600 px-6 min-h-[48px] py-2 font-semibold text-white transition-transform duration-300 ease-in-out hover:scale-105 active:scale-95 hover:from-blue-700 hover:to-indigo-700 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-neutral-900"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="rounded-md bg-gradient-to-r from-blue-600 to-indigo-600 px-6 min-h-[48px] py-2 font-semibold text-white transition-transform duration-200 hover:from-blue-700 hover:to-indigo-700 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-neutral-900"
             >
               Send Message
-            </button>
+            </motion.button>
           </div>
         </form>
         <p
@@ -126,15 +131,16 @@ export default function ContactPage() {
               </>
             ),
           ].map((node, idx) => (
-            <p
+            <motion.p
               key={idx}
-              className={`opacity-0 translate-y-3 transition-all duration-700 ease-in-out ${
-                visible ? 'opacity-100 translate-y-0' : ''
-              }`}
-              style={{ transitionDelay: `${idx * 100}ms` }}
+              initial={{ opacity: 0, y: 12 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, ease: 'easeOut', delay: idx * 0.1 }}
+              className="translate-y-3"
             >
               {node}
-            </p>
+            </motion.p>
           ))}
         </div>
         {/* Decorative feather watermark */}
@@ -153,13 +159,16 @@ export default function ContactPage() {
           <line x1="16" y1="8" x2="2" y2="22" />
           <line x1="17.5" y1="15" x2="9" y2="15" />
         </svg>
-      </section>
-      <section
-        ref={bringRef}
-        aria-label="What to Bring to Your Appointment"
-        className={`mx-auto mt-12 max-w-screen-md opacity-0 translate-y-6 transition-all duration-700 ease-in-out ${bringVisible ? "opacity-100 translate-y-0" : ""}`}
-      >
-        <div className="bg-neutral-900 p-6 rounded-md">
+        </motion.section>
+        <motion.section
+          aria-label="What to Bring to Your Appointment"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          viewport={{ once: true }}
+          className="mx-auto mt-12 max-w-screen-md"
+        >
+          <div className="bg-neutral-900 p-6 rounded-md">
           <div className="mb-4 flex items-center">
             <svg
               className="h-6 w-6 text-blue-400"
@@ -192,7 +201,8 @@ export default function ContactPage() {
             📄 Download Appointment Checklist (PDF)
           </a>
         </div>
-      </section>
-    </LayoutWrapper>
+        </motion.section>
+      </LayoutWrapper>
+    </PageTransition>
   );
 }

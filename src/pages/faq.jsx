@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 import LayoutWrapper from "../components/LayoutWrapper";
-import useScrollReveal from "../hooks/useScrollReveal";
+import PageTransition from "../components/PageTransition";
+import { motion } from "framer-motion";
 
 export default function FaqPage() {
   const faqs = [
@@ -35,26 +35,30 @@ export default function FaqPage() {
     setOpenIndex((prev) => (prev === index ? null : index));
   };
 
-  const [ref, visible] = useScrollReveal();
   return (
-    <LayoutWrapper>
-      <section
-        aria-label="Frequently Asked Questions"
-        ref={ref}
-        className={`bg-neutral-900 rounded-t-[3rem] mx-auto max-w-screen-lg px-4 py-12 lg:py-20 text-gray-200 sm:px-6 lg:px-8 opacity-0 translate-y-6 transition-all duration-700 ease-in-out ${visible ? "opacity-100 translate-y-0" : ""}`}
-      >
+    <PageTransition>
+      <LayoutWrapper>
+        <motion.section
+          aria-label="Frequently Asked Questions"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          viewport={{ once: true }}
+          className="bg-neutral-900 rounded-t-[3rem] mx-auto max-w-screen-lg px-4 py-12 lg:py-20 text-gray-200 sm:px-6 lg:px-8"
+        >
         <h1 className="mb-2 text-center">
           Frequently Asked Questions
         </h1>
         <div aria-hidden="true" className="border-t border-gray-600 w-12 mx-auto mt-4 opacity-60" />
         <dl className="space-y-6 sm:space-y-8">
           {faqs.map(({ q, a }, idx) => (
-            <div
+            <motion.div
               key={q}
-              className={`rounded bg-neutral-800 p-4 sm:p-6 shadow-sm opacity-0 translate-y-3 transition-all duration-700 ease-in-out ${
-                visible ? 'opacity-100 translate-y-0' : ''
-              }`}
-              style={{ transitionDelay: `${idx * 100}ms` }}
+              initial={{ opacity: 0, y: 12 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, ease: 'easeOut', delay: idx * 0.1 }}
+              className="rounded bg-neutral-800 p-4 sm:p-6 shadow-sm"
             >
               <dt>
                 <button
@@ -87,21 +91,22 @@ export default function FaqPage() {
               >
                 <p className="text-left text-gray-400 pb-2">{a}</p>
               </dd>
-            </div>
+            </motion.div>
           ))}
         </dl>
         <div className="mt-12 rounded-lg border border-blue-500/30 bg-neutral-800 p-6 text-center shadow-inner">
-          <h2 className="mb-4 text-gray-100">
-            Still have questions?
-          </h2>
-          <Link
-            to="/contact#contact"
-            className="inline-block min-h-[48px] rounded-md bg-blue-600 px-6 py-2 font-semibold text-white shadow transition-transform duration-300 ease-in-out hover:-translate-y-0.5 hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-neutral-900"
+          <h2 className="mb-4 text-gray-100">Still have questions?</h2>
+          <motion.a
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            href="/contact#contact"
+            className="inline-block min-h-[48px] rounded-md bg-blue-600 px-6 py-2 font-semibold text-white shadow transition-transform duration-200 hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-neutral-900"
           >
             Contact Us
-          </Link>
+          </motion.a>
         </div>
-      </section>
-    </LayoutWrapper>
+        </motion.section>
+      </LayoutWrapper>
+    </PageTransition>
   );
 }
