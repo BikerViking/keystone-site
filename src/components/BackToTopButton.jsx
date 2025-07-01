@@ -2,13 +2,15 @@ import React, { useEffect, useState } from "react";
 
 /**
  * Floating button that smoothly scrolls the page back to the top.
- * Appears after the user scrolls down 400px.
+ * Appears after the user scrolls beyond 50% of the viewport height.
  */
 export default function BackToTopButton() {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => setVisible(window.scrollY > 400);
+    // Show button once the user has scrolled more than half a viewport height
+    const handleScroll = () =>
+      setVisible(window.scrollY > window.innerHeight / 2);
     window.addEventListener("scroll", handleScroll);
     handleScroll(); // run on mount
     return () => window.removeEventListener("scroll", handleScroll);
@@ -23,7 +25,7 @@ export default function BackToTopButton() {
       type="button"
       onClick={scrollToTop}
       aria-label="Back to top"
-      className={`fixed bottom-8 right-8 z-50 rounded-full bg-blue-600 p-3 text-white shadow-md transition-opacity duration-300 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 ${visible ? "opacity-100" : "pointer-events-none opacity-0"}`}
+      className={`fixed bottom-6 right-4 z-50 rounded-full bg-blue-600 p-3 text-white shadow-md transition-opacity duration-300 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 ${visible ? "opacity-100" : "pointer-events-none opacity-0"}`}
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
