@@ -13,13 +13,13 @@ export default function AboutPage() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
           viewport={{ once: true }}
-          className="bg-gradient-to-b from-neutral-900 via-black to-neutral-950 mx-auto max-w-screen-lg px-4 py-12 lg:py-20 text-gray-200 sm:px-6 lg:px-8 space-y-4 sm:space-y-6"
+          className="bg-gradient-to-b from-neutral-900 via-black to-neutral-950 mx-auto max-w-screen-lg px-4 py-16 lg:py-24 text-gray-200 sm:px-6 lg:px-8 space-y-4 sm:space-y-6"
         >
         <h1 className="text-center">
           About Keystone Notary Group
         </h1>
         <div aria-hidden="true" className="border-b-2 border-blue-500 w-12 mx-auto mb-6" />
-        <p className="mx-auto max-w-prose text-left text-base sm:text-lg text-gray-300">
+        <p className="mx-auto max-w-3xl text-lg text-gray-300 leading-relaxed tracking-normal">
           Keystone Notary Group, LLC is a mobile notary service dedicated to professionalism,
           punctuality, and privacy. We provide document notarization services throughout Bucks
           and Montgomery County, Pennsylvania.

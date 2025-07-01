@@ -44,7 +44,7 @@ export default function FaqPage() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
           viewport={{ once: true }}
-          className="bg-gradient-to-b from-neutral-900 via-black to-neutral-950 rounded-t-[3rem] mx-auto max-w-screen-lg px-4 pt-20 pb-24 text-gray-200 sm:px-6 lg:px-8 space-y-4 sm:space-y-6"
+          className="bg-gradient-to-b from-neutral-900 via-black to-neutral-950 rounded-t-[3rem] mx-auto max-w-screen-lg px-4 py-16 lg:py-24 text-gray-200 sm:px-6 lg:px-8 space-y-4 sm:space-y-6"
         >
         <h1 className="text-center">
           Frequently Asked Questions

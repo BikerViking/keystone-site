@@ -71,7 +71,7 @@ export default function LandingHero() {
       <section
         id="home"
         ref={homeRef}
-        className={`relative flex min-h-screen w-full flex-col items-center justify-center bg-gradient-to-b from-gray-900 via-gray-950 to-black text-gray-200 overflow-hidden py-8 sm:py-12 opacity-0 translate-y-[10px] transition-all duration-700 ease-in-out scroll-mt-20 ${homeVisible ? "opacity-100 translate-y-0" : ""}`}
+        className={`relative flex min-h-screen w-full flex-col items-center justify-center bg-gradient-to-b from-gray-900 via-gray-950 to-black text-gray-200 overflow-hidden py-16 lg:py-24 opacity-0 translate-y-[10px] transition-all duration-700 ease-in-out scroll-mt-20 ${homeVisible ? "opacity-100 translate-y-0" : ""}`}
       >
         <div
           className="absolute inset-0 z-0 bg-cover bg-center opacity-40"
@@ -168,15 +168,15 @@ export default function LandingHero() {
         id="about"
         ref={aboutRef}
         aria-label="About"
-        className={`flex min-h-screen w-full flex-col items-center justify-center bg-neutral-900 px-4 py-12 lg:py-20 text-gray-200 sm:px-6 lg:px-8 opacity-0 translate-y-[10px] transition-all duration-700 ease-in-out scroll-mt-20 ${aboutVisible ? "opacity-100 translate-y-0" : ""}`}
+        className={`flex min-h-screen w-full flex-col items-center justify-center bg-neutral-900 px-4 py-16 lg:py-24 text-gray-200 sm:px-6 lg:px-8 opacity-0 translate-y-[10px] transition-all duration-700 ease-in-out scroll-mt-20 ${aboutVisible ? "opacity-100 translate-y-0" : ""}`}
       >
         <div className="mx-auto max-w-screen-lg text-center">
           <h2>
             About Keystone Notary Group
           </h2>
           <div aria-hidden="true" className="border-b-2 border-blue-500 w-12 mx-auto mb-6" />
-          {/* Ensure readability on small screens */}
-          <p className="mx-auto max-w-prose text-base sm:text-lg text-gray-300">
+          {/* Ensure readability on all devices */}
+          <p className="mx-auto max-w-3xl text-lg text-gray-300 leading-relaxed tracking-normal">
             Keystone Notary Group, LLC is a mobile notary service dedicated to
             professionalism, punctuality, and privacy. We provide document
             notarization services throughout Bucks and Montgomery County,
@@ -209,7 +209,7 @@ export default function LandingHero() {
         id="services"
         ref={servicesRef}
         aria-label="Services"
-        className={`flex min-h-screen w-full flex-col items-center justify-center bg-gray-950 paper-texture px-4 py-12 lg:py-20 text-gray-200 sm:px-6 lg:px-8 opacity-0 translate-y-[10px] transition-all duration-700 ease-in-out scroll-mt-20 ${servicesVisible ? "opacity-100 translate-y-0" : ""}`}
+        className={`flex min-h-screen w-full flex-col items-center justify-center bg-gray-950 paper-texture px-4 py-16 lg:py-24 text-gray-200 sm:px-6 lg:px-8 opacity-0 translate-y-[10px] transition-all duration-700 ease-in-out scroll-mt-20 ${servicesVisible ? "opacity-100 translate-y-0" : ""}`}
       >
         <div className="mx-auto w-full max-w-screen-lg">
           <h2 className="text-center">
@@ -279,7 +279,7 @@ export default function LandingHero() {
         id="faq"
         ref={faqRef}
         aria-label="Frequently Asked Questions"
-        className={`flex min-h-screen w-full flex-col items-center justify-center bg-neutral-900 rounded-t-[3rem] px-4 py-12 lg:py-20 text-gray-200 sm:px-6 lg:px-8 opacity-0 translate-y-[10px] transition-all duration-700 ease-in-out scroll-mt-20 ${faqVisible ? "opacity-100 translate-y-0" : ""}`}
+        className={`flex min-h-screen w-full flex-col items-center justify-center bg-neutral-900 rounded-t-[3rem] px-4 py-16 lg:py-24 text-gray-200 sm:px-6 lg:px-8 opacity-0 translate-y-[10px] transition-all duration-700 ease-in-out scroll-mt-20 ${faqVisible ? "opacity-100 translate-y-0" : ""}`}
       >
         <div className="mx-auto w-full max-w-screen-lg">
           <h2 className="text-center">
@@ -342,7 +342,7 @@ export default function LandingHero() {
         id="contact"
         ref={contactRef}
         aria-label="Contact"
-        className={`flex min-h-screen w-full flex-col items-center justify-center bg-gray-950 paper-texture rounded-t-[3rem] px-4 py-12 lg:py-20 text-gray-200 sm:px-6 lg:px-8 opacity-0 translate-y-[10px] transition-all duration-700 ease-in-out scroll-mt-20 ${contactVisible ? "opacity-100 translate-y-0" : ""}`}
+        className={`flex min-h-screen w-full flex-col items-center justify-center bg-gray-950 paper-texture rounded-t-[3rem] px-4 py-16 lg:py-24 text-gray-200 sm:px-6 lg:px-8 opacity-0 translate-y-[10px] transition-all duration-700 ease-in-out scroll-mt-20 ${contactVisible ? "opacity-100 translate-y-0" : ""}`}
       >
         <div className="mx-auto w-full max-w-screen-lg">
           <h2 className="text-center">

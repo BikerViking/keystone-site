@@ -112,7 +112,7 @@ export default function LayoutWrapper({ children, fullWidth = false }) {
         className={`flex-grow pt-20 pb-20 ${
           fullWidth
             ? ''
-            : 'mx-auto max-w-screen-lg px-4 py-12 sm:px-6 sm:py-16 lg:px-8'
+            : 'mx-auto max-w-screen-lg px-4 py-16 sm:px-6 lg:px-8 lg:py-24'
         }`}
       >
         {children}

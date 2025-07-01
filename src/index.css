@@ -9,13 +9,14 @@
     background-image: url('../public/bg-texture.PNG');
   }
   h1, h2 {
-    @apply font-display text-2xl sm:text-3xl font-semibold tracking-tight text-white mb-6;
+    /* Consistent heading scale */
+    @apply font-display text-3xl sm:text-4xl font-semibold tracking-tight text-white mb-6;
   }
   h3 {
-    @apply font-display text-xl sm:text-2xl font-semibold tracking-tight text-white mb-4;
+    @apply font-display text-2xl sm:text-3xl font-semibold tracking-tight text-white mb-4;
   }
   p {
-    @apply text-gray-300 leading-relaxed sm:leading-loose;
+    @apply text-lg text-gray-300 leading-relaxed tracking-normal;
   }
 }
 @layer utilities {
