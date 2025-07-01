@@ -5,17 +5,17 @@
 @layer base {
   /* Global background pattern */
   body {
-    @apply bg-cover bg-center bg-no-repeat min-h-screen font-sans text-base sm:text-lg leading-relaxed tracking-normal;
+    @apply scroll-smooth bg-cover bg-center bg-no-repeat min-h-screen font-sans text-[17px] sm:text-[18px] font-medium leading-relaxed sm:leading-loose tracking-normal sm:tracking-wide;
     background-image: url('../public/bg-texture.PNG');
   }
   h1, h2 {
-    @apply font-display text-3xl sm:text-4xl font-semibold tracking-wide;
+    @apply font-display text-2xl sm:text-3xl font-semibold tracking-tight text-white mb-6;
   }
   h3 {
-    @apply font-display text-xl font-medium tracking-wide;
+    @apply font-display text-xl sm:text-2xl font-semibold tracking-tight text-white mb-4;
   }
   p {
-    @apply leading-relaxed;
+    @apply text-gray-300 leading-relaxed sm:leading-loose;
   }
 }
 @layer utilities {

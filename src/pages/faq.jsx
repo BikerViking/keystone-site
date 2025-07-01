@@ -44,12 +44,12 @@ export default function FaqPage() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
           viewport={{ once: true }}
-          className="bg-gradient-to-b from-neutral-900 via-black to-neutral-950 rounded-t-[3rem] mx-auto max-w-screen-lg px-4 pt-20 pb-24 text-gray-200 sm:px-6 lg:px-8"
+          className="bg-gradient-to-b from-neutral-900 via-black to-neutral-950 rounded-t-[3rem] mx-auto max-w-screen-lg px-4 pt-20 pb-24 text-gray-200 sm:px-6 lg:px-8 space-y-4 sm:space-y-6"
         >
-        <h1 className="mb-2 text-center">
+        <h1 className="text-center">
           Frequently Asked Questions
         </h1>
-        <div aria-hidden="true" className="border-t border-gray-600 w-12 mx-auto mt-4 opacity-60" />
+        <div aria-hidden="true" className="border-b-2 border-blue-500 w-12 mx-auto mb-6" />
         <dl className="space-y-6 sm:space-y-8">
           {faqs.map(({ q, a }, idx) => (
             <motion.div

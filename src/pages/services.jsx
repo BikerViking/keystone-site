@@ -13,10 +13,10 @@ export default function ServicesPage() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
           viewport={{ once: true }}
-          className="relative overflow-hidden bg-gradient-to-b from-neutral-900 via-black to-neutral-950 mx-auto max-w-screen-lg px-4 pt-20 pb-24 text-gray-200 sm:px-6 lg:px-8"
+          className="relative overflow-hidden bg-gradient-to-b from-neutral-900 via-black to-neutral-950 mx-auto max-w-screen-lg px-4 pt-20 pb-24 text-gray-200 sm:px-6 lg:px-8 space-y-4 sm:space-y-6"
         >
-          <h1 className="mb-2 text-center">Our Services</h1>
-          <div aria-hidden="true" className="border-t border-gray-600 w-12 mx-auto mt-4 opacity-60" />
+          <h1 className="text-center">Our Services</h1>
+          <div aria-hidden="true" className="border-b-2 border-blue-500 w-12 mx-auto mb-6" />
 
           <div className="space-y-8">
             {/* Add subtle dividers between list items for improved readability */}
