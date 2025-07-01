@@ -62,7 +62,7 @@ export default function LandingHero() {
       <section
         id="home"
         ref={homeRef}
-        className={`relative flex min-h-screen w-full flex-col items-center justify-center bg-black text-gray-200 overflow-hidden py-12 lg:py-20 opacity-0 translate-y-6 transition-all duration-700 ease-in-out ${homeVisible ? "opacity-100 translate-y-0" : ""}`}
+        className={`relative flex min-h-screen w-full flex-col items-center justify-center bg-gradient-to-b from-gray-900 via-gray-950 to-black text-gray-200 overflow-hidden py-8 sm:py-12 opacity-0 translate-y-6 transition-all duration-700 ease-in-out ${homeVisible ? "opacity-100 translate-y-0" : ""}`}
       >
         <div
           className="absolute inset-0 z-0 bg-cover bg-center opacity-40"
@@ -74,19 +74,15 @@ export default function LandingHero() {
           aria-hidden="true"
         ></div>
 
-        <div className="relative z-10 mx-auto w-full max-w-screen-md px-4 py-12 lg:py-20 text-center">
-          <div
-            className="flex flex-col items-center border-b border-gray-800 bg-gradient-to-b from-black via-gray-950 to-transparent pb-4 pt-4"
-          >
-            <img
-              src="/logo.PNG"
-              alt="Keystone Notary Group logo"
-              className="mx-auto mb-4 w-32 sm:w-36 md:w-40"
-            />
-            <p className="text-xs uppercase tracking-wide text-gray-400">
-              Mobile Notary Services • Pennsylvania
-            </p>
-          </div>
+        <div className="relative z-10 mx-auto flex w-full max-w-screen-md flex-col items-center px-4">
+          <img
+            src="/logo.PNG"
+            alt="Keystone Notary Group logo"
+            className="w-36 md:w-48"
+          />
+          <p className="mt-4 mb-8 text-center text-gray-300 tracking-wide">
+            Mobile Notary Services in Pennsylvania
+          </p>
           <nav
             className="mt-8 sm:mt-10 border-b border-gray-700 pb-4 shadow-md"
             aria-label="Main navigation"
