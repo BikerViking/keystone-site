@@ -25,7 +25,7 @@ export default function ContactPage() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
           viewport={{ once: true }}
-          className="relative overflow-hidden bg-neutral-950 paper-texture mx-auto max-w-screen-lg px-4 pt-20 pb-24 text-gray-200 sm:px-6 lg:px-8"
+          className="relative overflow-hidden bg-gradient-to-b from-neutral-900 via-black to-neutral-950 paper-texture mx-auto max-w-screen-lg px-4 pt-20 pb-24 text-gray-200 sm:px-6 lg:px-8"
         >
         <h1 className="mb-2 text-center">
           Contact
@@ -146,7 +146,7 @@ export default function ContactPage() {
         {/* Decorative feather watermark */}
         <svg
           aria-hidden="true"
-          className="pointer-events-none absolute bottom-0 right-0 w-40 md:w-64 opacity-10 -z-10"
+          className="pointer-events-none absolute bottom-0 right-0 w-40 md:w-64 opacity-10 -z-10 animate-spin-slow"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
           fill="none"
@@ -167,7 +167,7 @@ export default function ContactPage() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
           viewport={{ once: true }}
-          className="bg-black mx-auto mt-12 max-w-screen-md px-4 pt-20 pb-24"
+          className="bg-gradient-to-b from-neutral-900 via-black to-neutral-950 mx-auto mt-12 max-w-screen-md px-4 pt-20 pb-24"
         >
           <div className="bg-neutral-900 p-6 rounded-md">
           <div className="mb-8 flex items-center justify-center">

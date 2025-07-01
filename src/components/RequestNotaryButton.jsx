@@ -45,7 +45,7 @@ export default function RequestNotaryButton() {
         aria-label="Request Notary"
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
-        className="pointer-events-auto w-full bg-blue-600 text-white text-center py-4 rounded-md shadow-lg text-lg font-semibold transition-transform duration-200 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400"
+        className="relative pointer-events-auto w-full bg-blue-600 text-white text-center py-4 rounded-md shadow-lg text-lg font-semibold transition-all duration-300 hover:bg-blue-700 hover:shadow-[0_0_10px_rgba(59,130,246,0.7)] focus:outline-none focus:ring-2 focus:ring-blue-400 ring-1 ring-blue-500/40 before:absolute before:inset-0 before:-z-10 before:rounded-md before:bg-gradient-radial before:from-blue-600/30 before:to-transparent before:blur-2xl"
       >
         Request Notary
       </motion.button>
