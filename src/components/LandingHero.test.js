@@ -39,3 +39,10 @@ test("renders logo and tagline", () => {
     screen.getByText(/mobile notary services in pennsylvania/i)
   ).toBeInTheDocument();
 });
+
+test("includes request notary button", () => {
+  render(<LandingHero />);
+  expect(
+    screen.getByRole("link", { name: /request notary/i })
+  ).toBeInTheDocument();
+});
