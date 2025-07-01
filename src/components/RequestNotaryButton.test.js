@@ -15,6 +15,9 @@ test('navigates to contact section when clicked', () => {
     </MemoryRouter>
   );
 
-  fireEvent.click(screen.getByRole('button', { name: /request notary/i }));
+  const button = screen.getByRole('button', { name: /request notary/i });
+  expect(button.className).toMatch(/shadow-\[0_0_10px_rgba\(59,130,246,0.7\)\]/);
+
+  fireEvent.click(button);
   expect(mockNavigate).toHaveBeenCalledWith('/contact#contact');
 });

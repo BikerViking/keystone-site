@@ -14,6 +14,11 @@ export default function LayoutWrapper({ children, fullWidth = false }) {
       /* Ensure pages share consistent textured background */
       style={{ backgroundImage: "url('/bg-texture.PNG')" }}
     >
+      {/* Soft radial accent for subtle depth */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -top-10 -left-10 h-72 w-72 rounded-full bg-gradient-radial from-blue-600/20 via-blue-600/10 to-transparent blur-3xl animate-pulse-slow"
+      />
       <Helmet>
         <title>Keystone Notary Group – Mobile Notary Services</title>
         <meta
