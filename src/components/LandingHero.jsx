@@ -62,7 +62,7 @@ export default function LandingHero() {
       <section
         id="home"
         ref={homeRef}
-        className={`relative flex min-h-screen w-full flex-col items-center justify-center bg-gradient-to-b from-gray-900 via-gray-950 to-black text-gray-200 overflow-hidden py-8 sm:py-12 opacity-0 translate-y-[10px] transition-all duration-700 ease-in-out ${homeVisible ? "opacity-100 translate-y-0" : ""}`}
+        className={`relative flex min-h-screen w-full flex-col items-center justify-center bg-gradient-to-b from-gray-900 via-gray-950 to-black text-gray-200 overflow-hidden py-8 sm:py-12 opacity-0 translate-y-[10px] transition-all duration-700 ease-in-out scroll-mt-20 ${homeVisible ? "opacity-100 translate-y-0" : ""}`}
       >
         <div
           className="absolute inset-0 z-0 bg-cover bg-center opacity-40"
@@ -118,13 +118,13 @@ export default function LandingHero() {
         id="about"
         ref={aboutRef}
         aria-label="About"
-        className={`flex min-h-screen w-full flex-col items-center justify-center bg-neutral-900 px-4 py-12 lg:py-20 text-gray-200 sm:px-6 lg:px-8 opacity-0 translate-y-[10px] transition-all duration-700 ease-in-out ${aboutVisible ? "opacity-100 translate-y-0" : ""}`}
+        className={`flex min-h-screen w-full flex-col items-center justify-center bg-neutral-900 px-4 py-12 lg:py-20 text-gray-200 sm:px-6 lg:px-8 opacity-0 translate-y-[10px] transition-all duration-700 ease-in-out scroll-mt-20 ${aboutVisible ? "opacity-100 translate-y-0" : ""}`}
       >
         <div className="mx-auto max-w-screen-lg text-center">
-          <h2 className="mb-2 sm:mb-4">
+          <h2>
             About Keystone Notary Group
           </h2>
-          <div aria-hidden="true" className="border-t border-gray-600 w-12 mx-auto mt-4 opacity-60" />
+          <div aria-hidden="true" className="border-b-2 border-blue-500 w-12 mx-auto mb-6" />
           {/* Ensure readability on small screens */}
           <p className="mx-auto max-w-prose text-base sm:text-lg text-gray-300">
             Keystone Notary Group, LLC is a mobile notary service dedicated to
@@ -159,13 +159,13 @@ export default function LandingHero() {
         id="services"
         ref={servicesRef}
         aria-label="Services"
-        className={`flex min-h-screen w-full flex-col items-center justify-center bg-gray-950 paper-texture px-4 py-12 lg:py-20 text-gray-200 sm:px-6 lg:px-8 opacity-0 translate-y-[10px] transition-all duration-700 ease-in-out ${servicesVisible ? "opacity-100 translate-y-0" : ""}`}
+        className={`flex min-h-screen w-full flex-col items-center justify-center bg-gray-950 paper-texture px-4 py-12 lg:py-20 text-gray-200 sm:px-6 lg:px-8 opacity-0 translate-y-[10px] transition-all duration-700 ease-in-out scroll-mt-20 ${servicesVisible ? "opacity-100 translate-y-0" : ""}`}
       >
         <div className="mx-auto w-full max-w-screen-lg">
-          <h2 className="mb-2 text-center sm:mb-4">
+          <h2 className="text-center">
             Our Services
           </h2>
-          <div aria-hidden="true" className="border-t border-gray-600 w-12 mx-auto mt-4 opacity-60" />
+          <div aria-hidden="true" className="border-b-2 border-blue-500 w-12 mx-auto mb-6" />
           <div className="space-y-8">
             {/* Add subtle dividers between list items for improved readability */}
             <ul className="list-disc list-inside divide-y divide-gray-400/20 space-y-4 text-left text-base sm:text-lg text-gray-300">
@@ -214,13 +214,13 @@ export default function LandingHero() {
         id="faq"
         ref={faqRef}
         aria-label="Frequently Asked Questions"
-        className={`flex min-h-screen w-full flex-col items-center justify-center bg-neutral-900 rounded-t-[3rem] px-4 py-12 lg:py-20 text-gray-200 sm:px-6 lg:px-8 opacity-0 translate-y-[10px] transition-all duration-700 ease-in-out ${faqVisible ? "opacity-100 translate-y-0" : ""}`}
+        className={`flex min-h-screen w-full flex-col items-center justify-center bg-neutral-900 rounded-t-[3rem] px-4 py-12 lg:py-20 text-gray-200 sm:px-6 lg:px-8 opacity-0 translate-y-[10px] transition-all duration-700 ease-in-out scroll-mt-20 ${faqVisible ? "opacity-100 translate-y-0" : ""}`}
       >
         <div className="mx-auto w-full max-w-screen-lg">
-          <h2 className="mb-2 text-center sm:mb-4">
+          <h2 className="text-center">
             Frequently Asked Questions
           </h2>
-          <div aria-hidden="true" className="border-t border-gray-600 w-12 mx-auto mt-4 opacity-60" />
+          <div aria-hidden="true" className="border-b-2 border-blue-500 w-12 mx-auto mb-6" />
           <dl className="space-y-6 sm:space-y-8">
             {faqs.map(({ q, a }, idx) => (
               <div
@@ -277,13 +277,13 @@ export default function LandingHero() {
         id="contact"
         ref={contactRef}
         aria-label="Contact"
-        className={`flex min-h-screen w-full flex-col items-center justify-center bg-gray-950 paper-texture rounded-t-[3rem] px-4 py-12 lg:py-20 text-gray-200 sm:px-6 lg:px-8 opacity-0 translate-y-[10px] transition-all duration-700 ease-in-out ${contactVisible ? "opacity-100 translate-y-0" : ""}`}
+        className={`flex min-h-screen w-full flex-col items-center justify-center bg-gray-950 paper-texture rounded-t-[3rem] px-4 py-12 lg:py-20 text-gray-200 sm:px-6 lg:px-8 opacity-0 translate-y-[10px] transition-all duration-700 ease-in-out scroll-mt-20 ${contactVisible ? "opacity-100 translate-y-0" : ""}`}
       >
         <div className="mx-auto w-full max-w-screen-lg">
-          <h2 className="mb-2 text-center sm:mb-4">
+          <h2 className="text-center">
             Contact
           </h2>
-          <div aria-hidden="true" className="border-t border-gray-600 w-12 mx-auto mt-4 opacity-60" />
+          <div aria-hidden="true" className="border-b-2 border-blue-500 w-12 mx-auto mb-6" />
           <form
             onSubmit={(e) => e.preventDefault()}
             className="space-y-6 sm:space-y-8"
