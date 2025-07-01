@@ -7,7 +7,6 @@ export default function LandingHero() {
     { label: "Home", href: "#home" },
     { label: "About", href: "#about" },
     { label: "Services", href: "#services" },
-    { label: "Service Area", href: "#service-area" },
     { label: "FAQ", href: "#faq" },
     { label: "Contact", href: "#contact" },
   ];
@@ -41,7 +40,6 @@ export default function LandingHero() {
   const [homeRef, homeVisible] = useScrollReveal();
   const [aboutRef, aboutVisible] = useScrollReveal();
   const [servicesRef, servicesVisible] = useScrollReveal();
-  const [areaRef, areaVisible] = useScrollReveal();
   const [faqRef, faqVisible] = useScrollReveal();
   const [contactRef, contactVisible] = useScrollReveal();
 
@@ -204,28 +202,6 @@ export default function LandingHero() {
               Senior Care Providers &bull; Individuals with urgent or
               specialized needs
             </p>
-          </div>
-        </div>
-      </section>
-      {/* Service Area Section */}
-      <section
-        id="service-area"
-        ref={areaRef}
-        aria-label="Service Area"
-        className={`flex min-h-screen w-full flex-col items-center justify-center bg-neutral-900 px-4 py-12 lg:py-20 text-gray-200 sm:px-6 lg:px-8 opacity-0 translate-y-6 transition-all duration-700 ease-in-out ${areaVisible ? "opacity-100 translate-y-0" : ""}`}
-      >
-        <div className="mx-auto w-full max-w-screen-lg text-center">
-          <h2 className="mb-2 sm:mb-4">Service Area</h2>
-          <div aria-hidden="true" className="border-t border-gray-600 w-12 mx-auto mt-4 opacity-60" />
-          <p className="mb-8 text-base sm:text-lg text-gray-300">
-            We proudly serve Bucks and Montgomery County, Pennsylvania.
-          </p>
-          <div className="mx-auto max-w-md">
-            <img
-              src="/pa-map.svg"
-              alt="Map showing Bucks and Montgomery counties in Pennsylvania"
-              className="h-auto w-full rounded-md border border-gray-600 shadow-md"
-            />
           </div>
         </div>
       </section>
