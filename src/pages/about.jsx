@@ -1,16 +1,20 @@
 import React from "react";
-import useScrollReveal from "../hooks/useScrollReveal";
 import LayoutWrapper from "../components/LayoutWrapper";
+import PageTransition from "../components/PageTransition";
+import { motion } from "framer-motion";
 
 export default function AboutPage() {
-  const [ref, visible] = useScrollReveal();
   return (
-    <LayoutWrapper>
-      <section
-        aria-label="About"
-        ref={ref}
-        className={`bg-neutral-900 mx-auto max-w-screen-lg px-4 py-12 lg:py-20 text-gray-200 sm:px-6 lg:px-8 opacity-0 translate-y-6 transition-all duration-700 ease-in-out ${visible ? "opacity-100 translate-y-0" : ""}`}
-      >
+    <PageTransition>
+      <LayoutWrapper>
+        <motion.section
+          aria-label="About"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          viewport={{ once: true }}
+          className="bg-neutral-900 mx-auto max-w-screen-lg px-4 py-12 lg:py-20 text-gray-200 sm:px-6 lg:px-8"
+        >
         <h1 className="mb-2 text-center">
           About Keystone Notary Group
         </h1>
@@ -37,7 +41,8 @@ export default function AboutPage() {
         <p className="mt-10 text-left text-sm text-gray-400">
           Commissioned in the Commonwealth of Pennsylvania
         </p>
-      </section>
-    </LayoutWrapper>
+        </motion.section>
+      </LayoutWrapper>
+    </PageTransition>
   );
 }

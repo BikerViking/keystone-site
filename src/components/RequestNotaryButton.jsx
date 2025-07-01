@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
 
 /**
  * Fixed mobile button that navigates to the contact section.
@@ -38,14 +39,16 @@ export default function RequestNotaryButton() {
         hidden ? "hidden" : ""
       }`}
     >
-      <button
+      <motion.button
         type="button"
         onClick={handleClick}
         aria-label="Request Notary"
-        className="pointer-events-auto w-full bg-blue-600 text-white text-center py-4 rounded-md shadow-lg text-lg font-semibold transition-transform duration-300 ease-in-out hover:scale-105 active:scale-95 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400"
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
+        className="pointer-events-auto w-full bg-blue-600 text-white text-center py-4 rounded-md shadow-lg text-lg font-semibold transition-transform duration-200 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400"
       >
         Request Notary
-      </button>
+      </motion.button>
     </div>
   );
 }
