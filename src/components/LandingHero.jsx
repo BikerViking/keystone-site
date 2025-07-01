@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import useScrollReveal from "../hooks/useScrollReveal";
+import { motion } from "framer-motion";
 
 export default function LandingHero() {
   // Map labels to in-page anchor targets
@@ -112,14 +113,31 @@ export default function LandingHero() {
             aria-hidden="true"
             className="pointer-events-none absolute -top-10 left-1/2 h-40 w-40 -translate-x-1/2 rounded-full bg-gradient-radial from-blue-600/20 via-blue-600/10 to-transparent blur-2xl"
           />
-          <img
+          <motion.img
             src="/logo.PNG"
             alt="Keystone Notary Group logo"
             className="w-36 md:w-48"
+            initial={{ opacity: 0, y: -8 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
           />
-          <p className="mt-4 mb-8 text-center text-gray-300 tracking-wide">
+          <motion.p
+            className="mt-4 mb-4 text-center text-gray-300 tracking-wide"
+            initial={{ opacity: 0, y: -8 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut", delay: 0.15 }}
+          >
             Mobile Notary Services in Pennsylvania
-          </p>
+          </motion.p>
+          <motion.a
+            href="#contact"
+            initial={{ opacity: 0, y: -8 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }}
+            className="mb-8 rounded-md bg-gradient-to-r from-blue-600 to-indigo-600 px-6 min-h-[48px] py-2 font-semibold text-white transition-colors duration-300 hover:from-blue-700 hover:to-indigo-700 focus:outline-none focus:ring-2 focus:ring-blue-600"
+          >
+            Request Notary
+          </motion.a>
           <nav
             className="mt-8 sm:mt-10 border-b border-gray-700 pb-4 shadow-md"
             aria-label="Main navigation"
