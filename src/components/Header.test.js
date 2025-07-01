@@ -39,3 +39,15 @@ test('adds shadow when page is scrolled', () => {
 
   expect(header.className).toMatch(/shadow-sm/);
 });
+
+test('renders tagline below logo', () => {
+  render(
+    <MemoryRouter>
+      <Header />
+    </MemoryRouter>
+  );
+
+  expect(
+    screen.getByText(/mobile notary services in pennsylvania/i)
+  ).toBeInTheDocument();
+});
