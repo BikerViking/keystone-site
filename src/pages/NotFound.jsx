@@ -13,7 +13,7 @@ export default function NotFound() {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -10 }}
           transition={{ duration: 0.4, ease: "easeOut" }}
-          className="bg-black mx-auto max-w-screen-lg px-4 py-12 lg:py-20 text-center text-gray-200 sm:px-6 lg:px-8 space-y-4 sm:space-y-6"
+          className="bg-black mx-auto max-w-screen-lg px-4 py-16 lg:py-24 text-center text-gray-200 sm:px-6 lg:px-8 space-y-4 sm:space-y-6"
         >
         <h1>404 – Page Not Found</h1>
         <div aria-hidden="true" className="border-b-2 border-blue-500 w-12 mx-auto mb-6" />

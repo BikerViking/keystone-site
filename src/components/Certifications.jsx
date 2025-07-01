@@ -2,8 +2,8 @@ import React from "react";
 
 export default function Certifications() {
   return (
-    <section className="bg-gray-950 paper-texture text-gray-200 py-12">
-      <div className="mx-auto max-w-screen-lg px-4">
+    <section className="bg-gray-950 paper-texture text-gray-200 py-16 lg:py-24">
+      <div className="mx-auto max-w-screen-lg px-4 sm:px-6 lg:px-8">
         <h2 className="mb-8 text-center">
           Certifications & Credentials
         </h2>
