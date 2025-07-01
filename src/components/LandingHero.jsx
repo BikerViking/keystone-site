@@ -43,6 +43,14 @@ export default function LandingHero() {
   const [faqRef, faqVisible] = useScrollReveal();
   const [contactRef, contactVisible] = useScrollReveal();
 
+  const [offsetY, setOffsetY] = useState(0);
+  useEffect(() => {
+    const handleScroll = () => setOffsetY(window.scrollY);
+    window.addEventListener('scroll', handleScroll);
+    handleScroll();
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   // Trigger the fade-in shortly after initial render so the transition runs
   useEffect(() => {
     const timer = setTimeout(() => setFadeIn(true), 300);
@@ -73,6 +81,30 @@ export default function LandingHero() {
           }}
           aria-hidden="true"
         ></div>
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 -z-10 opacity-5"
+          style={{
+            transform: `translateY(${offsetY * 0.2}px)`,
+            backgroundImage: "url('/bg-texture.PNG')",
+            backgroundSize: 'cover',
+          }}
+        />
+        <svg
+          aria-hidden="true"
+          className="pointer-events-none absolute bottom-[-10rem] right-[-5rem] -z-10 w-64 md:w-96 opacity-10 rotate-[12deg] animate-spin-slower"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z" />
+          <line x1="16" y1="8" x2="2" y2="22" />
+          <line x1="17.5" y1="15" x2="9" y2="15" />
+        </svg>
 
         <div className="relative z-10 mx-auto flex w-full max-w-screen-md flex-col items-center px-4">
           {/* Subtle glow behind logo */}
@@ -206,8 +238,23 @@ export default function LandingHero() {
           </div>
         </div>
       </section>
-      {/* Mobile separator between Services and FAQ */}
-      <hr aria-hidden="true" className="border-neutral-700 sm:hidden" />
+      {/* Section divider between Services and FAQ */}
+      <div aria-hidden="true" className="-mt-1">
+        <svg
+          className="hidden h-16 w-full sm:block"
+          viewBox="0 0 1440 100"
+          preserveAspectRatio="none"
+        >
+          <defs>
+            <linearGradient id="divider-gradient" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stopColor="#000" />
+              <stop offset="100%" stopColor="#171717" />
+            </linearGradient>
+          </defs>
+          <path d="M0 0h1440v100L0 20Z" fill="url(#divider-gradient)" />
+        </svg>
+        <hr className="border-neutral-700 sm:hidden" />
+      </div>
 
       {/* FAQ Section */}
       <section

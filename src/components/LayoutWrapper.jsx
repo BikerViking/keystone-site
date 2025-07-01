@@ -6,6 +6,7 @@ import Certifications from "./Certifications";
 import BackToTopButton from "./BackToTopButton";
 import RequestNotaryButton from "./RequestNotaryButton";
 import LegalFooter from "./LegalFooter";
+import ScrollProgress from "./ScrollProgress";
 
 export default function LayoutWrapper({ children, fullWidth = false }) {
   return (
@@ -14,6 +15,7 @@ export default function LayoutWrapper({ children, fullWidth = false }) {
       /* Ensure pages share consistent textured background */
       style={{ backgroundImage: "url('/bg-texture.PNG')" }}
     >
+      <ScrollProgress />
       {/* Soft radial accent for subtle depth */}
       <div
         aria-hidden="true"
