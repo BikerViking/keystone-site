@@ -122,7 +122,7 @@ export default function LandingHero() {
             transition={{ duration: 0.6, ease: "easeOut" }}
           />
           <motion.p
-            className="mt-4 mb-4 text-center text-gray-300 tracking-wide"
+            className="mt-4 mb-4 text-center text-gray-700 dark:text-gray-300 tracking-wide"
             initial={{ opacity: 0, y: -8 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: "easeOut", delay: 0.15 }}
@@ -142,7 +142,7 @@ export default function LandingHero() {
             className="mt-8 sm:mt-10 border-b border-gray-700 pb-4 shadow-md"
             aria-label="Main navigation"
             >
-              <ul className="flex flex-col items-center space-y-3 sm:space-y-6 text-sm sm:text-base font-medium uppercase text-gray-300">
+              <ul className="flex flex-col items-center space-y-3 sm:space-y-6 text-sm sm:text-base font-medium uppercase text-gray-700 dark:text-gray-300">
                 {navItems.map(({ label, href }, idx) => (
                   <li
                     key={label}
@@ -176,7 +176,7 @@ export default function LandingHero() {
           </h2>
           <div aria-hidden="true" className="border-b-2 border-blue-500 w-12 mx-auto mb-6" />
           {/* Ensure readability on all devices */}
-          <p className="mx-auto max-w-3xl text-lg text-gray-300 leading-relaxed tracking-normal">
+          <p className="mx-auto max-w-3xl text-lg text-gray-700 dark:text-gray-300 leading-relaxed tracking-normal">
             Keystone Notary Group, LLC is a mobile notary service dedicated to
             professionalism, punctuality, and privacy. We provide document
             notarization services throughout Bucks and Montgomery County,
@@ -198,7 +198,7 @@ export default function LandingHero() {
               </p>
             </div>
           </div>
-          <p className="mt-10 text-sm text-gray-400">
+          <p className="mt-10 text-sm text-gray-600 dark:text-gray-400">
             Commissioned in the Commonwealth of Pennsylvania
           </p>
         </div>
@@ -218,7 +218,7 @@ export default function LandingHero() {
           <div aria-hidden="true" className="border-b-2 border-blue-500 w-12 mx-auto mb-6" />
           <div className="space-y-8">
             {/* Add subtle dividers between list items for improved readability */}
-            <ul className="list-disc list-inside divide-y divide-gray-400/20 space-y-4 text-left text-base sm:text-lg text-gray-300">
+            <ul className="list-disc list-inside divide-y divide-gray-400/20 space-y-4 text-left text-base sm:text-lg text-gray-700 dark:text-gray-300">
               {[
                 'General notary work including acknowledgments, oaths, affirmations, and signature witnessing',
                 'Loan signing services for real estate closings, refinances, and mortgage documents',
@@ -245,7 +245,7 @@ export default function LandingHero() {
                 </li>
               ))}
             </ul>
-            <p className="mt-6 text-center text-base sm:text-lg text-gray-300">
+            <p className="mt-6 text-center text-base sm:text-lg text-gray-700 dark:text-gray-300">
               <strong>We proudly work with:</strong>
               <br />
               Homeowners &bull; Attorneys &bull; Title Companies &bull; Real
@@ -325,7 +325,7 @@ export default function LandingHero() {
                   className={`mt-2 overflow-hidden transition-all duration-300 ${openIndex === idx ? "max-h-96" : "max-h-0"}`}
                   aria-hidden={openIndex !== idx}
                 >
-                  <p className="text-left text-base sm:text-lg text-gray-300 pb-2">
+                  <p className="text-left text-base sm:text-lg text-gray-700 dark:text-gray-300 pb-2">
                     {a}
                   </p>
                 </dd>
@@ -399,18 +399,18 @@ export default function LandingHero() {
               </button>
             </div>
           </form>
-          <p className="mt-4 text-left text-sm text-gray-500">
+          <p className="mt-4 text-left text-sm text-gray-600 dark:text-gray-500">
             <strong>Disclaimer:</strong> Keystone Notary Group, LLC is not a law
             firm and does not provide legal advice, guidance on document
             selection, or assistance in preparing legal documents. For questions
             about what type of document you need, please consult a licensed
             attorney.
           </p>
-          <p className="mt-8 text-sm text-gray-400 sm:mt-10">
+          <p className="mt-8 text-sm text-gray-600 dark:text-gray-400 sm:mt-10">
             Please mention the type of document or notarization service you are
             requesting.
           </p>
-          <div className="mt-4 space-y-2 text-base sm:text-lg text-gray-300">
+          <div className="mt-4 space-y-2 text-base sm:text-lg text-gray-700 dark:text-gray-300">
             <p>
               <strong>Phone:</strong>{" "}
               <a
