@@ -12,7 +12,7 @@
     "node": ">=18"
   },
   "dependencies": {
-    "framer-motion": "^12.20.4",
+    "framer-motion": "^12.23.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-helmet": "^6.1.0",
@@ -25,7 +25,8 @@
     "css-select": "^5.1.0",
     "nth-check": "^2.1.1",
     "resolve-url-loader": "^5.0.0",
-    "webpack-dev-server": "4.15.1",
+    "webpack-dev-server": "5.2.2",
+    "@pmmmwh/react-refresh-webpack-plugin": "^0.6.1",
     "postcss": "^8.5.6"
   },
   "devDependencies": {
