@@ -3,6 +3,12 @@ module.exports = {
   content: ["./src/**/*.{js,jsx}"],
   theme: {
     extend: {
+      colors: {
+        primary: {
+          DEFAULT: '#2563eb',
+          dark: '#1d4ed8',
+        },
+      },
       animation: {
         fadeIn: 'fadeIn 1000ms ease-out forwards',
         slideUp: 'slideUp 700ms ease-out forwards',
@@ -27,6 +33,10 @@ module.exports = {
       fontFamily: {
         display: ['"Playfair Display"', 'serif'],
         sans: ['Inter', 'sans-serif'],
+      },
+      fontSize: {
+        'fluid-2xl': 'clamp(1.5rem, 1.2vw + 0.9rem, 1.875rem)',
+        'fluid-3xl': 'clamp(1.875rem, 1.5vw + 1rem, 2.25rem)',
       },
     },
   },

@@ -3,18 +3,31 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    --font-sans: 'Inter', sans-serif;
+    --font-display: 'Playfair Display', serif;
+  }
   /* Global background pattern */
   body {
     @apply scroll-smooth bg-cover bg-center bg-no-repeat min-h-screen font-sans text-[17px] sm:text-[18px] font-medium leading-relaxed sm:leading-loose tracking-normal sm:tracking-wide bg-white text-gray-800 dark:bg-gradient-to-b dark:from-gray-900 dark:via-gray-950 dark:to-black dark:text-gray-200;
-    background-image: url('../public/bg-texture.PNG');
+    background-image:
+      radial-gradient(circle, rgba(0,0,0,0.04) 1px, transparent 1px),
+      radial-gradient(circle, rgba(0,0,0,0.04) 1px, transparent 1px);
+    background-size: 4px 4px;
+    background-position: 0 0, 2px 2px;
+  }
+  body.pure-white {
+    background-image: none;
   }
   h1,
   h2 {
-    /* Consistent heading scale */
-    @apply font-display text-3xl sm:text-4xl font-semibold tracking-tight text-gray-900 mb-6 dark:text-white;
+    /* Fluid heading scale using clamp */
+    @apply font-display font-semibold tracking-tight text-gray-900 mb-6 dark:text-white;
+    font-size: theme('fontSize.fluid-3xl');
   }
   h3 {
-    @apply font-display text-2xl sm:text-3xl font-semibold tracking-tight text-gray-900 mb-4 dark:text-white;
+    @apply font-display font-semibold tracking-tight text-gray-900 mb-4 dark:text-white;
+    font-size: theme('fontSize.fluid-2xl');
   }
   p {
     @apply text-lg text-gray-700 leading-relaxed tracking-normal dark:text-gray-300;
