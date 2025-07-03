@@ -28,6 +28,11 @@ This project uses npm overrides to pin certain transitive dependencies to secure
 3. Build for production: `npm run build`
 4. Run tests: `npm test`
 
+**Note**: The `SITEMAP_BASE_URL` environment variable controls the base URL
+used in `public/sitemap.xml`. Set this variable before running
+`npm run build` or `npm run generate-sitemap` to ensure links point to the
+correct domain.
+
 ## Project Structure
 
 - `src/` - React components and pages
