@@ -4,15 +4,61 @@ import PageTransition from "../components/PageTransition";
 import { motion } from "framer-motion";
 
 export default function ContactPage() {
+  const [formData, setFormData] = useState({ name: "", email: "", message: "" });
+  const [errors, setErrors] = useState({});
   const [submitted, setSubmitted] = useState(false);
 
-  // Prevent default form submission until backend integration is added
-  const handleSubmit = (e) => {
+  const validate = () => {
+    const newErrors = {};
+    if (!formData.name.trim()) {
+      newErrors.name = "Name is required.";
+    } else if (formData.name.trim().length < 2) {
+      newErrors.name = "Name must be at least 2 characters.";
+    }
+
+    if (!formData.email.trim()) {
+      newErrors.email = "Email is required.";
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+      newErrors.email = "Enter a valid email.";
+    }
+
+    if (!formData.message.trim()) {
+      newErrors.message = "Message is required.";
+    }
+
+    return newErrors;
+  };
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Reset form fields so the user sees a clear form
-    e.target.reset();
-    // Show confirmation message
-    setSubmitted(true);
+    const validationErrors = validate();
+    if (Object.keys(validationErrors).length > 0) {
+      setErrors(validationErrors);
+      setSubmitted(false);
+      return;
+    }
+
+    setErrors({});
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      if (!res.ok) throw new Error("Network response was not ok");
+
+      setFormData({ name: "", email: "", message: "" });
+      setSubmitted(true);
+    } catch (err) {
+      setErrors({ submit: "Failed to send. Please try again later." });
+      setSubmitted(false);
+    }
   };
 
   return (
@@ -31,7 +77,7 @@ export default function ContactPage() {
           Contact
         </h1>
         <div aria-hidden="true" className="border-b-2 border-blue-500 w-12 mx-auto mb-6" />
-        <form onSubmit={handleSubmit} className="space-y-6 sm:space-y-8">
+        <form onSubmit={handleSubmit} noValidate className="space-y-6 sm:space-y-8">
           <div>
             <label htmlFor="name" className="block text-sm font-medium">
               Full Name
@@ -40,9 +86,18 @@ export default function ContactPage() {
               type="text"
               id="name"
               name="name"
+              value={formData.name}
+              onChange={handleChange}
+              aria-invalid={errors.name ? 'true' : 'false'}
+              aria-describedby={errors.name ? 'name-error' : undefined}
               className="mt-2 w-full rounded-md border border-gray-600 bg-neutral-800 p-2 text-gray-200 placeholder-gray-400 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
               placeholder="Your name"
             />
+            {errors.name && (
+              <p id="name-error" className="mt-1 text-sm text-red-400" role="alert">
+                {errors.name}
+              </p>
+            )}
           </div>
           <div>
             <label htmlFor="email" className="block text-sm font-medium">
@@ -52,9 +107,18 @@ export default function ContactPage() {
               type="email"
               id="email"
               name="email"
+              value={formData.email}
+              onChange={handleChange}
+              aria-invalid={errors.email ? 'true' : 'false'}
+              aria-describedby={errors.email ? 'email-error' : undefined}
               className="mt-2 w-full rounded-md border border-gray-600 bg-neutral-800 p-2 text-gray-200 placeholder-gray-400 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
               placeholder="you@example.com"
             />
+            {errors.email && (
+              <p id="email-error" className="mt-1 text-sm text-red-400" role="alert">
+                {errors.email}
+              </p>
+            )}
           </div>
           <div>
             <label htmlFor="message" className="block text-sm font-medium">
@@ -64,9 +128,18 @@ export default function ContactPage() {
               id="message"
               name="message"
               rows="5"
+              value={formData.message}
+              onChange={handleChange}
+              aria-invalid={errors.message ? 'true' : 'false'}
+              aria-describedby={errors.message ? 'message-error' : undefined}
               className="mt-2 w-full rounded-md border border-gray-600 bg-neutral-800 p-2 text-gray-200 placeholder-gray-400 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
               placeholder="Your message"
             ></textarea>
+            {errors.message && (
+              <p id="message-error" className="mt-1 text-sm text-red-400" role="alert">
+                {errors.message}
+              </p>
+            )}
           </div>
           <div className="text-center">
             <motion.button
@@ -79,6 +152,11 @@ export default function ContactPage() {
               Send Message
             </motion.button>
           </div>
+          {errors.submit && (
+            <p className="mt-4 text-center text-sm text-red-400" role="alert">
+              {errors.submit}
+            </p>
+          )}
         </form>
         <p
           role="status"
