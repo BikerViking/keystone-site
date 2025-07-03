@@ -74,11 +74,12 @@ export default function LandingHero() {
         className={`relative flex min-h-screen w-full flex-col items-center justify-center bg-white text-gray-800 dark:bg-gradient-to-b dark:from-gray-900 dark:via-gray-950 dark:to-black dark:text-gray-200 overflow-hidden py-16 lg:py-24 opacity-0 translate-y-[10px] transition-all duration-700 ease-in-out scroll-mt-20 ${homeVisible ? "opacity-100 translate-y-0" : ""}`}
       >
         <div
-          className="absolute inset-0 z-0 bg-cover bg-center opacity-40"
+          className="absolute inset-0 z-0 bg-cover bg-center opacity-40 motion-safe:animate-bg-pan"
           /* Faint parchment overlay to subtly reinforce legal theme */
           style={{
             backgroundImage:
               "linear-gradient(rgba(246,242,238,0.45), rgba(246,242,238,0.45)), url('/bg-texture.PNG')",
+            backgroundSize: '400% 400%',
           }}
           aria-hidden="true"
         ></div>

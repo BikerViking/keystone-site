@@ -53,3 +53,12 @@ test("contact form fields have light and dark styles", () => {
   expect(nameInput.className).toMatch(/bg-white/);
   expect(nameInput.className).toMatch(/dark:bg-neutral-800/);
 });
+
+test("hero background overlay animates when motion is allowed", () => {
+  const { container } = render(<LandingHero />);
+  const overlay = container.querySelector(
+    "#home > div.absolute.inset-0.z-0.bg-cover.bg-center.opacity-40",
+  );
+  expect(overlay).toBeInTheDocument();
+  expect(overlay.className).toMatch(/motion-safe:animate-bg-pan/);
+});
