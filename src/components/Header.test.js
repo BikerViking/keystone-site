@@ -52,3 +52,18 @@ test('does not render logo or tagline', () => {
     screen.queryByText(/mobile notary services in pennsylvania/i)
   ).toBeNull();
 });
+
+test('theme toggle updates body class', () => {
+  render(
+    <MemoryRouter>
+      <Header />
+    </MemoryRouter>
+  );
+
+  const toggle = screen.getByRole('button', { name: /toggle dark mode/i });
+  expect(document.body).not.toHaveClass('dark');
+  fireEvent.click(toggle);
+  expect(document.body).toHaveClass('dark');
+  fireEvent.click(toggle);
+  expect(document.body).not.toHaveClass('dark');
+});
