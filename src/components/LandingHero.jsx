@@ -116,7 +116,7 @@ export default function LandingHero() {
           <motion.img
             src="/logo.PNG"
             alt="Keystone Notary Group logo"
-            className="w-36 md:w-48"
+            className="w-36 md:w-48 invert dark:invert-0 drop-shadow"
             initial={{ opacity: 0, y: -8 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
@@ -301,7 +301,7 @@ export default function LandingHero() {
                     aria-expanded={openIndex === idx}
                     aria-controls={`faq-panel-${idx}`}
                     onClick={() => toggleFaq(idx)}
-                    className="flex w-full items-center justify-between text-left text-base font-medium text-gray-100 sm:text-lg"
+                    className="flex w-full items-center justify-between text-left text-base font-medium text-gray-800 dark:text-gray-100 sm:text-lg"
                   >
                     <span>{q}</span>
                     <svg
