@@ -48,3 +48,8 @@ This project uses npm overrides to pin certain transitive dependencies to secure
 2. Open the site in a browser and verify the service worker registers without errors (check DevTools > Application > Service Workers).
 3. With DevTools open, set the network mode to "Offline" and refresh the page to confirm the cached assets and offline page load correctly.
 4. Run `npm test` to execute unit tests.
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
+
