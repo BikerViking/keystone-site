@@ -46,3 +46,10 @@ test("includes request notary button", () => {
     screen.getByRole("link", { name: /request notary/i })
   ).toBeInTheDocument();
 });
+
+test("contact form fields have light and dark styles", () => {
+  render(<LandingHero />);
+  const nameInput = screen.getByPlaceholderText(/your name/i);
+  expect(nameInput.className).toMatch(/bg-white/);
+  expect(nameInput.className).toMatch(/dark:bg-neutral-800/);
+});
