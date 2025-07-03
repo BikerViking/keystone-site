@@ -25,16 +25,16 @@ export default function AboutPage() {
           and Montgomery County, Pennsylvania.
         </p>
         <div className="mt-10 grid gap-6 sm:mt-12 sm:grid-cols-2">
-          <div className="rounded bg-neutral-800 p-6 text-center shadow-sm">
+          <div className="bg-neutral-800 p-6 text-center shadow-sm">
             <p className="font-medium">Certified Loan Signing Agent</p>
           </div>
-          <div className="rounded bg-neutral-800 p-6 text-center shadow-sm">
+          <div className="bg-neutral-800 p-6 text-center shadow-sm">
             <p className="font-medium">NNA Certified and Insured</p>
           </div>
-          <div className="rounded bg-neutral-800 p-6 text-center shadow-sm">
+          <div className="bg-neutral-800 p-6 text-center shadow-sm">
             <p className="font-medium">Serving Bucks & Montgomery County</p>
           </div>
-          <div className="rounded bg-neutral-800 p-6 text-center shadow-sm">
+          <div className="bg-neutral-800 p-6 text-center shadow-sm">
             <p className="font-medium">After-Hours & Emergency Services Available</p>
           </div>
         </div>
