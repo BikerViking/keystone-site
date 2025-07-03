@@ -1,12 +1,15 @@
 import { render, screen, fireEvent } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
+import { HelmetProvider } from 'react-helmet-async';
 import FaqPage from './faq.jsx';
 
 test('accordion shows one answer at a time', () => {
   render(
-    <MemoryRouter>
-      <FaqPage />
-    </MemoryRouter>
+    <HelmetProvider>
+      <MemoryRouter>
+        <FaqPage />
+      </MemoryRouter>
+    </HelmetProvider>
   );
 
   const firstButton = screen.getByRole('button', {
@@ -37,9 +40,11 @@ test('accordion shows one answer at a time', () => {
 
 test('CTA to contact page is present', () => {
   render(
-    <MemoryRouter>
-      <FaqPage />
-    </MemoryRouter>
+    <HelmetProvider>
+      <MemoryRouter>
+        <FaqPage />
+      </MemoryRouter>
+    </HelmetProvider>
   );
 
   expect(

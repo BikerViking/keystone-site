@@ -1,5 +1,6 @@
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
+import { HelmetProvider } from 'react-helmet-async';
 import ContactPage from './contact.jsx';
 
 beforeEach(() => {
@@ -12,9 +13,11 @@ afterEach(() => {
 
 test('submits form and shows confirmation message', async () => {
   render(
-    <MemoryRouter>
-      <ContactPage />
-    </MemoryRouter>
+    <HelmetProvider>
+      <MemoryRouter>
+        <ContactPage />
+      </MemoryRouter>
+    </HelmetProvider>
   );
 
   fireEvent.change(screen.getByLabelText(/full name/i), {
@@ -44,9 +47,11 @@ test('submits form and shows confirmation message', async () => {
 
 test('shows validation errors for empty fields', () => {
   render(
-    <MemoryRouter>
-      <ContactPage />
-    </MemoryRouter>
+    <HelmetProvider>
+      <MemoryRouter>
+        <ContactPage />
+      </MemoryRouter>
+    </HelmetProvider>
   );
 
   fireEvent.click(screen.getByRole('button', { name: /send message/i }));
@@ -59,9 +64,11 @@ test('shows validation errors for empty fields', () => {
 
 test('shows validation error for invalid email', () => {
   render(
-    <MemoryRouter>
-      <ContactPage />
-    </MemoryRouter>
+    <HelmetProvider>
+      <MemoryRouter>
+        <ContactPage />
+      </MemoryRouter>
+    </HelmetProvider>
   );
 
   fireEvent.change(screen.getByLabelText(/full name/i), {
