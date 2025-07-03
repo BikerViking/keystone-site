@@ -87,14 +87,14 @@
         }
       </script>
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       // Deny analytics storage until user consents
       gtag('consent', 'default', {ad_storage: 'denied', analytics_storage: 'denied'});
       gtag('js', new Date());
-      gtag('config', 'G-XXXXXXXXXX', { anonymize_ip: true });
+      gtag('config', 'GA_MEASUREMENT_ID', { anonymize_ip: true });
     </script>
 
     <!-- Optional analytics: uncomment to enable -->

@@ -7,8 +7,11 @@ offline-capable service worker and web app manifest.
 
 ## Analytics
 
-Google Analytics 4 tracking is included with privacy-friendly defaults. Update
-the measurement ID in `public/index.html` and adjust consent logic as needed.
+Google Analytics 4 tracking is included with privacy-friendly defaults. Set the
+`REACT_APP_GA_ID` environment variable before running `npm run build`. The build
+script will inject this ID into `build/index.html` in place of the placeholder
+value, keeping the source file free of sensitive data. Adjust the consent logic
+as needed.
 Optional snippets for Hotjar or Microsoft Clarity are also provided in the head
 section but are disabled by default.
 
