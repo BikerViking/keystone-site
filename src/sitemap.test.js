@@ -12,4 +12,15 @@ describe('sitemap generation', () => {
     const sitemapPath = path.join(__dirname, '..', 'public', 'sitemap.xml');
     expect(fs.existsSync(sitemapPath)).toBe(true);
   });
+
+  test('removes trailing slash from base URL', () => {
+    execSync('node scripts/generate-sitemap.js', {
+      stdio: 'inherit',
+      env: { ...process.env, SITEMAP_BASE_URL: 'https://example.com/' },
+    });
+
+    const sitemapPath = path.join(__dirname, '..', 'public', 'sitemap.xml');
+    const xml = fs.readFileSync(sitemapPath, 'utf8');
+    expect(xml).toContain('<loc>https://example.com/about</loc>');
+  });
 });
