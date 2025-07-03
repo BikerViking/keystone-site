@@ -184,16 +184,16 @@ export default function LandingHero() {
             Pennsylvania.
           </p>
           <div className="mt-10 grid gap-6 sm:mt-12 sm:grid-cols-2">
-            <div className="rounded-lg bg-gray-200 text-gray-800 dark:bg-neutral-900 dark:text-gray-100 p-6 text-center shadow-md">
+            <div className="bg-gray-200 text-gray-800 dark:bg-neutral-900 dark:text-gray-100 p-6 text-center shadow-md">
               <p className="font-medium">Certified Loan Signing Agent</p>
             </div>
-            <div className="rounded-lg bg-gray-200 text-gray-800 dark:bg-neutral-900 dark:text-gray-100 p-6 text-center shadow-md">
+            <div className="bg-gray-200 text-gray-800 dark:bg-neutral-900 dark:text-gray-100 p-6 text-center shadow-md">
               <p className="font-medium">NNA Certified and Insured</p>
             </div>
-            <div className="rounded-lg bg-gray-200 text-gray-800 dark:bg-neutral-900 dark:text-gray-100 p-6 text-center shadow-md">
+            <div className="bg-gray-200 text-gray-800 dark:bg-neutral-900 dark:text-gray-100 p-6 text-center shadow-md">
               <p className="font-medium">Serving Bucks & Montgomery County</p>
             </div>
-            <div className="rounded-lg bg-gray-200 text-gray-800 dark:bg-neutral-900 dark:text-gray-100 p-6 text-center shadow-md">
+            <div className="bg-gray-200 text-gray-800 dark:bg-neutral-900 dark:text-gray-100 p-6 text-center shadow-md">
               <p className="font-medium">
                 After-Hours & Emergency Services Available
               </p>
@@ -280,7 +280,7 @@ export default function LandingHero() {
         id="faq"
         ref={faqRef}
         aria-label="Frequently Asked Questions"
-        className={`flex min-h-screen w-full flex-col items-center justify-center bg-gray-100 text-gray-800 dark:bg-neutral-900 dark:text-gray-200 rounded-t-[3rem] px-4 py-16 lg:py-24 sm:px-6 lg:px-8 opacity-0 translate-y-[10px] transition-all duration-700 ease-in-out scroll-mt-20 ${faqVisible ? "opacity-100 translate-y-0" : ""}`}
+        className={`flex min-h-screen w-full flex-col items-center justify-center bg-gray-100 text-gray-800 dark:bg-neutral-900 dark:text-gray-200 px-4 py-16 lg:py-24 sm:px-6 lg:px-8 opacity-0 translate-y-[10px] transition-all duration-700 ease-in-out scroll-mt-20 ${faqVisible ? "opacity-100 translate-y-0" : ""}`}
       >
         <div className="mx-auto w-full max-w-screen-lg">
           <h2 className="text-center">
@@ -291,7 +291,7 @@ export default function LandingHero() {
             {faqs.map(({ q, a }, idx) => (
               <div
                 key={q}
-                className={`rounded-lg bg-gray-200 text-gray-800 dark:bg-neutral-900 dark:text-gray-100 p-6 shadow-md opacity-0 translate-y-3 transition-all duration-700 ease-in-out ${
+                className={`bg-gray-200 text-gray-800 dark:bg-neutral-900 dark:text-gray-100 p-6 shadow-md opacity-0 translate-y-3 transition-all duration-700 ease-in-out ${
                   faqVisible ? 'opacity-100 translate-y-0' : ''
                 }`}
                 style={{ transitionDelay: `${idx * 100}ms` }}
@@ -343,7 +343,7 @@ export default function LandingHero() {
         id="contact"
         ref={contactRef}
         aria-label="Contact"
-        className={`flex min-h-screen w-full flex-col items-center justify-center bg-gray-100 paper-texture text-gray-800 dark:bg-gray-950 dark:text-gray-200 rounded-t-[3rem] px-4 py-16 lg:py-24 sm:px-6 lg:px-8 opacity-0 translate-y-[10px] transition-all duration-700 ease-in-out scroll-mt-20 ${contactVisible ? "opacity-100 translate-y-0" : ""}`}
+        className={`flex min-h-screen w-full flex-col items-center justify-center bg-gray-100 paper-texture text-gray-800 dark:bg-gray-950 dark:text-gray-200 px-4 py-16 lg:py-24 sm:px-6 lg:px-8 opacity-0 translate-y-[10px] transition-all duration-700 ease-in-out scroll-mt-20 ${contactVisible ? "opacity-100 translate-y-0" : ""}`}
       >
         <div className="mx-auto w-full max-w-screen-lg">
           <h2 className="text-center">

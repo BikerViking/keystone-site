@@ -44,7 +44,7 @@ export default function FaqPage() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
           viewport={{ once: true }}
-          className="bg-gradient-to-b from-neutral-900 via-black to-neutral-950 rounded-t-[3rem] mx-auto max-w-screen-lg px-4 py-16 lg:py-24 text-gray-200 sm:px-6 lg:px-8 space-y-4 sm:space-y-6"
+          className="bg-gradient-to-b from-neutral-900 via-black to-neutral-950 mx-auto max-w-screen-lg px-4 py-16 lg:py-24 text-gray-200 sm:px-6 lg:px-8 space-y-4 sm:space-y-6"
         >
         <h1 className="text-center">
           Frequently Asked Questions
@@ -58,7 +58,7 @@ export default function FaqPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, ease: 'easeOut', delay: idx * 0.1 }}
-              className="rounded bg-neutral-800 p-4 sm:p-6 shadow-sm"
+              className="bg-neutral-800 p-4 sm:p-6 shadow-sm"
             >
               <dt>
                 <button
@@ -94,7 +94,7 @@ export default function FaqPage() {
             </motion.div>
           ))}
         </dl>
-        <div className="mt-12 rounded-lg border border-blue-500/30 bg-neutral-800 p-6 text-center shadow-inner">
+        <div className="mt-12 border border-blue-500/30 bg-neutral-800 p-6 text-center shadow-inner">
           <h2 className="text-center text-3xl font-semibold tracking-wide text-white mb-8">Still have questions?</h2>
           <div aria-hidden="true" className="mx-auto mb-6 h-0.5 w-24 bg-gradient-to-r from-blue-500/50 to-blue-500/0" />
           <motion.a
