@@ -24,6 +24,7 @@ section but are disabled by default.
 This project uses npm overrides to pin certain transitive dependencies to secure versions.
 
 1. Install dependencies: `npm install`
+   - This runs `patch-package` to apply local patches in the `patches/` directory.
 2. Start the development server: `npm start`
 3. Build for production: `npm run build`
 4. Run tests: `npm test`
