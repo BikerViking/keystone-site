@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import LayoutWrapper from "../components/LayoutWrapper";
 import PageTransition from "../components/PageTransition";
+import ServiceAreaMap from "../components/ServiceAreaMap";
 import { motion } from "framer-motion";
 
 export default function ContactPage() {
@@ -220,6 +221,9 @@ export default function ContactPage() {
               {node}
             </motion.p>
           ))}
+        </div>
+        <div className="mt-8">
+          <ServiceAreaMap />
         </div>
         {/* Decorative feather watermark */}
         <svg
