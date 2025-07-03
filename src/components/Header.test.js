@@ -39,3 +39,31 @@ test('adds shadow when page is scrolled', () => {
 
   expect(header.className).toMatch(/shadow-sm/);
 });
+
+test('does not render logo or tagline', () => {
+  render(
+    <MemoryRouter>
+      <Header />
+    </MemoryRouter>
+  );
+
+  expect(screen.queryByAltText(/keystone notary group logo/i)).toBeNull();
+  expect(
+    screen.queryByText(/mobile notary services in pennsylvania/i)
+  ).toBeNull();
+});
+
+test('theme toggle updates body class', () => {
+  render(
+    <MemoryRouter>
+      <Header />
+    </MemoryRouter>
+  );
+
+  const toggle = screen.getByRole('button', { name: /toggle dark mode/i });
+  expect(document.body).not.toHaveClass('dark');
+  fireEvent.click(toggle);
+  expect(document.body).toHaveClass('dark');
+  fireEvent.click(toggle);
+  expect(document.body).not.toHaveClass('dark');
+});

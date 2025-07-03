@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 import LayoutWrapper from "../components/LayoutWrapper";
+import PageTransition from "../components/PageTransition";
+import { motion } from "framer-motion";
 
 export default function FaqPage() {
   const faqs = [
@@ -35,17 +36,30 @@ export default function FaqPage() {
   };
 
   return (
-    <LayoutWrapper>
-      <section
-        aria-label="Frequently Asked Questions"
-        className="bg-neutral-900 mx-auto max-w-screen-lg px-4 py-12 lg:py-20 text-gray-200 sm:px-6 lg:px-8"
-      >
-        <h1 className="mb-8 text-center font-extrabold">
+    <PageTransition>
+      <LayoutWrapper>
+        <motion.section
+          aria-label="Frequently Asked Questions"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          viewport={{ once: true }}
+          className="bg-gradient-to-b from-neutral-900 via-black to-neutral-950 mx-auto max-w-screen-lg px-4 py-16 lg:py-24 text-gray-200 sm:px-6 lg:px-8 space-y-4 sm:space-y-6"
+        >
+        <h1 className="text-center">
           Frequently Asked Questions
         </h1>
+        <div aria-hidden="true" className="border-b-2 border-blue-500 w-12 mx-auto mb-6" />
         <dl className="space-y-6 sm:space-y-8">
           {faqs.map(({ q, a }, idx) => (
-            <div key={q} className="rounded bg-neutral-800 p-4 sm:p-6 shadow-sm">
+            <motion.div
+              key={q}
+              initial={{ opacity: 0, y: 12 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, ease: 'easeOut', delay: idx * 0.1 }}
+              className="bg-neutral-800 p-4 sm:p-6 shadow-sm"
+            >
               <dt>
                 <button
                   type="button"
@@ -77,21 +91,23 @@ export default function FaqPage() {
               >
                 <p className="text-left text-gray-400 pb-2">{a}</p>
               </dd>
-            </div>
+            </motion.div>
           ))}
         </dl>
-        <div className="mt-12 rounded-lg border border-blue-500/30 bg-neutral-800 p-6 text-center shadow-inner">
-          <h2 className="mb-4 font-bold text-gray-100">
-            Still have questions?
-          </h2>
-          <Link
-            to="/contact#contact"
-            className="inline-block min-h-[48px] rounded-md bg-blue-600 px-6 py-2 font-semibold text-white shadow transition-colors hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-neutral-900"
+        <div className="mt-12 border border-blue-500/30 bg-neutral-800 p-6 text-center shadow-inner">
+          <h2 className="text-center text-3xl font-semibold tracking-wide text-white mb-8">Still have questions?</h2>
+          <div aria-hidden="true" className="mx-auto mb-6 h-0.5 w-24 bg-gradient-to-r from-blue-500/50 to-blue-500/0" />
+          <motion.a
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            href="/contact#contact"
+            className="inline-block min-h-[48px] rounded-md bg-blue-600 px-6 py-2 font-semibold text-white shadow transition-transform duration-200 hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-neutral-900"
           >
             Contact Us
-          </Link>
+          </motion.a>
         </div>
-      </section>
-    </LayoutWrapper>
+        </motion.section>
+      </LayoutWrapper>
+    </PageTransition>
   );
 }

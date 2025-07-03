@@ -1,11 +1,14 @@
 import React from "react";
 import LayoutWrapper from "../components/LayoutWrapper";
 import LandingHero from "../components/LandingHero";
+import PageTransition from "../components/PageTransition";
 
 export default function HomePage() {
   return (
-    <LayoutWrapper fullWidth>
-      <LandingHero />
-    </LayoutWrapper>
+    <PageTransition>
+      <LayoutWrapper fullWidth>
+        <LandingHero />
+      </LayoutWrapper>
+    </PageTransition>
   );
 }

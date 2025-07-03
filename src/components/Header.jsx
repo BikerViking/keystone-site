@@ -1,10 +1,12 @@
 import React, { useState, useEffect, useRef } from "react";
 import { createPortal } from "react-dom";
 import { NavLink } from "react-router-dom";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [dark, setDark] = useState(false);
   const firstRef = useRef(null);
   const lastRef = useRef(null);
 
@@ -20,6 +22,24 @@ export default function Header() {
       body.classList.remove("overflow-hidden");
     }
   }, [open]);
+
+  // Initialize theme from localStorage or system preference
+  useEffect(() => {
+    const stored = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const enabled = stored ? stored === 'dark' : prefersDark;
+    document.body.classList.toggle('dark', enabled);
+    setDark(enabled);
+  }, []);
+
+  const toggleTheme = () => {
+    setDark((prev) => {
+      const next = !prev;
+      document.body.classList.toggle('dark', next);
+      localStorage.setItem('theme', next ? 'dark' : 'light');
+      return next;
+    });
+  };
 
   // Toggle a subtle shadow once the user scrolls down the page
   useEffect(() => {
@@ -50,14 +70,21 @@ export default function Header() {
   return (
     <header
       role="banner"
-      className={`fixed top-0 left-0 right-0 z-50 border-b border-gray-800 bg-neutral-900/80 backdrop-blur text-gray-200 transition-shadow duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 border-b backdrop-blur transition-shadow duration-300 bg-white/70 text-gray-800 border-gray-200 dark:bg-gradient-to-b dark:from-gray-900 dark:via-gray-950 dark:to-black dark:text-gray-200 dark:border-gray-800 ${
         scrolled ? "shadow-sm" : "shadow-none"
       }`}
     >
-      <div className="mx-auto flex max-w-screen-xl flex-wrap items-center justify-center gap-4 px-4 py-2 sm:flex-nowrap sm:justify-between sm:px-6 sm:py-3">
-        <h1 className="text-center text-sm font-semibold uppercase tracking-wide text-gray-100 sm:text-base">
-          Keystone Notary Group
-        </h1>
+      <h1 className="sr-only">Keystone Notary Group</h1>
+      <div className="mx-auto flex max-w-screen-xl items-center justify-end px-4 sm:px-6">
+        {/* Theme toggle button */}
+        <button
+          type="button"
+          aria-label="Toggle dark mode"
+          onClick={toggleTheme}
+          className="rounded border border-gray-600 px-3 min-h-[36px] py-1 text-xs uppercase tracking-wide text-gray-800 dark:text-gray-200 transition-transform duration-300 ease-in-out hover:-translate-y-0.5 hover:shadow-md active:shadow-none focus:outline-none focus:ring-2 focus:ring-blue-600 mr-4"
+        >
+          {dark ? 'Light' : 'Dark'}
+        </button>
         {/* Mobile navigation toggle */}
         <button
           type="button"
@@ -65,7 +92,7 @@ export default function Header() {
           aria-controls="mobile-menu"
           aria-expanded={open}
           onClick={toggleMenu}
-          className="rounded border border-gray-600 px-6 min-h-[48px] py-1 text-xs uppercase tracking-wide text-gray-200 transition hover:shadow-xl active:shadow-none focus:outline-none focus:ring-2 focus:ring-blue-600 sm:hidden"
+          className="ml-4 rounded border border-gray-600 px-6 min-h-[48px] py-1 text-xs uppercase tracking-wide text-gray-800 dark:text-gray-200 transition-transform duration-300 ease-in-out hover:-translate-y-0.5 hover:shadow-md active:shadow-none focus:outline-none focus:ring-2 focus:ring-blue-600 sm:hidden"
         >
           Menu
         </button>
@@ -73,30 +100,34 @@ export default function Header() {
 
       {/* Mobile menu overlay rendered in a portal to avoid stacking issues */}
       {createPortal(
-        <div
-          role="presentation"
-          aria-hidden={!open}
-          aria-label="Menu overlay"
-          className={`sm:hidden fixed inset-0 z-[9999] bg-black/80 transition-opacity duration-300 ${
-            open ? "opacity-100" : "pointer-events-none opacity-0"
-          }`}
-          onClick={closeMenu}
-        >
-          <nav
-            id="mobile-menu"
-            aria-label="Mobile"
-            onKeyDown={handleKeyDown}
-            onClick={(e) => e.stopPropagation()}
-            className={`fixed right-0 top-0 bottom-0 w-64 transform bg-gray-900 text-white shadow-xl transition-all duration-300 ${
-              open ? "translate-x-0" : "translate-x-full"
-            }`}
-          >
+        <AnimatePresence>
+          {open && (
+            <motion.div
+              role="presentation"
+              aria-label="Menu overlay"
+              onClick={closeMenu}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="sm:hidden fixed inset-0 z-[9999] bg-black/80"
+            >
+              <motion.nav
+                id="mobile-menu"
+                aria-label="Mobile"
+                onKeyDown={handleKeyDown}
+                onClick={(e) => e.stopPropagation()}
+                initial={{ x: '100%' }}
+                animate={{ x: 0 }}
+                exit={{ x: '100%' }}
+                transition={{ type: 'tween', duration: 0.3 }}
+                className="fixed right-0 top-0 bottom-0 w-64 bg-white text-gray-800 dark:bg-gray-900 dark:text-white shadow-xl"
+              >
             <button
               type="button"
               aria-label="Close menu"
               onClick={closeMenu}
               ref={firstRef}
-              className="absolute top-4 right-4 text-white text-2xl z-50 focus:outline-none"
+              className="absolute top-4 right-4 text-gray-800 dark:text-white text-2xl z-50 focus:outline-none"
             >
               &times;
             </button>
@@ -106,7 +137,7 @@ export default function Header() {
                 to="/"
                 onClick={closeMenu}
                 className={({ isActive }) =>
-                  `block px-2 py-1 transition hover:text-blue-400${isActive ? " underline text-blue-400" : ""}`
+                  `block px-2 py-1 transition-transform duration-300 ease-in-out hover:-translate-y-0.5 hover:text-blue-400${isActive ? " underline text-blue-400" : ""}`
                 }
               >
                 Home
@@ -117,7 +148,7 @@ export default function Header() {
                 to="/services"
                 onClick={closeMenu}
                 className={({ isActive }) =>
-                  `block px-2 py-1 transition hover:text-blue-400${isActive ? " underline text-blue-400" : ""}`
+                  `block px-2 py-1 transition-transform duration-300 ease-in-out hover:-translate-y-0.5 hover:text-blue-400${isActive ? " underline text-blue-400" : ""}`
                 }
               >
                 Services
@@ -128,7 +159,7 @@ export default function Header() {
                 to="/faq"
                 onClick={closeMenu}
                 className={({ isActive }) =>
-                  `block px-2 py-1 transition hover:text-blue-400${isActive ? " underline text-blue-400" : ""}`
+                  `block px-2 py-1 transition-transform duration-300 ease-in-out hover:-translate-y-0.5 hover:text-blue-400${isActive ? " underline text-blue-400" : ""}`
                 }
               >
                 FAQ
@@ -140,15 +171,17 @@ export default function Header() {
                 onClick={closeMenu}
                 ref={lastRef}
                 className={({ isActive }) =>
-                  `block px-2 py-1 transition hover:text-blue-400${isActive ? " underline text-blue-400" : ""}`
+                  `block px-2 py-1 transition-transform duration-300 ease-in-out hover:-translate-y-0.5 hover:text-blue-400${isActive ? " underline text-blue-400" : ""}`
                 }
               >
                 Contact
               </NavLink>
             </li>
           </ul>
-        </nav>
-        </div>,
+              </motion.nav>
+            </motion.div>
+          )}
+        </AnimatePresence>,
         document.body
       )}
     </header>
