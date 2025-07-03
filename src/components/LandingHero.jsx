@@ -361,7 +361,7 @@ export default function LandingHero() {
                 type="text"
                 id="name"
                 name="name"
-                className="mt-2 w-full rounded-md border border-gray-600 bg-neutral-800 p-2 text-gray-200 placeholder-gray-400 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
+                className="mt-2 w-full rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-neutral-800 p-2 text-gray-800 dark:text-gray-200 placeholder-gray-500 dark:placeholder-gray-400 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
                 placeholder="Your name"
               />
             </div>
@@ -373,7 +373,7 @@ export default function LandingHero() {
                 type="email"
                 id="email"
                 name="email"
-                className="mt-2 w-full rounded-md border border-gray-600 bg-neutral-800 p-2 text-gray-200 placeholder-gray-400 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
+                className="mt-2 w-full rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-neutral-800 p-2 text-gray-800 dark:text-gray-200 placeholder-gray-500 dark:placeholder-gray-400 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
                 placeholder="you@example.com"
               />
             </div>
@@ -385,7 +385,7 @@ export default function LandingHero() {
                 id="message"
                 name="message"
                 rows="5"
-                className="mt-2 w-full rounded-md border border-gray-600 bg-neutral-800 p-2 text-gray-200 placeholder-gray-400 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
+                className="mt-2 w-full rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-neutral-800 p-2 text-gray-800 dark:text-gray-200 placeholder-gray-500 dark:placeholder-gray-400 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
                 placeholder="Your message"
               ></textarea>
             </div>
