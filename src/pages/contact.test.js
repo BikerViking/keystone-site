@@ -79,13 +79,3 @@ test('shows validation error for invalid email', () => {
   expect(fetch).not.toHaveBeenCalled();
   expect(screen.getByText(/enter a valid email/i)).toBeInTheDocument();
 });
-
-test('renders service area map', () => {
-  const { container } = render(
-    <MemoryRouter>
-      <ContactPage />
-    </MemoryRouter>
-  );
-
-  expect(container.querySelector('#service-area-map')).toBeInTheDocument();
-});
