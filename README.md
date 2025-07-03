@@ -17,7 +17,7 @@ section but are disabled by default.
 
 ## Requirements
 
-- Node.js 18 or later
+ - Node.js 20 or later
 
 ## Getting Started
 
