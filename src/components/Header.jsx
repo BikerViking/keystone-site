@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { createPortal } from "react-dom";
 import { NavLink } from "react-router-dom";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
@@ -99,24 +100,28 @@ export default function Header() {
 
       {/* Mobile menu overlay rendered in a portal to avoid stacking issues */}
       {createPortal(
-        <div
-          role="presentation"
-          aria-hidden={!open}
-          aria-label="Menu overlay"
-          className={`sm:hidden fixed inset-0 z-[9999] bg-black/80 transition-opacity duration-300 ${
-            open ? "opacity-100" : "pointer-events-none opacity-0"
-          }`}
-          onClick={closeMenu}
-        >
-          <nav
-            id="mobile-menu"
-            aria-label="Mobile"
-            onKeyDown={handleKeyDown}
-            onClick={(e) => e.stopPropagation()}
-            className={`fixed right-0 top-0 bottom-0 w-64 transform bg-white text-gray-800 dark:bg-gray-900 dark:text-white shadow-xl transition-all duration-300 ${
-              open ? "translate-x-0" : "translate-x-full"
-            }`}
-          >
+        <AnimatePresence>
+          {open && (
+            <motion.div
+              role="presentation"
+              aria-label="Menu overlay"
+              onClick={closeMenu}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="sm:hidden fixed inset-0 z-[9999] bg-black/80"
+            >
+              <motion.nav
+                id="mobile-menu"
+                aria-label="Mobile"
+                onKeyDown={handleKeyDown}
+                onClick={(e) => e.stopPropagation()}
+                initial={{ x: '100%' }}
+                animate={{ x: 0 }}
+                exit={{ x: '100%' }}
+                transition={{ type: 'tween', duration: 0.3 }}
+                className="fixed right-0 top-0 bottom-0 w-64 bg-white text-gray-800 dark:bg-gray-900 dark:text-white shadow-xl"
+              >
             <button
               type="button"
               aria-label="Close menu"
@@ -173,8 +178,10 @@ export default function Header() {
               </NavLink>
             </li>
           </ul>
-        </nav>
-        </div>,
+              </motion.nav>
+            </motion.div>
+          )}
+        </AnimatePresence>,
         document.body
       )}
     </header>
