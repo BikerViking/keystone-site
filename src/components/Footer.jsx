@@ -1,7 +1,7 @@
 import React from "react";
 export default function Footer() {
   return (
-    <footer className="bg-neutral-900 text-gray-500">
+    <footer className="bg-gray-100 text-gray-600 dark:bg-neutral-900 dark:text-gray-500">
       <div className="mx-auto max-w-screen-lg px-4 py-3 text-center sm:px-6 lg:px-8">
         <div className="mx-auto max-w-screen-xl px-4 py-3 text-center">
           {/* Static copyright text for legal clarity */}
