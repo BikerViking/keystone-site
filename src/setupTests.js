@@ -24,3 +24,12 @@ if (typeof window.matchMedia === 'undefined') {
     dispatchEvent: () => false,
   });
 }
+
+// Polyfill TextEncoder and TextDecoder for React Router DOM tests
+import { TextEncoder, TextDecoder } from 'util';
+if (typeof global.TextEncoder === 'undefined') {
+  global.TextEncoder = TextEncoder;
+}
+if (typeof global.TextDecoder === 'undefined') {
+  global.TextDecoder = TextDecoder;
+}

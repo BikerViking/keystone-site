@@ -16,7 +16,7 @@
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-helmet": "^6.1.0",
-    "react-router-dom": "^6.30.1",
+    "react-router-dom": "^7.6.3",
     "react-scripts": "^5.0.1"
   },
   "overrides": {
@@ -52,6 +52,14 @@
       "<rootDir>/src/**/__tests__/**/*.{js,jsx,ts,tsx}",
       "<rootDir>/src/**/*.{spec,test}.{js,jsx,ts,tsx}",
       "<rootDir>/scripts/**/__tests__/**/*.{js,jsx,ts,tsx}"
-    ]
+    ],
+    "transformIgnorePatterns": [
+      "/node_modules/(?!react-router-dom)/"
+    ],
+    "moduleNameMapper": {
+      "^react-router-dom$": "<rootDir>/node_modules/react-router-dom/dist/index.js",
+      "^react-router$": "<rootDir>/node_modules/react-router/dist/development/index.js",
+      "^react-router\/dom$": "<rootDir>/node_modules/react-router/dist/development/dom-export.js"
+    }
   }
 }
