@@ -8,7 +8,15 @@ import 'leaflet/dist/leaflet.css';
  */
 export default function ServiceAreaMap() {
   useEffect(() => {
-    const map = L.map('service-area-map', {
+    const container = L.DomUtil.get('service-area-map');
+    // React 18 StrictMode mounts components twice in development which can
+    // leave a leftover Leaflet map instance on the container. Remove any
+    // existing internal identifier so a new map can be created cleanly.
+    if (container && container._leaflet_id) {
+      container._leaflet_id = null;
+    }
+
+    const map = L.map(container, {
       attributionControl: false,
       zoomControl: false,
     }).setView([40.2765, -75.1449], 9); // Centered on Bucks/Montgomery County, PA
