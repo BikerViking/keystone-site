@@ -6,7 +6,8 @@
     "start": "react-scripts start",
     "build": "npm run generate-sitemap && react-scripts build && node scripts/inject-ga.js",
     "test": "react-scripts test --watchAll=false",
-    "generate-sitemap": "node scripts/generate-sitemap.js"
+    "generate-sitemap": "node scripts/generate-sitemap.js",
+    "postinstall": "patch-package"
   },
   "engines": {
     "node": ">=20"
@@ -29,9 +30,11 @@
     "webpack-dev-server": "^5.2.2"
   },
   "devDependencies": {
+    "@tailwindcss/postcss": "^4.1.11",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.3.0",
     "autoprefixer": "^10.4.21",
+    "patch-package": "^8.0.0",
     "postcss": "^8.5.6",
     "tailwindcss": "^4.1.11"
   },
@@ -59,7 +62,7 @@
     "moduleNameMapper": {
       "^react-router-dom$": "<rootDir>/node_modules/react-router-dom/dist/index.js",
       "^react-router$": "<rootDir>/node_modules/react-router/dist/development/index.js",
-      "^react-router\/dom$": "<rootDir>/node_modules/react-router/dist/development/dom-export.js"
+      "^react-router/dom$": "<rootDir>/node_modules/react-router/dist/development/dom-export.js"
     }
   }
 }

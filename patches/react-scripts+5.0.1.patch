@@ -1,0 +1,13 @@
+diff --git a/node_modules/react-scripts/config/webpack.config.js b/node_modules/react-scripts/config/webpack.config.js
+index e465d8e..3f51e3a 100644
+--- a/node_modules/react-scripts/config/webpack.config.js
++++ b/node_modules/react-scripts/config/webpack.config.js
+@@ -159,7 +159,7 @@ module.exports = function (webpackEnv) {
+                   'postcss-normalize',
+                 ]
+               : [
+-                  'tailwindcss',
++                  '@tailwindcss/postcss',
+                   'postcss-flexbugs-fixes',
+                   [
+                     'postcss-preset-env',
