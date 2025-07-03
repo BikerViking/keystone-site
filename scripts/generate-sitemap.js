@@ -18,7 +18,9 @@ function getRoutes() {
 }
 
 function generateSitemap(routes) {
-  const base = process.env.SITEMAP_BASE_URL || 'http://localhost';
+  const rawBase = process.env.SITEMAP_BASE_URL || 'http://localhost';
+  // Remove any trailing slash to avoid double slashes in URLs
+  const base = rawBase.replace(/\/$/, '');
   const urls = routes.map(r => {
     const loc = r === '/' ? base : `${base}${r}`;
     return `  <url><loc>${loc}</loc></url>`;

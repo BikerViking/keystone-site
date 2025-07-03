@@ -31,7 +31,8 @@ This project uses npm overrides to pin certain transitive dependencies to secure
 **Note**: The `SITEMAP_BASE_URL` environment variable controls the base URL
 used in `public/sitemap.xml`. Set this variable before running
 `npm run build` or `npm run generate-sitemap` to ensure links point to the
-correct domain.
+correct domain. Any trailing slash will be removed automatically so either
+`https://example.com` or `https://example.com/` work the same.
 
 ## Project Structure
 
