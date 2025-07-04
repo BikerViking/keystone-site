@@ -136,7 +136,7 @@ export default function LandingHero() {
             initial={{ opacity: 0, y: -8 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }}
-            className="mb-6 sm:mb-8 w-full max-w-xs sm:w-auto text-center mx-auto rounded-md bg-gradient-to-r from-blue-600 to-indigo-600 px-6 min-h-[48px] py-2 font-semibold text-white transition-colors duration-300 hover:from-blue-700 hover:to-indigo-700 focus:outline-none focus:ring-2 focus:ring-blue-600"
+            className="mb-6 sm:mb-8 w-full max-w-[400px] mx-auto sm:w-auto text-center rounded-md bg-gradient-to-r from-blue-600 to-indigo-600 px-4 sm:px-6 min-h-[48px] py-2 font-semibold text-white transition-colors duration-300 hover:from-blue-700 hover:to-indigo-700 focus:outline-none focus:ring-2 focus:ring-blue-600"
           >
             Request Notary
           </motion.a>
@@ -179,13 +179,13 @@ export default function LandingHero() {
           </h2>
           <div aria-hidden="true" className="border-b-2 border-blue-500 w-12 mx-auto mb-6" />
           {/* Ensure readability on all devices */}
-          <p className="mx-auto max-w-3xl text-lg text-gray-700 dark:text-gray-300 leading-relaxed tracking-normal">
+          <p className="mx-auto max-w-3xl text-lg sm:text-xl text-gray-700 dark:text-gray-300 leading-relaxed tracking-wide">
             Keystone Notary Group, LLC is a mobile notary service dedicated to
             professionalism, punctuality, and privacy. We provide document
             notarization services throughout Bucks and Montgomery County,
             Pennsylvania.
           </p>
-          <div className="mt-10 grid gap-6 sm:mt-12 sm:grid-cols-2">
+          <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-4 sm:mt-12">
             <div className="bg-gray-200 text-gray-800 dark:bg-neutral-900 dark:text-gray-100 p-6 text-center shadow-md">
               <p className="font-medium">Certified Loan Signing Agent</p>
             </div>
