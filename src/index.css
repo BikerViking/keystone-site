@@ -15,7 +15,7 @@
 
   body {
     /* Use dynamic viewport units to better handle browser chrome on mobile */
-    @apply scroll-smooth bg-cover bg-center bg-no-repeat min-h-[100dvh] font-sans text-[17px] sm:text-[18px] font-medium leading-relaxed sm:leading-loose tracking-normal sm:tracking-wide bg-white text-gray-800 dark:bg-gradient-to-b dark:from-gray-900 dark:via-gray-950 dark:to-black dark:text-gray-200;
+    @apply scroll-smooth bg-cover bg-center bg-no-repeat min-h-[100svh] font-sans text-[17px] sm:text-[18px] font-medium leading-relaxed sm:leading-loose tracking-normal sm:tracking-wide bg-white text-gray-800 dark:bg-gradient-to-b dark:from-gray-900 dark:via-gray-950 dark:to-black dark:text-gray-200;
     background-image:
       radial-gradient(circle, rgba(0,0,0,0.04) 1px, transparent 1px),
       radial-gradient(circle, rgba(0,0,0,0.04) 1px, transparent 1px);
