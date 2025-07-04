@@ -2,67 +2,27 @@
   "name": "keystone-site",
   "version": "1.0.0",
   "private": true,
+  "type": "module",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "npm run generate-sitemap && react-scripts build && node scripts/inject-ga.js",
-    "test": "react-scripts test --watchAll=false",
-    "generate-sitemap": "node scripts/generate-sitemap.js",
-    "postinstall": "patch-package"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^7.6.3",
+    "framer-motion": "^12.23.0",
+    "react-helmet-async": "^2.0.5"
+  },
+  "devDependencies": {
+    "vite": "^5.2.10",
+    "@vitejs/plugin-react": "^4.2.1",
+    "tailwindcss": "^4.1.11",
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.6"
   },
   "engines": {
     "node": ">=20"
-  },
-  "dependencies": {
-    "framer-motion": "^12.23.0",
-    "react": "^19.1.0",
-    "react-dom": "^19.1.0",
-    "react-helmet-async": "^2.0.5",
-    "react-router-dom": "^7.6.3",
-    "react-scripts": "^5.0.1"
-  },
-  "overrides": {
-    "svgo": "^4.0.0",
-    "@svgr/webpack": "^8.1.0",
-    "css-select": "^5.1.0",
-    "nth-check": "^2.1.1",
-    "resolve-url-loader": "^5.0.0",
-    "postcss": "^8.5.6",
-    "webpack-dev-server": "^5.2.2"
-  },
-  "devDependencies": {
-    "@tailwindcss/postcss": "^4.1.11",
-    "@testing-library/jest-dom": "^6.6.3",
-    "@testing-library/react": "^16.3.0",
-    "autoprefixer": "^10.4.21",
-    "patch-package": "^8.0.0",
-    "postcss": "^8.5.6",
-    "tailwindcss": "^4.1.11"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
-  "jest": {
-    "testMatch": [
-      "<rootDir>/src/**/__tests__/**/*.{js,jsx,ts,tsx}",
-      "<rootDir>/src/**/*.{spec,test}.{js,jsx,ts,tsx}",
-      "<rootDir>/scripts/**/__tests__/**/*.{js,jsx,ts,tsx}"
-    ],
-    "transformIgnorePatterns": [
-      "/node_modules/(?!react-router-dom)/"
-    ],
-    "moduleNameMapper": {
-      "^react-router-dom$": "<rootDir>/node_modules/react-router-dom/dist/index.js",
-      "^react-router$": "<rootDir>/node_modules/react-router/dist/development/index.js",
-      "^react-router/dom$": "<rootDir>/node_modules/react-router/dist/development/dom-export.js"
-    }
   }
 }
