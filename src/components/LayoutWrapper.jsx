@@ -107,15 +107,14 @@ export default function LayoutWrapper({ children, fullWidth = false }) {
         </script>
       </Helmet>
       <Header />
-      <main
-        role="main"
-        className={`flex-grow pt-20 pb-20 ${
-          fullWidth
-            ? ''
-            : 'mx-auto max-w-screen-lg px-4 py-16 sm:px-6 lg:px-8 lg:py-24'
-        }`}
-      >
-        {children}
+      <main role="main" className="flex-grow pt-20 pb-20">
+        {fullWidth ? (
+          children
+        ) : (
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-screen-lg">
+            {children}
+          </div>
+        )}
       </main>
       <Certifications />
       <Footer />

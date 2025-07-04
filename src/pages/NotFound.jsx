@@ -7,13 +7,14 @@ export default function NotFound() {
   return (
     <PageTransition>
       <LayoutWrapper>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.section
           aria-label="Page not found"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -10 }}
           transition={{ duration: 0.4, ease: "easeOut" }}
-          className="container mx-auto max-w-screen-lg overflow-x-hidden bg-black px-4 py-16 lg:py-24 text-center text-gray-200 sm:px-6 lg:px-8 space-y-4 sm:space-y-6"
+          className="max-w-screen-lg mx-auto overflow-x-hidden bg-black py-16 lg:py-24 text-center text-gray-200 space-y-4 sm:space-y-6"
         >
         <h1>404 – Page Not Found</h1>
         <div aria-hidden="true" className="border-b-2 border-blue-500 w-12 mx-auto mb-6" />
@@ -27,6 +28,7 @@ export default function NotFound() {
             Return Home
           </motion.a>
         </motion.section>
+        </div>
       </LayoutWrapper>
     </PageTransition>
   );
