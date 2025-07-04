@@ -39,7 +39,7 @@ correct domain. Any trailing slash will be removed automatically so either
 
 - `src/` - React components and pages
 - `public/` - Static assets and HTML template
-- `react-helmet-async` manages document head tags via a provider in `src/index.js`
+- `react-helmet-async` manages document head tags via a provider in `src/main.jsx`
 
 ## Analytics
 
