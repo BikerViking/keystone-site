@@ -71,7 +71,7 @@ export default function LandingHero() {
       <section
         id="home"
         ref={homeRef}
-        className={`relative flex min-h-screen w-full flex-col items-center justify-center bg-white text-gray-800 dark:bg-gradient-to-b dark:from-gray-900 dark:via-gray-950 dark:to-black dark:text-gray-200 overflow-hidden py-16 lg:py-24 opacity-0 translate-y-[10px] transition-all duration-700 ease-in-out scroll-mt-20 ${homeVisible ? "opacity-100 translate-y-0" : ""}`}
+        className={`relative flex min-h-screen w-full flex-col items-center justify-center bg-white text-gray-800 dark:bg-gradient-to-b dark:from-gray-900 dark:via-gray-950 dark:to-black dark:text-gray-200 overflow-hidden py-12 sm:py-16 md:py-20 lg:py-24 opacity-0 translate-y-[10px] transition-all duration-700 ease-in-out scroll-mt-20 ${homeVisible ? "opacity-100 translate-y-0" : ""}`}
       >
         <div
           className="absolute inset-0 z-0 bg-cover bg-center opacity-40 motion-safe:animate-bg-pan"
@@ -108,7 +108,8 @@ export default function LandingHero() {
           <line x1="17.5" y1="15" x2="9" y2="15" />
         </svg>
 
-        <div className="relative z-10 mx-auto flex w-full max-w-screen-md flex-col items-center px-4">
+        <div className="container mx-auto px-4 sm:px-6 md:px-8">
+          <div className="relative z-10 mx-auto flex w-full max-w-screen-md flex-col items-center">
           {/* Subtle glow behind logo */}
           <div
             aria-hidden="true"
@@ -117,13 +118,13 @@ export default function LandingHero() {
           <motion.img
             src="/logo.PNG"
             alt="Keystone Notary Group logo"
-            className="w-36 md:w-48 invert dark:invert-0 drop-shadow"
+            className="w-full max-w-[9rem] md:max-w-[12rem] invert dark:invert-0 drop-shadow"
             initial={{ opacity: 0, y: -8 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
           />
           <motion.p
-            className="mt-4 mb-4 text-center text-gray-700 dark:text-gray-300 tracking-wide"
+            className="mt-4 mb-4 w-full text-center text-gray-700 dark:text-gray-300 tracking-wide"
             initial={{ opacity: 0, y: -8 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: "easeOut", delay: 0.15 }}
@@ -135,7 +136,7 @@ export default function LandingHero() {
             initial={{ opacity: 0, y: -8 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }}
-            className="mb-8 rounded-md bg-gradient-to-r from-blue-600 to-indigo-600 px-6 min-h-[48px] py-2 font-semibold text-white transition-colors duration-300 hover:from-blue-700 hover:to-indigo-700 focus:outline-none focus:ring-2 focus:ring-blue-600"
+            className="mb-6 sm:mb-8 w-full sm:w-auto text-center mx-auto rounded-md bg-gradient-to-r from-blue-600 to-indigo-600 px-6 min-h-[48px] py-2 font-semibold text-white transition-colors duration-300 hover:from-blue-700 hover:to-indigo-700 focus:outline-none focus:ring-2 focus:ring-blue-600"
           >
             Request Notary
           </motion.a>
@@ -163,6 +164,7 @@ export default function LandingHero() {
               </ul>
             </nav>
           </div>
+        </div>
       </section>
       {/* About Section */}
       <section
