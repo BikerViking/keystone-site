@@ -14,7 +14,7 @@ This project was designed with performance, scalability, and clarity in mind. Th
 - React 18 with modern JSX syntax
 - Offline caching and service worker behavior
 - Google Analytics 4 integration
-- Netlify pull request previews and builds
+- Vercel and Netlify preview deployments and builds
 
 ---
 
@@ -118,11 +118,11 @@ To test:
 
 ## Deployment
 
-- Hosted via Netlify  
-- CI runs build and test checks on each pull request  
+- Hosted via Netlify with Vercel for additional previews
+- CI runs build and test checks on each pull request
 - Preview deployments are available for each branch
 
-Make sure your Netlify environment has `REACT_APP_GA_ID` and `SITEMAP_BASE_URL` defined if not using `.env`.
+Make sure your Netlify or Vercel project has `REACT_APP_GA_ID` and `SITEMAP_BASE_URL` defined if not using `.env`.
 
 ---
 
