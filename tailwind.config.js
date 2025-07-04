@@ -26,6 +26,10 @@ module.exports = {
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif']
+      },
+      fontSize: {
+        'fluid-2xl': 'clamp(1.5rem, 2vw + 1rem, 2rem)',
+        'fluid-3xl': 'clamp(2rem, 3vw + 1rem, 3rem)'
       }
     }
   },
