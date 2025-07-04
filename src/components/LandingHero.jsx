@@ -71,7 +71,7 @@ export default function LandingHero() {
       <section
         id="home"
         ref={homeRef}
-        className={`relative flex min-h-dvh w-full flex-col items-center justify-center bg-white text-gray-800 dark:bg-gradient-to-b dark:from-gray-900 dark:via-gray-950 dark:to-black dark:text-gray-200 overflow-hidden py-12 sm:py-16 md:py-20 lg:py-24 opacity-0 translate-y-[10px] transition-all duration-700 ease-in-out scroll-mt-20 ${homeVisible ? "opacity-100 translate-y-0" : ""}`}
+        className={`relative flex min-h-dvh w-full flex-col items-center justify-center bg-white text-gray-800 dark:bg-gradient-to-b dark:from-gray-900 dark:via-gray-950 dark:to-black dark:text-gray-200 overflow-hidden overflow-x-hidden py-12 sm:py-16 md:py-20 lg:py-24 opacity-0 translate-y-[10px] transition-all duration-700 ease-in-out scroll-mt-20 ${homeVisible ? "opacity-100 translate-y-0" : ""}`}
       >
         <div
           className="absolute inset-0 z-0 bg-cover bg-center opacity-40 motion-safe:animate-bg-pan"
@@ -108,7 +108,7 @@ export default function LandingHero() {
           <line x1="17.5" y1="15" x2="9" y2="15" />
         </svg>
 
-        <div className="container mx-auto px-4 sm:px-6 md:px-8">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="relative z-10 mx-auto flex w-full max-w-screen-md flex-col items-center">
           {/* Subtle glow behind logo */}
           <div
@@ -118,7 +118,7 @@ export default function LandingHero() {
           <motion.img
             src="/logo.PNG"
             alt="Keystone Notary Group logo"
-            className="w-full max-w-[90%] sm:max-w-xs mx-auto h-auto invert dark:invert-0 drop-shadow"
+            className="w-full max-w-[90%] sm:max-w-xs mx-auto h-auto object-contain invert dark:invert-0 drop-shadow"
             initial={{ opacity: 0, y: -8 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
@@ -136,7 +136,7 @@ export default function LandingHero() {
             initial={{ opacity: 0, y: -8 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }}
-            className="mb-6 sm:mb-8 w-full max-w-[400px] mx-auto sm:w-auto text-center rounded-md bg-gradient-to-r from-blue-600 to-indigo-600 px-4 sm:px-6 min-h-[48px] py-2 font-semibold text-white transition-colors duration-300 hover:from-blue-700 hover:to-indigo-700 focus:outline-none focus:ring-2 focus:ring-blue-600"
+            className="mb-6 sm:mb-8 w-full max-w-[90%] sm:max-w-[400px] mx-auto sm:w-auto text-center rounded-md bg-gradient-to-r from-blue-600 to-indigo-600 px-4 sm:px-6 min-h-[48px] py-2 font-semibold text-white transition-colors duration-300 hover:from-blue-700 hover:to-indigo-700 focus:outline-none focus:ring-2 focus:ring-blue-600"
           >
             Request Notary
           </motion.a>
@@ -171,9 +171,9 @@ export default function LandingHero() {
         id="about"
         ref={aboutRef}
         aria-label="About"
-        className={`flex min-h-dvh w-full flex-col items-center justify-center bg-gray-100 text-gray-800 dark:bg-neutral-900 dark:text-gray-200 px-4 py-16 lg:py-24 sm:px-6 lg:px-8 opacity-0 translate-y-[10px] transition-all duration-700 ease-in-out scroll-mt-20 ${aboutVisible ? "opacity-100 translate-y-0" : ""}`}
+        className={`flex min-h-dvh w-full flex-col items-center justify-center bg-gray-100 text-gray-800 dark:bg-neutral-900 dark:text-gray-200 overflow-x-hidden px-4 py-16 lg:py-24 sm:px-6 lg:px-8 opacity-0 translate-y-[10px] transition-all duration-700 ease-in-out scroll-mt-20 ${aboutVisible ? "opacity-100 translate-y-0" : ""}`}
       >
-        <div className="mx-auto max-w-screen-lg text-center">
+        <div className="container mx-auto max-w-screen-lg px-4 sm:px-6 lg:px-8 text-center">
           <h2>
             About Keystone Notary Group
           </h2>
@@ -212,9 +212,9 @@ export default function LandingHero() {
         id="services"
         ref={servicesRef}
         aria-label="Services"
-        className={`flex min-h-dvh w-full flex-col items-center justify-center bg-gray-100 paper-texture text-gray-800 dark:bg-gray-950 dark:text-gray-200 px-4 py-16 lg:py-24 sm:px-6 lg:px-8 opacity-0 translate-y-[10px] transition-all duration-700 ease-in-out scroll-mt-20 ${servicesVisible ? "opacity-100 translate-y-0" : ""}`}
+        className={`flex min-h-dvh w-full flex-col items-center justify-center bg-gray-100 paper-texture text-gray-800 dark:bg-gray-950 dark:text-gray-200 overflow-x-hidden px-4 py-16 lg:py-24 sm:px-6 lg:px-8 opacity-0 translate-y-[10px] transition-all duration-700 ease-in-out scroll-mt-20 ${servicesVisible ? "opacity-100 translate-y-0" : ""}`}
       >
-        <div className="mx-auto w-full max-w-screen-lg">
+        <div className="container mx-auto w-full max-w-screen-lg px-4 sm:px-6 lg:px-8">
           <h2 className="text-center">
             Our Services
           </h2>
@@ -282,9 +282,9 @@ export default function LandingHero() {
         id="faq"
         ref={faqRef}
         aria-label="Frequently Asked Questions"
-        className={`flex min-h-dvh w-full flex-col items-center justify-center bg-gray-100 text-gray-800 dark:bg-neutral-900 dark:text-gray-200 px-4 py-16 lg:py-24 sm:px-6 lg:px-8 opacity-0 translate-y-[10px] transition-all duration-700 ease-in-out scroll-mt-20 ${faqVisible ? "opacity-100 translate-y-0" : ""}`}
+        className={`flex min-h-dvh w-full flex-col items-center justify-center bg-gray-100 text-gray-800 dark:bg-neutral-900 dark:text-gray-200 overflow-x-hidden px-4 py-16 lg:py-24 sm:px-6 lg:px-8 opacity-0 translate-y-[10px] transition-all duration-700 ease-in-out scroll-mt-20 ${faqVisible ? "opacity-100 translate-y-0" : ""}`}
       >
-        <div className="mx-auto w-full max-w-screen-lg">
+        <div className="container mx-auto w-full max-w-screen-lg px-4 sm:px-6 lg:px-8">
           <h2 className="text-center">
             Frequently Asked Questions
           </h2>
@@ -345,9 +345,9 @@ export default function LandingHero() {
         id="contact"
         ref={contactRef}
         aria-label="Contact"
-        className={`flex min-h-dvh w-full flex-col items-center justify-center bg-gray-100 paper-texture text-gray-800 dark:bg-gray-950 dark:text-gray-200 px-4 py-16 lg:py-24 sm:px-6 lg:px-8 opacity-0 translate-y-[10px] transition-all duration-700 ease-in-out scroll-mt-20 ${contactVisible ? "opacity-100 translate-y-0" : ""}`}
+        className={`flex min-h-dvh w-full flex-col items-center justify-center bg-gray-100 paper-texture text-gray-800 dark:bg-gray-950 dark:text-gray-200 overflow-x-hidden px-4 py-16 lg:py-24 sm:px-6 lg:px-8 opacity-0 translate-y-[10px] transition-all duration-700 ease-in-out scroll-mt-20 ${contactVisible ? "opacity-100 translate-y-0" : ""}`}
       >
-        <div className="mx-auto w-full max-w-screen-lg">
+        <div className="container mx-auto w-full max-w-screen-lg px-4 sm:px-6 lg:px-8">
           <h2 className="text-center">
             Contact
           </h2>

@@ -13,7 +13,7 @@ export default function ServicesPage() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
           viewport={{ once: true }}
-          className="relative overflow-hidden bg-gradient-to-b from-neutral-900 via-black to-neutral-950 mx-auto max-w-screen-lg px-4 py-16 lg:py-24 text-gray-200 sm:px-6 lg:px-8 space-y-4 sm:space-y-6"
+          className="container mx-auto max-w-screen-lg overflow-x-hidden relative overflow-hidden bg-gradient-to-b from-neutral-900 via-black to-neutral-950 px-4 py-16 lg:py-24 text-gray-200 sm:px-6 lg:px-8 space-y-4 sm:space-y-6"
         >
           <h1 className="text-center">Our Services</h1>
           <div aria-hidden="true" className="border-b-2 border-blue-500 w-12 mx-auto mb-6" />
@@ -59,7 +59,7 @@ export default function ServicesPage() {
         {/* Decorative feather watermark */}
         <svg
           aria-hidden="true"
-          className="pointer-events-none absolute bottom-0 right-0 w-40 md:w-64 opacity-10 -z-10 animate-spin-slow"
+          className="pointer-events-none absolute bottom-0 right-0 max-w-xs w-40 md:w-64 opacity-10 -z-10 animate-spin-slow"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
           fill="none"

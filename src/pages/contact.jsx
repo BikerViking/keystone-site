@@ -71,7 +71,7 @@ export default function ContactPage() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
           viewport={{ once: true }}
-          className="relative overflow-hidden bg-gradient-to-b from-neutral-900 via-black to-neutral-950 paper-texture mx-auto max-w-screen-lg px-4 py-16 lg:py-24 text-gray-200 sm:px-6 lg:px-8 space-y-4 sm:space-y-6 scroll-mt-20"
+          className="container mx-auto max-w-screen-lg overflow-x-hidden relative overflow-hidden bg-gradient-to-b from-neutral-900 via-black to-neutral-950 paper-texture px-4 py-16 lg:py-24 text-gray-200 sm:px-6 lg:px-8 space-y-4 sm:space-y-6 scroll-mt-20"
         >
         <h1 className="text-center">
           Contact
@@ -147,7 +147,7 @@ export default function ContactPage() {
               aria-label="Send Message"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="rounded-md bg-gradient-to-r from-blue-600 to-indigo-600 px-6 min-h-[48px] py-2 font-semibold text-white transition-transform duration-200 hover:from-blue-700 hover:to-indigo-700 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-neutral-900"
+              className="rounded-md bg-gradient-to-r from-blue-600 to-indigo-600 px-6 min-h-[48px] py-2 font-semibold text-white transition-transform duration-200 hover:from-blue-700 hover:to-indigo-700 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-neutral-900 w-full max-w-[90%] sm:max-w-none sm:w-auto mx-auto"
             >
               Send Message
             </motion.button>
@@ -245,7 +245,7 @@ export default function ContactPage() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
           viewport={{ once: true }}
-          className="bg-gradient-to-b from-neutral-900 via-black to-neutral-950 mx-auto mt-12 max-w-screen-md px-4 py-16 lg:py-24 space-y-4 sm:space-y-6"
+          className="container mx-auto max-w-screen-md overflow-x-hidden bg-gradient-to-b from-neutral-900 via-black to-neutral-950 mt-12 px-4 py-16 lg:py-24 space-y-4 sm:space-y-6"
         >
           <div className="bg-neutral-900 p-6 ring-1 ring-neutral-700 shadow-[0_0_20px_rgba(255,255,255,0.05)]">
           <div className="mb-8 flex items-center justify-center">
