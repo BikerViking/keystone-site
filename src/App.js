@@ -1,8 +1,8 @@
 import React from "react";
 import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
+  createBrowserRouter,
+  RouterProvider,
+  Outlet,
   useLocation,
 } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
@@ -13,26 +13,32 @@ import AboutPage from "./pages/about";
 import FaqPage from "./pages/faq";
 import NotFound from "./pages/NotFound";
 
-function AnimatedRoutes() {
+function RootLayout() {
+  // Use location to ensure exit animations on route changes
   const location = useLocation();
   return (
     <AnimatePresence mode="wait">
-      <Routes location={location} key={location.pathname}>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/services" element={<ServicesPage />} />
-        <Route path="/about" element={<AboutPage />} />
-        <Route path="/faq" element={<FaqPage />} />
-        <Route path="/contact" element={<ContactPage />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
+      {/* Outlet is keyed by pathname so exiting page can animate out */}
+      <Outlet key={location.pathname} />
     </AnimatePresence>
   );
 }
 
+export const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <RootLayout />,
+    children: [
+      { index: true, element: <HomePage /> },
+      { path: "services", element: <ServicesPage /> },
+      { path: "about", element: <AboutPage /> },
+      { path: "faq", element: <FaqPage /> },
+      { path: "contact", element: <ContactPage /> },
+      { path: "*", element: <NotFound /> },
+    ],
+  },
+]);
+
 export default function App() {
-  return (
-    <Router>
-      <AnimatedRoutes />
-    </Router>
-  );
+  return <RouterProvider router={router} />;
 }
