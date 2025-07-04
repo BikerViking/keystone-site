@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const appJsPath = path.join(__dirname, '../src/App.js');
+const appJsPath = path.join(__dirname, '../src/App.jsx');
 const publicDir = path.join(__dirname, '../public');
 const sitemapPath = path.join(publicDir, 'sitemap.xml');
 const robotsPath = path.join(publicDir, 'robots.txt');
