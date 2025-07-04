@@ -8,14 +8,15 @@ Your job is to assist in maintaining and improving a production-grade website th
 
 - Requires Node.js 20+
 - Install dependencies with:
-  - `npm install --legacy-peer-deps`
+  - `npm install`
 - Start the development server:
   - `npm run dev`
 - Run unit tests:
   - `npm test`
 - Build the project:
   - `npm run build`
-- Tailwind uses the default configuration unless modified. You may update `tailwind.config.js` only if necessary to resolve layout or spacing issues.
+
+> Tip: If you encounter dependency resolution issues, delete `node_modules` and `package-lock.json`, then run `npm install` again from scratch.
 
 ## Project Scope and Goals
 
