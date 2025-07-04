@@ -1,5 +1,8 @@
-const fs = require('fs');
-const path = require('path');
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const appJsPath = path.join(__dirname, '../src/App.jsx');
 const publicDir = path.join(__dirname, '../public');
@@ -8,13 +11,19 @@ const robotsPath = path.join(publicDir, 'robots.txt');
 
 function getRoutes() {
   const content = fs.readFileSync(appJsPath, 'utf8');
-  const regex = /<Route\s+path=\"([^\"*]+)\"/g;
-  const routes = [];
+  const pathRegex = /path:\s*['"]([^'"*]+)['"]/g;
+  const routes = new Set();
   let match;
-  while ((match = regex.exec(content))) {
-    routes.push(match[1]);
+  while ((match = pathRegex.exec(content))) {
+    const p = match[1];
+    if (p !== '*') {
+      routes.add(p.startsWith('/') ? p : `/${p}`);
+    }
   }
-  return Array.from(new Set(routes));
+  if (/index:\s*true/.test(content)) {
+    routes.add('/');
+  }
+  return Array.from(routes);
 }
 
 function generateSitemap(routes) {
@@ -40,6 +49,4 @@ function main() {
   console.log('Sitemap and robots.txt generated');
 }
 
-if (require.main === module) {
-  main();
-}
+main();
