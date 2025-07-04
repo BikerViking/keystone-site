@@ -7,13 +7,14 @@ export default function AboutPage() {
   return (
     <PageTransition>
       <LayoutWrapper>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.section
             aria-label="About"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
             viewport={{ once: true }}
-            className="container mx-auto max-w-screen-lg overflow-x-hidden bg-gradient-to-b from-neutral-900 via-black to-neutral-950 px-4 py-16 lg:py-24 text-gray-200 sm:px-6 lg:px-8 space-y-4 sm:space-y-6"
+            className="max-w-screen-lg mx-auto overflow-x-hidden bg-gradient-to-b from-neutral-900 via-black to-neutral-950 py-16 lg:py-24 text-gray-200 space-y-4 sm:space-y-6"
           >
         <h1 className="text-center">
           About Keystone Notary Group
@@ -41,7 +42,8 @@ export default function AboutPage() {
         <p className="mt-10 text-left text-sm text-gray-400">
           Commissioned in the Commonwealth of Pennsylvania
         </p>
-        </motion.section>
+          </motion.section>
+        </div>
       </LayoutWrapper>
     </PageTransition>
   );

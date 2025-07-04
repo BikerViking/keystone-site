@@ -64,6 +64,7 @@ export default function ContactPage() {
   return (
     <PageTransition>
       <LayoutWrapper>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.section
           id="contact"
           aria-label="Contact"
@@ -71,7 +72,7 @@ export default function ContactPage() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
           viewport={{ once: true }}
-          className="container mx-auto max-w-screen-lg overflow-x-hidden relative overflow-hidden bg-gradient-to-b from-neutral-900 via-black to-neutral-950 paper-texture px-4 py-16 lg:py-24 text-gray-200 sm:px-6 lg:px-8 space-y-4 sm:space-y-6 scroll-mt-20"
+          className="max-w-screen-lg mx-auto overflow-x-hidden relative overflow-hidden bg-gradient-to-b from-neutral-900 via-black to-neutral-950 paper-texture py-16 lg:py-24 text-gray-200 space-y-4 sm:space-y-6 scroll-mt-20"
         >
         <h1 className="text-center">
           Contact
@@ -238,17 +239,19 @@ export default function ContactPage() {
           <line x1="17.5" y1="15" x2="9" y2="15" />
         </svg>
         </motion.section>
+        </div>
         <hr className="border-t border-gray-700 my-12" />
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.section
           aria-label="What to Bring to Your Appointment"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
           viewport={{ once: true }}
-          className="container mx-auto max-w-screen-md overflow-x-hidden bg-gradient-to-b from-neutral-900 via-black to-neutral-950 mt-12 px-4 py-16 lg:py-24 space-y-4 sm:space-y-6"
+          className="max-w-screen-md mx-auto overflow-x-hidden bg-gradient-to-b from-neutral-900 via-black to-neutral-950 mt-12 py-16 lg:py-24 space-y-4 sm:space-y-6"
         >
           <div className="bg-neutral-900 p-6 ring-1 ring-neutral-700 shadow-[0_0_20px_rgba(255,255,255,0.05)]">
-          <div className="mb-8 flex items-center justify-center">
+          <div className="mb-8 flex flex-row items-center justify-center">
             <svg
               className="h-6 w-6 text-blue-400"
               xmlns="http://www.w3.org/2000/svg"
@@ -282,6 +285,7 @@ export default function ContactPage() {
           </a>
         </div>
         </motion.section>
+        </div>
       </LayoutWrapper>
     </PageTransition>
   );
