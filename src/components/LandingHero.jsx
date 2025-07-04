@@ -118,7 +118,7 @@ export default function LandingHero() {
           <motion.img
             src="/logo.PNG"
             alt="Keystone Notary Group logo"
-            className="w-full max-w-[9rem] md:max-w-[12rem] invert dark:invert-0 drop-shadow"
+            className="w-full max-w-[90%] sm:max-w-xs mx-auto h-auto invert dark:invert-0 drop-shadow"
             initial={{ opacity: 0, y: -8 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
@@ -136,7 +136,7 @@ export default function LandingHero() {
             initial={{ opacity: 0, y: -8 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }}
-            className="mb-6 sm:mb-8 w-full sm:w-auto text-center mx-auto rounded-md bg-gradient-to-r from-blue-600 to-indigo-600 px-6 min-h-[48px] py-2 font-semibold text-white transition-colors duration-300 hover:from-blue-700 hover:to-indigo-700 focus:outline-none focus:ring-2 focus:ring-blue-600"
+            className="mb-6 sm:mb-8 w-full max-w-xs sm:w-auto text-center mx-auto rounded-md bg-gradient-to-r from-blue-600 to-indigo-600 px-6 min-h-[48px] py-2 font-semibold text-white transition-colors duration-300 hover:from-blue-700 hover:to-indigo-700 focus:outline-none focus:ring-2 focus:ring-blue-600"
           >
             Request Notary
           </motion.a>

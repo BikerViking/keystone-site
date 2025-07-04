@@ -75,7 +75,7 @@ export default function Header() {
       }`}
     >
       <h1 className="sr-only">Keystone Notary Group</h1>
-      <div className="mx-auto flex max-w-screen-xl items-center justify-end px-4 sm:px-6">
+      <div className="container mx-auto flex items-center justify-end px-4 sm:px-6">
         {/* Theme toggle button */}
         <button
           type="button"
