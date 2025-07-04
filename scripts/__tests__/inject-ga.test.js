@@ -1,8 +1,16 @@
-const path = require('path');
+import path from 'path';
+import { fileURLToPath } from 'url';
 
 // Mock the fs module before requiring the script
-jest.mock('fs');
-let fs = require('fs');
+vi.mock('fs', () => ({
+  default: {
+    readFileSync: vi.fn(),
+    writeFileSync: vi.fn()
+  }
+}));
+import fs from 'fs';
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 /**
  * Sample HTML with multiple GA_MEASUREMENT_ID placeholders to verify
@@ -15,16 +23,16 @@ const sampleHtml = `
 </html>
 `;
 
-beforeEach(() => {
-  jest.resetModules();
+beforeEach(async () => {
+  vi.resetModules();
   // Re-import the mocked fs after resetting modules
-  fs = require('fs');
+  fs = (await import('fs')).default;
 
   // Provide a fake GA ID for the script to inject
   process.env.REACT_APP_GA_ID = 'TEST_ID';
 
   // Prevent the script from exiting the test process
-  jest.spyOn(process, 'exit').mockImplementation(() => {});
+  vi.spyOn(process, 'exit').mockImplementation(() => {});
 
   // fs.readFileSync should return our sample HTML
   fs.readFileSync.mockReturnValue(sampleHtml);
@@ -34,14 +42,14 @@ beforeEach(() => {
 
 afterEach(() => {
   delete process.env.REACT_APP_GA_ID;
-  jest.restoreAllMocks();
+  vi.restoreAllMocks();
 });
 
-test('inject-ga replaces all GA_MEASUREMENT_ID placeholders', () => {
-  // Require the script after mocks and env setup
-  require('../inject-ga');
+test('inject-ga replaces all GA_MEASUREMENT_ID placeholders', async () => {
+  // Import the script after mocks and env setup
+  await import('../inject-ga.js');
 
-  const scriptDir = path.dirname(require.resolve('../inject-ga.js'));
+  const scriptDir = path.join(__dirname, '..');
   const buildPath = path.join(scriptDir, '../build/index.html');
   const expectedHtml = sampleHtml.replace(/GA_MEASUREMENT_ID/g, 'TEST_ID');
 

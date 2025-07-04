@@ -1,4 +1,4 @@
-const CACHE_NAME = 'kn-cache-v2';
+const CACHE_NAME = 'kn-cache-v3';
 const OFFLINE_URL = '/offline.html';
 const BASE_ASSETS = [
   '/',
@@ -18,9 +18,7 @@ self.addEventListener('install', event => {
         const manifestResponse = await fetch('/asset-manifest.json');
         if (manifestResponse.ok) {
           const manifest = await manifestResponse.json();
-          Object.values(manifest.files)
-            .filter(path => path.startsWith('/static/'))
-            .forEach(path => assets.push(path));
+          Object.values(manifest.files).forEach(path => assets.push(path));
         }
       } catch (e) {
         // Asset manifest may not be available; proceed with base assets only

@@ -25,7 +25,7 @@ This project uses npm overrides to pin certain transitive dependencies to secure
 
 1. Install dependencies: `npm install`
 2. Start the development server: `npm start`
-3. Build for production: `npm run build`
+3. Build for production: `npm run build` (generates `dist/asset-manifest.json` for the service worker)
 4. Generate the sitemap: `npm run generate-sitemap`
 5. Run tests: `npm test`
 

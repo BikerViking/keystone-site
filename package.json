@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build && node scripts/generate-asset-manifest.js",
     "preview": "vite preview",
     "generate-sitemap": "node scripts/generate-sitemap.js",
     "test": "vitest run"

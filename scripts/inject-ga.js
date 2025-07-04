@@ -1,6 +1,8 @@
-const fs = require('fs');
-const path = require('path');
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
 
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const buildIndexPath = path.join(__dirname, '../build/index.html');
 const gaId = process.env.REACT_APP_GA_ID;
 
