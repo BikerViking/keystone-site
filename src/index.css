@@ -8,6 +8,11 @@
     --font-display: 'Playfair Display', serif;
   }
   /* Global background pattern */
+  html,
+  body {
+    @apply overflow-x-hidden;
+  }
+
   body {
     @apply scroll-smooth bg-cover bg-center bg-no-repeat min-h-screen font-sans text-[17px] sm:text-[18px] font-medium leading-relaxed sm:leading-loose tracking-normal sm:tracking-wide bg-white text-gray-800 dark:bg-gradient-to-b dark:from-gray-900 dark:via-gray-950 dark:to-black dark:text-gray-200;
     background-image:
