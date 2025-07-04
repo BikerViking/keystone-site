@@ -6,7 +6,8 @@ import PageTransition from "../components/PageTransition";
 export default function HomePage() {
   return (
     <PageTransition>
-      <LayoutWrapper fullWidth>
+      {/* Use default responsive container for consistent layout */}
+      <LayoutWrapper>
         <LandingHero />
       </LayoutWrapper>
     </PageTransition>
