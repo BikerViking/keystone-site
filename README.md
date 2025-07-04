@@ -20,8 +20,9 @@ This project was designed with performance, scalability, and clarity in mind. Th
 
 ## Requirements
 
-- Node.js v20+  
-- `nvm` users: run `nvm use` to match `.nvmrc`
+- Node.js v20 or higher  
+- To match the project version, run:  
+  `nvm use`
 
 ---
 
@@ -32,13 +33,13 @@ To set up the project locally:
 1. Install dependencies  
    `npm install`
 
-2. Start development server  
+2. Start the development server  
    `npm run dev`
 
 3. Build for production  
    `npm run build`
 
-4. Preview production build  
+4. Preview the production build  
    `npm run preview`
 
 5. Run tests  
@@ -48,30 +49,95 @@ To set up the project locally:
 
 ## Project Structure
 
-- `src/` — React components and pages
-- `public/` — Static assets, service worker, favicon, and base HTML
-- `scripts/` — Utility scripts (e.g. for analytics injection)
-- `.codex/` — Codex automation directory
-- `AGENTS.md` — Codex agent responsibilities and automation behavior
-- `PREVIEW.md` — QA checklist and visual correctness goals
-- `TODO.md` — Technical migration and verification tasks
+| Path              | Purpose                                                 |
+|-------------------|----------------------------------------------------------|
+| `src/`            | React components, layout, and logic                      |
+| `public/`         | Static assets, HTML shell, and service worker            |
+| `scripts/`        | Automation scripts (e.g., GA injection)                  |
+| `.codex/`         | Codex configuration and agent settings                   |
+| `AGENTS.md`       | Codex agent expectations and constraints                 |
+| `PREVIEW.md`      | Visual QA checklist for Codex deployment review          |
+| `TODO.md`         | Technical migration tasks and verification checklist     |
 
 ---
 
-## Analytics Configuration
+## Environment Variables
 
-Google Analytics 4 is integrated via a non-blocking asynchronous script. Tracking ID injection is handled automatically at build time.
+Create a `.env` file (or use `.env.template`) and define:
 
-To configure analytics:
+REACT_APP_GA_ID=G-XXXXXXXXXX  
+SITEMAP_BASE_URL=https://www.keystonenotarygroup.com
 
-1. Set the `REACT_APP_GA_ID` environment variable
-2. Run `npm run build`
-3. The GA ID will be inserted into the final HTML without modifying the source
-
-Optional head tags for Hotjar and Microsoft Clarity are included but disabled by default.
+These values are used during build-time for analytics injection and sitemap generation.
 
 ---
 
-## Sitemap Configuration
+## Analytics Setup
 
-The base URL for the sitemap is controlled by:
+This site uses Google Analytics 4. Tracking is privacy-friendly and injected automatically at build time.
+
+To enable analytics:
+
+1. Set your `REACT_APP_GA_ID` in the `.env` file  
+2. Run `npm run build`  
+3. The GA script will be added dynamically with no manual edits required
+
+Optional support for Hotjar or Microsoft Clarity is included in the head tag but commented out by default.
+
+---
+
+## Sitemap Generation
+
+To generate or regenerate the sitemap:
+
+`npm run generate-sitemap`
+
+Make sure `SITEMAP_BASE_URL` is set correctly in your `.env` file. Trailing slashes are automatically removed.
+
+---
+
+## Offline & PWA Behavior
+
+The site registers a service worker for offline support.
+
+To update caching behavior:
+
+1. Edit `public/service-worker.js`  
+2. Bump the `CACHE_NAME` constant  
+3. Add or update asset references  
+4. Run `npm run build`  
+5. Deploy the new `build/` output
+
+To test:
+
+- Open DevTools → Application → Service Workers  
+- Set network mode to "Offline"  
+- Refresh and confirm cached pages load
+
+---
+
+## Deployment
+
+- Hosted via Netlify  
+- CI runs build and test checks on each pull request  
+- Preview deployments are available for each branch
+
+Make sure your Netlify environment has `REACT_APP_GA_ID` and `SITEMAP_BASE_URL` defined if not using `.env`.
+
+---
+
+## Testing
+
+All unit tests run using Vitest.
+
+To execute:
+
+`npm test`
+
+Tests are located alongside components in `src/`. Add coverage for all new features.
+
+---
+
+## License
+
+This project is licensed under the MIT License. See the LICENSE file for full details.
