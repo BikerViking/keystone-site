@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
-import App from "./App";
+import App from "./App.jsx";
 import { HelmetProvider } from "react-helmet-async";
 import { register as registerServiceWorker } from "./serviceWorkerRegistration";
 
