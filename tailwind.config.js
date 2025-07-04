@@ -1,4 +1,6 @@
 /** @type {import('tailwindcss').Config} */
+const defaultTheme = require('tailwindcss/defaultTheme');
+
 module.exports = {
   content: [
     "./index.html",
@@ -10,11 +12,13 @@ module.exports = {
       center: true,
       padding: {
         DEFAULT: '1rem',
-        sm: '1rem',
-        lg: '2rem',
-        xl: '2rem',
-        '2xl': '3rem'
+        sm: '2rem',
+        lg: '4rem'
       }
+    },
+    screens: {
+      xs: '375px',
+      ...defaultTheme.screens,
     },
     extend: {
       colors: {

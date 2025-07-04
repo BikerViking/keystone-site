@@ -19,12 +19,12 @@ export default function AboutPage() {
           About Keystone Notary Group
         </h1>
         <div aria-hidden="true" className="border-b-2 border-blue-500 w-12 mx-auto mb-6" />
-        <p className="mx-auto max-w-3xl text-lg text-gray-300 leading-relaxed tracking-normal">
+        <p className="mx-auto max-w-3xl text-lg sm:text-xl text-gray-300 leading-relaxed tracking-wide">
           Keystone Notary Group, LLC is a mobile notary service dedicated to professionalism,
           punctuality, and privacy. We provide document notarization services throughout Bucks
           and Montgomery County, Pennsylvania.
         </p>
-        <div className="mt-10 grid gap-6 sm:mt-12 sm:grid-cols-2">
+        <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-4 sm:mt-12">
           <div className="bg-neutral-800 p-6 text-center shadow-sm">
             <p className="font-medium">Certified Loan Signing Agent</p>
           </div>
