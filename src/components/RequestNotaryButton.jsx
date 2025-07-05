@@ -27,9 +27,19 @@ export default function RequestNotaryButton() {
     };
     window.addEventListener("focusin", focusIn);
     window.addEventListener("focusout", focusOut);
+    let observer;
+    const heroCta = document.getElementById("hero-request-notary");
+    if (heroCta) {
+      observer = new IntersectionObserver(
+        ([entry]) => setHidden(entry.isIntersecting),
+        { threshold: 0.1 }
+      );
+      observer.observe(heroCta);
+    }
     return () => {
       window.removeEventListener("focusin", focusIn);
       window.removeEventListener("focusout", focusOut);
+      observer?.disconnect();
     };
   }, []);
 
