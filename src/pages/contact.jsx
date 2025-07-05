@@ -77,7 +77,7 @@ export default function ContactPage() {
           viewport={{ once: true }}
           className="relative overflow-hidden bg-gradient-to-b from-neutral-900 via-black to-neutral-950 paper-texture py-16 lg:py-24 text-gray-200 space-y-4 sm:space-y-6 scroll-mt-20 w-full min-h-dvh"
         >
-          <div className="mx-auto w-full max-w-screen-md px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto w-full max-w-screen-lg px-4 sm:px-6 lg:px-8">
             <h1 className="text-center">Contact</h1>
             <div
               aria-hidden="true"
@@ -276,7 +276,7 @@ export default function ContactPage() {
           viewport={{ once: true }}
           className="w-full bg-gradient-to-b from-neutral-900 via-black to-neutral-950 mt-12 py-16 lg:py-24 space-y-4 sm:space-y-6"
         >
-          <div className="mx-auto w-full max-w-screen-md px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto w-full max-w-screen-lg px-4 sm:px-6 lg:px-8">
             <div className="bg-neutral-900 p-6 ring-1 ring-neutral-700 shadow-[0_0_20px_rgba(255,255,255,0.05)]">
               <div className="mb-8 flex flex-row items-center justify-center">
                 <svg
