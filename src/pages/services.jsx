@@ -15,7 +15,7 @@ export default function ServicesPage() {
           viewport={{ once: true }}
           className="overflow-x-hidden relative overflow-hidden bg-gradient-to-b from-neutral-900 via-black to-neutral-950 py-16 lg:py-24 text-gray-200 space-y-4 sm:space-y-6 w-full"
         >
-          <div className="mx-auto w-full max-w-screen-md px-4 sm:px-6 lg:px-8">
+          <div className="w-full px-4 sm:px-6 lg:px-8">
           <h1 className="text-center">Our Services</h1>
           <div aria-hidden="true" className="border-b-2 border-blue-500 w-12 mx-auto mb-6" />
 

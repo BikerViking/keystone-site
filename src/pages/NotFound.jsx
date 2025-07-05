@@ -15,7 +15,7 @@ export default function NotFound() {
           transition={{ duration: 0.4, ease: "easeOut" }}
           className="overflow-x-hidden bg-black py-16 lg:py-24 text-center text-gray-200 space-y-4 sm:space-y-6 w-full"
         >
-        <div className="mx-auto w-full max-w-screen-md px-4 sm:px-6 lg:px-8">
+        <div className="w-full px-4 sm:px-6 lg:px-8">
         <h1>404 – Page Not Found</h1>
         <div aria-hidden="true" className="border-b-2 border-blue-500 w-12 mx-auto mb-6" />
         <p className="mb-8 text-base sm:text-lg text-gray-400">Sorry, the page you are looking for doesn\'t exist.</p>
