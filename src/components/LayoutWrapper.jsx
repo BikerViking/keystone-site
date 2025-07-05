@@ -1,6 +1,6 @@
 import React from "react";
 import { Helmet } from "react-helmet-async";
-import Header from "./Header";
+import Navbar from "./Navbar";
 import Footer from "./Footer";
 import Certifications from "./Certifications";
 import BackToTopButton from "./BackToTopButton";
@@ -125,7 +125,7 @@ export default function LayoutWrapper({ children }) {
           `}
           </script>
         </Helmet>
-        <Header />
+        <Navbar />
         {/* Offset content just below the fixed header */}
         <main id="main-content" role="main" className="flex-grow w-full pt-16">
           {children}

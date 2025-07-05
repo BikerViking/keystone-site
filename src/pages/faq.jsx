@@ -46,7 +46,7 @@ export default function FaqPage() {
           viewport={{ once: true }}
           className="bg-gradient-to-b from-neutral-900 via-black to-neutral-950 py-16 lg:py-24 text-gray-200 space-y-4 sm:space-y-6 w-full min-h-dvh"
         >
-          <div className="mx-auto w-full max-w-screen-xl px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto w-full max-w-screen-lg px-4 sm:px-6 lg:px-8">
             <h1 className="text-center">Frequently Asked Questions</h1>
             <div
               aria-hidden="true"
