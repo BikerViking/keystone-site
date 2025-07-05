@@ -11,14 +11,18 @@
   html,
   body,
   #root {
-    width: 100vw !important;
-    max-width: 100vw !important;
-    min-width: 0 !important;
-    overflow-x: hidden !important;
+    width: 100vw;
+    max-width: 100vw;
+    min-height: 100vh;
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
+  }
+  #root {
     padding-left: env(safe-area-inset-left);
     padding-right: env(safe-area-inset-right);
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: env(safe-area-inset-bottom);
   }
 
   body {
@@ -58,24 +62,5 @@
       linear-gradient(rgba(255,255,255,0.06) 1px, transparent 1px);
     background-size: 4px 4px;
     background-position: 0 0, 2px 2px;
-  }
-}
-
-html,
-body,
-#root {
-  width: 100vw !important;
-  min-height: 100vh;
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;
-  background: #171717;
-}
-@supports (padding: env(safe-area-inset-left)) {
-  body {
-    padding-left: env(safe-area-inset-left);
-    padding-right: env(safe-area-inset-right);
-    padding-top: env(safe-area-inset-top);
-    padding-bottom: env(safe-area-inset-bottom);
   }
 }
