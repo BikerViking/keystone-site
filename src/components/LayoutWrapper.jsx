@@ -110,7 +110,8 @@ export default function LayoutWrapper({ children }) {
         </script>
       </Helmet>
       <Header />
-      <main role="main" className="flex-grow pt-20 pb-20 w-full">
+      {/* Offset content just below the fixed header */}
+      <main role="main" className="flex-grow w-full pt-16">
         {children}
       </main>
       <Certifications />

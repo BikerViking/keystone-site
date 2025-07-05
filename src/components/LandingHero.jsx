@@ -27,7 +27,7 @@ export default function LandingHero() {
       }`}
     >
       <section
-        className="relative flex min-h-dvh w-full flex-col items-center justify-center overflow-hidden bg-white py-12 text-gray-800 dark:bg-gradient-to-b dark:from-gray-900 dark:via-gray-950 dark:to-black dark:text-gray-200 sm:py-16 md:py-20 lg:py-24"
+        className="relative flex min-h-dvh w-full flex-col items-center justify-center overflow-hidden bg-white pt-0 pb-12 text-gray-800 dark:bg-gradient-to-b dark:from-gray-900 dark:via-gray-950 dark:to-black dark:text-gray-200 sm:pb-16 md:pb-20 lg:pb-24"
       >
         <div
           className="absolute inset-0 z-0 bg-cover bg-center opacity-40 motion-safe:animate-bg-pan"
