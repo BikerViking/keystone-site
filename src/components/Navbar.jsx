@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [dark, setDark] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   // Initialize theme from localStorage or system preference
   useEffect(() => {
@@ -13,6 +14,16 @@ export default function Navbar() {
     const enabled = stored ? stored === "dark" : prefersDark;
     document.documentElement.classList.toggle("dark", enabled);
     setDark(enabled);
+  }, []);
+
+  // Update header styles based on scroll position
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 10);
+    };
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const toggleTheme = () => {
@@ -38,8 +49,14 @@ export default function Navbar() {
   ];
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-gray-200 bg-white/70 backdrop-blur dark:border-gray-800 dark:bg-black/70">
-      <div className="mx-auto flex max-w-screen-xl items-center justify-between px-4 py-2">
+    <header
+      className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
+        scrolled
+          ? "bg-black/80 backdrop-blur border-b border-gray-700"
+          : "bg-transparent"
+      }`}
+    >
+      <div className="mx-auto flex max-w-4xl items-center justify-between px-4 py-3">
         <NavLink to="/" className="flex items-center space-x-2" aria-label="Home">
           <img src="/logo.PNG" alt="Keystone Notary Group logo" className="h-8 w-8" />
           <span className="font-display text-lg font-semibold text-gray-800 dark:text-gray-200">
