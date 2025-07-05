@@ -109,7 +109,7 @@ export default function LandingHero() {
         </svg>
 
         <section className="w-full px-4 sm:px-6 lg:px-8 overflow-x-hidden">
-          <div className="relative z-10 mx-auto flex w-full flex-col items-center overflow-x-hidden">
+          <div className="relative z-10 flex w-full flex-col items-center overflow-x-hidden">
           {/* Subtle glow behind logo */}
           <div
             aria-hidden="true"
@@ -118,7 +118,7 @@ export default function LandingHero() {
           <motion.img
             src="/logo.PNG"
             alt="Keystone Notary Group logo"
-            className="max-w-xs w-full object-contain mx-auto invert dark:invert-0 drop-shadow"
+            className="max-w-xs w-full object-contain invert dark:invert-0 drop-shadow"
             initial={{ opacity: 0, y: -8 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
@@ -137,7 +137,7 @@ export default function LandingHero() {
             initial={{ opacity: 0, y: -8 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }}
-            className="mb-6 sm:mb-8 w-full max-w-[90%] sm:max-w-[400px] mx-auto sm:w-auto text-center rounded-md bg-gradient-to-r from-blue-600 to-indigo-600 px-4 sm:px-6 min-h-[48px] py-2 font-semibold text-white transition-colors duration-300 hover:from-blue-700 hover:to-indigo-700 focus:outline-none focus:ring-2 focus:ring-blue-600"
+            className="mb-6 sm:mb-8 w-full max-w-[90%] sm:max-w-[400px] sm:w-auto text-center rounded-md bg-gradient-to-r from-blue-600 to-indigo-600 px-4 sm:px-6 min-h-[48px] py-2 font-semibold text-white transition-colors duration-300 hover:from-blue-700 hover:to-indigo-700 focus:outline-none focus:ring-2 focus:ring-blue-600"
           >
             Request Notary
           </motion.a>
