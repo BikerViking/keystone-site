@@ -70,12 +70,12 @@ export default function Header() {
   return (
     <header
       role="banner"
-      className={`fixed top-0 z-50 w-full border-b backdrop-blur transition-shadow duration-300 bg-white/70 text-gray-800 border-gray-200 dark:bg-gradient-to-b dark:from-gray-900 dark:via-gray-950 dark:to-black dark:text-gray-200 dark:border-gray-800 ${
+      className={`fixed top-0 z-50 w-full flex items-center justify-between border-b backdrop-blur transition-shadow duration-300 bg-white/70 text-gray-800 border-gray-200 dark:bg-gradient-to-b dark:from-gray-900 dark:via-gray-950 dark:to-black dark:text-gray-200 dark:border-gray-800 ${
         scrolled ? "shadow-sm" : "shadow-none"
       }`}
     >
       <h1 className="sr-only">Keystone Notary Group</h1>
-      <div className="w-full max-w-screen-lg mx-auto px-4 flex items-center justify-between">
+      <div className="flex w-full items-center justify-between px-4 md:mx-auto md:max-w-screen-lg">
         {/* Theme toggle button */}
         <button
           type="button"
