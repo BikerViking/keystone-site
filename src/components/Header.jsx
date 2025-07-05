@@ -75,7 +75,7 @@ export default function Header() {
       }`}
     >
       <h1 className="sr-only">Keystone Notary Group</h1>
-      <div className="w-full max-w-screen-lg mx-auto px-4 py-2 flex justify-between items-center">
+      <div className="w-full max-w-screen-lg mx-auto px-4 flex items-center justify-between">
         {/* Theme toggle button */}
         <button
           type="button"

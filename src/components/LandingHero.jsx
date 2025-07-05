@@ -108,7 +108,7 @@ export default function LandingHero() {
           <line x1="17.5" y1="15" x2="9" y2="15" />
         </svg>
 
-        <div className="mx-auto w-full max-w-screen-md px-4 sm:px-6 lg:px-8 overflow-x-hidden">
+        <section className="w-full max-w-screen-md mx-auto px-4 sm:px-6 lg:px-8 overflow-x-hidden">
           <div className="relative z-10 mx-auto flex w-full flex-col items-center overflow-x-hidden">
           {/* Subtle glow behind logo */}
           <div
@@ -165,7 +165,7 @@ export default function LandingHero() {
               </ul>
             </nav>
           </div>
-        </div>
+        </section>
       </section>
       {/* About Section */}
       <section
@@ -215,7 +215,7 @@ export default function LandingHero() {
         aria-label="Services"
         className={`flex min-h-dvh w-full flex-col items-center justify-center bg-gray-100 paper-texture text-gray-800 dark:bg-gray-950 dark:text-gray-200 overflow-x-hidden py-16 lg:py-24 opacity-0 translate-y-[10px] transition-all duration-700 ease-in-out scroll-mt-20 ${servicesVisible ? "opacity-100 translate-y-0" : ""}`}
       >
-        <div className="mx-auto w-full max-w-screen-md px-4 sm:px-6 lg:px-8 overflow-x-hidden">
+        <section className="w-full max-w-screen-md mx-auto px-4 sm:px-6 lg:px-8 overflow-x-hidden">
           <h2 className="text-center">
             Our Services
           </h2>
@@ -258,7 +258,7 @@ export default function LandingHero() {
               specialized needs
             </p>
           </div>
-        </div>
+        </section>
       </section>
       {/* Section divider between Services and FAQ */}
       <div aria-hidden="true" className="-mt-1">
@@ -285,7 +285,7 @@ export default function LandingHero() {
         aria-label="Frequently Asked Questions"
         className={`flex min-h-dvh w-full flex-col items-center justify-center bg-gray-100 text-gray-800 dark:bg-neutral-900 dark:text-gray-200 overflow-x-hidden py-16 lg:py-24 opacity-0 translate-y-[10px] transition-all duration-700 ease-in-out scroll-mt-20 ${faqVisible ? "opacity-100 translate-y-0" : ""}`}
       >
-        <div className="mx-auto w-full max-w-screen-md px-4 sm:px-6 lg:px-8 overflow-x-hidden">
+        <section className="w-full max-w-screen-md mx-auto px-4 sm:px-6 lg:px-8 overflow-x-hidden">
           <h2 className="text-center">
             Frequently Asked Questions
           </h2>
@@ -336,7 +336,7 @@ export default function LandingHero() {
               </div>
             ))}
           </dl>
-        </div>
+        </section>
       </section>
       {/* Mobile separator between FAQ and Contact */}
       <hr aria-hidden="true" className="border-neutral-700 sm:hidden" />
@@ -348,7 +348,7 @@ export default function LandingHero() {
         aria-label="Contact"
         className={`flex min-h-dvh w-full flex-col items-center justify-center bg-gray-100 paper-texture text-gray-800 dark:bg-gray-950 dark:text-gray-200 overflow-x-hidden py-16 lg:py-24 opacity-0 translate-y-[10px] transition-all duration-700 ease-in-out scroll-mt-20 ${contactVisible ? "opacity-100 translate-y-0" : ""}`}
       >
-        <div className="mx-auto w-full max-w-screen-md px-4 sm:px-6 lg:px-8 overflow-x-hidden">
+        <section className="w-full max-w-screen-md mx-auto px-4 sm:px-6 lg:px-8 overflow-x-hidden">
           <h2 className="text-center">
             Contact
           </h2>
@@ -438,7 +438,7 @@ export default function LandingHero() {
               <strong>Service Area:</strong> Bucks and Montgomery County, PA
             </p>
           </div>
-        </div>
+        </section>
       </section>
     </div>
   );
