@@ -120,7 +120,7 @@ export default function Header() {
                 animate={{ x: 0 }}
                 exit={{ x: '100%' }}
                 transition={{ type: 'tween', duration: 0.3 }}
-                className="fixed right-0 top-0 bottom-0 w-[80vw] max-w-xs min-w-[200px] bg-white text-gray-800 dark:bg-gray-900 dark:text-white shadow-xl"
+                className="fixed right-0 top-0 bottom-0 w-screen max-w-full bg-white text-gray-800 dark:bg-gray-900 dark:text-white shadow-xl"
               >
             <button
               type="button"
