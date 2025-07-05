@@ -174,7 +174,7 @@ export default function LandingHero() {
         aria-label="About"
         className={`flex min-h-dvh w-full flex-col items-center justify-center bg-gray-100 text-gray-800 dark:bg-neutral-900 dark:text-gray-200 overflow-x-hidden py-16 lg:py-24 opacity-0 translate-y-[10px] transition-all duration-700 ease-in-out scroll-mt-20 ${aboutVisible ? "opacity-100 translate-y-0" : ""}`}
       >
-        <div className="mx-auto w-full max-w-screen-md px-4 sm:px-6 lg:px-8 text-center overflow-x-hidden">
+        <div className="w-full px-4 sm:px-6 lg:px-8 text-center overflow-x-hidden">
           <h2>
             About Keystone Notary Group
           </h2>
