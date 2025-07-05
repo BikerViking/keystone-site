@@ -9,8 +9,9 @@
   }
   /* Global background pattern */
   html,
-  body {
-    @apply overflow-x-hidden;
+  body,
+  #root {
+    @apply w-[100vw] min-w-0 max-w-[100vw] m-0 p-0 overflow-x-hidden;
   }
 
   body {
@@ -40,12 +41,6 @@
   }
 }
 
-/* Basic body defaults */
-body {
-  overflow-x: hidden;
-  margin: 0;
-  padding: 0;
-}
 @layer utilities {
   .font-display {
     font-family: var(--font-display);
