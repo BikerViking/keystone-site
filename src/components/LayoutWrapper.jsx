@@ -8,7 +8,7 @@ import RequestNotaryButton from "./RequestNotaryButton";
 import LegalFooter from "./LegalFooter";
 import ScrollProgress from "./ScrollProgress";
 
-export default function LayoutWrapper({ children, fullWidth = false }) {
+export default function LayoutWrapper({ children }) {
   return (
       <div
         className="w-full min-h-screen bg-black flex flex-col overflow-x-hidden"
@@ -106,14 +106,8 @@ export default function LayoutWrapper({ children, fullWidth = false }) {
         </script>
       </Helmet>
       <Header />
-      <main role="main" className="flex-grow pt-20 pb-20">
-        {fullWidth ? (
-          children
-        ) : (
-          <div className="w-full max-w-screen-md mx-auto min-h-screen px-4 sm:px-6 lg:px-8">
-            {children}
-          </div>
-        )}
+      <main role="main" className="flex-grow pt-20 pb-20 w-full">
+        {children}
       </main>
       <Certifications />
       <Footer />
