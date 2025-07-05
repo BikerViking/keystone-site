@@ -10,8 +10,9 @@ import ScrollProgress from "./ScrollProgress";
 
 export default function LayoutWrapper({ children }) {
   return (
+    <div className="w-screen min-h-screen overflow-x-hidden">
       <div
-        className="w-full min-h-screen bg-black flex flex-col overflow-x-hidden"
+        className="flex flex-col w-full min-h-screen bg-black"
         style={{ backgroundImage: "url('/bg-texture.PNG')" }}
       >
       <ScrollProgress />
@@ -115,6 +116,7 @@ export default function LayoutWrapper({ children }) {
       {/* Floating quick access button for mobile devices */}
       <RequestNotaryButton />
       <BackToTopButton />
+      </div>
     </div>
   );
 }
