@@ -109,7 +109,8 @@ export default function Header() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="sm:hidden fixed inset-0 z-[9999] bg-black/80"
+              className="sm:hidden fixed inset-0 w-full h-full bg-black/80 z-[9999] left-0 right-0"
+              style={{ width: '100dvw', height: '100dvh' }}
             >
               <motion.nav
                 id="mobile-menu"
@@ -120,7 +121,7 @@ export default function Header() {
                 animate={{ x: 0 }}
                 exit={{ x: '100%' }}
                 transition={{ type: 'tween', duration: 0.3 }}
-                className="fixed inset-0 w-full h-full bg-black z-50 flex flex-col"
+                className="w-full h-full flex flex-col"
               >
             <button
               type="button"
