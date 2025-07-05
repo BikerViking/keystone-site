@@ -71,7 +71,7 @@ export default function LandingHero() {
       <section
         id="home"
         ref={homeRef}
-        className={`relative flex min-h-dvh max-w-full flex-col items-center justify-center bg-white text-gray-800 dark:bg-gradient-to-b dark:from-gray-900 dark:via-gray-950 dark:to-black dark:text-gray-200 overflow-hidden overflow-x-hidden py-12 sm:py-16 md:py-20 lg:py-24 opacity-0 translate-y-[10px] transition-all duration-700 ease-in-out scroll-mt-20 ${homeVisible ? "opacity-100 translate-y-0" : ""}`}
+        className={`relative flex min-h-dvh max-w-full flex-col items-center justify-center bg-white text-gray-800 dark:bg-gradient-to-b dark:from-gray-900 dark:via-gray-950 dark:to-black dark:text-gray-200 overflow-hidden overflow-x-hidden py-12 sm:py-16 md:py-20 lg:py-24 opacity-0 translate-y-[10px] transition-all duration-700 ease-in-out scroll-mt-20 max-w-screen-md mx-auto px-4 ${homeVisible ? "opacity-100 translate-y-0" : ""}`}
       >
         <div
           className="absolute inset-0 z-0 bg-cover bg-center opacity-40 motion-safe:animate-bg-pan"
@@ -132,6 +132,7 @@ export default function LandingHero() {
             Mobile Notary Services in Pennsylvania
           </motion.p>
           <motion.a
+            id="hero-request-notary"
             href="#contact"
             initial={{ opacity: 0, y: -8 }}
             animate={{ opacity: 1, y: 0 }}
@@ -171,7 +172,7 @@ export default function LandingHero() {
         id="about"
         ref={aboutRef}
         aria-label="About"
-        className={`flex min-h-dvh max-w-full flex-col items-center justify-center bg-gray-100 text-gray-800 dark:bg-neutral-900 dark:text-gray-200 overflow-x-hidden px-4 py-16 lg:py-24 sm:px-6 lg:px-8 opacity-0 translate-y-[10px] transition-all duration-700 ease-in-out scroll-mt-20 ${aboutVisible ? "opacity-100 translate-y-0" : ""}`}
+        className={`flex min-h-dvh max-w-full flex-col items-center justify-center bg-gray-100 text-gray-800 dark:bg-neutral-900 dark:text-gray-200 overflow-x-hidden py-16 lg:py-24 opacity-0 translate-y-[10px] transition-all duration-700 ease-in-out scroll-mt-20 max-w-screen-md mx-auto px-4 ${aboutVisible ? "opacity-100 translate-y-0" : ""}`}
       >
         <div className="mx-auto max-w-screen-md px-4 sm:px-6 lg:px-8 text-center overflow-x-hidden">
           <h2>
@@ -212,7 +213,7 @@ export default function LandingHero() {
         id="services"
         ref={servicesRef}
         aria-label="Services"
-        className={`flex min-h-dvh max-w-full flex-col items-center justify-center bg-gray-100 paper-texture text-gray-800 dark:bg-gray-950 dark:text-gray-200 overflow-x-hidden px-4 py-16 lg:py-24 sm:px-6 lg:px-8 opacity-0 translate-y-[10px] transition-all duration-700 ease-in-out scroll-mt-20 ${servicesVisible ? "opacity-100 translate-y-0" : ""}`}
+        className={`flex min-h-dvh max-w-full flex-col items-center justify-center bg-gray-100 paper-texture text-gray-800 dark:bg-gray-950 dark:text-gray-200 overflow-x-hidden py-16 lg:py-24 opacity-0 translate-y-[10px] transition-all duration-700 ease-in-out scroll-mt-20 max-w-screen-md mx-auto px-4 ${servicesVisible ? "opacity-100 translate-y-0" : ""}`}
       >
         <div className="mx-auto max-w-full max-w-screen-lg px-4 sm:px-6 lg:px-8 overflow-x-hidden">
           <h2 className="text-center">
@@ -282,7 +283,7 @@ export default function LandingHero() {
         id="faq"
         ref={faqRef}
         aria-label="Frequently Asked Questions"
-        className={`flex min-h-dvh max-w-full flex-col items-center justify-center bg-gray-100 text-gray-800 dark:bg-neutral-900 dark:text-gray-200 overflow-x-hidden px-4 py-16 lg:py-24 sm:px-6 lg:px-8 opacity-0 translate-y-[10px] transition-all duration-700 ease-in-out scroll-mt-20 ${faqVisible ? "opacity-100 translate-y-0" : ""}`}
+        className={`flex min-h-dvh max-w-full flex-col items-center justify-center bg-gray-100 text-gray-800 dark:bg-neutral-900 dark:text-gray-200 overflow-x-hidden py-16 lg:py-24 opacity-0 translate-y-[10px] transition-all duration-700 ease-in-out scroll-mt-20 max-w-screen-md mx-auto px-4 ${faqVisible ? "opacity-100 translate-y-0" : ""}`}
       >
         <div className="mx-auto max-w-full max-w-screen-md px-4 sm:px-6 lg:px-8 overflow-x-hidden">
           <h2 className="text-center">
@@ -345,7 +346,7 @@ export default function LandingHero() {
         id="contact"
         ref={contactRef}
         aria-label="Contact"
-        className={`flex min-h-dvh max-w-full flex-col items-center justify-center bg-gray-100 paper-texture text-gray-800 dark:bg-gray-950 dark:text-gray-200 overflow-x-hidden px-4 py-16 lg:py-24 sm:px-6 lg:px-8 opacity-0 translate-y-[10px] transition-all duration-700 ease-in-out scroll-mt-20 ${contactVisible ? "opacity-100 translate-y-0" : ""}`}
+        className={`flex min-h-dvh max-w-full flex-col items-center justify-center bg-gray-100 paper-texture text-gray-800 dark:bg-gray-950 dark:text-gray-200 overflow-x-hidden py-16 lg:py-24 opacity-0 translate-y-[10px] transition-all duration-700 ease-in-out scroll-mt-20 max-w-screen-md mx-auto px-4 ${contactVisible ? "opacity-100 translate-y-0" : ""}`}
       >
         <div className="mx-auto max-w-full max-w-screen-md px-4 sm:px-6 lg:px-8 overflow-x-hidden">
           <h2 className="text-center">
