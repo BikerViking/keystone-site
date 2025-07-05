@@ -71,13 +71,13 @@ export default function ContactPage() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
           viewport={{ once: true }}
-          className="overflow-x-hidden relative overflow-hidden bg-gradient-to-b from-neutral-900 via-black to-neutral-950 paper-texture py-16 lg:py-24 text-gray-200 space-y-4 sm:space-y-6 scroll-mt-20 w-full"
+          className="relative overflow-hidden bg-gradient-to-b from-neutral-900 via-black to-neutral-950 paper-texture py-16 lg:py-24 text-gray-200 space-y-4 sm:space-y-6 scroll-mt-20 w-full min-h-dvh"
         >
         <div className="w-full px-4 sm:px-6 lg:px-8">
         <h1 className="text-center">
           Contact
         </h1>
-        <div aria-hidden="true" className="border-b-2 border-blue-500 w-12 mx-auto mb-6" />
+        <div aria-hidden="true" className="border-b-2 border-blue-500 w-12 mb-6" />
         <form onSubmit={handleSubmit} noValidate className="space-y-6 sm:space-y-8">
           <div>
             <label htmlFor="name" className="block text-sm font-medium">
@@ -148,7 +148,7 @@ export default function ContactPage() {
               aria-label="Send Message"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="rounded-md bg-gradient-to-r from-blue-600 to-indigo-600 px-6 min-h-[48px] py-2 font-semibold text-white transition-transform duration-200 hover:from-blue-700 hover:to-indigo-700 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-neutral-900 w-full max-w-[90%] sm:max-w-none sm:w-auto mx-auto"
+              className="rounded-md bg-gradient-to-r from-blue-600 to-indigo-600 px-6 min-h-[48px] py-2 font-semibold text-white transition-transform duration-200 hover:from-blue-700 hover:to-indigo-700 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-neutral-900 w-full sm:w-auto"
             >
               Send Message
             </motion.button>
@@ -169,14 +169,14 @@ export default function ContactPage() {
         >
           ✅ Thank you! Your message has been sent. We’ll be in touch shortly.
         </p>
-        <p className="mt-4 text-left text-sm text-gray-500 max-w-3xl mx-auto leading-relaxed">
+        <p className="mt-4 text-left text-sm text-gray-500 leading-relaxed">
           <strong>Disclaimer:</strong> Keystone Notary Group, LLC is not a law
           firm and does not provide legal advice, guidance on document selection,
           or assistance in preparing legal documents. For questions about what
           type of document you need, please consult a licensed attorney.
         </p>
         {/* Additional instructions and contact information */}
-        <p className="mt-8 text-sm text-gray-400 sm:mt-10 max-w-3xl mx-auto leading-relaxed">
+        <p className="mt-8 text-sm text-gray-400 sm:mt-10 leading-relaxed">
           Please mention the type of document or notarization service you are requesting.
         </p>
         <div className="mt-4 space-y-2 text-base sm:text-lg text-gray-300">
@@ -247,7 +247,7 @@ export default function ContactPage() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
           viewport={{ once: true }}
-          className="w-full overflow-x-hidden bg-gradient-to-b from-neutral-900 via-black to-neutral-950 mt-12 py-16 lg:py-24 space-y-4 sm:space-y-6"
+          className="w-full bg-gradient-to-b from-neutral-900 via-black to-neutral-950 mt-12 py-16 lg:py-24 space-y-4 sm:space-y-6"
         >
           <div className="w-full px-4 sm:px-6 lg:px-8">
           <div className="bg-neutral-900 p-6 ring-1 ring-neutral-700 shadow-[0_0_20px_rgba(255,255,255,0.05)]">
@@ -268,7 +268,7 @@ export default function ContactPage() {
               />
             </svg>
             <h2 className="text-center">What to Bring to Your Appointment</h2>
-            <div aria-hidden="true" className="border-b-2 border-blue-500 w-12 mx-auto mb-6" />
+            <div aria-hidden="true" className="border-b-2 border-blue-500 w-12 mb-6" />
           </div>
           <ul className="list-disc list-inside space-y-1 text-gray-300">
             <li>Valid photo ID</li>

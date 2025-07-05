@@ -10,7 +10,7 @@ import ScrollProgress from "./ScrollProgress";
 
 export default function LayoutWrapper({ children }) {
   return (
-    <div className="w-full min-h-dvh overflow-x-hidden">
+    <div className="w-full min-h-dvh">
       <div
         className="flex flex-col w-full min-h-dvh bg-black"
         style={{ backgroundImage: "url('/bg-texture.PNG')" }}

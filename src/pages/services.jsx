@@ -13,11 +13,11 @@ export default function ServicesPage() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
           viewport={{ once: true }}
-          className="overflow-x-hidden relative overflow-hidden bg-gradient-to-b from-neutral-900 via-black to-neutral-950 py-16 lg:py-24 text-gray-200 space-y-4 sm:space-y-6 w-full"
+          className="relative overflow-hidden bg-gradient-to-b from-neutral-900 via-black to-neutral-950 py-16 lg:py-24 text-gray-200 space-y-4 sm:space-y-6 w-full min-h-dvh"
         >
           <div className="w-full px-4 sm:px-6 lg:px-8">
           <h1 className="text-center">Our Services</h1>
-          <div aria-hidden="true" className="border-b-2 border-blue-500 w-12 mx-auto mb-6" />
+          <div aria-hidden="true" className="border-b-2 border-blue-500 w-12 mb-6" />
 
           <div className="space-y-8">
             {/* Add subtle dividers between list items for improved readability */}
@@ -50,7 +50,7 @@ export default function ServicesPage() {
             </ul>
           </div>
 
-        <p className="mt-6 text-center text-base sm:text-lg text-gray-300 max-w-3xl mx-auto leading-relaxed">
+        <p className="mt-6 text-center text-base sm:text-lg text-gray-300 leading-relaxed">
           <strong>We proudly work with:</strong>
           <br />
           Homeowners &bull; Attorneys &bull; Title Companies &bull; Real Estate Agents &bull;
@@ -60,7 +60,7 @@ export default function ServicesPage() {
         {/* Decorative feather watermark */}
         <svg
           aria-hidden="true"
-          className="pointer-events-none absolute bottom-0 right-0 max-w-xs w-40 md:w-64 opacity-10 -z-10 animate-spin-slow"
+          className="pointer-events-none absolute bottom-0 right-0 w-40 md:w-64 opacity-10 -z-10 animate-spin-slow"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
           fill="none"
