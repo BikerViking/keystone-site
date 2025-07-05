@@ -2,11 +2,9 @@ import React from "react";
 
 export default function Certifications() {
   return (
-    <section className="bg-gray-100 paper-texture text-gray-800 dark:bg-gray-950 dark:text-gray-200 py-16 lg:py-24 w-full">
-      <div className="w-full px-4 sm:px-6 lg:px-8">
-        <h2 className="mb-8 text-center">
-          Certifications & Credentials
-        </h2>
+    <section className="w-full bg-gray-100 paper-texture py-16 lg:py-24 text-gray-800 dark:bg-gray-950 dark:text-gray-200">
+      <div className="mx-auto w-full max-w-screen-xl px-4 sm:px-6 lg:px-8">
+        <h2 className="mb-8 text-center">Certifications & Credentials</h2>
         <ul
           role="list"
           className="grid gap-y-6 gap-x-4 sm:grid-cols-2 md:grid-cols-4 sm:gap-6"
