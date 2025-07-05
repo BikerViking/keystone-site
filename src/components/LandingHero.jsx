@@ -26,9 +26,7 @@ export default function LandingHero() {
         fadeIn ? "opacity-100" : ""
       }`}
     >
-      <section
-        className="relative flex min-h-dvh w-full flex-col items-center justify-center overflow-hidden bg-white pt-0 pb-12 text-gray-800 dark:bg-gradient-to-b dark:from-gray-900 dark:via-gray-950 dark:to-black dark:text-gray-200 sm:pb-16 md:pb-20 lg:pb-24"
-      >
+      <section className="relative flex min-h-[100svh] w-full flex-col items-center justify-center overflow-hidden bg-white pt-0 pb-12 text-gray-800 dark:bg-gradient-to-b dark:from-gray-900 dark:via-gray-950 dark:to-black dark:text-gray-200 sm:pb-16 md:pb-20 lg:pb-24">
         <div
           className="absolute inset-0 z-0 bg-cover bg-center opacity-40 motion-safe:animate-bg-pan"
           style={{
@@ -63,7 +61,7 @@ export default function LandingHero() {
           <line x1="17.5" y1="15" x2="9" y2="15" />
         </svg>
         <section className="w-full px-4 sm:px-6 lg:px-8">
-          <div className="relative z-10 flex w-full flex-col items-center">
+          <div className="relative z-10 mx-auto flex w-full max-w-screen-md flex-col items-center">
             {/* Subtle glow behind logo */}
             <div
               aria-hidden="true"
@@ -77,6 +75,7 @@ export default function LandingHero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, ease: "easeOut" }}
             />
+            <h1 className="sr-only">Keystone Notary Group</h1>
             <motion.p
               className="mt-4 mb-4 w-full text-center tracking-wide text-gray-700 dark:text-gray-300"
               initial={{ opacity: 0, y: -8 }}

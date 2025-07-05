@@ -25,18 +25,20 @@ export default function Header() {
 
   // Initialize theme from localStorage or system preference
   useEffect(() => {
-    const stored = localStorage.getItem('theme');
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    const enabled = stored ? stored === 'dark' : prefersDark;
-    document.body.classList.toggle('dark', enabled);
+    const stored = localStorage.getItem("theme");
+    const prefersDark = window.matchMedia(
+      "(prefers-color-scheme: dark)",
+    ).matches;
+    const enabled = stored ? stored === "dark" : prefersDark;
+    document.body.classList.toggle("dark", enabled);
     setDark(enabled);
   }, []);
 
   const toggleTheme = () => {
     setDark((prev) => {
       const next = !prev;
-      document.body.classList.toggle('dark', next);
-      localStorage.setItem('theme', next ? 'dark' : 'light');
+      document.body.classList.toggle("dark", next);
+      localStorage.setItem("theme", next ? "dark" : "light");
       return next;
     });
   };
@@ -75,7 +77,7 @@ export default function Header() {
       }`}
     >
       <h1 className="sr-only">Keystone Notary Group</h1>
-      <div className="flex w-full items-center justify-between px-4">
+      <div className="mx-auto flex w-full max-w-screen-xl items-center justify-between px-4">
         {/* Theme toggle button */}
         <button
           type="button"
@@ -83,16 +85,19 @@ export default function Header() {
           onClick={toggleTheme}
           className="rounded border border-gray-600 px-3 min-h-[36px] py-1 text-xs uppercase tracking-wide text-gray-800 dark:text-gray-200 transition-transform duration-300 ease-in-out hover:-translate-y-0.5 hover:shadow-md active:shadow-none focus:outline-none focus:ring-2 focus:ring-blue-600 mr-4"
         >
-          {dark ? 'Light' : 'Dark'}
+          {dark ? "Light" : "Dark"}
         </button>
 
         {/* Desktop navigation */}
-        <nav className="hidden sm:flex items-center space-x-6" aria-label="Desktop">
+        <nav
+          className="hidden sm:flex items-center space-x-6"
+          aria-label="Desktop"
+        >
           <NavLink
             to="/"
             className={({ isActive }) =>
               `px-2 py-1 transition-transform duration-300 hover:-translate-y-0.5 hover:text-blue-400${
-                isActive ? ' underline text-blue-400' : ''
+                isActive ? " underline text-blue-400" : ""
               }`
             }
           >
@@ -102,7 +107,7 @@ export default function Header() {
             to="/services"
             className={({ isActive }) =>
               `px-2 py-1 transition-transform duration-300 hover:-translate-y-0.5 hover:text-blue-400${
-                isActive ? ' underline text-blue-400' : ''
+                isActive ? " underline text-blue-400" : ""
               }`
             }
           >
@@ -112,7 +117,7 @@ export default function Header() {
             to="/faq"
             className={({ isActive }) =>
               `px-2 py-1 transition-transform duration-300 hover:-translate-y-0.5 hover:text-blue-400${
-                isActive ? ' underline text-blue-400' : ''
+                isActive ? " underline text-blue-400" : ""
               }`
             }
           >
@@ -122,7 +127,7 @@ export default function Header() {
             to="/contact"
             className={({ isActive }) =>
               `px-2 py-1 transition-transform duration-300 hover:-translate-y-0.5 hover:text-blue-400${
-                isActive ? ' underline text-blue-400' : ''
+                isActive ? " underline text-blue-400" : ""
               }`
             }
           >
@@ -154,81 +159,82 @@ export default function Header() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="sm:hidden fixed inset-0 w-full h-full bg-black/80 z-[9999] left-0 right-0"
-              style={{ width: '100dvw', height: '100dvh' }}
+              className="sm:hidden fixed inset-0 z-[9999] h-[100dvh] w-[100dvw] bg-black/80"
             >
               <motion.nav
                 id="mobile-menu"
                 aria-label="Mobile"
+                role="dialog"
+                aria-modal="true"
                 onKeyDown={handleKeyDown}
                 onClick={(e) => e.stopPropagation()}
-                initial={{ x: '100%' }}
+                initial={{ x: "100%" }}
                 animate={{ x: 0 }}
-                exit={{ x: '100%' }}
-                transition={{ type: 'tween', duration: 0.3 }}
-                className="w-full h-full flex flex-col"
+                exit={{ x: "100%" }}
+                transition={{ type: "tween", duration: 0.3 }}
+                className="flex h-full w-full flex-col"
               >
-            <button
-              type="button"
-              aria-label="Close menu"
-              onClick={closeMenu}
-              ref={firstRef}
-              className="absolute top-4 right-4 text-gray-800 dark:text-white text-2xl z-50 focus:outline-none"
-            >
-              &times;
-            </button>
-            <ul className="flex flex-col items-start space-y-4 px-6 py-8 text-lg">
-            <li>
-              <NavLink
-                to="/"
-                onClick={closeMenu}
-                className={({ isActive }) =>
-                  `block px-2 py-1 transition-transform duration-300 ease-in-out hover:-translate-y-0.5 hover:text-blue-400${isActive ? " underline text-blue-400" : ""}`
-                }
-              >
-                Home
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="/services"
-                onClick={closeMenu}
-                className={({ isActive }) =>
-                  `block px-2 py-1 transition-transform duration-300 ease-in-out hover:-translate-y-0.5 hover:text-blue-400${isActive ? " underline text-blue-400" : ""}`
-                }
-              >
-                Services
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="/faq"
-                onClick={closeMenu}
-                className={({ isActive }) =>
-                  `block px-2 py-1 transition-transform duration-300 ease-in-out hover:-translate-y-0.5 hover:text-blue-400${isActive ? " underline text-blue-400" : ""}`
-                }
-              >
-                FAQ
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="/contact"
-                onClick={closeMenu}
-                ref={lastRef}
-                className={({ isActive }) =>
-                  `block px-2 py-1 transition-transform duration-300 ease-in-out hover:-translate-y-0.5 hover:text-blue-400${isActive ? " underline text-blue-400" : ""}`
-                }
-              >
-                Contact
-              </NavLink>
-            </li>
-          </ul>
+                <button
+                  type="button"
+                  aria-label="Close menu"
+                  onClick={closeMenu}
+                  ref={firstRef}
+                  className="absolute top-4 right-4 text-gray-800 dark:text-white text-2xl z-50 focus:outline-none"
+                >
+                  &times;
+                </button>
+                <ul className="flex flex-col items-start space-y-4 px-6 py-8 text-lg">
+                  <li>
+                    <NavLink
+                      to="/"
+                      onClick={closeMenu}
+                      className={({ isActive }) =>
+                        `block px-2 py-1 transition-transform duration-300 ease-in-out hover:-translate-y-0.5 hover:text-blue-400${isActive ? " underline text-blue-400" : ""}`
+                      }
+                    >
+                      Home
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink
+                      to="/services"
+                      onClick={closeMenu}
+                      className={({ isActive }) =>
+                        `block px-2 py-1 transition-transform duration-300 ease-in-out hover:-translate-y-0.5 hover:text-blue-400${isActive ? " underline text-blue-400" : ""}`
+                      }
+                    >
+                      Services
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink
+                      to="/faq"
+                      onClick={closeMenu}
+                      className={({ isActive }) =>
+                        `block px-2 py-1 transition-transform duration-300 ease-in-out hover:-translate-y-0.5 hover:text-blue-400${isActive ? " underline text-blue-400" : ""}`
+                      }
+                    >
+                      FAQ
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink
+                      to="/contact"
+                      onClick={closeMenu}
+                      ref={lastRef}
+                      className={({ isActive }) =>
+                        `block px-2 py-1 transition-transform duration-300 ease-in-out hover:-translate-y-0.5 hover:text-blue-400${isActive ? " underline text-blue-400" : ""}`
+                      }
+                    >
+                      Contact
+                    </NavLink>
+                  </li>
+                </ul>
               </motion.nav>
             </motion.div>
           )}
         </AnimatePresence>,
-        document.body
+        document.body,
       )}
     </header>
   );
