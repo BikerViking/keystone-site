@@ -70,12 +70,12 @@ export default function Header() {
   return (
     <header
       role="banner"
-      className={`fixed top-0 left-0 right-0 z-50 border-b backdrop-blur transition-shadow duration-300 bg-white/70 text-gray-800 border-gray-200 dark:bg-gradient-to-b dark:from-gray-900 dark:via-gray-950 dark:to-black dark:text-gray-200 dark:border-gray-800 ${
+      className={`fixed top-0 z-50 w-full border-b backdrop-blur transition-shadow duration-300 bg-white/70 text-gray-800 border-gray-200 dark:bg-gradient-to-b dark:from-gray-900 dark:via-gray-950 dark:to-black dark:text-gray-200 dark:border-gray-800 ${
         scrolled ? "shadow-sm" : "shadow-none"
       }`}
     >
       <h1 className="sr-only">Keystone Notary Group</h1>
-      <div className="container mx-auto flex justify-between items-center pl-4 sm:pl-6 md:pl-8 pr-4 sm:pr-6 md:pr-8">
+      <div className="w-full px-4 sm:px-6 md:px-8 max-w-screen-lg mx-auto flex justify-between items-center">
         {/* Theme toggle button */}
         <button
           type="button"
@@ -92,7 +92,7 @@ export default function Header() {
           aria-controls="mobile-menu"
           aria-expanded={open}
           onClick={toggleMenu}
-          className="ml-4 rounded border border-gray-600 px-6 min-h-[48px] py-1 text-xs uppercase tracking-wide text-gray-800 dark:text-gray-200 transition-transform duration-300 ease-in-out hover:-translate-y-0.5 hover:shadow-md active:shadow-none focus:outline-none focus:ring-2 focus:ring-blue-600 sm:hidden pr-4 sm:pr-6 md:pr-8"
+          className="ml-4 rounded border border-gray-600 px-6 min-h-[48px] py-1 text-xs uppercase tracking-wide text-gray-800 dark:text-gray-200 transition-transform duration-300 ease-in-out hover:-translate-y-0.5 hover:shadow-md active:shadow-none focus:outline-none focus:ring-2 focus:ring-blue-600 sm:hidden"
         >
           Menu
         </button>
