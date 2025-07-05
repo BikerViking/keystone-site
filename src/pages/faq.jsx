@@ -38,15 +38,15 @@ export default function FaqPage() {
   return (
     <PageTransition>
       <LayoutWrapper>
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.section
           aria-label="Frequently Asked Questions"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
           viewport={{ once: true }}
-          className="overflow-x-hidden bg-gradient-to-b from-neutral-900 via-black to-neutral-950 py-16 lg:py-24 text-gray-200 space-y-4 sm:space-y-6 max-w-screen-md mx-auto px-4"
+          className="overflow-x-hidden bg-gradient-to-b from-neutral-900 via-black to-neutral-950 py-16 lg:py-24 text-gray-200 space-y-4 sm:space-y-6 w-full"
         >
+          <div className="mx-auto w-full max-w-screen-md px-4 sm:px-6 lg:px-8">
         <h1 className="text-center">
           Frequently Asked Questions
         </h1>
@@ -106,9 +106,9 @@ export default function FaqPage() {
           >
             Contact Us
           </motion.a>
+          </div>
         </div>
         </motion.section>
-        </div>
       </LayoutWrapper>
     </PageTransition>
   );
