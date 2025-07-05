@@ -15,7 +15,7 @@ export default function ServicesPage() {
           viewport={{ once: true }}
           className="relative overflow-hidden bg-gradient-to-b from-neutral-900 via-black to-neutral-950 py-16 lg:py-24 text-gray-200 space-y-4 sm:space-y-6 w-full min-h-dvh"
         >
-          <div className="mx-auto w-full max-w-screen-lg px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto w-full max-w-4xl px-4 sm:px-6 lg:px-8">
             <h1 className="text-center">Our Services</h1>
             <div
               aria-hidden="true"
@@ -24,7 +24,7 @@ export default function ServicesPage() {
 
             <div className="space-y-8">
               {/* Add subtle dividers between list items for improved readability */}
-              <ul className="list-disc list-inside divide-y divide-gray-400/20 space-y-4 text-left text-base sm:text-lg text-gray-300">
+              <ul className="space-y-4 divide-y divide-gray-700/40 text-left text-base sm:text-lg text-gray-300">
                 {[
                   "General notary work including acknowledgments, oaths, affirmations, and signature witnessing",
                   "Loan signing services for real estate closings, refinances, and mortgage documents",
@@ -43,14 +43,12 @@ export default function ServicesPage() {
                       ease: "easeOut",
                       delay: idx * 0.1,
                     }}
+                    className="border-l-4 border-blue-600 pl-4 py-2"
                   >
                     {text.includes("After-hours") ? (
                       <>
                         After-hours and emergency appointments
-                        <span className="italic">
-                          {" "}
-                          (additional surcharge applies)
-                        </span>
+                        <span className="italic"> (additional surcharge applies)</span>
                       </>
                     ) : (
                       text
