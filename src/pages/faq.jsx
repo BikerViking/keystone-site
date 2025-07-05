@@ -44,13 +44,13 @@ export default function FaqPage() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
           viewport={{ once: true }}
-          className="overflow-x-hidden bg-gradient-to-b from-neutral-900 via-black to-neutral-950 py-16 lg:py-24 text-gray-200 space-y-4 sm:space-y-6 w-full"
+          className="bg-gradient-to-b from-neutral-900 via-black to-neutral-950 py-16 lg:py-24 text-gray-200 space-y-4 sm:space-y-6 w-full min-h-dvh"
         >
           <div className="w-full px-4 sm:px-6 lg:px-8">
         <h1 className="text-center">
           Frequently Asked Questions
         </h1>
-        <div aria-hidden="true" className="border-b-2 border-blue-500 w-12 mx-auto mb-6" />
+        <div aria-hidden="true" className="border-b-2 border-blue-500 w-12 mb-6" />
         <dl className="space-y-6 sm:space-y-8">
           {faqs.map(({ q, a }, idx) => (
             <motion.div
@@ -97,7 +97,7 @@ export default function FaqPage() {
         </dl>
         <div className="mt-12 border border-blue-500/30 bg-neutral-800 p-6 text-center shadow-inner">
           <h2 className="text-center text-3xl font-semibold tracking-wide text-white mb-8">Still have questions?</h2>
-          <div aria-hidden="true" className="mx-auto mb-6 h-0.5 w-24 bg-gradient-to-r from-blue-500/50 to-blue-500/0" />
+          <div aria-hidden="true" className="mb-6 h-0.5 w-24 bg-gradient-to-r from-blue-500/50 to-blue-500/0" />
           <motion.a
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}

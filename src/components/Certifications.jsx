@@ -2,14 +2,14 @@ import React from "react";
 
 export default function Certifications() {
   return (
-    <section className="bg-gray-100 paper-texture text-gray-800 dark:bg-gray-950 dark:text-gray-200 overflow-x-hidden py-16 lg:py-24 w-full">
+    <section className="bg-gray-100 paper-texture text-gray-800 dark:bg-gray-950 dark:text-gray-200 py-16 lg:py-24 w-full">
       <div className="w-full px-4 sm:px-6 lg:px-8">
         <h2 className="mb-8 text-center">
           Certifications & Credentials
         </h2>
         <ul
           role="list"
-          className="mx-auto grid max-w-md gap-y-6 gap-x-4 sm:max-w-none sm:grid-cols-2 md:grid-cols-4 sm:gap-6"
+          className="grid gap-y-6 gap-x-4 sm:grid-cols-2 md:grid-cols-4 sm:gap-6"
         >
           <li className="flex flex-col items-center justify-center gap-3 sm:flex-row">
             <svg
