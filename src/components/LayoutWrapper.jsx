@@ -27,7 +27,7 @@ export default function LayoutWrapper({ children, fullWidth = false }) {
           name="description"
           content="Keystone Notary Group, LLC provides professional mobile notary services throughout Bucks and Montgomery County, Pennsylvania. Certified, punctual, and NNA insured."
         />
-        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta charSet="utf-8" />
 
         {/* Open Graph tags */}
@@ -111,7 +111,7 @@ export default function LayoutWrapper({ children, fullWidth = false }) {
         {fullWidth ? (
           children
         ) : (
-          <div className="w-full min-h-screen mx-auto px-4 sm:px-6 lg:px-8 max-w-screen-lg">
+          <div className="w-full min-h-screen mx-auto px-4 sm:px-6 lg:px-8">
             {children}
           </div>
         )}
