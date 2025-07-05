@@ -8,14 +8,6 @@ module.exports = {
   ],
   darkMode: 'class',
   theme: {
-    container: {
-      center: true,
-      padding: {
-        DEFAULT: '1rem',
-        sm: '2rem',
-        lg: '4rem'
-      }
-    },
     screens: {
       xs: '375px',
       ...defaultTheme.screens,

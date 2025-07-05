@@ -10,11 +10,10 @@ import ScrollProgress from "./ScrollProgress";
 
 export default function LayoutWrapper({ children, fullWidth = false }) {
   return (
-    <div
-      className="w-full min-h-screen min-h-dvh bg-black dark:bg-black scroll-smooth relative flex flex-col overflow-x-hidden brightness-100 contrast-100 text-gray-900 dark:brightness-125 dark:contrast-110 dark:text-gray-200 before:absolute before:inset-0 before:-z-10 before:pointer-events-none before:bg-[radial-gradient(circle,rgba(255,255,255,0.05)_1px,transparent_1px)] before:bg-[length:50px_50px]"
-      /* Ensure pages share consistent textured background */
-      style={{ backgroundImage: "url('/bg-texture.PNG')" }}
-    >
+      <div
+        className="w-full min-h-screen bg-black flex flex-col overflow-x-hidden"
+        style={{ backgroundImage: "url('/bg-texture.PNG')" }}
+      >
       <ScrollProgress />
       {/* Soft radial accent for subtle depth */}
       <div
