@@ -64,7 +64,6 @@ export default function ContactPage() {
   return (
     <PageTransition>
       <LayoutWrapper>
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.section
           id="contact"
           aria-label="Contact"
@@ -72,8 +71,9 @@ export default function ContactPage() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
           viewport={{ once: true }}
-          className="overflow-x-hidden relative overflow-hidden bg-gradient-to-b from-neutral-900 via-black to-neutral-950 paper-texture py-16 lg:py-24 text-gray-200 space-y-4 sm:space-y-6 scroll-mt-20 max-w-screen-md mx-auto px-4"
+          className="overflow-x-hidden relative overflow-hidden bg-gradient-to-b from-neutral-900 via-black to-neutral-950 paper-texture py-16 lg:py-24 text-gray-200 space-y-4 sm:space-y-6 scroll-mt-20 w-full"
         >
+        <div className="mx-auto w-full max-w-screen-md px-4 sm:px-6 lg:px-8">
         <h1 className="text-center">
           Contact
         </h1>
@@ -238,18 +238,18 @@ export default function ContactPage() {
           <line x1="16" y1="8" x2="2" y2="22" />
           <line x1="17.5" y1="15" x2="9" y2="15" />
         </svg>
+          </div>
         </motion.section>
-        </div>
         <hr className="border-t border-gray-700 my-12" />
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.section
           aria-label="What to Bring to Your Appointment"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
           viewport={{ once: true }}
-          className="max-w-screen-md mx-auto px-4 overflow-x-hidden bg-gradient-to-b from-neutral-900 via-black to-neutral-950 mt-12 py-16 lg:py-24 space-y-4 sm:space-y-6"
+          className="w-full overflow-x-hidden bg-gradient-to-b from-neutral-900 via-black to-neutral-950 mt-12 py-16 lg:py-24 space-y-4 sm:space-y-6"
         >
+          <div className="mx-auto w-full max-w-screen-md px-4 sm:px-6 lg:px-8">
           <div className="bg-neutral-900 p-6 ring-1 ring-neutral-700 shadow-[0_0_20px_rgba(255,255,255,0.05)]">
           <div className="mb-8 flex flex-row items-center justify-center">
             <svg
@@ -283,9 +283,9 @@ export default function ContactPage() {
           >
             📄 Download Appointment Checklist (PDF)
           </a>
+          </div>
         </div>
         </motion.section>
-        </div>
       </LayoutWrapper>
     </PageTransition>
   );

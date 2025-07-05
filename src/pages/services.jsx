@@ -7,15 +7,15 @@ export default function ServicesPage() {
   return (
     <PageTransition>
       <LayoutWrapper>
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.section
           aria-label="Services"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
           viewport={{ once: true }}
-          className="overflow-x-hidden relative overflow-hidden bg-gradient-to-b from-neutral-900 via-black to-neutral-950 py-16 lg:py-24 text-gray-200 space-y-4 sm:space-y-6 max-w-screen-md mx-auto px-4"
+          className="overflow-x-hidden relative overflow-hidden bg-gradient-to-b from-neutral-900 via-black to-neutral-950 py-16 lg:py-24 text-gray-200 space-y-4 sm:space-y-6 w-full"
         >
+          <div className="mx-auto w-full max-w-screen-md px-4 sm:px-6 lg:px-8">
           <h1 className="text-center">Our Services</h1>
           <div aria-hidden="true" className="border-b-2 border-blue-500 w-12 mx-auto mb-6" />
 
@@ -73,8 +73,8 @@ export default function ServicesPage() {
           <line x1="16" y1="8" x2="2" y2="22" />
           <line x1="17.5" y1="15" x2="9" y2="15" />
         </svg>
+          </div>
         </motion.section>
-        </div>
       </LayoutWrapper>
     </PageTransition>
   );
