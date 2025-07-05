@@ -10,9 +10,9 @@ import ScrollProgress from "./ScrollProgress";
 
 export default function LayoutWrapper({ children }) {
   return (
-    <div className="w-full min-h-screen overflow-x-hidden">
+    <div className="w-full min-h-dvh overflow-x-hidden">
       <div
-        className="flex flex-col w-full min-h-screen bg-black"
+        className="flex flex-col w-full min-h-dvh bg-black"
         style={{ backgroundImage: "url('/bg-texture.PNG')" }}
       >
       <ScrollProgress />
@@ -27,7 +27,10 @@ export default function LayoutWrapper({ children }) {
           name="description"
           content="Keystone Notary Group, LLC provides professional mobile notary services throughout Bucks and Montgomery County, Pennsylvania. Certified, punctual, and NNA insured."
         />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1, viewport-fit=cover"
+        />
         <meta charSet="utf-8" />
 
         {/* Open Graph tags */}
