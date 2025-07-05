@@ -85,6 +85,51 @@ export default function Header() {
         >
           {dark ? 'Light' : 'Dark'}
         </button>
+
+        {/* Desktop navigation */}
+        <nav className="hidden sm:flex items-center space-x-6" aria-label="Desktop">
+          <NavLink
+            to="/"
+            className={({ isActive }) =>
+              `px-2 py-1 transition-transform duration-300 hover:-translate-y-0.5 hover:text-blue-400${
+                isActive ? ' underline text-blue-400' : ''
+              }`
+            }
+          >
+            Home
+          </NavLink>
+          <NavLink
+            to="/services"
+            className={({ isActive }) =>
+              `px-2 py-1 transition-transform duration-300 hover:-translate-y-0.5 hover:text-blue-400${
+                isActive ? ' underline text-blue-400' : ''
+              }`
+            }
+          >
+            Services
+          </NavLink>
+          <NavLink
+            to="/faq"
+            className={({ isActive }) =>
+              `px-2 py-1 transition-transform duration-300 hover:-translate-y-0.5 hover:text-blue-400${
+                isActive ? ' underline text-blue-400' : ''
+              }`
+            }
+          >
+            FAQ
+          </NavLink>
+          <NavLink
+            to="/contact"
+            className={({ isActive }) =>
+              `px-2 py-1 transition-transform duration-300 hover:-translate-y-0.5 hover:text-blue-400${
+                isActive ? ' underline text-blue-400' : ''
+              }`
+            }
+          >
+            Contact
+          </NavLink>
+        </nav>
+
         {/* Mobile navigation toggle */}
         <button
           type="button"
