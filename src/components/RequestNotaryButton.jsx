@@ -11,7 +11,8 @@ export default function RequestNotaryButton() {
   const [hidden, setHidden] = useState(false);
 
   const handleClick = () => {
-    navigate("/contact#contact");
+    // Navigate to the dedicated contact page
+    navigate("/contact");
   };
 
   useEffect(() => {
