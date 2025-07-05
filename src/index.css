@@ -39,6 +39,13 @@
     @apply text-lg text-gray-700 leading-relaxed tracking-normal dark:text-gray-300;
   }
 }
+
+/* Basic body defaults */
+body {
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
 @layer utilities {
   .font-display {
     font-family: var(--font-display);
