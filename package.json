@@ -2,7 +2,7 @@
   "name": "keystone-site",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "build": "mkdir -p dist && cp index.html dist/index.html",
     "test": "node --test",

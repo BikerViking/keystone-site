@@ -1,10 +1,14 @@
 const express = require('express');
 const path = require('path');
+const fs = require('fs');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-app.use(express.static(path.join(__dirname), {
+const distDir = path.join(__dirname, 'dist');
+const staticDir = fs.existsSync(distDir) ? distDir : __dirname;
+
+app.use(express.static(staticDir, {
   setHeaders(res, filePath) {
     const isHtml = path.extname(filePath) === '.html';
     res.setHeader('Cache-Control', isHtml ? 'public,max-age=0' : 'public,max-age=31536000,immutable');
