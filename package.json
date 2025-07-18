@@ -4,7 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "build": "mkdir -p dist && cp index.html dist/index.html",
+    "build": "mkdir -p dist && cp index.html dist/index.html && cp main.js dist/main.js",
     "test": "node --test",
     "start": "node server.js"
   },
