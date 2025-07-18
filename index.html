@@ -169,7 +169,8 @@
         html.dark select,
         html.dark textarea {
             background-color: #333333 !important;
-            color: #E5E5E5 !important;
+            /* Use a lighter text color for contrast */
+            color: #f0f0f0 !important;
             border-color: #888888 !important;
         }
         
@@ -271,7 +272,8 @@
             color: #333333 !important;
         }
         html.dark .text-charcoal, html.dark [class*="text-charcoal"] {
-            color: #E5E5E5 !important;
+            /* Lighten text color in dark mode for better readability */
+            color: #f0f0f0 !important;
         }
 
         .bg-lightgray, [class*="bg-lightgray"] {
@@ -289,17 +291,20 @@
             color: #444444 !important;
         }
         html.dark .text-darkgray, html.dark [class*="text-darkgray"] {
-            color: #CCCCCC !important;
+            /* Slightly brighter gray on dark backgrounds */
+            color: #d1d1d1 !important;
         }
 
         /* Override inline styles for dark mode */
         html.dark [style*="color: #333"],
         html.dark [style*="color:#333"] {
-            color: #E5E5E5 !important;
+            /* Override inline dark text with a brighter value */
+            color: #f0f0f0 !important;
         }
         html.dark [style*="color: #555"],
         html.dark [style*="color:#555"] {
-            color: #CCCCCC !important;
+            /* Ensure medium grays remain legible */
+            color: #d1d1d1 !important;
         }
         html.dark [style*="background-color: white"],
         html.dark [style*="background-color:white"] {
