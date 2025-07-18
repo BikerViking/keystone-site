@@ -168,9 +168,9 @@
         html.dark input,
         html.dark select,
         html.dark textarea {
-            background-color: #333333;
-            color: #E5E5E5;
-            border-color: #888888;
+            background-color: #333333 !important;
+            color: #E5E5E5 !important;
+            border-color: #888888 !important;
         }
         
         /* Fallback styles in case Tailwind doesn't load properly */
@@ -378,6 +378,26 @@
         .floating-button:hover {
             transform: translateY(-3px);
             box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+        }
+        .theme-toggle-btn {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            z-index: 100;
+            padding: 0.5rem;
+            border-radius: 9999px;
+            background-color: #333333;
+            color: #ffffff;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        .theme-toggle-btn:hover {
+            transform: translateY(-3px);
+            background-color: #444444;
+        }
+        html.dark .theme-toggle-btn {
+            background-color: #E5E5E5;
+            color: #333333;
         }
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(20px); -webkit-transform: translateY(20px); }
@@ -587,24 +607,8 @@
                     <a href="#about" class="nav-link text-darkgray hover:text-charcoal transition-colors duration-300 font-medium">About</a>
                     <a href="#faq" class="nav-link text-darkgray hover:text-charcoal transition-colors duration-300 font-medium">FAQ</a>
                     <a href="#contact" class="nav-link text-darkgray hover:text-charcoal transition-colors duration-300 font-medium">Contact</a>
-                    <button id="theme-toggle" class="ml-4 text-charcoal dark:text-platinum focus:outline-none" aria-label="Toggle dark mode">
-                        <svg id="theme-sun" class="h-6 w-6 hidden" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                            <path d="M12 18a6 6 0 100-12 6 6 0 000 12zM12 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm0 16a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zm10-6a1 1 0 01-1 1h-1a1 1 0 110-2h1a1 1 0 011 1zM5 12a1 1 0 01-1 1H3a1 1 0 110-2h1a1 1 0 011 1zm13.657-6.657a1 1 0 010 1.414l-.707.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM6.464 17.536a1 1 0 010 1.414l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 0zm12.728 0a1 1 0 01-1.414 1.414l-.707-.707a1 1 0 011.414-1.414l.707.707zM6.464 6.464A1 1 0 015.05 5.05l.707-.707a1 1 0 111.414 1.414l-.707.707z"/>
-                        </svg>
-                        <svg id="theme-moon" class="h-6 w-6" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                            <path d="M17.293 13.293A8.001 8.001 0 016.707 2.707 8 8 0 1017.293 13.293z"/>
-                        </svg>
-                    </button>
                 </div>
                 <div class="flex items-center md:hidden space-x-4">
-                    <button id="theme-toggle-mobile" class="text-charcoal dark:text-platinum focus:outline-none" aria-label="Toggle dark mode">
-                        <svg id="theme-sun-mobile" class="h-6 w-6 hidden" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                            <path d="M12 18a6 6 0 100-12 6 6 0 000 12zM12 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm0 16a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zm10-6a1 1 0 01-1 1h-1a1 1 0 110-2h1a1 1 0 011 1zM5 12a1 1 0 01-1 1H3a1 1 0 110-2h1a1 1 0 011 1zm13.657-6.657a1 1 0 010 1.414l-.707.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM6.464 17.536a1 1 0 010 1.414l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 0zm12.728 0a1 1 0 01-1.414 1.414l-.707-.707a1 1 0 011.414-1.414l.707.707zM6.464 6.464A1 1 0 015.05 5.05l.707-.707a1 1 0 111.414 1.414l-.707.707z"/>
-                        </svg>
-                        <svg id="theme-moon-mobile" class="h-6 w-6" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                            <path d="M17.293 13.293A8.001 8.001 0 016.707 2.707 8 8 0 1017.293 13.293z"/>
-                        </svg>
-                    </button>
                     <button id="menu-button" class="text-charcoal focus:outline-none md:hidden" aria-label="Toggle menu" aria-expanded="false">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
@@ -623,7 +627,16 @@
                 </div>
             </div>
         </div>
-    </nav>
+</nav>
+
+    <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle dark mode">
+        <svg id="theme-sun" class="h-6 w-6 hidden" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M12 18a6 6 0 100-12 6 6 0 000 12zM12 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm0 16a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zm10-6a1 1 0 01-1 1h-1a1 1 0 110-2h1a1 1 0 011 1zM5 12a1 1 0 01-1 1H3a1 1 0 110-2h1a1 1 0 011 1zm13.657-6.657a1 1 0 010 1.414l-.707.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM6.464 17.536a1 1 0 010 1.414l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 0zm12.728 0a1 1 0 01-1.414 1.414l-.707-.707a1 1 0 011.414-1.414l.707.707zM6.464 6.464A1 1 0 015.05 5.05l.707-.707a1 1 0 111.414 1.414l-.707.707z"/>
+        </svg>
+        <svg id="theme-moon" class="h-6 w-6" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M17.293 13.293A8.001 8.001 0 016.707 2.707 8 8 0 1017.293 13.293z"/>
+        </svg>
+    </button>
 
     <!-- Hero Section -->
     <section class="hero-section bg-charcoal hero-pattern text-white py-16 md:py-24">
@@ -1607,11 +1620,6 @@
             document.getElementById('theme-toggle'),
             document.getElementById('theme-sun'),
             document.getElementById('theme-moon')
-        );
-        initTheme(
-            document.getElementById('theme-toggle-mobile'),
-            document.getElementById('theme-sun-mobile'),
-            document.getElementById('theme-moon-mobile')
         );
 
         // Mobile menu toggle
