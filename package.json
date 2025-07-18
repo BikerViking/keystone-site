@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "mkdir -p dist && cp index.html dist/index.html",
-    "test": "echo \"No tests\"",
+    "test": "node --test",
     "start": "node server.js"
   },
   "keywords": [],
