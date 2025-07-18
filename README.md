@@ -1,14 +1,14 @@
 # Keystone Notary Group Website
 
-This project serves a static marketing site powered by an Express server. The build step copies `index.html` into `dist/` for deployments such as Vercel.
+This project now uses React and Tailwind CSS built with Vite. The Express server serves the compiled assets from `dist/` and applies a strict Content Security Policy.
 
 ## Development
 
-Install dependencies and run the server:
+Install dependencies and run the development server:
 
 ```bash
 npm install
-npm start
+npm run dev
 ```
 
 ## Testing
