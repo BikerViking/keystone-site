@@ -19,9 +19,7 @@ initTheme();
                 mobileMenu.classList.toggle('hidden');
             });
         }
-        
-        // Add touch event handling for mobile devices
-        document.addEventListener('touchstart', function() {}, {passive: true});
+
         
         // Improve keyboard navigation
         document.addEventListener('keydown', function(e) {
@@ -303,13 +301,11 @@ initTheme();
                 uploadSection.style.display = 'block';
             }
             
-            // Initialize the document verification tool
-            document.addEventListener('DOMContentLoaded', function() {
-                const documentVerificationTool = document.getElementById('document-verification-tool');
-                if (documentVerificationTool) {
-                    documentVerificationTool.style.display = 'block';
-                }
-            });
+            // Show the verification tool when available
+            const documentVerificationTool = document.getElementById('document-verification-tool');
+            if (documentVerificationTool) {
+                documentVerificationTool.style.display = 'block';
+            }
             
             // Make sure the drop zone is visible and properly styled
             if (dropZone) {
@@ -403,7 +399,12 @@ initTheme();
                 // Check file type
                 const validTypes = ['application/pdf', 'application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document', 'image/jpeg', 'image/png'];
                 if (!validTypes.includes(file.type)) {
-                    alert('Please upload a valid document (PDF, DOC, DOCX, JPG, or PNG).');
+                    const uploadError = document.getElementById('upload-error');
+                    if (uploadError) {
+                        uploadError.textContent = 'Please upload a valid document (PDF, DOC, DOCX, JPG, or PNG).';
+                        uploadError.classList.remove('hidden');
+                        uploadError.focus();
+                    }
                     return;
                 }
                 

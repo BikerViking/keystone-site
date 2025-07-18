@@ -86,7 +86,12 @@ export function initClientPortal() {
     });
   });
 
+  const uploadMessage = document.getElementById('upload-message');
   uploadDocumentBtn.addEventListener('click', () => {
-    alert('Document upload feature would be integrated with a secure file storage system.');
+    if (uploadMessage) {
+      uploadMessage.textContent = 'Secure upload feature coming soon.';
+      uploadMessage.classList.remove('hidden');
+      uploadMessage.focus();
+    }
   });
 }
