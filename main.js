@@ -66,23 +66,8 @@
                     clientPortalModal.classList.add('hidden');
                     document.body.style.overflow = '';
                 }
-                
-                // Close chat window if open
-                const chatWindow = document.getElementById('chat-window');
-                if (chatWindow && !chatWindow.classList.contains('hidden')) {
-                    chatWindow.classList.add('hidden');
-                    chatWindow.style.display = 'none';
-                }
-                
-                // Close screenshot instructions if open
-                const screenshotModal = document.getElementById('screenshot-instructions');
-                if (screenshotModal && !screenshotModal.classList.contains('hidden')) {
-                    screenshotModal.classList.add('hidden');
-                    document.body.style.overflow = '';
-                }
             }
         });
-        
 
         // Form validation and submission with API integration hooks
         document.querySelectorAll('form').forEach(form => {
