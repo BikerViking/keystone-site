@@ -1,6 +1,6 @@
 # Keystone Notary Group Website
 
-This project serves a static marketing site powered by an Express server. The build step copies `index.html` into `dist/` for deployments such as Vercel.
+This project serves a static marketing site powered by an Express server. The build step copies the site assets (HTML, CSS, and JS) into `dist/` for deployments such as Vercel.
 
 ## Development
 
