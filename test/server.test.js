@@ -1,6 +1,7 @@
 const test = require('node:test');
 const assert = require('node:assert/strict');
 const app = require('../server.js');
+const fs = require('node:fs');
 let server;
 
 test.before(() => {
@@ -17,4 +18,12 @@ test('static headers', async () => {
   assert.equal(res.status, 200);
   assert.ok(res.headers.get('cache-control'));
   assert.ok(res.headers.get('content-security-policy'));
+});
+
+test('forms expose live regions', async () => {
+  const html = await fs.promises.readFile('index.html', 'utf8');
+  assert.ok(html.includes('id="login-message"'));
+  assert.ok(html.includes('id="register-message"'));
+  assert.ok(html.includes('id="appointment-message"'));
+  assert.ok(html.includes('id="newsletter-message"'));
 });

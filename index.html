@@ -729,6 +729,7 @@
                     <div>
                         <button type="submit" class="w-full bg-charcoal text-white py-3 px-6 rounded-sm hover:bg-darkgray transition-colors duration-300" >Sign In</button>
                     </div>
+                    <p id="login-message" class="mt-2 text-sm text-green-600 hidden" aria-live="polite" tabindex="-1"></p>
                 </form>
                 
                 <div class="mt-6 text-center">
@@ -766,6 +767,7 @@
                     <div>
                         <button type="submit" class="w-full bg-charcoal text-white py-3 px-6 rounded-sm hover:bg-darkgray transition-colors duration-300" >Create Account</button>
                     </div>
+                        <p id="register-message" class="mt-2 text-sm text-green-600 hidden" aria-live="polite" tabindex="-1"></p>
                 </form>
                 
                 <div class="mt-6 text-center">
@@ -1465,6 +1467,7 @@
                                 </span>
                             </button>
                             <p id="form-feedback" class="mt-2 text-sm text-red-600 hidden" style="margin-top: 8px; font-size: 0.875rem; color: #e53e3e; display: none;"></p>
+                                <p id="appointment-message" class="mt-2 text-sm text-green-600 hidden" aria-live="polite" tabindex="-1"></p>
                         </div>
                     </form>
                 </div>
@@ -1584,7 +1587,7 @@
                         <input type="email" id="newsletter-email" placeholder="Your email address" class="px-3 md:px-4 py-2 w-full rounded-sm sm:rounded-l-sm sm:rounded-r-none focus:outline-none text-charcoal" required style="display: block; width: 100%; height: auto; background-color: white; border: 1px solid #AAAAAA; box-sizing: border-box;">
                         <button type="submit" class="bg-white text-charcoal px-4 py-2 mt-2 sm:mt-0 rounded-sm sm:rounded-l-none sm:rounded-r-sm hover:bg-platinum transition-colors duration-300" style="display: block; cursor: pointer; background-color: white; color: #333333; text-align: center; border: 1px solid #AAAAAA; border-left: none; box-sizing: border-box;">Subscribe</button>
                     </form>
-                    <div id="newsletter-message" class="mt-2 text-sm text-white hidden"></div>
+                    <p id="newsletter-message" class="mt-2 text-sm text-white hidden" aria-live="polite" tabindex="-1"></p>
                     
                     <!-- Newsletter subscription handled server-side -->
                 </div>
