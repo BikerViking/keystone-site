@@ -35,18 +35,13 @@
         
         // Check if elements exist before accessing them
         if (menuButton && mobileMenu) {
-            // Initially hide the mobile menu
-            mobileMenu.style.display = 'none';
-            
+            // Hide mobile menu by default
+            mobileMenu.classList.add('hidden');
+
             menuButton.addEventListener('click', () => {
                 const isExpanded = menuButton.getAttribute('aria-expanded') === 'true';
-                menuButton.setAttribute('aria-expanded', !isExpanded);
-                
-                if (mobileMenu.style.display === 'none') {
-                    mobileMenu.style.display = 'block';
-                } else {
-                    mobileMenu.style.display = 'none';
-                }
+                menuButton.setAttribute('aria-expanded', String(!isExpanded));
+                mobileMenu.classList.toggle('hidden');
             });
         }
         
