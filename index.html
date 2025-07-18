@@ -636,7 +636,7 @@
                     <span class="text-xl font-semibold tracking-wide text-charcoal">KEYSTONE NOTARY GROUP</span>
                 </div>
                 <div class="hidden md:flex items-center space-x-8">
-                    <a href="#" class="nav-link text-darkgray hover:text-charcoal transition-colors duration-300 font-medium">Home</a>
+                    <a href="#home" class="nav-link text-darkgray hover:text-charcoal transition-colors duration-300 font-medium">Home</a>
                     <a href="#services" class="nav-link text-darkgray hover:text-charcoal transition-colors duration-300 font-medium">Services</a>
                     <a href="#why-choose-us" class="nav-link text-darkgray hover:text-charcoal transition-colors duration-300 font-medium">Why Us</a>
                     <a href="#about" class="nav-link text-darkgray hover:text-charcoal transition-colors duration-300 font-medium">About</a>
@@ -653,7 +653,7 @@
             </div>
             <div id="mobile-menu" class="hidden pt-4 pb-2 border-t border-mediumgray mt-4">
                 <div class="flex flex-col space-y-2">
-                    <a href="#" class="text-darkgray hover:text-charcoal transition-colors duration-300 font-medium py-2">Home</a>
+                    <a href="#home" class="text-darkgray hover:text-charcoal transition-colors duration-300 font-medium py-2">Home</a>
                     <a href="#services" class="text-darkgray hover:text-charcoal transition-colors duration-300 font-medium py-2">Services</a>
                     <a href="#why-choose-us" class="text-darkgray hover:text-charcoal transition-colors duration-300 font-medium py-2">Why Us</a>
                     <a href="#about" class="text-darkgray hover:text-charcoal transition-colors duration-300 font-medium py-2">About</a>
@@ -664,7 +664,7 @@
         </div>
 </nav>
 
-    <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle dark mode">
+    <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle dark mode" aria-pressed="false">
         <svg id="theme-sun" class="h-6 w-6 hidden" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
             <path d="M12 18a6 6 0 100-12 6 6 0 000 12zM12 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm0 16a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zm10-6a1 1 0 01-1 1h-1a1 1 0 110-2h1a1 1 0 011 1zM5 12a1 1 0 01-1 1H3a1 1 0 110-2h1a1 1 0 011 1zm13.657-6.657a1 1 0 010 1.414l-.707.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM6.464 17.536a1 1 0 010 1.414l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 0zm12.728 0a1 1 0 01-1.414 1.414l-.707-.707a1 1 0 011.414-1.414l.707.707zM6.464 6.464A1 1 0 015.05 5.05l.707-.707a1 1 0 111.414 1.414l-.707.707z"/>
         </svg>
@@ -674,7 +674,7 @@
     </button>
 
     <!-- Hero Section -->
-    <section class="hero-section bg-charcoal hero-pattern text-white py-16 md:py-24">
+    <section id="home" class="hero-section bg-charcoal hero-pattern text-white py-16 md:py-24">
         <div class="container mx-auto px-4 md:px-6">
             <div class="max-w-3xl mx-auto text-center">
                 <h1 class="text-3xl sm:text-4xl md:text-5xl font-light mb-4 md:mb-6 leading-tight">Professional Notary Services with Integrity</h1>
@@ -969,7 +969,7 @@
                             </div>
                             
                             <div id="verification-results" class="hidden mt-6 animate-slide-up bg-white p-5 rounded-sm">
-                                <div class="p-4 rounded-sm mb-4" id="result-status-container">
+                                <div class="p-4 rounded-sm mb-4" id="result-status-container" role="status" aria-live="polite">
                                     <div class="flex items-center">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2 animate-pulse" id="result-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="width: 24px; height: 24px; margin-right: 8px;">
                                         </svg>
@@ -1399,38 +1399,9 @@
                             </div>
                         </div>
                         
-                        <div id="time-slots" style="display: block; margin-top: 20px;">
+                        <div id="time-slots" style="display: none; margin-top: 20px;">
                             <h5 class="text-sm md:text-md font-medium text-charcoal mb-2 md:mb-3" style="font-size: 1rem; font-weight: 500; color: #333333; margin-bottom: 12px;">Available Times for <span id="selected-date">November 15, 2023</span></h5>
-                            <div id="time-slots-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; width: 100%;">
-                                <!-- Sample time slots -->
-                                <div class="time-slot-wrapper" style="padding: 0; margin: 0;">
-                                    <button type="button" class="time-slot" style="font-size: 0.9rem; background-color: white; border: 1px solid #AAAAAA; padding: 8px; text-align: center; width: 100%; box-sizing: border-box; display: block; cursor: pointer; border-radius: 2px; margin: 0;">9:00 AM</button>
-                                </div>
-                                <div class="time-slot-wrapper" style="padding: 0; margin: 0;">
-                                    <button type="button" class="time-slot" style="font-size: 0.9rem; background-color: white; border: 1px solid #AAAAAA; padding: 8px; text-align: center; width: 100%; box-sizing: border-box; display: block; cursor: pointer; border-radius: 2px; margin: 0;">9:30 AM</button>
-                                </div>
-                                <div class="time-slot-wrapper" style="padding: 0; margin: 0;">
-                                    <button type="button" class="time-slot" style="font-size: 0.9rem; background-color: white; border: 1px solid #AAAAAA; padding: 8px; text-align: center; width: 100%; box-sizing: border-box; display: block; cursor: pointer; border-radius: 2px; margin: 0;">10:00 AM</button>
-                                </div>
-                                <div class="time-slot-wrapper" style="padding: 0; margin: 0;">
-                                    <button type="button" class="time-slot" style="font-size: 0.9rem; background-color: white; border: 1px solid #AAAAAA; padding: 8px; text-align: center; width: 100%; box-sizing: border-box; display: block; cursor: pointer; border-radius: 2px; margin: 0;">10:30 AM</button>
-                                </div>
-                                <div class="time-slot-wrapper" style="padding: 0; margin: 0;">
-                                    <button type="button" class="time-slot" style="font-size: 0.9rem; background-color: white; border: 1px solid #AAAAAA; padding: 8px; text-align: center; width: 100%; box-sizing: border-box; display: block; cursor: pointer; border-radius: 2px; margin: 0;">11:00 AM</button>
-                                </div>
-                                <div class="time-slot-wrapper" style="padding: 0; margin: 0;">
-                                    <button type="button" class="time-slot" style="font-size: 0.9rem; background-color: white; border: 1px solid #AAAAAA; padding: 8px; text-align: center; width: 100%; box-sizing: border-box; display: block; cursor: pointer; border-radius: 2px; margin: 0;">11:30 AM</button>
-                                </div>
-                                <div class="time-slot-wrapper" style="padding: 0; margin: 0;">
-                                    <button type="button" class="time-slot" style="font-size: 0.9rem; background-color: white; border: 1px solid #AAAAAA; padding: 8px; text-align: center; width: 100%; box-sizing: border-box; display: block; cursor: pointer; border-radius: 2px; margin: 0;">1:00 PM</button>
-                                </div>
-                                <div class="time-slot-wrapper" style="padding: 0; margin: 0;">
-                                    <button type="button" class="time-slot" style="font-size: 0.9rem; background-color: white; border: 1px solid #AAAAAA; padding: 8px; text-align: center; width: 100%; box-sizing: border-box; display: block; cursor: pointer; border-radius: 2px; margin: 0;">1:30 PM</button>
-                                </div>
-                                <div class="time-slot-wrapper" style="padding: 0; margin: 0;">
-                                    <button type="button" class="time-slot selected" style="font-size: 0.9rem; background-color: #333333; color: white; border: 1px solid #333333; padding: 8px; text-align: center; width: 100%; box-sizing: border-box; display: block; cursor: pointer; border-radius: 2px; font-weight: 500; margin: 0;">2:00 PM</button>
-                                </div>
-                            </div>
+                            <div id="time-slots-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; width: 100%;"></div>
                         </div>
                     </div>
                     
