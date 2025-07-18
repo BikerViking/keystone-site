@@ -57,7 +57,6 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap">
     <!-- Load Tailwind after fonts -->
     <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <!-- Structured data for SEO -->
     <script type="application/ld+json">
     {
@@ -1758,39 +1757,6 @@
                         message: document.getElementById('message').value
                     };
                     
-                    // This is where you would integrate with a booking API
-                    // Example API integration:
-                    /*
-                    fetch('https://api.example.com/appointments', {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json',
-                            'Authorization': 'Bearer YOUR_API_KEY'
-                        },
-                        body: JSON.stringify(formData)
-                    })
-                    .then(response => {
-                        if (!response.ok) {
-                            throw new Error('Network response was not ok');
-                        }
-                        return response.json();
-                    })
-                    .then(data => {
-                        // Handle successful booking
-                        alert('Your appointment has been scheduled! Confirmation #: ' + data.confirmationNumber);
-                        form.reset();
-                        resetAppointmentForm();
-                    })
-                    .catch(error => {
-                        const formFeedback = document.getElementById('form-feedback');
-                        if (formFeedback) {
-                            formFeedback.textContent = 'There was an error scheduling your appointment. Please try again.';
-                            formFeedback.classList.remove('hidden');
-                        } else {
-                            alert('There was an error scheduling your appointment. Please try again.');
-                        }
-                    });
-                    */
                     
                     // Show loading state
                     const submitBtn = document.getElementById('submit-appointment');
@@ -1814,48 +1780,6 @@
                         resetAppointmentForm();
                     }, 1500);
                 } else if (form.id === 'login-form') {
-                    // Authentication API integration point
-                    /*
-                    const email = document.getElementById('email-login').value;
-                    const password = document.getElementById('password-login').value;
-                    
-                    fetch('https://api.example.com/auth/login', {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json'
-                        },
-                        body: JSON.stringify({ email, password })
-                    })
-                    .then(response => {
-                        if (!response.ok) {
-                            throw new Error('Invalid credentials');
-                        }
-                        return response.json();
-                    })
-                    .then(data => {
-                        if (data.token) {
-                            // Store token and show portal
-                            localStorage.setItem('authToken', data.token);
-                            showUserPortal(data.user);
-                        } else {
-                            throw new Error('Invalid credentials');
-                        }
-                    })
-                    .catch(error => {
-                        // Show error message near the form
-                        const errorMsg = document.createElement('p');
-                        errorMsg.className = 'text-red-600 text-sm mt-2';
-                        errorMsg.textContent = error.message || 'Login failed. Please try again.';
-                        
-                        // Remove any existing error messages
-                        const existingError = form.querySelector('.text-red-600');
-                        if (existingError) {
-                            existingError.remove();
-                        }
-                        
-                        form.appendChild(errorMsg);
-                    });
-                    */
                     
                     // For demo, continue with the existing functionality
                     const email = document.getElementById('email-login').value;
@@ -1864,30 +1788,6 @@
                     document.getElementById('portal-section').classList.remove('hidden');
                     document.getElementById('user-name').textContent = firstName.charAt(0).toUpperCase() + firstName.slice(1);
                 } else {
-                    // Generic form submission
-                    /*
-                    const formData = new FormData(form);
-                    
-                    fetch('https://api.example.com/contact', {
-                        method: 'POST',
-                        body: formData
-                    })
-                    .then(response => {
-                        if (!response.ok) {
-                            throw new Error('Network response was not ok');
-                        }
-                        return response.json();
-                    })
-                    .then(data => {
-                        alert('Thank you for your message! We will contact you shortly.');
-                        form.reset();
-                    })
-                    .catch(error => {
-                        alert('There was an error sending your message. Please try again.');
-                    });
-                    */
-                    
-                    // For demo:
                     alert('Thank you for your message! We will contact you shortly.');
                     form.reset();
                 }
@@ -2342,30 +2242,6 @@
                     }
                 }, 100);
                 
-                // This is where you would add API integration code
-                // Example structure for API integration:
-                /*
-                const formData = new FormData();
-                formData.append('document', file);
-                
-                fetch('https://api.example.com/document-verification', {
-                    method: 'POST',
-                    body: formData,
-                    headers: {
-                        'Authorization': 'Bearer YOUR_API_KEY'
-                    }
-                })
-                .then(response => response.json())
-                .then(data => {
-                    // Process verification results
-                    verificationProgress.classList.add('hidden');
-                    verificationResults.classList.remove('hidden');
-                    displayVerificationResults(data);
-                })
-                .catch(error => {
-                    alert('An error occurred during document verification.');
-                });
-                */
             }
             
             // Analyze document (simulated)
@@ -2494,33 +2370,6 @@
                     `;
                 }
                 
-                // API integration point for document verification
-                /*
-                // This would be the actual implementation in a production environment
-                const formData = new FormData();
-                formData.append('document', file);
-                
-                fetch('https://api.example.com/document-verification', {
-                    method: 'POST',
-                    headers: {
-                        'Authorization': 'Bearer YOUR_API_KEY'
-                    },
-                    body: formData
-                })
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error('Network response was not ok');
-                    }
-                    return response.json();
-                })
-                .then(data => {
-                    // Process the verification results from the API
-                    // Update UI based on API response
-                })
-                .catch(error => {
-                    // Handle error state in UI
-                });
-                */
             }
         }
         
