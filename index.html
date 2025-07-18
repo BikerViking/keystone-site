@@ -291,9 +291,19 @@
         .bg-platinum, [class*="bg-platinum"] {
             background-color: #E5E5E5 !important;
         }
-        
+
         .text-platinum, [class*="text-platinum"] {
             color: #E5E5E5 !important;
+        }
+
+        /* Preserve contrast on light backgrounds in dark mode */
+        html.dark .bg-platinum [class*="text-charcoal"],
+        html.dark .bg-white [class*="text-charcoal"] {
+            color: #333333 !important;
+        }
+        html.dark .bg-platinum [class*="text-darkgray"],
+        html.dark .bg-white [class*="text-darkgray"] {
+            color: #444444 !important;
         }
         
         .border-mediumgray, [class*="border-mediumgray"] {
