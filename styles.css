@@ -166,9 +166,14 @@
             background-color: #333333 !important;
         }
         
-        .bg-platinum, [class*="bg-platinum"] {
-            background-color: #E5E5E5 !important;
-        }
+.bg-platinum, [class*="bg-platinum"] {
+    background-color: #E5E5E5 !important;
+}
+
+html.dark .bg-platinum,
+html.dark [class*="bg-platinum"] {
+    background-color: #2b2b2b !important;
+}
 
         .text-platinum, [class*="text-platinum"] {
             color: #E5E5E5 !important;
