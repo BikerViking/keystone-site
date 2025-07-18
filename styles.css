@@ -176,19 +176,24 @@
 
         /* Preserve contrast on light backgrounds in dark mode */
         html.dark .bg-platinum [class*="text-charcoal"],
-        html.dark .bg-white [class*="text-charcoal"] {
-            color: #333333 !important;
+        html.dark .bg-white [class*="text-charcoal"],
+        html.dark .bg-white {
+            color: #E5E5E5 !important;
         }
         html.dark .bg-platinum [class*="text-darkgray"],
         html.dark .bg-white [class*="text-darkgray"] {
-            color: #444444 !important;
+            color: #CCCCCC !important;
         }
         html.dark .bg-white {
-            color: #333333 !important;
+            background-color: #1a1a1a !important;
         }
         
         .border-mediumgray, [class*="border-mediumgray"] {
             border-color: #AAAAAA !important;
+        }
+        html.dark .border-mediumgray,
+        html.dark [class*="border-mediumgray"] {
+            border-color: #666666 !important;
         }
         
         /* Force colors for specific elements */
