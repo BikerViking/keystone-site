@@ -33,23 +33,8 @@ initTheme();
                     clientPortalModal.classList.add('hidden');
                     document.body.style.overflow = '';
                 }
-                
-                // Close chat window if open
-                const chatWindow = document.getElementById('chat-window');
-                if (chatWindow && !chatWindow.classList.contains('hidden')) {
-                    chatWindow.classList.add('hidden');
-                    chatWindow.style.display = 'none';
-                }
-                
-                // Close screenshot instructions if open
-                const screenshotModal = document.getElementById('screenshot-instructions');
-                if (screenshotModal && !screenshotModal.classList.contains('hidden')) {
-                    screenshotModal.classList.add('hidden');
-                    document.body.style.overflow = '';
-                }
             }
         });
-        
 
         // Form validation and submission with API integration hooks
         document.querySelectorAll('form').forEach(form => {
@@ -116,8 +101,8 @@ initTheme();
                             loadingSpinner.classList.add('hidden');
                         }
                         
-                        // For demo purposes:
-                        alert('Thank you for scheduling your appointment! We will send a confirmation email shortly.');
+                        // Announce success instead of using alert for better accessibility
+                        announce('appointment-message', 'Thank you for scheduling your appointment! We will send a confirmation email shortly.');
                         form.reset();
                         resetAppointmentForm();
                     }, 1500);
@@ -130,7 +115,8 @@ initTheme();
                     document.getElementById('portal-section').classList.remove('hidden');
                     document.getElementById('user-name').textContent = firstName.charAt(0).toUpperCase() + firstName.slice(1);
                 } else {
-                    alert('Thank you for your message! We will contact you shortly.');
+                    // Generic success announcement for other forms
+                    announce(`${form.id}-message`, 'Thank you for your message! We will contact you shortly.');
                     form.reset();
                 }
             });
@@ -176,6 +162,17 @@ initTheme();
             return isValid;
         }
         
+
+        // Announce status messages in dedicated live regions
+        function announce(id, message) {
+            const region = document.getElementById(id);
+            if (region) {
+                region.textContent = message;
+                region.classList.remove('hidden');
+                region.setAttribute('tabindex', '-1');
+                region.focus();
+            }
+        }
 
         // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
