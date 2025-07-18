@@ -448,15 +448,13 @@ initTheme();
                 
             }
             
-            // Analyze document (simulated)
+            // Basic client-side document analysis
             function analyzeDocument(file) {
-                // In a real app, this would send the file to a server for analysis
-                // For demo purposes, we'll simulate different results based on file name
                 
                 const fileName = file.name.toLowerCase();
                 let documentCategory;
                 let isValid = true;
-                let issues = [];
+                const issues = [];
                 
                 // Announce to screen readers that analysis is complete
                 const resultStatusContainer = document.getElementById('result-status-container');
@@ -475,20 +473,14 @@ initTheme();
                     documentCategory = 'General Document';
                 }
                 
-                // Simulate random issues
-                if (Math.random() > 0.7) {
+                if (file.size > 5 * 1024 * 1024) {
                     isValid = false;
-                    issues.push('Missing signature line for notary');
+                    issues.push('File exceeds 5MB size limit');
                 }
-                
-                if (Math.random() > 0.8) {
+
+                if (documentCategory === 'General Document') {
                     isValid = false;
-                    issues.push('No space for notary seal');
-                }
-                
-                if (Math.random() > 0.9) {
-                    isValid = false;
-                    issues.push('Missing notarial certificate language');
+                    issues.push('Unrecognized document type; please include a notarial certificate and signature line');
                 }
                 
                 // Display results

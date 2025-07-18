@@ -89,7 +89,7 @@ export function initClientPortal() {
   const uploadMessage = document.getElementById('upload-message');
   uploadDocumentBtn.addEventListener('click', () => {
     if (uploadMessage) {
-      uploadMessage.textContent = 'Secure upload feature coming soon.';
+      uploadMessage.textContent = 'Please contact our office to submit documents securely.';
       uploadMessage.classList.remove('hidden');
       uploadMessage.focus();
     }
