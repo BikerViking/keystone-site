@@ -4,7 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "build": "mkdir -p dist && cp index.html dist/index.html && cp main.js calendar.js theme.js portal.js "build": "mkdir -p dist && cp index.html dist/index.html && cp main.js dist/main.js && cp styles.css dist/styles.css",
+    "build": "mkdir -p dist && cp index.html main.js calendar.js theme.js portal.js styles.css dist/",
     "test": "node --test",
     "start": "node server.js"
   },
