@@ -287,6 +287,20 @@
         html.dark .text-darkgray, html.dark [class*="text-darkgray"] {
             color: #CCCCCC !important;
         }
+
+        /* Override inline styles for dark mode */
+        html.dark [style*="color: #333"],
+        html.dark [style*="color:#333"] {
+            color: #E5E5E5 !important;
+        }
+        html.dark [style*="color: #555"],
+        html.dark [style*="color:#555"] {
+            color: #CCCCCC !important;
+        }
+        html.dark [style*="background-color: white"],
+        html.dark [style*="background-color:white"] {
+            background-color: #333333 !important;
+        }
         
         .bg-platinum, [class*="bg-platinum"] {
             background-color: #E5E5E5 !important;
