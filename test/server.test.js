@@ -27,3 +27,8 @@ test('forms expose live regions', async () => {
   assert.ok(html.includes('id="appointment-message"'));
   assert.ok(html.includes('id="newsletter-message"'));
 });
+
+test('no inline styles remain', async () => {
+  const html = await fs.promises.readFile('index.html', 'utf8');
+  assert.equal(html.includes('style="'), false);
+});
