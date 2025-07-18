@@ -109,7 +109,8 @@
             },
             safelist: [
                 'bg-charcoal', 'text-white', 'text-charcoal', 'bg-lightgray',
-                'border-mediumgray', 'text-darkgray', 'text-platinum'
+                'border-mediumgray', 'text-darkgray', 'text-platinum',
+                'text-mediumgray', 'opacity-70', 'cursor-not-allowed'
             ]
         }
     </script>
@@ -461,7 +462,7 @@
                         <div id="document-verification-tool">
                             <div id="upload-section" class="animate-slide-up">
                                 <div class="border-2 border-dashed border-mediumgray rounded-sm p-8 text-center cursor-pointer hover:border-charcoal transition-colors duration-300 flex flex-col items-center justify-center bg-white min-h-[250px] box-border w-full" id="drop-zone">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto text-darkgray mb-4 animate-pulse" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="width: 48px; height: 48px; color: #555555;">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto text-darkgray mb-4 animate-pulse" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
                                     </svg>
                                     <p class="text-darkgray mb-2">Drag and drop your document here</p>
@@ -479,7 +480,7 @@
                                         <span class="text-sm text-darkgray" id="progress-percentage">0%</span>
                                     </div>
                                     <div class="w-full bg-platinum rounded-full h-2 overflow-hidden">
-                                        <div class="bg-charcoal h-2 rounded-full animate-shimmer" id="progress-bar" style="width: 0%"></div>
+                                        <div class="bg-charcoal h-2 rounded-full animate-shimmer" id="progress-bar"></div>
                                     </div>
                                 </div>
                                 <div class="text-center text-sm text-darkgray mt-4">
@@ -495,32 +496,32 @@
                             <div id="verification-results" class="hidden mt-6 animate-slide-up bg-white p-5 rounded-sm">
                                 <div class="p-4 rounded-sm mb-4" id="result-status-container" role="status" aria-live="polite">
                                     <div class="flex items-center">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2 animate-pulse" id="result-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="width: 24px; height: 24px; margin-right: 8px;">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2 animate-pulse" id="result-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                         </svg>
                                         <h4 class="text-lg font-medium" id="result-status">Document Analysis Complete</h4>
                                     </div>
                                 </div>
                                 
                                 <div class="space-y-4">
-                                    <div class="border-b border-mediumgray pb-4 opacity-0 animate-slide-right" style="animation-delay: 0.1s; animation-fill-mode: forwards;">
+                                    <div class="border-b border-mediumgray pb-4 opacity-0 animate-slide-right delay-100">
                                         <h5 class="font-medium text-charcoal mb-2">Document Type</h5>
                                         <p class="text-darkgray" id="document-type">-</p>
                                     </div>
                                     
-                                    <div class="border-b border-mediumgray pb-4 opacity-0 animate-slide-right" style="animation-delay: 0.3s; animation-fill-mode: forwards;">
+                                    <div class="border-b border-mediumgray pb-4 opacity-0 animate-slide-right delay-300">
                                         <h5 class="font-medium text-charcoal mb-2">Notarization Requirements</h5>
                                         <ul class="list-disc pl-5 text-darkgray space-y-1" id="requirements-list">
                                         </ul>
                                     </div>
                                     
-                                    <div class="opacity-0 animate-slide-right" style="animation-delay: 0.5s; animation-fill-mode: forwards;">
+                                    <div class="opacity-0 animate-slide-right delay-500">
                                         <h5 class="font-medium text-charcoal mb-2">Recommendations</h5>
                                         <div class="text-darkgray" id="recommendations">
                                         </div>
                                     </div>
                                 </div>
                                 
-                                <div class="mt-6 flex justify-between opacity-0 animate-slide-up" style="animation-delay: 0.7s; animation-fill-mode: forwards;">
+                                <div class="mt-6 flex justify-between opacity-0 animate-slide-up delay-700">
                                     <button type="button" id="verify-another" class="text-charcoal hover:underline flex items-center group" class="text-charcoal hover:underline flex items-center group cursor-pointer">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1 transition-transform duration-300 group-hover:rotate-180" viewBox="0 0 20 20" fill="currentColor">
                                             <path fill-rule="evenodd" d="M4 2a1 1 0 011 1v2.101a7.002 7.002 0 0111.601 2.566 1 1 0 11-1.885.666A5.002 5.002 0 005.999 7H9a1 1 0 010 2H4a1 1 0 01-1-1V3a1 1 0 011-1zm.008 9.057a1 1 0 011.276.61A5.002 5.002 0 0014.001 13H11a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0v-2.101a7.002 7.002 0 01-11.601-2.566 1 1 0 01.61-1.276z" clip-rule="evenodd" />
@@ -652,7 +653,7 @@
                     </div>
                 </div>
                 <div class="bg-white p-10 shadow-lg">
-                    <div class="relative w-full bg-darkgray rounded-sm overflow-hidden" style="padding-bottom: 75%;">
+                    <div class="relative w-full bg-darkgray rounded-sm overflow-hidden aspect-4-3">
                         <svg class="absolute inset-0 w-full h-full text-mediumgray" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="0.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                         </svg>
@@ -873,8 +874,8 @@
                         </div>
                         
                         <div class="mb-4 md:mb-6">
-                            <div class="calendar-header mb-1" style="margin-bottom: 4px;">
-                                <div class="grid grid-cols-7 gap-1" style="display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; width: 100%; max-width: 100%;">
+                            <div class="calendar-header mb-1">
+                                <div class="grid grid-cols-7 gap-1">
                                     <div class="text-center text-xs md:text-sm font-medium text-darkgray py-1 md:py-2 bg-lightgray">S</div>
                                     <div class="text-center text-xs md:text-sm font-medium text-darkgray py-1 md:py-2 bg-lightgray">M</div>
                                     <div class="text-center text-xs md:text-sm font-medium text-darkgray py-1 md:py-2 bg-lightgray">T</div>
@@ -885,69 +886,69 @@
                                 </div>
                             </div>
                             <!-- Calendar days grid -->
-                            <div id="calendar-days" class="grid grid-cols-7 gap-1" style="display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; width: 100%;">
+                            <div id="calendar-days" class="grid grid-cols-7 gap-1">
                                 <!-- Sample calendar days for immediate display -->
-                                <div class="calendar-day empty" style="height: 40px;"></div>
-                                <div class="calendar-day empty" style="height: 40px;"></div>
-                                <div class="calendar-day empty" style="height: 40px;"></div>
-                                <div class="calendar-day" style="background-color: white; height: 40px; display: flex; align-items: center; justify-content: center; cursor: pointer; border: 1px solid #AAAAAA; border-radius: 2px;">1</div>
-                                <div class="calendar-day" style="background-color: white; height: 40px; display: flex; align-items: center; justify-content: center; cursor: pointer; border: 1px solid #AAAAAA; border-radius: 2px;">2</div>
-                                <div class="calendar-day" style="background-color: white; height: 40px; display: flex; align-items: center; justify-content: center; cursor: pointer; border: 1px solid #AAAAAA; border-radius: 2px;">3</div>
-                                <div class="calendar-day" style="background-color: white; height: 40px; display: flex; align-items: center; justify-content: center; cursor: pointer; border: 1px solid #AAAAAA; border-radius: 2px;">4</div>
-                                <div class="calendar-day" style="background-color: white; height: 40px; display: flex; align-items: center; justify-content: center; cursor: pointer; border: 1px solid #AAAAAA; border-radius: 2px;">5</div>
-                                <div class="calendar-day" style="background-color: white; height: 40px; display: flex; align-items: center; justify-content: center; cursor: pointer; border: 1px solid #AAAAAA; border-radius: 2px;">6</div>
-                                <div class="calendar-day" style="background-color: white; height: 40px; display: flex; align-items: center; justify-content: center; cursor: pointer; border: 1px solid #AAAAAA; border-radius: 2px;">7</div>
-                                <div class="calendar-day" style="background-color: white; height: 40px; display: flex; align-items: center; justify-content: center; cursor: pointer; border: 1px solid #AAAAAA; border-radius: 2px;">8</div>
-                                <div class="calendar-day" style="background-color: white; height: 40px; display: flex; align-items: center; justify-content: center; cursor: pointer; border: 1px solid #AAAAAA; border-radius: 2px;">9</div>
-                                <div class="calendar-day" style="background-color: white; height: 40px; display: flex; align-items: center; justify-content: center; cursor: pointer; border: 1px solid #AAAAAA; border-radius: 2px;">10</div>
-                                <div class="calendar-day" style="background-color: white; height: 40px; display: flex; align-items: center; justify-content: center; cursor: pointer; border: 1px solid #AAAAAA; border-radius: 2px;">11</div>
-                                <div class="calendar-day" style="background-color: white; height: 40px; display: flex; align-items: center; justify-content: center; cursor: pointer; border: 1px solid #AAAAAA; border-radius: 2px;">12</div>
-                                <div class="calendar-day" style="background-color: white; height: 40px; display: flex; align-items: center; justify-content: center; cursor: pointer; border: 1px solid #AAAAAA; border-radius: 2px;">13</div>
-                                <div class="calendar-day" style="background-color: white; height: 40px; display: flex; align-items: center; justify-content: center; cursor: pointer; border: 1px solid #AAAAAA; border-radius: 2px;">14</div>
-                                <div class="calendar-day selected" style="background-color: #333333; color: white; height: 40px; display: flex; align-items: center; justify-content: center; cursor: pointer; border: 1px solid #333333; border-radius: 2px;">15</div>
-                                <div class="calendar-day" style="background-color: white; height: 40px; display: flex; align-items: center; justify-content: center; cursor: pointer; border: 1px solid #AAAAAA; border-radius: 2px;">16</div>
-                                <div class="calendar-day" style="background-color: white; height: 40px; display: flex; align-items: center; justify-content: center; cursor: pointer; border: 1px solid #AAAAAA; border-radius: 2px;">17</div>
-                                <div class="calendar-day" style="background-color: white; height: 40px; display: flex; align-items: center; justify-content: center; cursor: pointer; border: 1px solid #AAAAAA; border-radius: 2px;">18</div>
-                                <div class="calendar-day" style="background-color: white; height: 40px; display: flex; align-items: center; justify-content: center; cursor: pointer; border: 1px solid #AAAAAA; border-radius: 2px;">19</div>
-                                <div class="calendar-day" style="background-color: white; height: 40px; display: flex; align-items: center; justify-content: center; cursor: pointer; border: 1px solid #AAAAAA; border-radius: 2px;">20</div>
-                                <div class="calendar-day" style="background-color: white; height: 40px; display: flex; align-items: center; justify-content: center; cursor: pointer; border: 1px solid #AAAAAA; border-radius: 2px;">21</div>
-                                <div class="calendar-day" style="background-color: white; height: 40px; display: flex; align-items: center; justify-content: center; cursor: pointer; border: 1px solid #AAAAAA; border-radius: 2px;">22</div>
-                                <div class="calendar-day" style="background-color: white; height: 40px; display: flex; align-items: center; justify-content: center; cursor: pointer; border: 1px solid #AAAAAA; border-radius: 2px;">23</div>
-                                <div class="calendar-day" style="background-color: white; height: 40px; display: flex; align-items: center; justify-content: center; cursor: pointer; border: 1px solid #AAAAAA; border-radius: 2px;">24</div>
-                                <div class="calendar-day" style="background-color: white; height: 40px; display: flex; align-items: center; justify-content: center; cursor: pointer; border: 1px solid #AAAAAA; border-radius: 2px;">25</div>
-                                <div class="calendar-day" style="background-color: white; height: 40px; display: flex; align-items: center; justify-content: center; cursor: pointer; border: 1px solid #AAAAAA; border-radius: 2px;">26</div>
-                                <div class="calendar-day" style="background-color: white; height: 40px; display: flex; align-items: center; justify-content: center; cursor: pointer; border: 1px solid #AAAAAA; border-radius: 2px;">27</div>
-                                <div class="calendar-day" style="background-color: white; height: 40px; display: flex; align-items: center; justify-content: center; cursor: pointer; border: 1px solid #AAAAAA; border-radius: 2px;">28</div>
-                                <div class="calendar-day" style="background-color: white; height: 40px; display: flex; align-items: center; justify-content: center; cursor: pointer; border: 1px solid #AAAAAA; border-radius: 2px;">29</div>
-                                <div class="calendar-day" style="background-color: white; height: 40px; display: flex; align-items: center; justify-content: center; cursor: pointer; border: 1px solid #AAAAAA; border-radius: 2px;">30</div>
+                                <div class="calendar-day empty"></div>
+                                <div class="calendar-day empty"></div>
+                                <div class="calendar-day empty"></div>
+                                <div class="calendar-day">1</div>
+                                <div class="calendar-day">2</div>
+                                <div class="calendar-day">3</div>
+                                <div class="calendar-day">4</div>
+                                <div class="calendar-day">5</div>
+                                <div class="calendar-day">6</div>
+                                <div class="calendar-day">7</div>
+                                <div class="calendar-day">8</div>
+                                <div class="calendar-day">9</div>
+                                <div class="calendar-day">10</div>
+                                <div class="calendar-day">11</div>
+                                <div class="calendar-day">12</div>
+                                <div class="calendar-day">13</div>
+                                <div class="calendar-day">14</div>
+                                <div class="calendar-day selected">15</div>
+                                <div class="calendar-day">16</div>
+                                <div class="calendar-day">17</div>
+                                <div class="calendar-day">18</div>
+                                <div class="calendar-day">19</div>
+                                <div class="calendar-day">20</div>
+                                <div class="calendar-day">21</div>
+                                <div class="calendar-day">22</div>
+                                <div class="calendar-day">23</div>
+                                <div class="calendar-day">24</div>
+                                <div class="calendar-day">25</div>
+                                <div class="calendar-day">26</div>
+                                <div class="calendar-day">27</div>
+                                <div class="calendar-day">28</div>
+                                <div class="calendar-day">29</div>
+                                <div class="calendar-day">30</div>
                             </div>
                         </div>
                         
-                        <div id="time-slots" style="display: none; margin-top: 20px;">
-                            <h5 class="text-sm md:text-md font-medium text-charcoal mb-2 md:mb-3" style="font-size: 1rem; font-weight: 500; color: #333333; margin-bottom: 12px;">Available Times for <span id="selected-date">November 15, 2023</span></h5>
-                            <div id="time-slots-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; width: 100%;"></div>
+                        <div id="time-slots" class="hidden mt-5">
+                            <h5 class="text-sm md:text-md font-medium text-charcoal mb-2 md:mb-3">Available Times for <span id="selected-date">November 15, 2023</span></h5>
+                            <div id="time-slots-grid" class="grid grid-cols-3 gap-2 w-full"></div>
                         </div>
                     </div>
                     
                     <!-- Appointment Form -->
-                    <form id="appointment-form" class="space-y-4 md:space-y-6" style="margin-top: 20px;">
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6" style="display: grid; gap: 16px;">
+                    <form id="appointment-form" class="space-y-4 md:space-y-6 mt-5">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
                             <div>
-                                <label for="name" class="block text-sm font-medium text-darkgray mb-1 md:mb-2" style="display: block; font-size: 0.875rem; font-weight: 500; color: #555555; margin-bottom: 8px;">Full Name</label>
-                                <input type="text" id="name" class="w-full px-3 md:px-4 py-2 md:py-3 border border-mediumgray rounded-sm focus:outline-none focus:ring-2 focus:ring-charcoal focus:border-transparent" placeholder="John Doe" required style="display: block; width: 100%; height: 45px; background-color: white; box-sizing: border-box; padding: 8px 16px; border: 1px solid #AAAAAA; border-radius: 2px; color: #333333;">
+                                <label for="name" class="block text-sm font-medium text-darkgray mb-1 md:mb-2">Full Name</label>
+                                <input type="text" id="name" class="w-full px-3 md:px-4 py-2 md:py-3 border border-mediumgray rounded-sm focus:outline-none focus:ring-2 focus:ring-charcoal focus:border-transparent" placeholder="John Doe" required>
                             </div>
                             <div>
-                                <label for="email" class="block text-sm font-medium text-darkgray mb-1 md:mb-2" style="display: block; font-size: 0.875rem; font-weight: 500; color: #555555; margin-bottom: 8px;">Email Address</label>
-                                <input type="email" id="email" class="w-full px-3 md:px-4 py-2 md:py-3 border border-mediumgray rounded-sm focus:outline-none focus:ring-2 focus:ring-charcoal focus:border-transparent" placeholder="john@example.com" required style="display: block; width: 100%; height: 45px; background-color: white; box-sizing: border-box; padding: 8px 16px; border: 1px solid #AAAAAA; border-radius: 2px; color: #333333;">
+                                <label for="email" class="block text-sm font-medium text-darkgray mb-1 md:mb-2">Email Address</label>
+                                <input type="email" id="email" class="w-full px-3 md:px-4 py-2 md:py-3 border border-mediumgray rounded-sm focus:outline-none focus:ring-2 focus:ring-charcoal focus:border-transparent" placeholder="john@example.com" required>
                             </div>
                         </div>
-                        <div style="margin-top: 16px;">
-                            <label for="phone" class="block text-sm font-medium text-darkgray mb-1 md:mb-2" style="display: block; font-size: 0.875rem; font-weight: 500; color: #555555; margin-bottom: 8px;">Phone Number</label>
-                            <input type="tel" id="phone" class="w-full px-3 md:px-4 py-2 md:py-3 border border-mediumgray rounded-sm focus:outline-none focus:ring-2 focus:ring-charcoal focus:border-transparent" placeholder="(123) 456-7890" required style="display: block; width: 100%; height: 45px; background-color: white; box-sizing: border-box; padding: 8px 16px; border: 1px solid #AAAAAA; border-radius: 2px; color: #333333;">
+                        <div class="mt-4">
+                            <label for="phone" class="block text-sm font-medium text-darkgray mb-1 md:mb-2">Phone Number</label>
+                            <input type="tel" id="phone" class="w-full px-3 md:px-4 py-2 md:py-3 border border-mediumgray rounded-sm focus:outline-none focus:ring-2 focus:ring-charcoal focus:border-transparent" placeholder="(123) 456-7890" required>
                         </div>
-                        <div style="margin-top: 16px;">
-                            <label for="service" class="block text-sm font-medium text-darkgray mb-1 md:mb-2" style="display: block; font-size: 0.875rem; font-weight: 500; color: #555555; margin-bottom: 8px;">Service Needed</label>
-                            <select id="service" class="w-full px-3 md:px-4 py-2 md:py-3 border border-mediumgray rounded-sm focus:outline-none focus:ring-2 focus:ring-charcoal focus:border-transparent" required style="display: block; width: 100%; height: 45px; background-color: white; appearance: menulist; -webkit-appearance: menulist; -moz-appearance: menulist; box-sizing: border-box; padding: 8px 16px; border: 1px solid #AAAAAA; border-radius: 2px; color: #333333;">
+                        <div>
+                            <label for="service" class="block text-sm font-medium text-darkgray mb-1 md:mb-2">Service Needed</label>
+                            <select id="service" class="w-full px-3 md:px-4 py-2 md:py-3 border border-mediumgray rounded-sm focus:outline-none focus:ring-2 focus:ring-charcoal focus:border-transparent" required>
                                 <option value="" selected disabled>Select a service</option>
                                 <option value="real-estate">Real Estate Closing</option>
                                 <option value="power-of-attorney">Power of Attorney</option>
@@ -955,19 +956,19 @@
                                 <option value="other">Other</option>
                             </select>
                         </div>
-                        <div style="margin-top: 16px;">
-                            <label for="appointment-details" class="block text-sm font-medium text-darkgray mb-1 md:mb-2" style="display: block; font-size: 0.875rem; font-weight: 500; color: #555555; margin-bottom: 8px;">Appointment Details</label>
-                            <div id="appointment-details" class="w-full px-3 md:px-4 py-2 md:py-3 border border-mediumgray rounded-sm bg-lightgray" style="min-height: 40px; width: 100%; padding: 12px 16px; border: 1px solid #AAAAAA; border-radius: 2px; background-color: #F5F5F5; box-sizing: border-box;">
-                                <p class="font-medium text-charcoal" style="font-weight: 500; color: #333333;">Selected Appointment:</p>
-                                <p class="text-darkgray" style="color: #555555;">November 15, 2023 at 2:00 PM</p>
+                        <div>
+                            <label for="appointment-details" class="block text-sm font-medium text-darkgray mb-1 md:mb-2">Appointment Details</label>
+                            <div id="appointment-details" class="w-full px-3 md:px-4 py-2 md:py-3 border border-mediumgray rounded-sm bg-lightgray">
+                                <p class="font-medium text-charcoal">Selected Appointment:</p>
+                                <p class="text-darkgray">November 15, 2023 at 2:00 PM</p>
                             </div>
                         </div>
-                        <div style="margin-top: 16px;">
-                            <label for="message" class="block text-sm font-medium text-darkgray mb-1 md:mb-2" style="display: block; font-size: 0.875rem; font-weight: 500; color: #555555; margin-bottom: 8px;">Additional Information</label>
-                            <textarea id="message" rows="3" class="w-full px-3 md:px-4 py-2 md:py-3 border border-mediumgray rounded-sm focus:outline-none focus:ring-2 focus:ring-charcoal focus:border-transparent" placeholder="Please provide any additional details about your notary needs..." style="display: block; width: 100%; height: auto; min-height: 100px; background-color: white; box-sizing: border-box; padding: 8px 16px; border: 1px solid #AAAAAA; border-radius: 2px; resize: vertical; color: #333333;"></textarea>
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-darkgray mb-1 md:mb-2">Additional Information</label>
+                            <textarea id="message" rows="3" class="w-full px-3 md:px-4 py-2 md:py-3 border border-mediumgray rounded-sm focus:outline-none focus:ring-2 focus:ring-charcoal focus:border-transparent" placeholder="Please provide any additional details about your notary needs..."></textarea>
                         </div>
-                        <div style="margin-top: 20px;">
-                            <button type="submit" id="submit-appointment" class="w-full bg-charcoal text-white py-2 md:py-3 px-4 md:px-6 rounded-sm hover:bg-darkgray transition-colors duration-300 relative" disabled style="cursor: not-allowed; opacity: 0.7; display: block; width: 100%; text-align: center; background-color: #333333; color: white; padding: 12px 24px; border-radius: 2px; border: none; font-weight: 500; font-size: 1rem;">
+                        <div class="mt-5">
+                            <button type="submit" id="submit-appointment" class="w-full bg-charcoal text-white py-2 md:py-3 px-4 md:px-6 rounded-sm hover:bg-darkgray transition-colors duration-300 relative opacity-70 cursor-not-allowed" disabled>
                                 <span>Confirm Appointment</span>
                                 <span id="submit-loading" class="absolute inset-0 flex items-center justify-center bg-charcoal hidden">
                                     <svg class="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
@@ -976,7 +977,7 @@
                                     </svg>
                                 </span>
                             </button>
-                            <p id="form-feedback" class="mt-2 text-sm text-red-600 hidden" style="margin-top: 8px; font-size: 0.875rem; color: #e53e3e; display: none;"></p>
+                            <p id="form-feedback" class="mt-2 text-sm text-red-600 hidden"></p>
                                 <p id="appointment-message" class="mt-2 text-sm text-green-600 hidden" aria-live="polite" tabindex="-1"></p>
                         </div>
                     </form>
@@ -1094,8 +1095,8 @@
                     <h4 class="text-lg font-medium mb-4 md:mb-6">Newsletter</h4>
                     <p class="text-platinum text-sm mb-3 md:mb-4">Subscribe to our newsletter for updates and notary tips.</p>
                     <form id="newsletter-form" class="flex flex-col sm:flex-row">
-                        <input type="email" id="newsletter-email" placeholder="Your email address" class="px-3 md:px-4 py-2 w-full rounded-sm sm:rounded-l-sm sm:rounded-r-none focus:outline-none text-charcoal" required style="display: block; width: 100%; height: auto; background-color: white; border: 1px solid #AAAAAA; box-sizing: border-box;">
-                        <button type="submit" class="bg-white text-charcoal px-4 py-2 mt-2 sm:mt-0 rounded-sm sm:rounded-l-none sm:rounded-r-sm hover:bg-platinum transition-colors duration-300" style="display: block; cursor: pointer; background-color: white; color: #333333; text-align: center; border: 1px solid #AAAAAA; border-left: none; box-sizing: border-box;">Subscribe</button>
+                        <input type="email" id="newsletter-email" placeholder="Your email address" class="px-3 md:px-4 py-2 w-full rounded-sm sm:rounded-l-sm sm:rounded-r-none focus:outline-none text-charcoal" required>
+                        <button type="submit" class="bg-white text-charcoal px-4 py-2 mt-2 sm:mt-0 rounded-sm sm:rounded-l-none sm:rounded-r-sm hover:bg-platinum transition-colors duration-300">Subscribe</button>
                     </form>
                     <p id="newsletter-message" class="mt-2 text-sm text-white hidden" aria-live="polite" tabindex="-1"></p>
                     
