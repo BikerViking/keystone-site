@@ -306,7 +306,14 @@ html.dark [class*="bg-platinum"] {
             background-color: #E5E5E5;
             color: #333333;
         }
-        .aspect-4-3 { padding-bottom: 75%; }
+        .aspect-4-3 {
+            padding-bottom: 75%;
+            position: relative;
+            width: 100%;
+            max-width: calc(100vh * 4 / 3);
+            margin-left: auto;
+            margin-right: auto;
+        }
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(20px); -webkit-transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); -webkit-transform: translateY(0); }
