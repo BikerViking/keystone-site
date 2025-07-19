@@ -192,8 +192,8 @@ initTheme();
                     
                     // Close mobile menu if open
                     const mobileMenu = document.getElementById('mobile-menu');
-                    if (mobileMenu && mobileMenu.style.display !== 'none') {
-                        mobileMenu.style.display = 'none';
+                    if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
                         
                         // Update menu button state
                         const menuButton = document.getElementById('menu-button');
@@ -238,7 +238,8 @@ initTheme();
                 const observer = new IntersectionObserver((entries) => {
                     entries.forEach(entry => {
                         if (entry.isIntersecting) {
-                            entry.target.style.opacity = '1';
+                            entry.target.classList.remove('opacity-0');
+                            entry.target.classList.add('opacity-100');
                             observer.unobserve(entry.target);
                         }
                     });
@@ -253,7 +254,8 @@ initTheme();
             } else {
                 // Fallback for browsers that don't support IntersectionObserver
                 fadeElements.forEach(element => {
-                    element.style.opacity = '1';
+                    element.classList.remove('opacity-0');
+                    element.classList.add('opacity-100');
                 });
             }
             
@@ -290,21 +292,21 @@ initTheme();
             
             // Make sure all elements are properly styled
             if (verificationProgress) {
-                verificationProgress.style.display = 'none';
+                verificationProgress.classList.add('hidden');
             }
-            
+
             if (verificationResults) {
-                verificationResults.style.display = 'none';
+                verificationResults.classList.add('hidden');
             }
-            
+
             if (uploadSection) {
-                uploadSection.style.display = 'block';
+                uploadSection.classList.remove('hidden');
             }
             
             // Show the verification tool when available
             const documentVerificationTool = document.getElementById('document-verification-tool');
             if (documentVerificationTool) {
-                documentVerificationTool.style.display = 'block';
+                documentVerificationTool.classList.remove('hidden');
             }
             
             // Ensure drop zone classes are applied
@@ -328,7 +330,7 @@ initTheme();
             
             // Make sure the file input is hidden
             if (fileInput) {
-                fileInput.style.display = 'none';
+                fileInput.classList.add('hidden');
             }
             
             // Click browse files button
@@ -386,11 +388,11 @@ initTheme();
             if (verifyAnotherBtn) {
                 verifyAnotherBtn.addEventListener('click', () => {
                     if (verificationResults) {
-                        verificationResults.style.display = 'none';
+                        verificationResults.classList.add('hidden');
                     }
-                    
+
                     if (uploadSection) {
-                        uploadSection.style.display = 'block';
+                        uploadSection.classList.remove('hidden');
                     }
                     
                     if (fileInput) {
@@ -415,11 +417,11 @@ initTheme();
                 
                 // Show progress
                 if (uploadSection) {
-                    uploadSection.style.display = 'none';
+                    uploadSection.classList.add('hidden');
                 }
-                
+
                 if (verificationProgress) {
-                    verificationProgress.style.display = 'block';
+                    verificationProgress.classList.remove('hidden');
                 }
                 
                 // Simulate progress (in a real app, this would be actual file upload and analysis)
@@ -439,11 +441,11 @@ initTheme();
                         clearInterval(interval);
                         setTimeout(() => {
                             if (verificationProgress) {
-                                verificationProgress.style.display = 'none';
+                                verificationProgress.classList.add('hidden');
                             }
-                            
+
                             if (verificationResults) {
-                                verificationResults.style.display = 'block';
+                                verificationResults.classList.remove('hidden');
                             }
                             
                             analyzeDocument(file);
