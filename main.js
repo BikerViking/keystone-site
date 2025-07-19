@@ -72,6 +72,15 @@ initTheme();
                 }
                 
                 if (form.id === 'appointment-form') {
+                    // Get form data
+                    const formData = {
+                        name: document.getElementById('name').value,
+                        email: document.getElementById('email').value,
+                        phone: document.getElementById('phone').value,
+                        service: document.getElementById('service').value,
+                        appointmentDetails: document.getElementById('appointment-details').innerText,
+                        message: document.getElementById('message').value
+                    };
                     
                     
                     // Show loading state
@@ -132,7 +141,7 @@ initTheme();
                 errorMessage = 'Please enter a valid email address';
             }
             // Phone validation
-            else if (field.id === 'phone' && !/^[\d\s()\-+]{10,15}$/.test(field.value)) {
+            else if (field.id === 'phone' && !/^[\d\s\(\)\-\+]{10,15}$/.test(field.value)) {
                 isValid = false;
                 errorMessage = 'Please enter a valid phone number';
             }
@@ -271,6 +280,7 @@ initTheme();
             const verificationResults = document.getElementById('verification-results');
             const progressBar = document.getElementById('progress-bar');
             const progressPercentage = document.getElementById('progress-percentage');
+            const resultStatusContainer = document.getElementById('result-status-container');
             const resultIcon = document.getElementById('result-icon');
             const resultStatus = document.getElementById('result-status');
             const documentType = document.getElementById('document-type');
