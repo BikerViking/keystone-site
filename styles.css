@@ -341,6 +341,10 @@ html.dark [class*="bg-platinum"] {
             transition: background-color 0.2s ease;
             border-radius: 2px;
         }
+        html.dark .calendar-day:not(.empty) {
+            background-color: #2b2b2b;
+            border-color: #666666;
+        }
         .calendar-day span {
             display: inline-block;
             pointer-events: none;
