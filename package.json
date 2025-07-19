@@ -1,12 +1,10 @@
 {
   "name": "keystone-site",
-  "version": "1.0.3",
+  "version": "1.0.2",
   "description": "",
   "main": "server.js",
   "scripts": {
-    "build": "npm run css && npm run js && cp index.html 404.html fonts.css dist/",
-    "css": "tailwindcss -c tailwind-config.js -i input.css -o dist/styles.css --minify",
-    "js": "esbuild main.js --bundle --minify --outfile=dist/app.js",
+    "build": "mkdir -p dist && cp index.html main.js calendar.js theme.js portal.js tailwind-config.js styles.css dist/",
     "test": "node --test",
     "start": "node server.js"
   },
@@ -15,13 +13,6 @@
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
-    "compression": "^1.7.4",
-    "express": "^5.1.0",
-    "helmet": "^7.0.0"
-  },
-  "devDependencies": {
-    "esbuild": "^0.21.0",
-    "eslint": "^8.0.0",
-    "tailwindcss": "^3.4.0"
+    "express": "^5.1.0"
   }
 }
