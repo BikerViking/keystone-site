@@ -4,7 +4,8 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "build": "mkdir -p dist && cp index.html main.js calendar.js theme.js portal.js tailwind-config.js styles.css dist/",
+    "build": "node build.js",
+    "lint": "eslint .",
     "test": "node --test",
     "start": "node server.js"
   },
@@ -14,5 +15,11 @@
   "type": "commonjs",
   "dependencies": {
     "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "esbuild": "^0.19.11",
+    "eslint": "^8.57.0",
+    "prettier": "^3.2.5",
+    "tailwindcss": "^3.4.4"
   }
 }
