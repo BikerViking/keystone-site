@@ -4,39 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     <!-- Force styles to load in correct order -->
-    <style>
-        /* Critical styles to ensure proper display */
-        *, *::before, *::after {
-            box-sizing: border-box;
-        }
-        
-        html {
-            line-height: 1.15;
-            -webkit-text-size-adjust: 100%;
-            -webkit-tap-highlight-color: transparent;
-        }
-        
-        body, html {
-            margin: 0;
-            padding: 0;
-            width: 100%;
-            height: 100%;
-            font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            overflow-x: hidden;
-        }
-        
-        /* CSS Reset */
-        body, h1, h2, h3, h4, h5, h6, p, ol, ul, figure {
-            margin: 0;
-            padding: 0;
-        }
-        
-        img, svg {
-            vertical-align: middle;
-            max-width: 100%;
-            height: auto;
-        }
-    </style>
     <meta name="description" content="Professional notary services with integrity. Keystone Notary Group provides reliable, efficient notarization for all your important documents.">
     <meta name="theme-color" content="#333333">
     <meta name="color-scheme" content="light dark">
@@ -90,60 +57,7 @@
     }
     </script>
     
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    colors: {
-                        charcoal: '#333333',
-                        platinum: '#E5E5E5',
-                        lightgray: '#F5F5F5',
-                        mediumgray: '#888888',
-                        darkgray: '#444444',
-                        darkbg: '#1a1a1a'
-                    },
-                    fontFamily: {
-                        'montserrat': ['Montserrat', 'sans-serif'],
-                    },
-                }
-            },
-            safelist: [
-                'bg-charcoal', 'text-white', 'text-charcoal', 'bg-lightgray',
-                'border-mediumgray', 'text-darkgray', 'text-platinum',
-                'text-mediumgray', 'opacity-70', 'cursor-not-allowed'
-            ]
-        }
-    </script>
-    <!-- Ensure Tailwind loads properly -->
-    <style type="text/tailwindcss">
-        @layer base {
-            body {
-                @apply font-montserrat bg-lightgray text-charcoal dark:bg-darkbg dark:text-platinum;
-            }
-            .bg-charcoal {
-                background-color: #333333;
-            }
-            .text-charcoal {
-                color: #333333;
-            }
-            .bg-platinum {
-                background-color: #E5E5E5;
-            }
-            .text-platinum {
-                color: #E5E5E5;
-            }
-            .bg-lightgray {
-                background-color: #F5F5F5;
-            }
-            .text-darkgray {
-                color: #444444;
-            }
-            .border-mediumgray {
-                border-color: #888888;
-            }
-        }
-    </style>
+    <script src="tailwind-config.js"></script>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body class="bg-lightgray micro-texture min-w-[320px] overflow-x-hidden">
