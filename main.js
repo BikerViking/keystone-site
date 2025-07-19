@@ -307,15 +307,23 @@ initTheme();
                 documentVerificationTool.style.display = 'block';
             }
             
-            // Make sure the drop zone is visible and properly styled
+            // Ensure drop zone classes are applied
             if (dropZone) {
-                dropZone.style.border = '2px dashed #AAAAAA';
-                dropZone.style.borderRadius = '4px';
-                dropZone.style.padding = '2rem';
-                dropZone.style.textAlign = 'center';
-                dropZone.style.cursor = 'pointer';
-                dropZone.style.backgroundColor = '#ffffff';
-                dropZone.style.transition = 'border-color 0.3s ease';
+                dropZone.classList.add(
+                    'border-2',
+                    'border-dashed',
+                    'border-mediumgray',
+                    'rounded-sm',
+                    'p-8',
+                    'text-center',
+                    'cursor-pointer',
+                    'transition-colors',
+                    'duration-300',
+                    'bg-white',
+                    'min-h-[250px]',
+                    'box-border',
+                    'w-full'
+                );
             }
             
             // Make sure the file input is hidden
@@ -344,20 +352,17 @@ initTheme();
             if (dropZone) {
                 dropZone.addEventListener('dragover', (e) => {
                     e.preventDefault();
-                    dropZone.style.borderColor = '#333333';
-                    dropZone.style.backgroundColor = '#f9f9f9';
+                    dropZone.classList.add('border-charcoal', 'bg-lightgray', 'dark:bg-darkgray');
                 });
-                
+
                 dropZone.addEventListener('dragleave', () => {
-                    dropZone.style.borderColor = '#AAAAAA';
-                    dropZone.style.backgroundColor = '#ffffff';
+                    dropZone.classList.remove('border-charcoal', 'bg-lightgray', 'dark:bg-darkgray');
                 });
-                
+
                 dropZone.addEventListener('drop', (e) => {
                     e.preventDefault();
-                    dropZone.style.borderColor = '#AAAAAA';
-                    dropZone.style.backgroundColor = '#ffffff';
-                    
+                    dropZone.classList.remove('border-charcoal', 'bg-lightgray', 'dark:bg-darkgray');
+
                     if (e.dataTransfer.files.length > 0) {
                         handleFile(e.dataTransfer.files[0]);
                     }

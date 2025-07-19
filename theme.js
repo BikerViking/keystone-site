@@ -3,6 +3,14 @@ export function initTheme() {
   const sunIcon = document.getElementById('theme-sun');
   const moonIcon = document.getElementById('theme-moon');
 
+  const setThemeAttributes = (isDark) => {
+    const metaTheme = document.querySelector('meta[name="theme-color"]');
+    if (metaTheme) {
+      metaTheme.setAttribute('content', isDark ? '#1a1a1a' : '#ffffff');
+    }
+    document.documentElement.style.colorScheme = isDark ? 'dark' : 'light';
+  };
+
   const toggleTheme = () => {
     document.documentElement.classList.toggle('dark');
     const isDark = document.documentElement.classList.contains('dark');
@@ -14,11 +22,13 @@ export function initTheme() {
     if (btn) {
       btn.setAttribute('aria-pressed', String(isDark));
     }
+    setThemeAttributes(isDark);
   };
 
   const stored = localStorage.getItem('theme');
   const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-  if (stored === 'dark' || (!stored && prefersDark)) {
+  const startDark = stored === 'dark' || (!stored && prefersDark);
+  if (startDark) {
     document.documentElement.classList.add('dark');
     if (sunIcon && moonIcon) {
       sunIcon.classList.remove('hidden');
@@ -30,6 +40,7 @@ export function initTheme() {
   } else if (btn) {
     btn.setAttribute('aria-pressed', 'false');
   }
+  setThemeAttributes(startDark);
 
   if (btn) {
     btn.addEventListener('click', toggleTheme);
