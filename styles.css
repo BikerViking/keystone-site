@@ -544,4 +544,14 @@ html.dark [class*="bg-platinum"] {
             }
             h1 { font-size: 1.5rem; }
             h2 { font-size: 1.25rem; }
+            /* Keep mobile layout when width exceeds md breakpoint */
+            .md\:grid-cols-2,
+            .md\:grid-cols-3,
+            .md\:grid-cols-7 {
+                grid-template-columns: repeat(1, minmax(0, 1fr));
+            }
+            .md\:flex-row { flex-direction: column; }
+            .hidden.md\:flex { display: none !important; }
+            .md\:hidden { display: block !important; }
+            .container { max-width: 100%; padding-left: 1rem; padding-right: 1rem; }
         }
