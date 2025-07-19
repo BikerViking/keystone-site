@@ -1,4 +1,11 @@
-tailwind.config = {
+module.exports = {
+  content: [
+    './index.html',
+    './main.js',
+    './calendar.js',
+    './portal.js',
+    './theme.js'
+  ],
   darkMode: 'class',
   theme: {
     extend: {
