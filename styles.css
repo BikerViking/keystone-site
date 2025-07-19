@@ -528,13 +528,3 @@ html.dark [class*="bg-platinum"] {
             box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
         }
         #progress-bar { width: 0%; }
-                            @media (min-width: 640px) {
-                                #appointment-form .grid-cols-1.sm\:grid-cols-2 {
-                                    grid-template-columns: repeat(2, 1fr);
-                                }
-                            }
-                            @media (max-width: 639px) {
-                                #appointment-form .grid-cols-1.sm\:grid-cols-2 {
-                                    grid-template-columns: 1fr;
-                                }
-                            }
