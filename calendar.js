@@ -71,21 +71,12 @@ export function initCalendar() {
     for (let i = 0; i < firstDay; i++) {
       const emptyDay = document.createElement('div');
       emptyDay.className = 'calendar-day empty';
-      emptyDay.style.height = '40px';
       calendarDaysContainer.appendChild(emptyDay);
     }
 
     for (let day = 1; day <= daysInMonth; day++) {
       const dayElement = document.createElement('div');
       dayElement.className = 'calendar-day';
-      dayElement.style.backgroundColor = 'white';
-      dayElement.style.height = '40px';
-      dayElement.style.display = 'flex';
-      dayElement.style.alignItems = 'center';
-      dayElement.style.justifyContent = 'center';
-      dayElement.style.cursor = 'pointer';
-      dayElement.style.border = '1px solid #AAAAAA';
-      dayElement.style.borderRadius = '2px';
 
       const daySpan = document.createElement('span');
       daySpan.textContent = day;
@@ -95,9 +86,7 @@ export function initCalendar() {
       const checkDate = new Date(year, month, day);
 
       if (checkDate < new Date(today.getFullYear(), today.getMonth(), today.getDate())) {
-        dayElement.classList.add('cursor-not-allowed');
-        dayElement.style.backgroundColor = '#f0f0f0';
-        dayElement.style.color = '#AAAAAA';
+        dayElement.classList.add('disabled');
       } else {
         dayElement.addEventListener('click', function () {
           selectDate(day, month, year, this);
@@ -113,7 +102,6 @@ export function initCalendar() {
     for (let i = 0; i < remainingCells; i++) {
       const emptyDay = document.createElement('div');
       emptyDay.className = 'calendar-day empty';
-      emptyDay.style.height = '40px';
       calendarDaysContainer.appendChild(emptyDay);
     }
   }
@@ -125,8 +113,6 @@ export function initCalendar() {
 
     document.querySelectorAll('.calendar-day.selected').forEach(day => {
       day.classList.remove('selected');
-      day.style.backgroundColor = 'white';
-      day.style.color = '#333333';
     });
 
     if (timeSlots) {
@@ -139,22 +125,15 @@ export function initCalendar() {
 
     if (submitAppointmentBtn) {
       submitAppointmentBtn.disabled = true;
-      submitAppointmentBtn.style.opacity = '0.7';
-      submitAppointmentBtn.style.cursor = 'not-allowed';
     }
   }
 
   function selectDate(day, month, year, element) {
     document.querySelectorAll('.calendar-day.selected').forEach(d => {
       d.classList.remove('selected');
-      d.style.backgroundColor = 'white';
-      d.style.color = '#333333';
     });
 
     element.classList.add('selected');
-    element.style.backgroundColor = '#333333';
-    element.style.color = 'white';
-    element.style.borderColor = '#333333';
 
     const selectedDate = new Date(year, month, day);
 
@@ -186,23 +165,10 @@ export function initCalendar() {
       for (let minute = 0; minute < 60; minute += 30) {
         const slotWrapper = document.createElement('div');
         slotWrapper.className = 'time-slot-wrapper';
-        slotWrapper.style.padding = '0';
-        slotWrapper.style.margin = '0';
 
         const timeSlot = document.createElement('button');
         timeSlot.type = 'button';
         timeSlot.className = 'time-slot';
-        timeSlot.style.fontSize = '0.9rem';
-        timeSlot.style.backgroundColor = 'white';
-        timeSlot.style.border = '1px solid #AAAAAA';
-        timeSlot.style.borderRadius = '2px';
-        timeSlot.style.padding = '8px';
-        timeSlot.style.textAlign = 'center';
-        timeSlot.style.width = '100%';
-        timeSlot.style.boxSizing = 'border-box';
-        timeSlot.style.display = 'block';
-        timeSlot.style.cursor = 'pointer';
-        timeSlot.style.margin = '0';
 
         const period = hour >= 12 ? 'PM' : 'AM';
         const displayHour = hour > 12 ? hour - 12 : (hour === 0 ? 12 : hour);
@@ -220,15 +186,9 @@ export function initCalendar() {
   function selectTimeSlot(element, date, hour, minute) {
     document.querySelectorAll('.time-slot').forEach(slot => {
       slot.classList.remove('selected');
-      slot.style.backgroundColor = 'white';
-      slot.style.color = '#333333';
-      slot.style.borderColor = '#AAAAAA';
     });
 
     element.classList.add('selected');
-    element.style.backgroundColor = '#333333';
-    element.style.color = 'white';
-    element.style.borderColor = '#333333';
 
     const formattedDate = date.toLocaleDateString('en-US', {
       weekday: 'long',
@@ -251,8 +211,6 @@ export function initCalendar() {
 
     if (submitAppointmentBtn) {
       submitAppointmentBtn.disabled = false;
-      submitAppointmentBtn.style.opacity = '1';
-      submitAppointmentBtn.style.cursor = 'pointer';
     }
   }
 }
