@@ -228,7 +228,7 @@ initTheme();
             });
         });
 
-        // Animation for fade-in elements
+        // Animation for fade-in elements and initialization hooks
         document.addEventListener('DOMContentLoaded', () => {
             const fadeElements = document.querySelectorAll('.fade-in');
             
@@ -264,6 +264,9 @@ initTheme();
             
             // Initialize client portal
             initClientPortal();
+
+            // Document verification tool
+            initDocumentVerification();
         });
         
         
@@ -575,11 +578,6 @@ initTheme();
                 
             }
         }
-        
-        // Initialize document verification on page load
-        document.addEventListener('DOMContentLoaded', () => {
-            initDocumentVerification();
-        });
         
 
         
