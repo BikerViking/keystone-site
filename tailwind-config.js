@@ -1,4 +1,4 @@
-tailwind.config = {
+module.exports = {
   darkMode: 'class',
   theme: {
     extend: {
