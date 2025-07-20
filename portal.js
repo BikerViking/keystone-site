@@ -96,14 +96,14 @@ export function initClientPortal() {
     loginForm.reset();
   });
 
-  scheduleNewBtn.addEventListener('click', () => {
+  scheduleNewBtn.addEventListener('click', (e) => {
+    e.preventDefault();
     clientPortalModal.classList.add('hidden');
     document.body.style.overflow = '';
     const contactSection = document.querySelector('#contact');
-    window.scrollTo({
-      top: contactSection.offsetTop,
-      behavior: 'smooth',
-    });
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    }
   });
 
   const uploadMessage = document.getElementById('upload-message');

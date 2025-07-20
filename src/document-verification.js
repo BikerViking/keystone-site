@@ -14,7 +14,22 @@ export function initDocumentVerification() {
   const recommendations = document.getElementById('recommendations');
   const verifyAnotherBtn = document.getElementById('verify-another');
 
-  if (!dropZone || !fileInput || !browseFilesBtn) {
+  if (
+    !dropZone ||
+    !fileInput ||
+    !browseFilesBtn ||
+    !uploadSection ||
+    !verificationProgress ||
+    !verificationResults ||
+    !progressBar ||
+    !progressPercentage ||
+    !resultIcon ||
+    !resultStatus ||
+    !documentType ||
+    !requirementsList ||
+    !recommendations ||
+    !verifyAnotherBtn
+  ) {
     return;
   }
 
