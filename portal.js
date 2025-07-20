@@ -14,9 +14,22 @@ export function initClientPortal() {
   const uploadDocumentBtn = document.getElementById('upload-document');
   const userName = document.getElementById('user-name');
 
-  if (!clientLoginBtn || !clientPortalModal || !closeModalBtn || !loginSection || !registerSection ||
-      !portalSection || !showRegisterBtn || !showLoginBtn || !loginForm || !registerForm ||
-      !logoutBtn || !scheduleNewBtn || !uploadDocumentBtn || !userName) {
+  if (
+    !clientLoginBtn ||
+    !clientPortalModal ||
+    !closeModalBtn ||
+    !loginSection ||
+    !registerSection ||
+    !portalSection ||
+    !showRegisterBtn ||
+    !showLoginBtn ||
+    !loginForm ||
+    !registerForm ||
+    !logoutBtn ||
+    !scheduleNewBtn ||
+    !uploadDocumentBtn ||
+    !userName
+  ) {
     return;
   }
 
@@ -35,7 +48,7 @@ export function initClientPortal() {
     registerForm.reset();
   });
 
-  clientPortalModal.addEventListener('click', e => {
+  clientPortalModal.addEventListener('click', (e) => {
     if (e.target === clientPortalModal) {
       clientPortalModal.classList.add('hidden');
       document.body.style.overflow = '';
@@ -47,28 +60,29 @@ export function initClientPortal() {
     }
   });
 
-  showRegisterBtn.addEventListener('click', e => {
+  showRegisterBtn.addEventListener('click', (e) => {
     e.preventDefault();
     loginSection.classList.add('hidden');
     registerSection.classList.remove('hidden');
   });
 
-  showLoginBtn.addEventListener('click', e => {
+  showLoginBtn.addEventListener('click', (e) => {
     e.preventDefault();
     registerSection.classList.add('hidden');
     loginSection.classList.remove('hidden');
   });
 
-  loginForm.addEventListener('submit', e => {
+  loginForm.addEventListener('submit', (e) => {
     e.preventDefault();
     const email = document.getElementById('email-login').value;
     const firstName = email.split('@')[0];
     loginSection.classList.add('hidden');
     portalSection.classList.remove('hidden');
-    userName.textContent = firstName.charAt(0).toUpperCase() + firstName.slice(1);
+    userName.textContent =
+      firstName.charAt(0).toUpperCase() + firstName.slice(1);
   });
 
-  registerForm.addEventListener('submit', e => {
+  registerForm.addEventListener('submit', (e) => {
     e.preventDefault();
     const firstName = document.getElementById('first-name').value;
     registerSection.classList.add('hidden');
@@ -88,14 +102,15 @@ export function initClientPortal() {
     const contactSection = document.querySelector('#contact');
     window.scrollTo({
       top: contactSection.offsetTop,
-      behavior: 'smooth'
+      behavior: 'smooth',
     });
   });
 
   const uploadMessage = document.getElementById('upload-message');
   uploadDocumentBtn.addEventListener('click', () => {
     if (uploadMessage) {
-      uploadMessage.textContent = 'Please contact our office to submit documents securely.';
+      uploadMessage.textContent =
+        'Please contact our office to submit documents securely.';
       uploadMessage.classList.remove('hidden');
       uploadMessage.focus();
     }
