@@ -14,6 +14,16 @@ export function initClientPortal() {
   const uploadDocumentBtn = document.getElementById('upload-document');
   const userName = document.getElementById('user-name');
 
+  function closePortal() {
+    clientPortalModal.classList.add('hidden');
+    document.body.style.overflow = '';
+    loginSection.classList.remove('hidden');
+    registerSection.classList.add('hidden');
+    portalSection.classList.add('hidden');
+    loginForm.reset();
+    registerForm.reset();
+  }
+
   if (
     !clientLoginBtn ||
     !clientPortalModal ||
@@ -38,25 +48,11 @@ export function initClientPortal() {
     document.body.style.overflow = 'hidden';
   });
 
-  closeModalBtn.addEventListener('click', () => {
-    clientPortalModal.classList.add('hidden');
-    document.body.style.overflow = '';
-    loginSection.classList.remove('hidden');
-    registerSection.classList.add('hidden');
-    portalSection.classList.add('hidden');
-    loginForm.reset();
-    registerForm.reset();
-  });
+  closeModalBtn.addEventListener('click', closePortal);
 
   clientPortalModal.addEventListener('click', (e) => {
     if (e.target === clientPortalModal) {
-      clientPortalModal.classList.add('hidden');
-      document.body.style.overflow = '';
-      loginSection.classList.remove('hidden');
-      registerSection.classList.add('hidden');
-      portalSection.classList.add('hidden');
-      loginForm.reset();
-      registerForm.reset();
+      closePortal();
     }
   });
 
@@ -98,8 +94,7 @@ export function initClientPortal() {
 
   scheduleNewBtn.addEventListener('click', (e) => {
     e.preventDefault();
-    clientPortalModal.classList.add('hidden');
-    document.body.style.overflow = '';
+    closePortal();
     const contactSection = document.querySelector('#contact');
     if (contactSection) {
       contactSection.scrollIntoView({ behavior: 'smooth' });
