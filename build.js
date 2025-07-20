@@ -4,8 +4,11 @@ const { rmSync, mkdirSync, copyFileSync, readFileSync, writeFileSync } = require
 rmSync('dist', { recursive: true, force: true });
 mkdirSync('dist');
 
+execSync('npx eleventy --input templates --output dist --quiet', { stdio: 'inherit' });
+copyFileSync('dist/index.html', 'index.html');
+
 execSync(
-  'npx tailwindcss -c tailwind-config.js -i src/styles.css -o dist/styles.css --minify --content index.html',
+  'npx tailwindcss -c tailwind-config.js -i src/styles.css -o dist/styles.css --minify --content dist/index.html',
   { stdio: 'inherit' }
 );
 
@@ -17,5 +20,4 @@ copyFileSync('dist/styles.css', 'styles.css');
 
 execSync('npx esbuild main.js --bundle --minify --outfile=dist/main.js', { stdio: 'inherit' });
 
-copyFileSync('index.html', 'dist/index.html');
 
