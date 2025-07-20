@@ -22,10 +22,10 @@ app.use(
         'Strict-Transport-Security',
         'max-age=63072000; includeSubDomains',
       );
-      res.setHeader(
-        'Content-Security-Policy',
-        "default-src 'self'; img-src 'self' data:; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com",
-      );
+        res.setHeader(
+          'Content-Security-Policy',
+          "default-src 'self'; img-src 'self' data:; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; object-src 'none'; base-uri 'self'",
+        );
       res.setHeader('Referrer-Policy', 'no-referrer');
       res.setHeader('Permissions-Policy', 'geolocation=(), microphone=()');
     },
