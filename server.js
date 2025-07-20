@@ -17,7 +17,7 @@ app.use(express.static(staticDir, {
     res.setHeader('Strict-Transport-Security', 'max-age=63072000; includeSubDomains');
     res.setHeader(
       'Content-Security-Policy',
-      "default-src 'self'; img-src 'self' data:; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com"
+      "default-src 'self'; img-src 'self' data:; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com"
     );
   },
 }));
