@@ -36,7 +36,7 @@ initTheme();
         });
 
         // Form validation and submission with API integration hooks
-        document.querySelectorAll('form').forEach(form => {
+        document.querySelectorAll('form[data-form="validate"]').forEach(form => {
             // Add validation listeners to required fields
             form.querySelectorAll('input[required], select[required], textarea[required]').forEach(field => {
                 field.addEventListener('blur', () => {

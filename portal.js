@@ -14,6 +14,12 @@ export function initClientPortal() {
   const uploadDocumentBtn = document.getElementById('upload-document');
   const userName = document.getElementById('user-name');
 
+  if (!clientLoginBtn || !clientPortalModal || !closeModalBtn || !loginSection || !registerSection ||
+      !portalSection || !showRegisterBtn || !showLoginBtn || !loginForm || !registerForm ||
+      !logoutBtn || !scheduleNewBtn || !uploadDocumentBtn || !userName) {
+    return;
+  }
+
   clientLoginBtn.addEventListener('click', () => {
     clientPortalModal.classList.remove('hidden');
     document.body.style.overflow = 'hidden';
