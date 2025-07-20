@@ -1,5 +1,11 @@
 const { execSync } = require('node:child_process');
-const { rmSync, mkdirSync, copyFileSync, readFileSync, writeFileSync } = require('node:fs');
+const {
+  rmSync,
+  mkdirSync,
+  copyFileSync,
+  readFileSync,
+  writeFileSync,
+} = require('node:fs');
 
 function run(cmd) {
   try {
@@ -15,7 +21,9 @@ try {
   mkdirSync('dist');
   run('npx eleventy --input templates --output dist --quiet');
   copyFileSync('dist/index.html', 'index.html');
-  run('npx tailwindcss -c tailwind-config.js -i src/styles.css -o dist/styles.css --minify --content dist/index.html');
+  run(
+    'npx tailwindcss -c tailwind-config.js -i src/styles.css -o dist/styles.css --minify --content dist/index.html',
+  );
 
   const baseCss = readFileSync('src/base.css', 'utf8');
   const distStyles = readFileSync('dist/styles.css', 'utf8');
@@ -27,5 +35,3 @@ try {
   process.stderr.write(`${err.message}\n`);
   process.exit(1);
 }
-
-

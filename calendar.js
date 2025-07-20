@@ -8,10 +8,10 @@ export function resetAppointmentForm() {
   document.getElementById('submit-appointment').disabled = true;
   document.getElementById('time-slots').classList.add('hidden');
 
-  document.querySelectorAll('.calendar-day.selected').forEach(day => {
+  document.querySelectorAll('.calendar-day.selected').forEach((day) => {
     day.classList.remove('selected', 'bg-charcoal', 'text-white');
   });
-  document.querySelectorAll('.time-slot.selected').forEach(slot => {
+  document.querySelectorAll('.time-slot.selected').forEach((slot) => {
     slot.classList.remove('selected', 'bg-charcoal', 'text-white');
   });
 }
@@ -35,8 +35,18 @@ export function initCalendar() {
   if (!currentMonthElement || !calendarDaysContainer) return;
 
   const monthNames = [
-    'January', 'February', 'March', 'April', 'May', 'June',
-    'July', 'August', 'September', 'October', 'November', 'December'
+    'January',
+    'February',
+    'March',
+    'April',
+    'May',
+    'June',
+    'July',
+    'August',
+    'September',
+    'October',
+    'November',
+    'December',
   ];
 
   currentMonthElement.textContent = `${monthNames[currentMonth]} ${currentYear}`;
@@ -90,7 +100,10 @@ export function initCalendar() {
       const today = new Date();
       const checkDate = new Date(year, month, day);
 
-      if (checkDate < new Date(today.getFullYear(), today.getMonth(), today.getDate())) {
+      if (
+        checkDate <
+        new Date(today.getFullYear(), today.getMonth(), today.getDate())
+      ) {
         dayElement.classList.add('disabled');
       } else {
         dayElement.addEventListener('click', function () {
@@ -116,7 +129,7 @@ export function initCalendar() {
       currentMonthElement.textContent = `${monthNames[currentMonth]} ${currentYear}`;
     }
 
-    document.querySelectorAll('.calendar-day.selected').forEach(day => {
+    document.querySelectorAll('.calendar-day.selected').forEach((day) => {
       day.classList.remove('selected');
     });
 
@@ -141,7 +154,7 @@ export function initCalendar() {
   }
 
   function selectDate(day, month, year, element) {
-    document.querySelectorAll('.calendar-day.selected').forEach(d => {
+    document.querySelectorAll('.calendar-day.selected').forEach((d) => {
       d.classList.remove('selected');
     });
 
@@ -152,7 +165,7 @@ export function initCalendar() {
     const formattedDate = selectedDate.toLocaleDateString('en-US', {
       month: 'long',
       day: 'numeric',
-      year: 'numeric'
+      year: 'numeric',
     });
 
     if (selectedDateElement) {
@@ -183,11 +196,13 @@ export function initCalendar() {
         timeSlot.className = 'time-slot';
 
         const period = hour >= 12 ? 'PM' : 'AM';
-        const displayHour = hour > 12 ? hour - 12 : (hour === 0 ? 12 : hour);
+        const displayHour = hour > 12 ? hour - 12 : hour === 0 ? 12 : hour;
         const displayMinute = minute === 0 ? '00' : minute;
 
         timeSlot.textContent = `${displayHour}:${displayMinute}${period}`;
-        timeSlot.addEventListener('click', () => selectTimeSlot(timeSlot, date, hour, minute));
+        timeSlot.addEventListener('click', () =>
+          selectTimeSlot(timeSlot, date, hour, minute),
+        );
 
         slotWrapper.appendChild(timeSlot);
         timeSlotsGrid.appendChild(slotWrapper);
@@ -196,7 +211,7 @@ export function initCalendar() {
   }
 
   function selectTimeSlot(element, date, hour, minute) {
-    document.querySelectorAll('.time-slot').forEach(slot => {
+    document.querySelectorAll('.time-slot').forEach((slot) => {
       slot.classList.remove('selected');
     });
 
@@ -206,7 +221,7 @@ export function initCalendar() {
       weekday: 'long',
       month: 'long',
       day: 'numeric',
-      year: 'numeric'
+      year: 'numeric',
     });
 
     const period = hour >= 12 ? 'PM' : 'AM';
