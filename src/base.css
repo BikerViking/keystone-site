@@ -341,7 +341,8 @@ html.dark [class*="bg-platinum"] {
         .calendar-day {
             position: relative;
             width: 100%;
-            height: 40px;
+            aspect-ratio: 1 / 1;
+            min-height: 40px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -394,9 +395,13 @@ html.dark [class*="bg-platinum"] {
         }
         #calendar-days {
             display: grid;
-            grid-template-columns: repeat(7, 1fr);
+            grid-template-columns: repeat(7, minmax(0, 1fr));
+            grid-auto-rows: 1fr;
             gap: 4px;
             width: 100%;
+            max-width: 350px;
+            margin-left: auto;
+            margin-right: auto;
             box-sizing: border-box;
         }
         .calendar-header .grid-cols-7 {
