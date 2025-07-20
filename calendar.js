@@ -1,5 +1,10 @@
 export function resetAppointmentForm() {
-  document.getElementById('appointment-details').innerHTML = '<p class="text-darkgray">No date and time selected</p>';
+  const container = document.getElementById('appointment-details');
+  container.textContent = '';
+  const p = document.createElement('p');
+  p.className = 'text-darkgray';
+  p.textContent = 'No date and time selected';
+  container.appendChild(p);
   document.getElementById('submit-appointment').disabled = true;
   document.getElementById('time-slots').classList.add('hidden');
 
@@ -120,7 +125,14 @@ export function initCalendar() {
     }
 
     if (appointmentDetails) {
-      appointmentDetails.innerHTML = '<p class="font-medium text-charcoal">Selected Date:</p><p class="text-darkgray">No date selected</p>';
+      appointmentDetails.textContent = '';
+      const label = document.createElement('p');
+      label.className = 'font-medium text-charcoal';
+      label.textContent = 'Selected Date:';
+      const value = document.createElement('p');
+      value.className = 'text-darkgray';
+      value.textContent = 'No date selected';
+      appointmentDetails.append(label, value);
     }
 
     if (submitAppointmentBtn) {
@@ -203,10 +215,14 @@ export function initCalendar() {
     const formattedTime = `${displayHour}:${displayMinute} ${period}`;
 
     if (appointmentDetails) {
-      appointmentDetails.innerHTML = `
-            <p class="font-medium text-charcoal">Selected Appointment:</p>
-            <p class="text-darkgray">${formattedDate} at ${formattedTime}</p>
-        `;
+      appointmentDetails.textContent = '';
+      const label = document.createElement('p');
+      label.className = 'font-medium text-charcoal';
+      label.textContent = 'Selected Appointment:';
+      const value = document.createElement('p');
+      value.className = 'text-darkgray';
+      value.textContent = `${formattedDate} at ${formattedTime}`;
+      appointmentDetails.append(label, value);
     }
 
     if (submitAppointmentBtn) {
