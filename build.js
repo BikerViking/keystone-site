@@ -5,8 +5,7 @@ function run(cmd) {
   try {
     execSync(cmd, { stdio: 'inherit' });
   } catch (err) {
-    console.error(`Error running: ${cmd}`);
-    console.error(err.message);
+    process.stderr.write(`Error running: ${cmd}\n${err.message}\n`);
     process.exit(1);
   }
 }
@@ -25,7 +24,7 @@ try {
   copyFileSync('dist/styles.css', 'styles.css');
   run('npx esbuild main.js --bundle --minify --outfile=dist/main.js');
 } catch (err) {
-  console.error(err.message);
+  process.stderr.write(`${err.message}\n`);
   process.exit(1);
 }
 
