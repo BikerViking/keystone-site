@@ -26,8 +26,8 @@ export function initTheme() {
   };
 
   const stored = localStorage.getItem('theme');
-  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-  const startDark = stored === 'dark' || (!stored && prefersDark);
+  const colorSchemeMedia = window.matchMedia('(prefers-color-scheme: dark)');
+  const startDark = stored === 'dark' || (!stored && colorSchemeMedia.matches);
   if (startDark) {
     document.documentElement.classList.add('dark');
     if (sunIcon && moonIcon) {
@@ -41,6 +41,21 @@ export function initTheme() {
     btn.setAttribute('aria-pressed', 'false');
   }
   setThemeAttributes(startDark);
+
+  if (!stored) {
+    colorSchemeMedia.addEventListener('change', (e) => {
+      const isDark = e.matches;
+      document.documentElement.classList.toggle('dark', isDark);
+      if (sunIcon && moonIcon) {
+        sunIcon.classList.toggle('hidden', !isDark);
+        moonIcon.classList.toggle('hidden', isDark);
+      }
+      if (btn) {
+        btn.setAttribute('aria-pressed', String(isDark));
+      }
+      setThemeAttributes(isDark);
+    });
+  }
 
   if (btn) {
     btn.addEventListener('click', toggleTheme);
