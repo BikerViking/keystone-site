@@ -11,3 +11,228 @@ model_max_output_tokens = "true"
 sandbox_mode = "danger-full-access"
 
 disable_response_storage = "false"
+
+# Godforge Codex Configuration (Ultimate Mode)
+# Purpose: Ensure Codex outputs production-grade, readable, self-explanatory, deduplicated code with strong test hygiene and intent annotations.
+
+# ────────────────────────────────────────────────
+# BASELINE PRINCIPLES (Do not modify)
+# ────────────────────────────────────────────────
+
+**Codex and all engineers must follow these instructions for every code change. This is a non-negotiable baseline for quality.**
+
+## Core Assumption
+> You are contributing to a production system. Code must be fully complete, secure, accessible, and visually polished. All output must be deployable to `main` with no cleanup.
+
+---
+
+[task_memory]
+respect_previous_context = true
+maintain_continuity = true
+layout_improvement_permissions_granted = false
+maintain_luxury_appearance = false
+
+[code_purity]
+remove_leftover_code = true
+remove_unused_imports = true
+no_duplicate_markup = true
+flatten_nesting = true
+prefer_modern_idioms = true
+
+[intent_comments]
+require_why_comments = true
+annotate_new_logic = true
+explain_functions_plain_english = true
+
+[react_tailwind]
+prohibit_absolute_unless_explicit = false
+eliminate_wrapper_divs = false
+
+[react_tailwind_strict]
+require_flex_grid = true
+prohibit_absolute_unless_explicit = true
+co_locate_logic_and_styles = true
+eliminate_wrapper_divs = true
+use_clsx_or_variants = true
+prefer_gap_and_items_center = true
+
+[react_strict]
+opt_into_strict_mode = true
+suppress_legacy_lifecycle_warnings = true
+detect_unsafe_effects = true
+warn_on_direct_dom_access = true
+prefer_use_layout_effect_for_sync = true
+
+[react_defaults]
+wrap_root_in_strict_mode = true
+require_strictmode_in_tests = true
+warn_if_strictmode_missing = true
+
+[ux_polish]
+auto_refine_ux = true
+auto_polish_ux = true
+all_device_compatible = true
+perfect_spacing = true
+smooth_transitions = true
+handle_edge_cases = true
+
+[testing]
+ensure_all_tests_present = true
+remove_broken_snapshots = true
+simulate_mobile_viewport = true
+simulate_desktop_viewport = true
+prefer_getByRole = true
+validate_all = ["yarn test", "yarn lint"]
+require_snapshot_tests = true
+require_accessibility_tests = true
+stub_network_calls = true
+auto_update_snapshots_if_layout_changes = true
+require_unit_tests = true
+
+[testing_advanced]
+auto_mock_api_calls = true
+auto_generate_missing_tests = true
+warn_on_low_test_coverage = true
+warn_on_high_complexity = true
+
+[accessibility_security]
+require_wcag_aa = true
+no_third_party_assets = true
+no_env_leaks = true
+prohibit_env_leaks = true
+prohibit_third_party_fonts = true
+prohibit_inline_tokens = true
+enforce_https_links = true
+
+[traceability]
+require_change_reason = true
+annotate_replacements = true
+summarize_in_pr = true
+track_removed_code = true
+
+[lint_semantic]
+no_any_type = true
+prefer_destructured_props = true
+use_named_functions = true
+enforce_semantic_tags = true
+
+[self_testing]
+auto_detect_ux_errors = true
+auto_detect_bloat = true
+auto_detect_visual_inconsistencies = true
+auto_improve_visual_appearance = true
+auto_check_responsive_layouts = true
+auto_remove_invalid_structure = true
+auto_rewrite_broken_layouts = true
+auto_clean_codebase = true
+
+[merge_checklist]
+tests_pass = true
+fully_responsive = true
+no_lint_warnings = true
+layout_polished = true
+secure_code = true
+semantic_and_a11y_verified = true
+
+[structure]
+detect_duplicate_tags = true
+flatten_nested_layouts = true
+enforce_responsive_breakpoints = ["320px", "640px", "1024px", "1280px", "1920px"]
+
+[metadata]
+require_version_file = true
+require_changelog = true
+require_release_notes = true
+require_comments_explaining_intent = true
+track_technical_debt = true
+require_agents_file = true
+
+[dependencies]
+auto_update_necessary_dependencies = true
+ensure_dependency_compatibility = true
+allow_auto_install = true
+only_dev_dependencies = false
+allow_global_packages = true
+version_lock = "strict"
+require_approval_for_prod = false
+permit_peer_dependencies = true
+permit_optional_dependencies = true
+
+[settings]
+exclude = [
+  "node_modules",
+  "dist",
+  "build",
+  ".next",
+  "out",
+  "*.lock",
+  "*.log",
+  "*.map",
+  "coverage",
+  "*.min.js"
+]
+
+auto_format = true
+detect_jsx = true
+wrap_attributes = true
+collapse_whitespace = true
+deduplicate_imports = true
+remove_invalid_tags = true
+preserve_class_order = false
+trim_trailing_whitespace = true
+max_line_length = 240
+strip_snapshot_noise = true
+autofix_redundant_svg = true
+detect_nested_headings = true
+resolve_duplicate_elements = true
+enable_intent_comments = true
+anticipate_user_intent = true
+explain_in_plain_language = true
+infer_missing_specs = true
+clean_aria_inconsistencies = true
+semantic_structure_enforcement = true
+
+[shell_limits]
+max_output_bytes = 1600
+truncate_large_outputs = true
+use_grep_preview_mode = true
+exclude_dirs = ["node_modules", "dist", "build", ".next", ".vercel", "out"]
+
+[execution]
+prefer_file_preview = true
+summarize_grep_matches = true
+avoid_raw_binary_dump = true
+
+[cli_optimization]
+wrap_long_output = true
+limit_stdout_lines = 500
+stream_stdout_with_ellipsis = true
+always_use_grep_cuts = true
+
+[performance]
+detect_render_loops = true
+warn_on_large_assets = true
+limit_component_size_lines = 200
+
+[docs]
+auto_update_documents = true
+auto_document_components = true
+generate_function_comments = true
+auto_generate_readme = true
+
+[component_architecture]
+enforce_component_directory_structure = true
+separate_logic_from_ui = true
+limit_props_per_component = 10
+
+[pr_quality]
+auto_summarize_changes = true
+require_changelog_entry = true
+limit_pr_file_count = 15
+enforce_clear_commit_messages = true
+enforce_commit_format = true
+require_plain_text_summary = true
+
+[privacy]
+never_log_user_data = true
+anonymize_debug_output = true
