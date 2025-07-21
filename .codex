@@ -4,6 +4,10 @@ model_provider = "openai"
 approval_policy = "never"
 model_reasoning_effort = "high"
 model_reasoning_summary = "detailed"
+model_max_output_tokens = "true"
+
 
 # same as `--sandbox danger-full-access`
 sandbox_mode = "danger-full-access"
+
+disable_response_storage = "false"
