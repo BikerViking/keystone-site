@@ -4,7 +4,7 @@ This project serves a static marketing site powered by an Express server. The bu
 
 ## Development
 
-Install dependencies and run the server:
+Install dependencies and run the server. The build step runs automatically:
 
 ```bash
 npm install

@@ -7,6 +7,7 @@
     "build": "node build.js",
     "lint": "ESLINT_USE_FLAT_CONFIG=false eslint .",
     "test": "node --test && playwright test",
+    "prestart": "npm run build",
     "start": "node server.js"
   },
   "keywords": [],
