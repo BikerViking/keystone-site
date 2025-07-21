@@ -3,6 +3,7 @@ const path = require('path');
 const fs = require('fs');
 
 const app = express();
+app.disable('x-powered-by');
 const PORT = process.env.PORT || 3000;
 
 const distDir = path.join(__dirname, 'dist');
@@ -22,10 +23,9 @@ app.use(
         'Strict-Transport-Security',
         'max-age=63072000; includeSubDomains',
       );
-        res.setHeader(
-          'Content-Security-Policy',
-          "default-src 'self'; img-src 'self' data:; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; object-src 'none'; base-uri 'self'",
-        );
+      const csp =
+        "default-src 'self'; img-src 'self' data:; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; object-src 'none'; base-uri 'self'";
+      res.setHeader('Content-Security-Policy', csp);
       res.setHeader('Referrer-Policy', 'no-referrer');
       res.setHeader('Permissions-Policy', 'geolocation=(), microphone=()');
     },

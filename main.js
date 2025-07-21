@@ -105,7 +105,6 @@ document.querySelectorAll('form[data-form="validate"]').forEach((form) => {
         resetAppointmentForm();
       }, 1500);
     } else if (form.id === 'login-form') {
-      // For demo, continue with the existing functionality
       const email = document.getElementById('email-login').value;
       const firstName = email.split('@')[0];
       document.getElementById('login-section').classList.add('hidden');
