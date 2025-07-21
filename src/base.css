@@ -242,6 +242,17 @@ html.dark [class*='bg-platinum'] {
   color: #e5e5e5 !important;
 }
 
+/* Utility color classes missing from Tailwind build */
+.bg-blue-100 { background-color: oklch(93.2% 0.032 255.585) !important; }
+.text-blue-800 { color: oklch(42.4% 0.199 265.638) !important; }
+.bg-green-100 { background-color: oklch(96.2% 0.044 156.743) !important; }
+.text-green-600 { color: oklch(62.7% 0.194 149.214) !important; }
+.text-green-800 { color: oklch(44.8% 0.119 151.328) !important; }
+.bg-yellow-100 { background-color: oklch(97.3% 0.071 103.193) !important; }
+.text-yellow-600 { color: oklch(68.1% 0.162 75.834) !important; }
+.text-yellow-800 { color: oklch(47.6% 0.114 61.907) !important; }
+.text-red-600 { color: oklch(59.5% 0.233 25.644) !important; }
+
 /* Preserve contrast on light backgrounds in dark mode */
 html.dark .bg-platinum [class*='text-charcoal'],
 html.dark .bg-white [class*='text-charcoal'],

@@ -22,7 +22,7 @@ try {
   run('npx eleventy --input templates --output dist --quiet');
   copyFileSync('dist/index.html', 'index.html');
   run(
-    'npx tailwindcss -c tailwind-config.js -i src/styles.css -o dist/styles.css --minify --content dist/index.html',
+    'npx tailwindcss -c tailwind-config.js -i src/styles.css -o dist/styles.css --minify',
   );
 
 
