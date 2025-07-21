@@ -5,9 +5,8 @@
   "main": "server.js",
   "scripts": {
     "build": "node build.js",
-    "lint": "ESLINT_USE_FLAT_CONFIG=false eslint .",
+    "lint": "eslint .",
     "test": "node --test && playwright test",
-    "prestart": "npm run build",
     "start": "node server.js"
   },
   "keywords": [],
@@ -18,14 +17,13 @@
     "express": "^5.1.0"
   },
   "devDependencies": {
-    "@11ty/eleventy": "^3.1.2",
+    "@11ty/eleventy": "^2.0.1",
     "@playwright/test": "^1.54.1",
     "esbuild": "^0.25.8",
-    "eslint": "^9.31.0",
+    "eslint": "^8.57.1",
     "playwright": "^1.54.1",
     "prettier": "^3.6.2",
-    "tailwindcss": "^4.1.11",
-    "@tailwindcss/cli": "^4.1.11",
-    "jsdom": "^26.1.0"
+    "tailwindcss": "^3.4.17",
+    "jsdom": "^24.1.3"
   }
 }

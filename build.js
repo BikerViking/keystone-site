@@ -3,6 +3,8 @@ const {
   rmSync,
   mkdirSync,
   copyFileSync,
+  readFileSync,
+  writeFileSync,
 } = require('node:fs');
 
 function run(cmd) {
@@ -20,9 +22,12 @@ try {
   run('npx eleventy --input templates --output dist --quiet');
   copyFileSync('dist/index.html', 'index.html');
   run(
-    'npx tailwindcss -c tailwind-config.js -i src/styles.css -o dist/styles.css --minify',
+    'npx tailwindcss -c tailwind-config.js -i src/styles.css -o dist/styles.css --minify --content dist/index.html',
   );
 
+  const baseCss = readFileSync('src/base.css', 'utf8');
+  const distStyles = readFileSync('dist/styles.css', 'utf8');
+  writeFileSync('dist/styles.css', `${distStyles}\n${baseCss}`);
 
   copyFileSync('dist/styles.css', 'styles.css');
   run('npx esbuild main.js --bundle --minify --outfile=dist/main.js');

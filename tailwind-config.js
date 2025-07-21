@@ -4,8 +4,7 @@ module.exports = {
     './main.js',
     './calendar.js',
     './portal.js',
-    './theme.js',
-    './src/document-verification.js'
+    './theme.js'
   ],
   darkMode: 'class',
   theme: {
@@ -26,9 +25,6 @@ module.exports = {
   safelist: [
     'bg-charcoal', 'text-white', 'text-charcoal', 'bg-lightgray',
     'border-mediumgray', 'text-darkgray', 'text-platinum',
-    'text-mediumgray', 'opacity-70', 'cursor-not-allowed',
-    'bg-green-100', 'bg-yellow-100', 'bg-blue-100',
-    'text-green-600', 'text-green-800', 'text-yellow-600',
-    'text-yellow-800', 'text-blue-800', 'text-red-600'
+    'text-mediumgray', 'opacity-70', 'cursor-not-allowed'
   ]
 };
