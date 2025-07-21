@@ -3,8 +3,6 @@ const {
   rmSync,
   mkdirSync,
   copyFileSync,
-  readFileSync,
-  writeFileSync,
 } = require('node:fs');
 
 function run(cmd) {

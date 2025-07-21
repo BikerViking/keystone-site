@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "build": "node build.js",
-    "lint": "eslint .",
+    "lint": "ESLINT_USE_FLAT_CONFIG=false eslint .",
     "test": "node --test && playwright test",
     "start": "node server.js"
   },
