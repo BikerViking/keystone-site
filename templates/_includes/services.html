@@ -94,7 +94,14 @@
                                         <span class="text-sm text-darkgray" id="progress-percentage">0%</span>
                                     </div>
                                     <div class="w-full bg-platinum rounded-full h-2 overflow-hidden">
-                                        <div class="bg-charcoal h-2 rounded-full animate-shimmer" id="progress-bar"></div>
+                                        <div
+                                            id="progress-bar"
+                                            class="bg-charcoal h-2 rounded-full animate-shimmer"
+                                            role="progressbar"
+                                            aria-valuemin="0"
+                                            aria-valuemax="100"
+                                            aria-valuenow="0"
+                                        ></div>
                                     </div>
                                 </div>
                                 <div class="text-center text-sm text-darkgray mt-4">
