@@ -58,8 +58,10 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body class="bg-lightgray micro-texture min-w-[320px] overflow-x-hidden">
+    <a href="#main-content" class="sr-only focus:not-sr-only absolute top-2 left-2 z-50 bg-charcoal text-white p-2 rounded-sm">Skip to content</a>
     <!-- Navigation -->
     {% include "header.html" %}
+    <main id="main-content">
 
     <!-- Hero Section -->
     {% include "hero.html" %}
@@ -568,6 +570,7 @@
         </div>
     </section>
 
+    </main>
     <!-- Footer -->
     {% include "footer.html" %}
 
