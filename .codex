@@ -4,3 +4,6 @@ model_provider = "openai"
 approval_policy = "never"
 model_reasoning_effort = "high"
 model_reasoning_summary = "detailed"
+
+# same as `--sandbox danger-full-access`
+sandbox_mode = "danger-full-access"
