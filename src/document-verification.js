@@ -9,6 +9,7 @@ export function initDocumentVerification() {
   const progressPercentage = document.getElementById('progress-percentage');
   const resultIcon = document.getElementById('result-icon');
   const resultStatus = document.getElementById('result-status');
+  const resultStatusContainer = document.getElementById('result-status-container');
   const documentType = document.getElementById('document-type');
   const requirementsList = document.getElementById('requirements-list');
   const recommendations = document.getElementById('recommendations');
@@ -25,6 +26,7 @@ export function initDocumentVerification() {
     !progressPercentage ||
     !resultIcon ||
     !resultStatus ||
+    !resultStatusContainer ||
     !documentType ||
     !requirementsList ||
     !recommendations ||
@@ -131,6 +133,7 @@ export function initDocumentVerification() {
 
     uploadSection.classList.add('hidden');
     verificationProgress.classList.remove('hidden');
+    resultStatusContainer.setAttribute('aria-busy', 'true');
 
     let progress = 0;
     const interval = setInterval(() => {
@@ -156,7 +159,6 @@ export function initDocumentVerification() {
     const issues = [];
 
     const resultStatusContainer = document.getElementById('result-status-container');
-    resultStatusContainer.setAttribute('aria-busy', 'false');
 
     if (fileName.includes('power') || fileName.includes('attorney')) {
       documentCategory = 'Power of Attorney';
@@ -254,5 +256,7 @@ export function initDocumentVerification() {
         <p class="mt-2">We recommend consulting with our notary professionals to ensure your document meets all requirements.</p>
       `;
     }
+
+    resultStatusContainer.setAttribute('aria-busy', 'false');
   }
 }
