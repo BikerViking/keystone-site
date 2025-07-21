@@ -162,6 +162,8 @@ export function initDocumentVerification() {
     let isValid = true;
     const issues = [];
 
+    const resultStatusContainer = document.getElementById('result-status-container');
+
     if (fileName.includes('power') || fileName.includes('attorney')) {
       documentCategory = 'Power of Attorney';
     } else if (fileName.includes('deed') || fileName.includes('title') || fileName.includes('property')) {
