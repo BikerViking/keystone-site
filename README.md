@@ -19,3 +19,19 @@ Run unit tests and build validation:
 npm test
 npm run build
 ```
+
+## Troubleshooting
+
+If `npm install` prints `Unknown env config "http-proxy"`, unset the
+`npm_config_http_proxy` environment variable before running commands:
+
+```bash
+unset npm_config_http_proxy
+```
+
+Playwright tests require additional system libraries. Install them once per host:
+
+```bash
+npx playwright install --with-deps
+```
+
