@@ -6,6 +6,9 @@ export function initDocumentVerification() {
   const verificationProgress = document.getElementById('verification-progress');
   const verificationResults = document.getElementById('verification-results');
   const progressBar = document.getElementById('progress-bar');
+  if (progressBar) {
+    progressBar.setAttribute('aria-valuenow', '0');
+  }
   const progressPercentage = document.getElementById('progress-percentage');
   const resultIcon = document.getElementById('result-icon');
   const resultStatus = document.getElementById('result-status');
@@ -139,6 +142,7 @@ export function initDocumentVerification() {
     const interval = setInterval(() => {
       progress += 5;
       progressBar.style.width = `${progress}%`;
+      progressBar.setAttribute('aria-valuenow', String(progress));
       progressPercentage.textContent = `${progress}%`;
 
       if (progress >= 100) {
