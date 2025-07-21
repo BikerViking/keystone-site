@@ -114,19 +114,9 @@ export function initDocumentVerification() {
     verificationResults.classList.add('hidden');
     uploadSection.classList.remove('hidden');
     fileInput.value = '';
-    progressBar.style.width = '0%';
-    progressBar.setAttribute('aria-valuenow', '0');
-    progressPercentage.textContent = '0%';
   });
 
   function handleFile(file) {
-    const uploadError = document.getElementById('upload-error');
-    if (uploadError) {
-      uploadError.classList.add('hidden');
-    }
-    progressBar.style.width = '0%';
-    progressBar.setAttribute('aria-valuenow', '0');
-    progressPercentage.textContent = '0%';
     const validTypes = [
       'application/pdf',
       'application/msword',
@@ -135,6 +125,7 @@ export function initDocumentVerification() {
       'image/png'
     ];
     if (!validTypes.includes(file.type)) {
+      const uploadError = document.getElementById('upload-error');
       if (uploadError) {
         uploadError.textContent = 'Please upload a valid document (PDF, DOC, DOCX, JPG, or PNG).';
         uploadError.classList.remove('hidden');
@@ -170,6 +161,8 @@ export function initDocumentVerification() {
     let documentCategory;
     let isValid = true;
     const issues = [];
+
+    const resultStatusContainer = document.getElementById('result-status-container');
 
     if (fileName.includes('power') || fileName.includes('attorney')) {
       documentCategory = 'Power of Attorney';
