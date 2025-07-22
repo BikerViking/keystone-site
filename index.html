@@ -58,7 +58,6 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body class="bg-lightgray micro-texture min-w-[320px] overflow-x-hidden">
-    <a href="#main-content" class="sr-only focus:not-sr-only absolute top-2 left-2 z-50 bg-charcoal text-white p-2 rounded-sm">Skip to content</a>
     <!-- Navigation -->
         <nav class="bg-white shadow-sm" aria-label="Main navigation">
         <div class="container mx-auto px-4 sm:px-6 py-4 max-w-[1200px]">
@@ -109,11 +108,12 @@
         </svg>
     </button>
 
+    <!-- Hero Section -->
 
-    <main id="main-content">
 
     <!-- Hero Section -->
-        <section id="home" class="hero-section bg-charcoal hero-pattern text-white py-16 md:py-24">
+        <!-- Hero Section -->
+    <section id="home" class="hero-section bg-charcoal hero-pattern text-white py-16 md:py-24">
         <div class="container mx-auto px-4 md:px-6">
             <div class="max-w-3xl mx-auto text-center">
                 <h1 class="text-3xl sm:text-4xl md:text-5xl font-light mb-4 md:mb-6 leading-tight">Professional Notary Services with Integrity</h1>
@@ -148,7 +148,7 @@
                 <h3 class="text-2xl font-light text-charcoal mb-6">Client Portal</h3>
                 <p class="text-darkgray mb-6">Access your documents, track notarization status, and manage your appointments.</p>
                 
-                <form id="login-form" class="space-y-4" data-form="validate">
+                <form id="login-form" class="space-y-4">
                     <div>
                         <label for="email-login" class="block text-sm font-medium text-darkgray mb-2">Email Address</label>
                         <input type="email" id="email-login" class="w-full px-4 py-3 border border-mediumgray rounded-sm focus:outline-none focus:ring-2 focus:ring-charcoal focus:border-transparent" placeholder="your@email.com" required>
@@ -181,7 +181,7 @@
                 <h3 class="text-2xl font-light text-charcoal mb-6">Create an Account</h3>
                 <p class="text-darkgray mb-6">Register to access your documents and manage your notary appointments.</p>
                 
-                <form id="register-form" class="space-y-4" data-form="validate">
+                <form id="register-form" class="space-y-4">
                     <div class="grid grid-cols-2 gap-4">
                         <div>
                             <label for="first-name" class="block text-sm font-medium text-darkgray mb-2">First Name</label>
@@ -303,37 +303,160 @@
     </div>
 
     <!-- Services Section -->
-    <section id="services" class="relative py-16 md:py-24 bg-white z-0 overflow-visible">
-  <div class="container mx-auto px-4 md:px-8">
-    <h2 class="text-3xl font-bold text-center mb-12">Our Notary Services</h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      <!-- Real Estate Closings -->
-      <div class="bg-lightgray p-6 rounded-lg shadow-md flex flex-col justify-between min-h-[360px]">
-        <div>
-          <div class="text-4xl mb-4">📄</div>
-          <h3 class="text-xl font-semibold mb-2">Real Estate Closings</h3>
-          <p class="text-sm text-gray-200 mb-4">Professional notarization for all your real estate transactions, ensuring legal compliance and peace of mind.</p>
+        <!-- Services Section -->
+    <section id="services" class="py-16 md:py-20 bg-white">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="text-center mb-12 md:mb-16">
+                <h2 class="text-2xl md:text-3xl font-light text-charcoal mb-4">Our Notary Services</h2>
+                <div class="w-24 h-1 bg-charcoal mx-auto"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
+                <!-- Service 1 -->
+                <div class="service-card bg-lightgray p-6 md:p-8 rounded-sm shadow-sm transition-all duration-300 hover-lift flex flex-col h-full">
+                    <div class="mb-4 md:mb-6">
+                        <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 md:h-12 md:w-12 text-charcoal" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-medium text-charcoal mb-2 md:mb-3">Real Estate Closings</h3>
+                    <p class="text-darkgray mb-4 md:mb-6">Professional notarization for all your real estate transactions, ensuring legal compliance and peace of mind.</p>
+                    <div class="mt-auto">
+                        <a href="#contact" class="text-charcoal font-medium inline-flex items-center group">
+                            Learn More
+                            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-2 transform transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="service-card bg-lightgray p-6 md:p-8 rounded-sm shadow-sm transition-all duration-300 hover-lift flex flex-col h-full">
+                    <div class="mb-4 md:mb-6">
+                        <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 md:h-12 md:w-12 text-charcoal" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-medium text-charcoal mb-2 md:mb-3">Power of Attorney</h3>
+                    <p class="text-darkgray mb-4 md:mb-6">Proper notarization of power of attorney documents to ensure they meet all legal requirements.</p>
+                    <div class="mt-auto">
+                        <a href="#contact" class="text-charcoal font-medium inline-flex items-center group">
+                            Learn More
+                            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-2 transform transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="service-card bg-lightgray p-6 md:p-8 rounded-sm shadow-sm transition-all duration-300 hover-lift flex flex-col h-full">
+                    <div class="mb-4 md:mb-6">
+                        <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 md:h-12 md:w-12 text-charcoal" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-medium text-charcoal mb-2 md:mb-3">Mobile Notary</h3>
+                    <p class="text-darkgray mb-4 md:mb-6">Convenient notary services at your location. We come to your home, office, or any location of your choice.</p>
+                    <div class="mt-auto">
+                        <a href="#contact" class="text-charcoal font-medium inline-flex items-center group">
+                            Learn More
+                            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-2 transform transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Document Pre-Verification Tool -->
+            <div class="mt-20 bg-lightgray p-8 rounded-sm shadow-sm">
+                <div class="text-center mb-8">
+                    <h3 class="text-2xl font-light text-charcoal mb-3">Document Pre-Verification</h3>
+                    <p class="text-darkgray max-w-2xl mx-auto">Upload your document before your appointment to verify it's notarizable. Our system will check for common issues and provide guidance to ensure a smooth notarization process.</p>
+                </div>
+                
+                <div class="max-w-3xl mx-auto">
+                    <div class="bg-white p-6 rounded-sm shadow-sm hover-lift">
+                        <div id="document-verification-tool">
+                            <div id="upload-section" class="animate-slide-up">
+                                <div class="border-2 border-dashed border-mediumgray rounded-sm p-8 text-center cursor-pointer hover:border-charcoal transition-colors duration-300 flex flex-col items-center justify-center bg-white min-h-[250px] box-border w-full" id="drop-zone">
+                                    <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto text-darkgray mb-4 animate-pulse" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
+                                    </svg>
+                                    <p class="text-darkgray mb-2">Drag and drop your document here</p>
+                                    <p class="text-mediumgray text-sm mb-4">or</p>
+                                    <button type="button" id="browse-files" class="bg-charcoal text-white py-2 px-4 rounded-sm hover:bg-darkgray transition-colors duration-300">Browse Files</button>
+                                    <input type="file" id="file-input" class="hidden" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png">
+                                    <p class="text-sm text-mediumgray mt-4">Supported formats: PDF, DOC, DOCX, JPG, PNG</p>
+                                    <p id="upload-error" class="hidden mt-2 text-sm text-red-600" aria-live="polite" tabindex="-1"></p>
+                                </div>
+                            </div>
+                            
+                            <div id="verification-progress" class="hidden mt-6 animate-slide-up bg-white p-5 rounded-sm">
+                                <div class="mb-4">
+                                    <div class="flex justify-between mb-1">
+                                        <span class="text-sm text-darkgray">Analyzing document...</span>
+                                        <span class="text-sm text-darkgray" id="progress-percentage">0%</span>
+                                    </div>
+                                    <div class="w-full bg-platinum rounded-full h-2 overflow-hidden">
+                                        <div class="bg-charcoal h-2 rounded-full animate-shimmer" id="progress-bar"></div>
+                                    </div>
+                                </div>
+                                <div class="text-center text-sm text-darkgray mt-4">
+                                    <p class="flex items-center justify-center">
+                                        <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2 animate-spin" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                                        </svg>
+                                        Please wait while we analyze your document
+                                    </p>
+                                </div>
+                            </div>
+                            
+                            <div id="verification-results" class="hidden mt-6 animate-slide-up bg-white p-5 rounded-sm">
+                                <div class="p-4 rounded-sm mb-4" id="result-status-container" role="status" aria-live="polite">
+                                    <div class="flex items-center">
+                                        <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2 animate-pulse" id="result-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        </svg>
+                                        <h4 class="text-lg font-medium" id="result-status">Document Analysis Complete</h4>
+                                    </div>
+                                </div>
+                                
+                                <div class="space-y-4">
+                                    <div class="border-b border-mediumgray pb-4 opacity-0 animate-slide-right delay-100">
+                                        <h5 class="font-medium text-charcoal mb-2">Document Type</h5>
+                                        <p class="text-darkgray" id="document-type">-</p>
+                                    </div>
+                                    
+                                    <div class="border-b border-mediumgray pb-4 opacity-0 animate-slide-right delay-300">
+                                        <h5 class="font-medium text-charcoal mb-2">Notarization Requirements</h5>
+                                        <ul class="list-disc pl-5 text-darkgray space-y-1" id="requirements-list">
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="opacity-0 animate-slide-right delay-500">
+                                        <h5 class="font-medium text-charcoal mb-2">Recommendations</h5>
+                                        <div class="text-darkgray" id="recommendations">
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="mt-6 flex justify-between opacity-0 animate-slide-up delay-700">
+                                    <button type="button" id="verify-another" class="text-charcoal hover:underline flex items-center group cursor-pointer">
+                                        <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1 transition-transform duration-300 group-hover:rotate-180" viewBox="0 0 20 20" fill="currentColor">
+                                            <path fill-rule="evenodd" d="M4 2a1 1 0 011 1v2.101a7.002 7.002 0 0111.601 2.566 1 1 0 11-1.885.666A5.002 5.002 0 005.999 7H9a1 1 0 010 2H4a1 1 0 01-1-1V3a1 1 0 011-1zm.008 9.057a1 1 0 011.276.61A5.002 5.002 0 0014.001 13H11a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0v-2.101a7.002 7.002 0 01-11.601-2.566 1 1 0 01.61-1.276z" clip-rule="evenodd" />
+                                        </svg>
+                                        Verify Another Document
+                                    </button>
+                                    <a href="#contact" class="bg-charcoal text-white py-2 px-4 rounded-sm hover:bg-darkgray transition-colors duration-300">Schedule Notarization</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <a href="#" class="text-blue-300 underline mt-auto">Learn More →</a>
-      </div>
-
-      <!-- Power of Attorney -->
-      <div class="bg-lightgray p-6 rounded-lg shadow-md flex flex-col justify-between min-h-[360px]">
-        <div>
-          <div class="text-4xl mb-4">📄</div>
-          <h3 class="text-xl font-semibold mb-2">Power of Attorney</h3>
-          <p class="text-sm text-gray-200 mb-4">Proper notarization of power of attorney documents to ensure they meet all legal requirements.</p>
-        </div>
-        <a href="#" class="text-blue-300 underline mt-auto">Book Now ↓</a>
-      </div>
-
-      <!-- Add additional services here following same structure -->
-
-    </div>
-    <!-- Footer Spacer to avoid overlapping toggle -->
-    <div class="h-24 md:h-0"></div>
-  </div>
-</section>
+    </section>
 
 
     <!-- Why Choose Us Section -->
@@ -496,6 +619,7 @@
 
     <!-- FAQ Section -->
     
+    <!-- FAQ Section -->
     <section id="faq" class="py-20 bg-white">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16">
@@ -697,7 +821,7 @@
                     </div>
                     
                     <!-- Appointment Form -->
-                    <form id="appointment-form" class="space-y-4 md:space-y-6 mt-5" data-form="validate">
+                    <form id="appointment-form" class="space-y-4 md:space-y-6 mt-5">
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
                             <div>
                                 <label for="name" class="block text-sm font-medium text-darkgray mb-1 md:mb-2">Full Name</label>
@@ -815,9 +939,9 @@
         </div>
     </section>
 
-    </main>
     <!-- Footer -->
-        <footer class="bg-charcoal text-white py-8 md:py-12">
+        <!-- Footer -->
+    <footer class="bg-charcoal text-white py-8 md:py-12">
         <div class="container mx-auto px-4 md:px-6">
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 md:gap-10">
                 <div>
@@ -831,17 +955,17 @@
                     </div>
                     <p class="text-platinum text-sm mb-4 md:mb-6">Professional notary services with integrity and attention to detail.</p>
                     <div class="flex space-x-4">
-                        <a href="https://www.facebook.com/keystonenotarygroup" target="_blank" rel="noopener noreferrer" class="text-platinum hover:text-white transition-colors duration-300 p-1">
+                        <a href="https://www.facebook.com/keystonenotarygroup" class="text-platinum hover:text-white transition-colors duration-300 p-1">
                             <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
                                 <path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"/>
                             </svg>
                         </a>
-                        <a href="https://www.instagram.com/keystonenotarygroup" target="_blank" rel="noopener noreferrer" class="text-platinum hover:text-white transition-colors duration-300 p-1">
+                        <a href="https://www.instagram.com/keystonenotarygroup" class="text-platinum hover:text-white transition-colors duration-300 p-1">
                             <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
                                 <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
                             </svg>
                         </a>
-                        <a href="https://www.linkedin.com/company/keystonenotarygroup" target="_blank" rel="noopener noreferrer" class="text-platinum hover:text-white transition-colors duration-300 p-1">
+                        <a href="https://www.linkedin.com/company/keystonenotarygroup" class="text-platinum hover:text-white transition-colors duration-300 p-1">
                             <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
                                 <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
                             </svg>
@@ -861,7 +985,7 @@
                 <div class="mt-6 md:mt-0">
                     <h4 class="text-lg font-medium mb-4 md:mb-6">Newsletter</h4>
                     <p class="text-platinum text-sm mb-3 md:mb-4">Subscribe to our newsletter for updates and notary tips.</p>
-                    <form id="newsletter-form" class="flex flex-col sm:flex-row" data-form="validate">
+                    <form id="newsletter-form" class="flex flex-col sm:flex-row">
                         <input type="email" id="newsletter-email" placeholder="Your email address" class="px-3 md:px-4 py-2 w-full rounded-sm sm:rounded-l-sm sm:rounded-r-none focus:outline-none text-charcoal" required>
                         <button type="submit" class="bg-white text-charcoal px-4 py-2 mt-2 sm:mt-0 rounded-sm sm:rounded-l-none sm:rounded-r-sm hover:bg-platinum transition-colors duration-300">Subscribe</button>
                     </form>
