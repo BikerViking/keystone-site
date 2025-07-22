@@ -1,6 +1,6 @@
 {
   "name": "keystone-site",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "",
   "main": "server.js",
   "scripts": {
@@ -14,7 +14,7 @@
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
-    "express": "^5.1.0"
+    "express": "5.1.0"
   },
   "devDependencies": {
     "esbuild": "^0.19.11",
