@@ -27,6 +27,7 @@ test('forms expose live regions', async () => {
   assert.ok(html.includes('id="appointment-message"'));
   assert.ok(html.includes('id="newsletter-message"'));
   assert.ok(html.includes('id="upload-message"'));
+  assert.ok(html.includes('id="upload-error"'));
 });
 
 test('no inline styles remain', async () => {
