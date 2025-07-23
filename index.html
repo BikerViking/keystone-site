@@ -60,7 +60,8 @@
 <body class="bg-lightgray micro-texture min-w-[320px] overflow-x-hidden">
     <a href="#main-content" class="sr-only focus:not-sr-only absolute top-2 left-2 z-50 bg-charcoal text-white p-2 rounded-sm">Skip to content</a>
     <!-- Navigation -->
-        <nav class="bg-white shadow-sm" aria-label="Main navigation">
+    <header class="bg-white shadow-sm" role="banner">
+    <nav aria-label="Main navigation">
         <div class="container mx-auto px-4 sm:px-6 py-4 max-w-[1200px]">
             <div class="flex justify-between items-center flex-wrap">
                 <div class="flex items-center">
@@ -108,7 +109,7 @@
             <path d="M17.293 13.293A8.001 8.001 0 016.707 2.707 8 8 0 1017.293 13.293z"/>
         </svg>
     </button>
-
+</header>
 
     <main id="main-content">
 
@@ -136,8 +137,9 @@
 
     
     <!-- Client Portal Modal -->
-    <div id="client-portal-modal" role="dialog" aria-modal="true" class="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center hidden overflow-y-auto">
+    <div id="client-portal-modal" role="dialog" aria-modal="true" aria-labelledby="portal-heading" class="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center hidden overflow-y-auto">
         <div class="bg-white rounded-sm p-4 sm:p-6 md:p-8 w-full mx-4 my-4 sm:my-0 relative max-w-[500px] shadow-lg">
+            <h2 id="portal-heading" class="sr-only">Client Portal</h2>
             <button id="close-modal" class="absolute top-3 sm:top-4 right-3 sm:right-4 text-darkgray hover:text-charcoal p-1" aria-label="Close modal">
                 <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 sm:h-6 sm:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
@@ -173,7 +175,7 @@
                 </form>
                 
                 <div class="mt-6 text-center">
-                    <p class="text-sm text-darkgray">Don't have an account? <a href="#" id="show-register" role="button" class="text-charcoal hover:underline">Register here</a></p>
+                    <p class="text-sm text-darkgray">Don't have an account? <button type="button" id="show-register" class="text-charcoal hover:underline">Register here</button></p>
                 </div>
             </div>
             
@@ -211,7 +213,7 @@
                 </form>
                 
                 <div class="mt-6 text-center">
-                    <p class="text-sm text-darkgray">Already have an account? <a href="#" id="show-login" role="button" class="text-charcoal hover:underline">Sign in</a></p>
+                    <p class="text-sm text-darkgray">Already have an account? <button type="button" id="show-login" class="text-charcoal hover:underline">Sign in</button></p>
                 </div>
             </div>
             
@@ -303,15 +305,15 @@
     </div>
 
     <!-- Services Section -->
-        <section id="services" class="py-16 md:py-20 bg-white">
+        <section id="services" class="py-16 md:py-20 bg-white" aria-labelledby="services-heading">
         <div class="container mx-auto px-4 md:px-6">
             <div class="text-center mb-12 md:mb-16">
-                <h2 class="text-2xl md:text-3xl font-light text-charcoal mb-4">Our Notary Services</h2>
+                <h2 id="services-heading" class="text-2xl md:text-3xl font-light text-charcoal mb-4">Our Notary Services</h2>
                 <div class="w-24 h-1 bg-charcoal mx-auto"></div>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
                 <!-- Service 1 -->
-                <div class="service-card bg-lightgray p-6 md:p-8 rounded-sm shadow-sm transition-transform duration-300 hover:-translate-y-1 hover:shadow-md flex flex-col h-full">
+                <article class="service-card bg-lightgray p-6 md:p-8 rounded-sm shadow-sm transition-transform duration-300 hover:-translate-y-1 hover:shadow-md flex flex-col h-full">
                     <div class="mb-4 md:mb-6">
                         <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 md:h-12 md:w-12 text-charcoal" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
@@ -327,10 +329,10 @@
                             </svg>
                         </a>
                     </div>
-                </div>
+                </article>
                 
                 <!-- Service 2 -->
-                <div class="service-card bg-lightgray p-6 md:p-8 rounded-sm shadow-sm transition-transform duration-300 hover:-translate-y-1 hover:shadow-md flex flex-col h-full">
+                <article class="service-card bg-lightgray p-6 md:p-8 rounded-sm shadow-sm transition-transform duration-300 hover:-translate-y-1 hover:shadow-md flex flex-col h-full">
                     <div class="mb-4 md:mb-6">
                         <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 md:h-12 md:w-12 text-charcoal" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2" />
@@ -346,10 +348,10 @@
                             </svg>
                         </a>
                     </div>
-                </div>
+                </article>
                 
                 <!-- Service 3 -->
-                <div class="service-card bg-lightgray p-6 md:p-8 rounded-sm shadow-sm transition-transform duration-300 hover:-translate-y-1 hover:shadow-md flex flex-col h-full">
+                <article class="service-card bg-lightgray p-6 md:p-8 rounded-sm shadow-sm transition-transform duration-300 hover:-translate-y-1 hover:shadow-md flex flex-col h-full">
                     <div class="mb-4 md:mb-6">
                         <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 md:h-12 md:w-12 text-charcoal" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z" />
@@ -365,7 +367,7 @@
                             </svg>
                         </a>
                     </div>
-                </div>
+                </article>
             </div>
             
             <!-- Document Pre-Verification Tool -->
@@ -466,10 +468,10 @@
 
 
     <!-- Why Choose Us Section -->
-    <section id="why-choose-us" class="py-20 bg-white">
+    <section id="why-choose-us" class="py-20 bg-white" aria-labelledby="why-heading">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16">
-                <h2 class="text-3xl font-light text-charcoal mb-4">Why Choose Us</h2>
+                <h2 id="why-heading" class="text-3xl font-light text-charcoal mb-4">Why Choose Us</h2>
                 <div class="w-24 h-1 bg-charcoal mx-auto"></div>
                 <p class="mt-6 text-darkgray max-w-2xl mx-auto">What sets Keystone Notary Group, LLC apart from other notary services.</p>
             </div>
@@ -547,11 +549,11 @@
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-20 bg-platinum micro-texture">
+    <section id="about" class="py-20 bg-platinum micro-texture" aria-labelledby="about-heading">
         <div class="container mx-auto px-6">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <div>
-                    <h2 class="text-3xl font-light text-charcoal mb-6">About Keystone Notary Group, LLC</h2>
+                    <h2 id="about-heading" class="text-3xl font-light text-charcoal mb-6">About Keystone Notary Group, LLC</h2>
                     <p class="text-darkgray mb-6">At Keystone Notary Group, we pride ourselves on delivering professional notary services with the highest level of integrity and attention to detail. Our experienced team ensures that all your important documents are properly notarized in compliance with state laws.</p>
                     <p class="text-darkgray mb-6">With years of experience in the industry, we understand the importance of accuracy and reliability when it comes to legal documentation. Our commitment to excellence has made us a trusted partner for individuals and businesses alike.</p>
                     <p class="text-darkgray mb-6">We are insured mobile notaries commissioned in the Commonwealth of Pennsylvania and NNA Certified Notary Signing Agents. We handle oaths and affirmations, acknowledgments, wills, medical directives, certified copies, and loan signings.</p>
@@ -625,10 +627,10 @@
 
     <!-- FAQ Section -->
     
-    <section id="faq" class="py-20 bg-white">
+    <section id="faq" class="py-20 bg-white" aria-labelledby="faq-heading">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16">
-                <h2 class="text-3xl font-light text-charcoal mb-4">Frequently Asked Questions</h2>
+                <h2 id="faq-heading" class="text-3xl font-light text-charcoal mb-4">Frequently Asked Questions</h2>
                 <div class="w-24 h-1 bg-charcoal mx-auto"></div>
                 <p class="mt-6 text-darkgray max-w-2xl mx-auto">Find answers to common questions about our notary services.</p>
             </div>
@@ -772,10 +774,10 @@
 
 
     <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-white">
+    <section id="contact" class="py-20 bg-white" aria-labelledby="contact-heading">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16">
-                <h2 class="text-3xl font-light text-charcoal mb-4">Contact Us</h2>
+                <h2 id="contact-heading" class="text-3xl font-light text-charcoal mb-4">Contact Us</h2>
                 <div class="w-24 h-1 bg-charcoal mx-auto"></div>
                 <p class="mt-6 text-darkgray max-w-2xl mx-auto">Schedule an appointment or inquire about our services. We're here to assist you with all your notary needs.</p>
             </div>
