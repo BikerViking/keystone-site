@@ -62,7 +62,7 @@
     <!-- Navigation -->
         <nav class="bg-white shadow-sm" aria-label="Main navigation">
         <div class="container mx-auto px-4 sm:px-6 py-4 max-w-[1200px]">
-            <div class="flex justify-between items-center">
+            <div class="flex justify-between items-center flex-wrap">
                 <div class="flex items-center">
                     <div class="mr-2">
                         <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-charcoal" viewBox="0 0 20 20" fill="currentColor">
@@ -87,7 +87,7 @@
                     </button>
                 </div>
             </div>
-            <div id="mobile-menu" class="hidden pt-4 pb-2 border-t border-mediumgray mt-4">
+            <div id="mobile-menu" class="hidden md:hidden pt-4 pb-2 border-t border-mediumgray mt-4">
                 <div class="flex flex-col space-y-2">
                     <a href="#home" class="text-darkgray hover:text-charcoal transition-colors duration-300 font-medium py-2">Home</a>
                     <a href="#services" class="text-darkgray hover:text-charcoal transition-colors duration-300 font-medium py-2">Services</a>
@@ -113,7 +113,7 @@
     <main id="main-content">
 
     <!-- Hero Section -->
-        <section id="home" class="hero-section bg-charcoal hero-pattern text-white py-16 md:py-24">
+        <section id="home" class="hero-section bg-charcoal hero-pattern text-white py-16 md:py-24 overflow-hidden">
         <div class="container mx-auto px-4 md:px-6">
             <div class="max-w-3xl mx-auto text-center">
                 <h1 class="text-3xl sm:text-4xl md:text-5xl font-light mb-4 md:mb-6 leading-tight">Professional Notary Services with Integrity</h1>
@@ -311,7 +311,7 @@
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
                 <!-- Service 1 -->
-                <div class="service-card bg-lightgray p-6 md:p-8 rounded-sm shadow-sm transition-all duration-300 hover-lift flex flex-col h-full">
+                <div class="service-card bg-lightgray p-6 md:p-8 rounded-sm shadow-sm transition-transform duration-300 hover:-translate-y-1 hover:shadow-md flex flex-col h-full">
                     <div class="mb-4 md:mb-6">
                         <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 md:h-12 md:w-12 text-charcoal" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
@@ -330,7 +330,7 @@
                 </div>
                 
                 <!-- Service 2 -->
-                <div class="service-card bg-lightgray p-6 md:p-8 rounded-sm shadow-sm transition-all duration-300 hover-lift flex flex-col h-full">
+                <div class="service-card bg-lightgray p-6 md:p-8 rounded-sm shadow-sm transition-transform duration-300 hover:-translate-y-1 hover:shadow-md flex flex-col h-full">
                     <div class="mb-4 md:mb-6">
                         <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 md:h-12 md:w-12 text-charcoal" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2" />
@@ -349,7 +349,7 @@
                 </div>
                 
                 <!-- Service 3 -->
-                <div class="service-card bg-lightgray p-6 md:p-8 rounded-sm shadow-sm transition-all duration-300 hover-lift flex flex-col h-full">
+                <div class="service-card bg-lightgray p-6 md:p-8 rounded-sm shadow-sm transition-transform duration-300 hover:-translate-y-1 hover:shadow-md flex flex-col h-full">
                     <div class="mb-4 md:mb-6">
                         <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 md:h-12 md:w-12 text-charcoal" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z" />
@@ -376,7 +376,7 @@
                 </div>
                 
                 <div class="max-w-3xl mx-auto">
-                    <div class="bg-white p-6 rounded-sm shadow-sm hover-lift">
+                    <div class="bg-white p-6 rounded-sm shadow-sm transition-transform duration-300 hover:-translate-y-1 hover:shadow-md">
                         <div id="document-verification-tool">
                             <div id="upload-section" class="animate-slide-up">
                                 <div class="border-2 border-dashed border-mediumgray rounded-sm p-8 text-center cursor-pointer hover:border-charcoal transition-colors duration-300 flex flex-col items-center justify-center bg-white min-h-[250px] box-border w-full" id="drop-zone" tabindex="0">
@@ -1008,7 +1008,7 @@
 
 
     <!-- Floating Book Now Button -->
-    <a href="#contact" class="floating-button bg-charcoal text-white px-4 sm:px-6 py-2 sm:py-3 rounded-full flex items-center shadow-lg">
+    <a href="#contact" class="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-40 bg-charcoal text-white px-4 sm:px-6 py-2 sm:py-3 rounded-full flex items-center shadow-lg hover:shadow-xl transition-shadow">
         <span class="mr-2 text-sm sm:text-base">Book Now</span>
         <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 sm:h-5 sm:w-5" viewBox="0 0 20 20" fill="currentColor">
             <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v3.586L7.707 9.293a1 1 0 00-1.414 1.414l3 3a1 1 0 001.414 0l3-3a1 1 0 00-1.414-1.414L11 10.586V7z" clip-rule="evenodd" />
