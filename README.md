@@ -24,6 +24,14 @@ npm test
 npm run build
 ```
 
+## Formatting
+
+Ensure source files follow the project's style guide:
+
+```bash
+npm run format
+```
+
 ## Viewing the Site
 
 After running `npm run build`, open `dist/index.html` in your browser to preview the compiled site.
