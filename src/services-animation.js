@@ -16,6 +16,8 @@ export function initServiceAnimations() {
           ease: 'power3.out',
         });
       });
+    } else {
+      console.warn("GSAP or ScrollTrigger not loaded.");
     }
   });
 }
