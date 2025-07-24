@@ -18,6 +18,8 @@ test('static headers', async () => {
   assert.equal(res.status, 200);
   assert.ok(res.headers.get('cache-control'));
   assert.ok(res.headers.get('content-security-policy'));
+  assert.ok(res.headers.get('referrer-policy'));
+  assert.ok(res.headers.get('permissions-policy'));
 });
 
 test('forms expose live regions', async () => {
