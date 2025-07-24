@@ -1,6 +1,7 @@
-// IntersectionObserver-based stacking effect ensures smooth behavior
-// even if GSAP fails to initialize. This keeps dependencies minimal
-// and respects user motion preferences.
+// Apply a scroll-driven stacking effect using CSS sticky positioning.
+// Cards offset by index remain stacked as the user scrolls down and
+// naturally unstack when scrolling back up. This keeps dependencies
+// minimal and respects reduced-motion preferences.
 
 export function initServiceCardStack() {
   if (typeof window === 'undefined') return;
@@ -16,41 +17,11 @@ export function initServiceCardStack() {
   const rootFont = parseFloat(
     getComputedStyle(document.documentElement).fontSize,
   );
-  const step = 1.5 * rootFont; // 1.5rem
-
-  const indexMap = new Map();
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        const card = entry.target;
-        const idx = indexMap.get(card);
-        if (entry.isIntersecting) {
-          applyStack(card, idx * step, idx + 1);
-        } else if (entry.boundingClientRect.top > 0) {
-          removeStack(card);
-        }
-      });
-    },
-    {
-      rootMargin: '0px 0px -20% 0px',
-      threshold: 0,
-    },
-  );
+  const step = 2.5 * rootFont; // 2.5rem offset for visible stacking
 
   cards.forEach((card, index) => {
-    indexMap.set(card, index);
-    observer.observe(card);
+    card.style.position = 'sticky';
+    card.style.top = `${index * step}px`;
+    card.style.zIndex = String(cards.length - index);
   });
-}
-
-function applyStack(el, y, z) {
-  el.style.transform = `translateY(${-y}px)`;
-  el.style.zIndex = z;
-  el.classList.add('stacked');
-}
-
-function removeStack(el) {
-  el.style.transform = '';
-  el.style.zIndex = '';
-  el.classList.remove('stacked');
 }
