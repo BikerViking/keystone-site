@@ -5,6 +5,7 @@ import { initClientPortal } from './portal.js';
 import { initDocumentVerification } from './src/document-verification.js';
 import { initHeroAnimations } from './src/hero-animation.js';
 import { initScrollAnimations } from './src/scrollAnimations.js';
+import { initServiceCardStack } from './src/service-card-stack.js';
 initTheme();
 initHeroAnimations();
 
@@ -247,4 +248,5 @@ document.addEventListener('DOMContentLoaded', () => {
   initClientPortal();
   initDocumentVerification();
   initScrollAnimations();
+  initServiceCardStack();
 });

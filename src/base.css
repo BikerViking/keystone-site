@@ -45,8 +45,6 @@ img,svg{vertical-align:middle;max-width:100%;height:auto;}
             padding-right: 1rem;
         }
         
-        }
-        
         /* Explicit color definitions */
         .bg-charcoal, [class*="bg-charcoal"] {
             background-color: #333333 !important;
@@ -463,21 +461,18 @@ html.dark [class*="bg-platinum"] {
             box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
         }
 
-        /* Layered stacking effect for service cards */
+        /* Scroll-triggered stacking effect */
         .stacked-services .service-card {
             position: relative;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-        .stacked-services .service-card:nth-child(2) { margin-top: -1.5rem; z-index: 5; }
-        .stacked-services .service-card:nth-child(3) { margin-top: -3rem; z-index: 4; }
-        .stacked-services .service-card:nth-child(4) { margin-top: -4.5rem; z-index: 3; }
-        .stacked-services .service-card:nth-child(5) { margin-top: -6rem; z-index: 2; }
-        .stacked-services .service-card:nth-child(6) { margin-top: -7.5rem; z-index: 1; }
+        .stacked-services .service-card.stacked {
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.15);
+        }
         .stacked-services .service-card:hover,
         .stacked-services .service-card:focus-within {
             transform: translateY(-4px) scale(1.02);
             box-shadow: 0 12px 30px -5px rgba(0, 0, 0, 0.2);
-            z-index: 6;
         }
         #progress-bar { width: 0%; }
 
