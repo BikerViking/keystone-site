@@ -20,4 +20,6 @@ copyFileSync('dist/styles.css', 'styles.css');
 
 execSync('npx esbuild main.js --bundle --minify --outfile=dist/main.js', { stdio: 'inherit' });
 
+copyFileSync('dist/main.js', 'main.js');
+
 
