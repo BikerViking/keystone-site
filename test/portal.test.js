@@ -48,7 +48,7 @@ test.afterEach(() => {
 });
 
 test('initClientPortal opens and closes modal', () => {
-  const dom = setupDom();
+  setupDom();
   const { initClientPortal } = loadModule('portal.js');
   initClientPortal();
 
