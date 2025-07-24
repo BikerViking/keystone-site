@@ -66,7 +66,7 @@
     <!-- Client Portal Modal -->
     <div id="client-portal-modal" role="dialog" aria-modal="true" class="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center hidden overflow-y-auto">
         <div class="bg-white rounded-sm p-4 sm:p-6 md:p-8 w-full mx-4 my-4 sm:my-0 relative max-w-[500px] shadow-lg">
-            <button id="close-modal" class="absolute top-3 sm:top-4 right-3 sm:right-4 text-darkgray hover:text-charcoal p-1" aria-label="Close modal">
+            <button type="button" id="close-modal" class="absolute top-3 sm:top-4 right-3 sm:right-4 text-darkgray hover:text-charcoal p-1" aria-label="Close modal">
                 <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 sm:h-6 sm:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
                 </svg>
@@ -146,7 +146,7 @@
             <div id="portal-section" class="hidden">
                 <div class="flex justify-between items-center mb-6">
                     <h3 class="text-2xl font-light text-charcoal">Welcome, <span id="user-name">Client</span></h3>
-                    <button id="logout-btn" class="text-sm text-charcoal hover:underline">Sign Out</button>
+                    <button type="button" id="logout-btn" class="text-sm text-charcoal hover:underline">Sign Out</button>
                 </div>
                 
                 <div class="mb-8">
@@ -197,7 +197,7 @@
                                 </div>
                             </div>
                         </div>
-                        <button id="upload-document" class="text-charcoal hover:underline text-sm flex items-center">
+                        <button type="button" id="upload-document" class="text-charcoal hover:underline text-sm flex items-center">
                             <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" viewBox="0 0 20 20" fill="currentColor">
                                 <path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM6.293 6.707a1 1 0 010-1.414l3-3a1 1 0 011.414 0l3 3a1 1 0 01-1.414 1.414L11 5.414V13a1 1 0 11-2 0V5.414L7.707 6.707a1 1 0 01-1.414 0z" clip-rule="evenodd" />
                             </svg>
@@ -412,13 +412,13 @@
                     <!-- Appointment Scheduler -->
                     <div class="bg-lightgray p-4 md:p-6 rounded-sm mb-6 md:mb-8 max-w-sm mx-auto">
                         <div class="flex justify-between items-center mb-4 md:mb-6">
-                            <button id="prev-month" class="text-charcoal hover:text-darkgray focus:outline-none p-2" aria-label="Previous month">
+                            <button type="button" id="prev-month" class="text-charcoal hover:text-darkgray focus:outline-none p-2" aria-label="Previous month">
                                 <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                                     <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
                                 </svg>
                             </button>
                             <h4 id="current-month" class="text-base md:text-lg font-medium text-charcoal"></h4>
-                            <button id="next-month" class="text-charcoal hover:text-darkgray focus:outline-none p-2" aria-label="Next month">
+                            <button type="button" id="next-month" class="text-charcoal hover:text-darkgray focus:outline-none p-2" aria-label="Next month">
                                 <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                                     <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
                                 </svg>
