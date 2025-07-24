@@ -4,20 +4,18 @@ export function initScrollAnimations() {
   const elements = document.querySelectorAll('[data-animate]');
   if (!elements.length) return;
 
-  // Skip animations entirely for users who prefer reduced motion
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    return;
+  const prefersReducedMotion =
+    window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Respect user preference or lack of IntersectionObserver support
+  if (prefersReducedMotion || !('IntersectionObserver' in window)) {
+    return; // Leave elements unmodified
   }
 
-  // Fallback: immediately apply classes if IntersectionObserver unsupported
-  if (!('IntersectionObserver' in window)) {
-    elements.forEach((el) => {
-      const cls = el.dataset.animate;
-      if (cls) el.classList.add(cls);
-    });
-    return;
-  }
+  startAnimations(elements);
+}
 
+function startAnimations(elements) {
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
