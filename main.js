@@ -4,7 +4,7 @@ import { initClientPortal } from './portal.js';
 
 import { initDocumentVerification } from './src/document-verification.js';
 import { initHeroAnimations } from './src/hero-animation.js';
-import { initScrollMotion } from './src/scrollMotion.js';
+import { initScrollAnimations } from './src/scrollAnimations.js';
 initTheme();
 initHeroAnimations();
 
@@ -246,5 +246,5 @@ document.addEventListener('DOMContentLoaded', () => {
   initCalendar();
   initClientPortal();
   initDocumentVerification();
-  initScrollMotion();
+  initScrollAnimations();
 });
