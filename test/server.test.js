@@ -2,9 +2,11 @@ const test = require('node:test');
 const assert = require('node:assert/strict');
 const app = require('../server.js');
 const fs = require('node:fs');
+const { execSync } = require('node:child_process');
 let server;
 
 test.before(() => {
+  execSync('node build.js');
   server = app.listen(0);
 });
 

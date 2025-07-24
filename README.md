@@ -23,3 +23,7 @@ Run unit tests and build validation:
 npm test
 npm run build
 ```
+
+## Viewing the Site
+
+After running `npm run build`, open `dist/index.html` in your browser to preview the compiled site.
