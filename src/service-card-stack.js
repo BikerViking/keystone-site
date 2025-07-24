@@ -1,5 +1,6 @@
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+// IntersectionObserver-based stacking effect ensures smooth behavior
+// even if GSAP fails to initialize. This keeps dependencies minimal
+// and respects user motion preferences.
 
 export function initServiceCardStack() {
   if (typeof window === 'undefined') return;
@@ -12,39 +13,44 @@ export function initServiceCardStack() {
   const cards = document.querySelectorAll('.stacked-services .service-card');
   if (!cards.length) return;
 
-  gsap.registerPlugin(ScrollTrigger);
   const rootFont = parseFloat(
     getComputedStyle(document.documentElement).fontSize,
   );
   const step = 1.5 * rootFont; // 1.5rem
 
+  const indexMap = new Map();
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        const card = entry.target;
+        const idx = indexMap.get(card);
+        if (entry.isIntersecting) {
+          applyStack(card, idx * step, idx + 1);
+        } else if (entry.boundingClientRect.top > 0) {
+          removeStack(card);
+        }
+      });
+    },
+    {
+      rootMargin: '0px 0px -20% 0px',
+      threshold: 0,
+    },
+  );
+
   cards.forEach((card, index) => {
-    const offset = index * step;
-    ScrollTrigger.create({
-      trigger: card,
-      start: 'top 80%',
-      onEnter: () => applyStack(card, offset, index + 1),
-      onLeaveBack: () => removeStack(card),
-    });
+    indexMap.set(card, index);
+    observer.observe(card);
   });
 }
 
 function applyStack(el, y, z) {
-  gsap.to(el, {
-    y: -y,
-    zIndex: z,
-    boxShadow: '0 10px 25px -5px rgba(0,0,0,0.15)',
-    duration: 0.3,
-    overwrite: 'auto',
-  });
+  el.style.transform = `translateY(${-y}px)`;
+  el.style.zIndex = z;
+  el.classList.add('stacked');
 }
 
 function removeStack(el) {
-  gsap.to(el, {
-    y: 0,
-    zIndex: 0,
-    boxShadow: 'none',
-    duration: 0.3,
-    overwrite: 'auto',
-  });
+  el.style.transform = '';
+  el.style.zIndex = '';
+  el.classList.remove('stacked');
 }
