@@ -116,6 +116,7 @@
       </div>
       <div class="flex items-center md:hidden space-x-4">
         <button
+          type="button"
           id="menu-button"
           class="text-charcoal focus:outline-none md:hidden"
           aria-label="Toggle menu"
@@ -181,6 +182,7 @@
 </nav>
 
 <button
+  type="button"
   id="theme-toggle"
   class="theme-toggle-btn"
   aria-label="Toggle dark mode"
@@ -222,7 +224,7 @@
                     <a href="#services" class="border border-white text-white px-6 md:px-8 py-3 rounded-sm hover:bg-white hover:text-charcoal transition-colors duration-300 font-medium text-center">Our Services</a>
                 </div>
                 <div class="mt-8">
-                    <button id="client-login-btn" class="flex items-center mx-auto text-platinum hover:text-white transition-colors duration-300">
+                    <button type="button" id="client-login-btn" class="flex items-center mx-auto text-platinum hover:text-white transition-colors duration-300">
                         <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
                             <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-6-3a2 2 0 11-4 0 2 2 0 014 0zm-2 4a5 5 0 00-4.546 2.916A5.986 5.986 0 0010 16a5.986 5.986 0 004.546-2.084A5 5 0 0010 11z" clip-rule="evenodd" />
                         </svg>
@@ -237,7 +239,7 @@
     <!-- Client Portal Modal -->
     <div id="client-portal-modal" role="dialog" aria-modal="true" class="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center hidden overflow-y-auto">
         <div class="bg-white rounded-sm p-4 sm:p-6 md:p-8 w-full mx-4 my-4 sm:my-0 relative max-w-[500px] shadow-lg">
-            <button id="close-modal" class="absolute top-3 sm:top-4 right-3 sm:right-4 text-darkgray hover:text-charcoal p-1" aria-label="Close modal">
+            <button type="button" id="close-modal" class="absolute top-3 sm:top-4 right-3 sm:right-4 text-darkgray hover:text-charcoal p-1" aria-label="Close modal">
                 <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 sm:h-6 sm:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
                 </svg>
@@ -317,7 +319,7 @@
             <div id="portal-section" class="hidden">
                 <div class="flex justify-between items-center mb-6">
                     <h3 class="text-2xl font-light text-charcoal">Welcome, <span id="user-name">Client</span></h3>
-                    <button id="logout-btn" class="text-sm text-charcoal hover:underline">Sign Out</button>
+                    <button type="button" id="logout-btn" class="text-sm text-charcoal hover:underline">Sign Out</button>
                 </div>
                 
                 <div class="mb-8">
@@ -368,7 +370,7 @@
                                 </div>
                             </div>
                         </div>
-                        <button id="upload-document" class="text-charcoal hover:underline text-sm flex items-center">
+                        <button type="button" id="upload-document" class="text-charcoal hover:underline text-sm flex items-center">
                             <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" viewBox="0 0 20 20" fill="currentColor">
                                 <path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM6.293 6.707a1 1 0 010-1.414l3-3a1 1 0 011.414 0l3 3a1 1 0 01-1.414 1.414L11 5.414V13a1 1 0 11-2 0V5.414L7.707 6.707a1 1 0 01-1.414 0z" clip-rule="evenodd" />
                             </svg>
@@ -730,7 +732,7 @@
                 <div class="space-y-6">
                     <!-- FAQ Item 1 -->
                     <div class="faq-item border-b border-mediumgray pb-6 opacity-0 fade-in fade-in-1">
-                        <button class="faq-question w-full flex justify-between items-center text-left focus:outline-none">
+                        <button type="button" class="faq-question w-full flex justify-between items-center text-left focus:outline-none">
                             <h3 class="text-lg font-medium text-charcoal">What documents can a notary public notarize?</h3>
                             <svg aria-hidden="true" class="faq-arrow h-5 w-5 text-charcoal transform transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                                 <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
@@ -753,7 +755,7 @@
                     
                     <!-- FAQ Item 2 -->
                     <div class="faq-item border-b border-mediumgray pb-6 opacity-0 fade-in fade-in-2">
-                        <button class="faq-question w-full flex justify-between items-center text-left focus:outline-none">
+                        <button type="button" class="faq-question w-full flex justify-between items-center text-left focus:outline-none">
                             <h3 class="text-lg font-medium text-charcoal">What identification is required for notarization?</h3>
                             <svg aria-hidden="true" class="faq-arrow h-5 w-5 text-charcoal transform transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                                 <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
@@ -773,7 +775,7 @@
                     
                     <!-- FAQ Item 3 -->
                     <div class="faq-item border-b border-mediumgray pb-6 opacity-0 fade-in fade-in-3">
-                        <button class="faq-question w-full flex justify-between items-center text-left focus:outline-none">
+                        <button type="button" class="faq-question w-full flex justify-between items-center text-left focus:outline-none">
                             <h3 class="text-lg font-medium text-charcoal">Do I need to sign the document in front of the notary?</h3>
                             <svg aria-hidden="true" class="faq-arrow h-5 w-5 text-charcoal transform transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                                 <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
@@ -788,7 +790,7 @@
                     
                     <!-- FAQ Item 4 -->
                     <div class="faq-item border-b border-mediumgray pb-6 opacity-0 fade-in fade-in-4">
-                        <button class="faq-question w-full flex justify-between items-center text-left focus:outline-none">
+                        <button type="button" class="faq-question w-full flex justify-between items-center text-left focus:outline-none">
                             <h3 class="text-lg font-medium text-charcoal">How much does notary service cost?</h3>
                             <svg aria-hidden="true" class="faq-arrow h-5 w-5 text-charcoal transform transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                                 <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
@@ -842,7 +844,7 @@
                     
                     <!-- FAQ Item 5 -->
                     <div class="faq-item border-b border-mediumgray pb-6 opacity-0 fade-in fade-in-5">
-                        <button class="faq-question w-full flex justify-between items-center text-left focus:outline-none">
+                        <button type="button" class="faq-question w-full flex justify-between items-center text-left focus:outline-none">
                             <h3 class="text-lg font-medium text-charcoal">Can you notarize documents in languages other than English?</h3>
                             <svg aria-hidden="true" class="faq-arrow h-5 w-5 text-charcoal transform transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                                 <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
@@ -883,13 +885,13 @@
                     <!-- Appointment Scheduler -->
                     <div class="bg-lightgray p-4 md:p-6 rounded-sm mb-6 md:mb-8 max-w-sm mx-auto">
                         <div class="flex justify-between items-center mb-4 md:mb-6">
-                            <button id="prev-month" class="text-charcoal hover:text-darkgray focus:outline-none p-2" aria-label="Previous month">
+                            <button type="button" id="prev-month" class="text-charcoal hover:text-darkgray focus:outline-none p-2" aria-label="Previous month">
                                 <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                                     <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
                                 </svg>
                             </button>
                             <h4 id="current-month" class="text-base md:text-lg font-medium text-charcoal"></h4>
-                            <button id="next-month" class="text-charcoal hover:text-darkgray focus:outline-none p-2" aria-label="Next month">
+                            <button type="button" id="next-month" class="text-charcoal hover:text-darkgray focus:outline-none p-2" aria-label="Next month">
                                 <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                                     <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
                                 </svg>
