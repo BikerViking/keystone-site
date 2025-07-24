@@ -11,7 +11,9 @@ export function initServiceCardStack() {
   ).matches;
   if (prefersReducedMotion) return;
 
-  const cards = document.querySelectorAll('.stacked-services .service-card');
+  const container = document.querySelector('.stacked-services');
+  if (!container) return;
+  const cards = container.querySelectorAll('.service-card');
   if (!cards.length) return;
 
   const rootFont = parseFloat(
@@ -19,6 +21,7 @@ export function initServiceCardStack() {
   );
   const step = 2.5 * rootFont; // 2.5rem offset for visible stacking
 
+  container.classList.add('relative');
   cards.forEach((card, index) => {
     card.style.position = 'sticky';
     card.style.setProperty('top', `${index * step}px`);
