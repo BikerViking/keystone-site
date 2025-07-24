@@ -24,6 +24,9 @@ app.use(express.static(staticDir, {
     );
   },
 }));
+app.use((req, res) => {
+  res.status(404).sendFile(path.join(staticDir, 'index.html'));
+});
 if (require.main === module) {
   app.listen(PORT);
 }
