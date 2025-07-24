@@ -3,7 +3,9 @@ import { initCalendar, resetAppointmentForm } from './calendar.js';
 import { initClientPortal } from './portal.js';
 
 import { initDocumentVerification } from './src/document-verification.js';
+import { initServiceAnimations } from './src/services-animation.js';
 initTheme();
+initServiceAnimations();
 
         // Mobile menu toggle
         const menuButton = document.getElementById('menu-button');
