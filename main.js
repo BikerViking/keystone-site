@@ -6,8 +6,6 @@ import { initDocumentVerification } from './src/document-verification.js';
 import { initHeroAnimations } from './src/hero-animation.js';
 import { initScrollAnimations } from './src/scrollAnimations.js';
 import { initServiceCardStack } from './src/service-card-stack.js';
-initTheme();
-initHeroAnimations();
 
 // Mobile menu toggle
 const menuButton = document.getElementById('menu-button');
@@ -244,6 +242,8 @@ document.querySelectorAll('.faq-question').forEach((question) => {
 
 // Initialize site features
 document.addEventListener('DOMContentLoaded', () => {
+  initTheme();
+  initHeroAnimations();
   initCalendar();
   initClientPortal();
   initDocumentVerification();
