@@ -7,7 +7,7 @@
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
                 <!-- Service 1 -->
-                <div class="service-card bg-lightgray p-6 md:p-8 rounded-sm shadow-sm transition-all duration-300 hover-lift flex flex-col h-full">
+                <div class="service-card bg-lightgray p-6 md:p-8 rounded-sm shadow-sm transition-transform duration-300 hover:-translate-y-1 hover:shadow-lg hover:ring-1 hover:ring-black/10 flex flex-col h-full">
                     <div class="mb-4 md:mb-6">
                         <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 md:h-12 md:w-12 text-charcoal" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
@@ -26,7 +26,7 @@
                 </div>
                 
                 <!-- Service 2 -->
-                <div class="service-card bg-lightgray p-6 md:p-8 rounded-sm shadow-sm transition-all duration-300 hover-lift flex flex-col h-full">
+                <div class="service-card bg-lightgray p-6 md:p-8 rounded-sm shadow-sm transition-transform duration-300 hover:-translate-y-1 hover:shadow-lg hover:ring-1 hover:ring-black/10 flex flex-col h-full">
                     <div class="mb-4 md:mb-6">
                         <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 md:h-12 md:w-12 text-charcoal" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2" />
@@ -45,7 +45,7 @@
                 </div>
                 
                 <!-- Service 3 -->
-                <div class="service-card bg-lightgray p-6 md:p-8 rounded-sm shadow-sm transition-all duration-300 hover-lift flex flex-col h-full">
+                <div class="service-card bg-lightgray p-6 md:p-8 rounded-sm shadow-sm transition-transform duration-300 hover:-translate-y-1 hover:shadow-lg hover:ring-1 hover:ring-black/10 flex flex-col h-full">
                     <div class="mb-4 md:mb-6">
                         <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 md:h-12 md:w-12 text-charcoal" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z" />
@@ -152,3 +152,23 @@
             </div>
         </div>
     </section>
+
+<!-- Animate service cards on scroll -->
+<script>
+  window.addEventListener('DOMContentLoaded', () => {
+    gsap.utils.toArray('.service-card').forEach((card, i) => {
+      gsap.from(card, {
+        scrollTrigger: {
+          trigger: card,
+          start: 'top 90%',
+          toggleActions: 'play none none none'
+        },
+        y: 40,
+        opacity: 0,
+        duration: 0.8,
+        delay: i * 0.15,
+        ease: 'power3.out'
+      });
+    });
+  });
+</script>
