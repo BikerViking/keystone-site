@@ -45,4 +45,20 @@ export function initTheme() {
   if (btn) {
     btn.addEventListener('click', toggleTheme);
   }
+
+  if (!stored) {
+    window
+      .matchMedia('(prefers-color-scheme: dark)')
+      .addEventListener('change', (e) => {
+        document.documentElement.classList.toggle('dark', e.matches);
+        if (sunIcon && moonIcon) {
+          sunIcon.classList.toggle('hidden', !e.matches);
+          moonIcon.classList.toggle('hidden', e.matches);
+        }
+        if (btn) {
+          btn.setAttribute('aria-pressed', String(e.matches));
+        }
+        setThemeAttributes(e.matches);
+      });
+  }
 }

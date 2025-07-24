@@ -21,7 +21,7 @@ export function initServiceCardStack() {
 
   cards.forEach((card, index) => {
     card.style.position = 'sticky';
-    card.style.top = `${index * step}px`;
-    card.style.zIndex = String(cards.length - index);
+    card.style.setProperty('top', `${index * step}px`);
+    card.style.setProperty('z-index', `${cards.length - index}`);
   });
 }
