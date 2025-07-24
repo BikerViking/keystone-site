@@ -38,3 +38,9 @@ test('no inline styles remain', async () => {
   const html = await fs.promises.readFile('index.html', 'utf8');
   assert.equal(html.includes('style="'), false);
 });
+
+test('returns 404 for unknown routes', async () => {
+  const { port } = server.address();
+  const res = await fetch(`http://localhost:${port}/missing-page`);
+  assert.equal(res.status, 404);
+});
