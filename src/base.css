@@ -45,79 +45,6 @@ img,svg{vertical-align:middle;max-width:100%;height:auto;}
             padding-right: 1rem;
         }
         
-        /* Responsive fixes */
-        @media (min-width: 768px) {
-            .hidden.md\:flex {
-                display: flex !important;
-            }
-            .md\:hidden {
-                display: none !important;
-            }
-            .md\:grid-cols-2 {
-                grid-template-columns: repeat(2, minmax(0, 1fr));
-            }
-            .md\:grid-cols-3 {
-                grid-template-columns: repeat(3, minmax(0, 1fr));
-            }
-        }
-        
-        @media (max-width: 767px) {
-            .md\:hidden {
-                display: block !important;
-            }
-            .hidden.md\:flex {
-                display: none !important;
-            }
-            .grid-cols-1 {
-                grid-template-columns: repeat(1, minmax(0, 1fr));
-            }
-        }
-        
-        /* Grid fallbacks */
-        .grid {
-            display: grid;
-        }
-        .grid-cols-1 {
-            grid-template-columns: repeat(1, minmax(0, 1fr));
-        }
-        .grid-cols-2 {
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-        }
-        .grid-cols-3 {
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-        }
-        .grid-cols-7 {
-            grid-template-columns: repeat(7, minmax(0, 1fr));
-        }
-        
-        @media (max-width: 640px) {
-            .sm\:grid-cols-2 {
-                grid-template-columns: repeat(1, minmax(0, 1fr));
-            }
-            .sm\:grid-cols-3 {
-                grid-template-columns: repeat(1, minmax(0, 1fr));
-            }
-        }
-        
-        @media (min-width: 641px) {
-            .sm\:grid-cols-2 {
-                grid-template-columns: repeat(2, minmax(0, 1fr));
-            }
-            .sm\:grid-cols-3 {
-                grid-template-columns: repeat(3, minmax(0, 1fr));
-            }
-        }
-        .gap-1 {
-            gap: 0.25rem;
-        }
-        .gap-4 {
-            gap: 1rem;
-        }
-        .gap-6 {
-            gap: 1.5rem;
-        }
-        .gap-8 {
-            gap: 2rem;
         }
         
         /* Explicit color definitions */
@@ -237,19 +164,6 @@ html.dark [class*="bg-platinum"] {
             height: auto;
         }
         
-        /* Ensure icons have proper dimensions */
-        .h-4 { height: 1rem !important; }
-        .w-4 { width: 1rem !important; }
-        .h-5 { height: 1.25rem !important; }
-        .w-5 { width: 1.25rem !important; }
-        .h-6 { height: 1.5rem !important; }
-        .w-6 { width: 1.5rem !important; }
-        .h-8 { height: 2rem !important; }
-        .w-8 { width: 2rem !important; }
-        .h-10 { height: 2.5rem !important; }
-        .w-10 { width: 2.5rem !important; }
-        .h-12 { height: 3rem !important; }
-        .w-12 { width: 3rem !important; }
         
         .nav-link {
             position: relative;
