@@ -462,8 +462,16 @@ html.dark [class*="bg-platinum"] {
         }
 
         /* Scroll-triggered stacking effect */
+        .stacked-services {
+            position: relative;
+            min-height: 200vh;
+            padding: 2rem 0;
+        }
         .stacked-services .service-card {
-            transition: box-shadow 0.3s ease;
+            width: 90%;
+            max-width: 600px;
+            margin: 0 auto;
+            transition: transform 0.4s ease-out;
         }
         .stacked-services .service-card:hover,
         .stacked-services .service-card:focus-within {
