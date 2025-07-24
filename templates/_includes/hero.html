@@ -1,61 +1,27 @@
 <!-- Hero Section -->
-<section id="home" class="hero-section bg-charcoal hero-pattern text-white py-16 md:py-24 overflow-hidden">
+<section
+  id="home"
+  class="hero-section bg-charcoal hero-pattern text-white py-16 md:py-24 overflow-hidden"
+>
   <div class="container mx-auto px-4 md:px-6">
     <div class="max-w-3xl mx-auto text-center">
-      <h1 class="hero-title text-3xl sm:text-4xl md:text-5xl font-light mb-4 md:mb-6 leading-tight">
+      <h1
+        class="hero-title text-3xl sm:text-4xl md:text-5xl font-light mb-4 md:mb-6 leading-tight"
+      >
         Professional Notary Services with Integrity
       </h1>
-      <p class="hero-subtitle text-base sm:text-lg md:text-xl text-platinum mb-8 md:mb-10 font-light px-2">
-        Insured mobile notaries commissioned in Pennsylvania and NNA Certified Signing Agents, providing prompt, reliable service at your location.
+      <p
+        class="hero-subtitle text-base sm:text-lg md:text-xl text-platinum mb-8 md:mb-10 font-light px-2"
+      >
+        Insured mobile notaries commissioned in Pennsylvania and NNA Certified
+        Signing Agents, providing prompt, reliable service at your location.
       </p>
-      <a href="#contact" class="hero-cta inline-block bg-black text-white px-6 py-3 rounded-sm shadow-sm transition-all duration-300 hover:bg-white hover:text-black">
+      <a
+        href="#contact"
+        class="hero-cta inline-block bg-black text-white px-6 py-3 rounded-sm shadow-sm transition-all duration-300 hover:bg-white hover:text-black"
+      >
         Schedule Appointment
       </a>
     </div>
   </div>
 </section>
-
-<!-- Animate on scroll -->
-<script>
-  window.addEventListener('DOMContentLoaded', () => {
-    gsap.registerPlugin(ScrollTrigger);
-
-    gsap.from('.hero-title', {
-      scrollTrigger: {
-        trigger: '.hero-title',
-        start: 'top 80%',
-        toggleActions: 'play none none none'
-      },
-      y: 40,
-      opacity: 0,
-      duration: 1.2,
-      ease: 'power3.out'
-    });
-
-    gsap.from('.hero-subtitle', {
-      scrollTrigger: {
-        trigger: '.hero-subtitle',
-        start: 'top 85%',
-        toggleActions: 'play none none none'
-      },
-      y: 30,
-      opacity: 0,
-      duration: 1.2,
-      delay: 0.2,
-      ease: 'power3.out'
-    });
-
-    gsap.from('.hero-cta', {
-      scrollTrigger: {
-        trigger: '.hero-cta',
-        start: 'top 90%',
-        toggleActions: 'play none none none'
-      },
-      y: 20,
-      opacity: 0,
-      duration: 1,
-      delay: 0.4,
-      ease: 'power2.out'
-    });
-  });
-</script>

@@ -1,9 +1,7 @@
-/* global gsap, ScrollTrigger */
-export function initServiceAnimations() {
-  if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') {
-    return;
-  }
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
+export function initServiceAnimations() {
   gsap.registerPlugin(ScrollTrigger);
   gsap.utils.toArray('.service-card').forEach((card, index) => {
     gsap.fromTo(
@@ -20,7 +18,7 @@ export function initServiceAnimations() {
           start: 'top 90%',
           toggleActions: 'play none none none',
         },
-      }
+      },
     );
   });
 }
