@@ -1,24 +1,30 @@
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-
 export function initServiceAnimations() {
-  gsap.registerPlugin(ScrollTrigger);
-  gsap.utils.toArray('.service-card').forEach((card, index) => {
-    gsap.fromTo(
-      card,
-      { y: 40, opacity: 0 },
-      {
-        y: 0,
-        opacity: 1,
-        duration: 0.8,
-        delay: index * 0.15,
-        ease: 'power3.out',
-        scrollTrigger: {
-          trigger: card,
-          start: 'top 90%',
-          toggleActions: 'play none none none',
-        },
+  if (typeof window === 'undefined') return;
+
+  const cards = document.querySelectorAll('.service-card');
+  if (!cards.length) return;
+
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    cards.forEach((c) => c.classList.remove('opacity-0'));
+    return;
+  }
+
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.remove('opacity-0');
+            entry.target.classList.add('animate-slide-up');
+            observer.unobserve(entry.target);
+          }
+        });
       },
+      { threshold: 0.1 }
     );
-  });
+
+    cards.forEach((card) => observer.observe(card));
+  } else {
+    cards.forEach((c) => c.classList.remove('opacity-0'));
+  }
 }
