@@ -6,35 +6,15 @@ export function initDocumentVerification() {
   const verificationProgress = document.getElementById('verification-progress');
   const verificationResults = document.getElementById('verification-results');
   const progressBar = document.getElementById('progress-bar');
-  if (progressBar) {
-    progressBar.setAttribute('aria-valuenow', '0');
-  }
   const progressPercentage = document.getElementById('progress-percentage');
   const resultIcon = document.getElementById('result-icon');
   const resultStatus = document.getElementById('result-status');
-  const resultStatusContainer = document.getElementById('result-status-container');
   const documentType = document.getElementById('document-type');
   const requirementsList = document.getElementById('requirements-list');
   const recommendations = document.getElementById('recommendations');
   const verifyAnotherBtn = document.getElementById('verify-another');
 
-  if (
-    !dropZone ||
-    !fileInput ||
-    !browseFilesBtn ||
-    !uploadSection ||
-    !verificationProgress ||
-    !verificationResults ||
-    !progressBar ||
-    !progressPercentage ||
-    !resultIcon ||
-    !resultStatus ||
-    !resultStatusContainer ||
-    !documentType ||
-    !requirementsList ||
-    !recommendations ||
-    !verifyAnotherBtn
-  ) {
+  if (!dropZone || !fileInput || !browseFilesBtn) {
     return;
   }
 
@@ -136,13 +116,11 @@ export function initDocumentVerification() {
 
     uploadSection.classList.add('hidden');
     verificationProgress.classList.remove('hidden');
-    resultStatusContainer.setAttribute('aria-busy', 'true');
 
     let progress = 0;
     const interval = setInterval(() => {
       progress += 5;
       progressBar.style.width = `${progress}%`;
-      progressBar.setAttribute('aria-valuenow', String(progress));
       progressPercentage.textContent = `${progress}%`;
 
       if (progress >= 100) {
@@ -163,6 +141,7 @@ export function initDocumentVerification() {
     const issues = [];
 
     const resultStatusContainer = document.getElementById('result-status-container');
+    resultStatusContainer.setAttribute('aria-busy', 'false');
 
     if (fileName.includes('power') || fileName.includes('attorney')) {
       documentCategory = 'Power of Attorney';
@@ -260,7 +239,5 @@ export function initDocumentVerification() {
         <p class="mt-2">We recommend consulting with our notary professionals to ensure your document meets all requirements.</p>
       `;
     }
-
-    resultStatusContainer.setAttribute('aria-busy', 'false');
   }
 }
