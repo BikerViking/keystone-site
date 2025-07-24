@@ -3,10 +3,9 @@ import { initCalendar, resetAppointmentForm } from './calendar.js';
 import { initClientPortal } from './portal.js';
 
 import { initDocumentVerification } from './src/document-verification.js';
-import { initServiceAnimations } from './src/services-animation.js';
 import { initHeroAnimations } from './src/hero-animation.js';
+import { initScrollMotion } from './src/scrollMotion.js';
 initTheme();
-initServiceAnimations();
 initHeroAnimations();
 
 // Mobile menu toggle
@@ -242,46 +241,10 @@ document.querySelectorAll('.faq-question').forEach((question) => {
   });
 });
 
-// Animation for fade-in elements and initialization hooks
+// Initialize site features
 document.addEventListener('DOMContentLoaded', () => {
-  const fadeElements = document.querySelectorAll('.fade-in');
-
-  // Check if IntersectionObserver is supported
-  if ('IntersectionObserver' in window) {
-    // Create an intersection observer
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.remove('opacity-0');
-            entry.target.classList.add('opacity-100');
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      {
-        threshold: 0.1,
-      },
-    );
-
-    // Observe each fade element
-    fadeElements.forEach((element) => {
-      observer.observe(element);
-    });
-  } else {
-    // Fallback for browsers that don't support IntersectionObserver
-    fadeElements.forEach((element) => {
-      element.classList.remove('opacity-0');
-      element.classList.add('opacity-100');
-    });
-  }
-
-  // Initialize calendar
   initCalendar();
-
-  // Initialize client portal
   initClientPortal();
-
-  // Document verification tool
   initDocumentVerification();
+  initScrollMotion();
 });
