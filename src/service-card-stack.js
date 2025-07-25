@@ -1,7 +1,7 @@
-// Animate service cards into a vertical stack as the user scrolls.
-// IntersectionObserver drives the effect so each card smoothly
-// translates based on its visibility. Reduced-motion preferences
-// and unsupported browsers simply skip the animation.
+// Animate service cards into a vertical stack as the page scrolls.
+// Scrolling events update each card's position so it slides
+// smoothly into place. Reduced-motion preferences and
+// unsupported browsers simply skip the animation.
 
 export function initServiceCardStack() {
   if (typeof window === 'undefined') return;
