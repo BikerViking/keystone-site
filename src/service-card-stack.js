@@ -7,28 +7,23 @@ export function initServiceCardStack() {
   if (typeof window === 'undefined') return;
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
-  const container = document.querySelector('.stacked-services');
-  if (!container) return;
-
-  const cards = Array.from(container.querySelectorAll('.service-card'));
+  const cards = Array.from(document.querySelectorAll('.service-card'));
   if (!cards.length) return;
 
   gsap.registerPlugin(ScrollTrigger);
 
-  const spacing = 60; // offset between cards
-
-  cards.forEach((card, index) => {
+  cards.forEach((card) => {
     gsap.fromTo(
       card,
-      { y: index * spacing },
+      { y: 40, opacity: 0 },
       {
         y: 0,
+        opacity: 1,
         scrollTrigger: {
-          trigger: container,
-          start: 'top top',
-          end: `+=${spacing * (cards.length - 1)}`,
+          trigger: card,
+          start: 'top 80%',
+          end: 'top 50%',
           scrub: true,
-          pin: index === 0,
         },
       },
     );
