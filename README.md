@@ -40,6 +40,7 @@ After running `npm run build`, open `dist/index.html` in your browser to preview
 
 The service cards stack using a scroll animation. This effect is automatically
 disabled when your system's **Reduce Motion** setting is enabled, as detected by
-the `prefers-reduced-motion` media query. To see the animation in action,
-temporarily disable "Reduce Motion" in your operating system preferences and
-reload the page.
+the `prefers-reduced-motion` media query. If you don't see the animation,
+verify that "Reduce Motion" is turned off in your operating system. Temporarily
+disabling the setting and reloading the page lets you confirm the effect is
+working.
