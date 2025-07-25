@@ -6,44 +6,41 @@
 export function initServiceCardStack() {
   if (typeof window === 'undefined') return;
 
-  const prefersReducedMotion = window.matchMedia(
-    '(prefers-reduced-motion: reduce)'
-  ).matches;
-  if (prefersReducedMotion || !('IntersectionObserver' in window)) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
   const container = document.querySelector('.stacked-services');
   if (!container) return;
-  const cards = container.querySelectorAll('.service-card');
+  const cards = Array.from(container.querySelectorAll('.service-card'));
   if (!cards.length) return;
 
-  // Ensure the container has enough height for scrolling.
-  container.style.position = 'relative';
-  container.style.minHeight = '200vh';
-  container.style.padding = '2rem 0';
+  const spacing = 60; // px each card moves
 
-  // Position cards absolutely so they stack visually.
+  container.style.position = 'relative';
+  container.style.padding = '2rem 0';
+  container.style.height = `${window.innerHeight + spacing * (cards.length - 1)}px`;
+
   cards.forEach((card, index) => {
     card.style.position = 'absolute';
-    card.style.top = `${index * 50}px`;
+    card.style.top = '0';
     card.style.left = '0';
     card.style.right = '0';
     card.style.margin = '0 auto';
-    card.style.zIndex = `${cards.length - index}`;
+    card.style.zIndex = String(cards.length - index);
     card.style.transition = 'transform 0.4s ease-out';
   });
 
-  const thresholds = Array.from({ length: 100 }, (_, i) => i / 100);
-  const observer = new IntersectionObserver(
-    entries => {
-      entries.forEach(entry => {
-        const card = entry.target;
-        const idx = Array.from(cards).indexOf(card);
-        const progress = 1 - entry.intersectionRatio;
-        card.style.transform = `translateY(${progress * idx * 50}px)`;
-      });
-    },
-    { threshold: thresholds }
-  );
+  const update = () => {
+    const rect = container.getBoundingClientRect();
+    const progress = Math.min(
+      Math.max(-rect.top / (spacing * (cards.length - 1)), 0),
+      1
+    );
+    cards.forEach((card, idx) => {
+      card.style.transform = `translateY(${progress * idx * spacing}px)`;
+    });
+  };
 
-  cards.forEach(card => observer.observe(card));
+  update();
+  window.addEventListener('scroll', update, { passive: true });
+  window.addEventListener('resize', update);
 }
