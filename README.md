@@ -35,3 +35,11 @@ npm run format
 ## Viewing the Site
 
 After running `npm run build`, open `dist/index.html` in your browser to preview the compiled site.
+
+## Accessibility
+
+The service cards stack using a scroll animation. This effect is automatically
+disabled when your system's **Reduce Motion** setting is enabled, as detected by
+the `prefers-reduced-motion` media query. To see the animation in action,
+temporarily disable "Reduce Motion" in your operating system preferences and
+reload the page.
