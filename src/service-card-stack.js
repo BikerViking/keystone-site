@@ -24,23 +24,30 @@ export function initServiceCardStack() {
   showDiag(`Cards found: ${cards.length}`);
   if (!cards.length) return;
 
-  gsap.registerPlugin(ScrollTrigger);
-
-  cards.forEach((card, index) => {
-    showDiag(`Animating card index ${index}`);
-    gsap.fromTo(
-      card,
-      { y: 40, opacity: 0 },
-      {
-        y: 0,
-        opacity: 1,
-        scrollTrigger: {
-          trigger: card,
-          start: 'top 80%',
-          end: 'top 50%',
-          scrub: true,
-        },
-      },
-    );
+  // Force cards visible without animation to debug layout issues
+  cards.forEach(card => {
+    card.style.opacity = '1';
+    card.style.transform = 'none';
   });
+
+  // Animation disabled temporarily
+  // gsap.registerPlugin(ScrollTrigger);
+
+  // cards.forEach((card, index) => {
+  //   showDiag(`Animating card index ${index}`);
+  //   gsap.fromTo(
+  //     card,
+  //     { y: 40, opacity: 0 },
+  //     {
+  //       y: 0,
+  //       opacity: 1,
+  //       scrollTrigger: {
+  //         trigger: card,
+  //         start: 'top 80%',
+  //         end: 'top 50%',
+  //         scrub: true,
+  //       },
+  //     },
+  //   );
+  // });
 }
