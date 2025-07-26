@@ -15,6 +15,8 @@ npm install
 npm start
 ```
 
+Run `npm run build` before opening `dist/index.html`. The service cards and animations appear only in the compiled output.
+
 ## Testing
 
 Run unit tests and build validation:
